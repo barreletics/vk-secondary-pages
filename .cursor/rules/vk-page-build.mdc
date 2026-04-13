@@ -1,0 +1,58 @@
+---
+description: VK secondary page build rules — layout rhythm, colors, content, speed
+alwaysApply: true
+---
+
+# VK Secondary Pages — Build Rules
+
+## Section Rhythm (always follow this order)
+1. **Hero** — `#EDE8E2` warm light, dark text, red eyebrow, red CTA button
+2. **Strip / credential bar** — `var(--warm-white)`, thin border, no padding
+3. **Grid / cards** — `var(--off-white)` bg, `#fff` cards, 1px rgba gap
+4. **Content / body** — `#fff` bg, dark text
+5. **CTA / form** — `#EDE8E2` bg, white inputs, red button
+6. **Values bar** — `var(--off-white)` bg, `#fff` tiles, program-exclusive benefits only
+7. **Footer** — standard template
+
+## Color Rules
+- `--vk-red: #C0392B` — all CTAs, eyebrows, accents on secondary pages
+- `--near-black: #1A1A18` — all body text
+- `--amber: #D4860A` — VINTAGE/USED content only. Never on new pages.
+- `--amber-bg: #F5E6C8` — VINTAGE/USED only. Never on secondary program pages.
+- `#EDE8E2` — hero and CTA section bg on all secondary pages
+- BANNED: `rgba(192,57,43,0.04–0.08)` as standalone bg. Use `var(--off-white)`.
+- BANNED: `#fde8e6`. Use `rgba(26,26,24,0.07)` for neutral pills.
+- Form focus borders: always `var(--vk-red)` regardless of section bg.
+
+## Typography
+- Display/headings: Playfair Display — H1 48–56px, H2 32–40px, H3 18–22px
+- Body: DM Sans — 13–17px
+- Eyebrows: DM Sans, 12px, 0.18–0.22em letter-spacing, uppercase, `var(--vk-red)`
+- Pricing: DM Sans only, font-weight 500, `var(--near-black)`. NEVER Playfair on numbers.
+- Min font size: 12px everywhere.
+
+## Build Speed Rules
+- Pull hero copy, 3-step process, JSON-LD, and "what we buy" from `VK-secondary-pages-source.html` first
+- Check live vintageking.com for the page — if 404, build from source + design system
+- No ask-mode for pages with a spec in navigator.html
+- Use existing build script pattern (`tools/build_*.py`)
+- Always: light hero (`#EDE8E2`), never dark hero on secondary pages
+- Always: white form inputs with dark text on light bg sections
+- Always: update navigator.html (status, link, repo col, progress counter) after each page
+
+## Values / Benefit Tiles
+- Only show program-exclusive benefits (not things already in the nav bar)
+- Never: "Free Shipping", "0% Financing" as tile headlines (already in topbar)
+- Use: preferred pricing, account manager, trade credit, installs, warranty, priority service
+
+## SEO / JSON-LD
+- Every page needs at least one JSON-LD block (Service, HowTo, FAQPage, or JobPosting)
+- Meta description: 140–160 chars, action-oriented
+- Title: `[Page Name] — [Benefit Hook] | Vintage King`
+
+## Navigator Updates (after every page)
+- Status dot: `dot-done`
+- Repo col: green `Yes — filename.html ↗`
+- Page name col: plain text name + red `filename.html ↗` link below
+- Sidebar blurb: update to reflect latest done page
+- Progress counter: increment by 1, recalculate bar %
