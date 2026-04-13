@@ -164,7 +164,7 @@ def build():
       <!-- Shop cards -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#1c1208 0%,#2a1c0a 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#1c1410 0%,#2a1e12 50%,#1a1208 100%);position:relative;display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -174,7 +174,7 @@ def build():
           </div>
         </a>
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#121218 0%,#1a1a24 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#14141c 0%,#1e1e28 50%,#121218 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -184,7 +184,7 @@ def build():
           </div>
         </a>
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#0e1210 0%,#161e18 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#101410 0%,#181e18 50%,#0e1210 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -252,7 +252,7 @@ def build():
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#0e1010 0%,#181810 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#121010 0%,#1e1c10 50%,#0e1010 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -262,7 +262,7 @@ def build():
           </div>
         </a>
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#100e08 0%,#1c1a10 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#14100a 0%,#201c12 50%,#100e08 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -272,7 +272,7 @@ def build():
           </div>
         </a>
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#100c08 0%,#1e1610 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#140e0a 0%,#221a10 50%,#100c08 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -367,7 +367,7 @@ def build():
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#0c1018 0%,#141820 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#0e1018 0%,#161c24 50%,#0c1018 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -377,7 +377,7 @@ def build():
           </div>
         </a>
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#140c08 0%,#201410 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#160e0a 0%,#241810 50%,#140c08 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -387,7 +387,7 @@ def build():
           </div>
         </a>
         <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:140px;background:linear-gradient(135deg,#080c10 0%,#101418 100%);display:flex;align-items:center;justify-content:center">
+          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#0a0e14 0%,#12161c 50%,#080c10 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
