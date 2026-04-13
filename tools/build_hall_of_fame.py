@@ -69,7 +69,7 @@ def build():
         </div>
         <h1 style="font-family:'Playfair Display',serif;font-size:58px;font-weight:700;color:var(--near-black);line-height:1.04;margin:0 0 24px">Hall<br>of Fame.</h1>
         <p style="font-size:17px;color:var(--mid-grey);line-height:1.70;margin:0 0 16px;max-width:460px">Some pieces of gear do not just get used — they define entire eras of recorded music. The VK Hall of Fame honors the compressors, preamps, and microphones that changed everything.</p>
-        <p style="font-size:16px;color:var(--mid-grey);line-height:1.70;margin:0 0 40px;max-width:460px">Curated by the engineers and historians at Vintage King. 13 inductees across 3 categories.</p>
+        <p style="font-size:16px;color:var(--mid-grey);line-height:1.70;margin:0 0 40px;max-width:460px">Curated by the engineers and historians at Vintage King. 19 inductees across 5 categories.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap">
           <a href="#hof-compressors" style="display:inline-flex;align-items:center;gap:8px;background:#D4860A;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 28px;border-radius:3px;text-decoration:none" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">See the Inductees</a>
           <a href="#hof-nominate" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(26,26,24,0.22);color:var(--near-black);font-size:13px;font-weight:500;padding:14px 28px;border-radius:3px;text-decoration:none" onmouseover="this.style.borderColor='rgba(26,26,24,0.55)'" onmouseout="this.style.borderColor='rgba(26,26,24,0.22)'">Nominate a Piece</a>
@@ -93,6 +93,14 @@ def build():
               <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(212,134,10,0.20);border-radius:2px">
                 <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.80)">Microphones</span>
                 <span style="font-size:11px;font-weight:700;color:#D4860A">6</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(212,134,10,0.20);border-radius:2px">
+                <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.80)">EQs &amp; Filters</span>
+                <span style="font-size:11px;font-weight:700;color:#D4860A">3</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(212,134,10,0.20);border-radius:2px">
+                <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.80)">Consoles</span>
+                <span style="font-size:11px;font-weight:700;color:#D4860A">3</span>
               </div>
             </div>
           </div>
@@ -163,8 +171,8 @@ def build():
 
       <!-- Shop cards -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#1c1410 0%,#2a1e12 50%,#1a1208 100%);position:relative;display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#1c1410 0%,#2a1e12 50%,#1a1208 100%);position:relative;display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -173,8 +181,8 @@ def build():
             <div style="font-size:13px;color:rgba(255,255,255,0.40)">Contact for availability</div>
           </div>
         </a>
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#14141c 0%,#1e1e28 50%,#121218 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#14141c 0%,#1e1e28 50%,#121218 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -183,8 +191,8 @@ def build():
             <div style="font-size:13px;color:rgba(255,255,255,0.40)">From $2,199 new · Used available</div>
           </div>
         </a>
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#101410 0%,#181e18 50%,#0e1210 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#101410 0%,#181e18 50%,#0e1210 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -251,8 +259,8 @@ def build():
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#121010 0%,#1e1c10 50%,#0e1010 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#121010 0%,#1e1c10 50%,#0e1010 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -261,8 +269,8 @@ def build():
             <div style="font-size:13px;color:rgba(255,255,255,0.40)">Originals from $4,500 · New reissues available</div>
           </div>
         </a>
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#14100a 0%,#201c12 50%,#100e08 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#14100a 0%,#201c12 50%,#100e08 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -271,8 +279,8 @@ def build():
             <div style="font-size:13px;color:rgba(255,255,255,0.40)">Originals from $3,200 · Contact us</div>
           </div>
         </a>
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#140e0a 0%,#221a10 50%,#100c08 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#140e0a 0%,#221a10 50%,#100c08 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -366,8 +374,8 @@ def build():
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#0e1018 0%,#161c24 50%,#0c1018 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#0e1018 0%,#161c24 50%,#0c1018 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -376,8 +384,8 @@ def build():
             <div style="font-size:13px;color:rgba(255,255,255,0.40)">From $12,000 · Contact us</div>
           </div>
         </a>
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#160e0a 0%,#241810 50%,#140c08 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#160e0a 0%,#241810 50%,#140c08 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -386,8 +394,8 @@ def build():
             <div style="font-size:13px;color:rgba(255,255,255,0.40)">From $18,000 · Contact us</div>
           </div>
         </a>
-        <a href="#" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
-          <div style="height:300px;overflow:hidden;background:linear-gradient(160deg,#0a0e14 0%,#12161c 50%,#080c10 100%);display:flex;align-items:center;justify-content:center">
+        <a href="#" style="background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.14);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.09)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#0a0e14 0%,#12161c 50%,#080c10 100%);display:flex;align-items:center;justify-content:center">
             <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
           </div>
           <div style="padding:18px 20px">
@@ -407,6 +415,224 @@ def build():
       <div>
         <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--near-black);line-height:1.55;margin:0 0 14px">"When I put a U 47 in front of a great singer, I stop thinking about the microphone. That is the whole point. The best gear disappears into the performance."</p>
         <div style="font-size:12px;font-weight:600;color:#D4860A;letter-spacing:0.08em;text-transform:uppercase">Al Schmitt — Recording Engineer, 23 Grammy Awards</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CATEGORY 4 — EQs (LIGHT section)
+  ══════════════════════════════════════ -->
+  <div id="hof-eqs" style="background:var(--off-white);padding:80px 0 64px;border-top:2px solid var(--pale-grey)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px">
+      <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:8px;padding-bottom:20px;border-bottom:2px solid rgba(26,26,24,0.12)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A">Category IV</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--near-black);margin:0">EQs &amp; Filters</h2>
+        <div style="margin-left:auto;font-size:13px;color:var(--mid-grey);font-weight:500">3 inductees</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:48px">
+        <div style="display:grid;grid-template-columns:200px 1fr 160px 120px;gap:0;align-items:center;padding:22px 0;border-bottom:1px solid var(--pale-grey)">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--near-black)">Pultec EQP-1A</div>
+          <div style="padding:0 24px"><div style="font-size:13px;color:var(--mid-grey);line-height:1.6">The classic passive tube equalizer. Beloved for the simultaneous boost-and-cut trick on low frequencies that adds weight without muddiness. Found on nearly every major studio rack since the 1950s.</div></div>
+          <div style="font-size:12px;font-weight:500;color:#D4860A;letter-spacing:0.06em;text-transform:uppercase">c. 1951</div>
+          <div style="text-align:right"><a href="#" style="font-size:12px;font-weight:600;color:#D4860A;text-decoration:none;letter-spacing:0.04em" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Shop →</a></div>
+        </div>
+        <div style="display:grid;grid-template-columns:200px 1fr 160px 120px;gap:0;align-items:center;padding:22px 0;border-bottom:1px solid var(--pale-grey)">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--near-black)">API 550A</div>
+          <div style="padding:0 24px"><div style="font-size:13px;color:var(--mid-grey);line-height:1.6">Three-band discrete solid-state EQ with proportional-Q curves. The foundation of the API sound. On every major rock and soul recording from the late 1960s onward. Still in production. An inductee by consensus.</div></div>
+          <div style="font-size:12px;font-weight:500;color:#D4860A;letter-spacing:0.06em;text-transform:uppercase">c. 1967</div>
+          <div style="text-align:right"><a href="#" style="font-size:12px;font-weight:600;color:#D4860A;text-decoration:none;letter-spacing:0.04em" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Shop →</a></div>
+        </div>
+        <div style="display:grid;grid-template-columns:200px 1fr 160px 120px;gap:0;align-items:center;padding:22px 0">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--near-black)">Neve 1084</div>
+          <div style="padding:0 24px"><div style="font-size:13px;color:var(--mid-grey);line-height:1.6">Four-band transformer-coupled Class-A EQ module from the Neve 8000 series. Wide, musical curves that add presence and sheen without aggression. A staple at AIR, Abbey Road, and Electric Lady for decades.</div></div>
+          <div style="font-size:12px;font-weight:500;color:#D4860A;letter-spacing:0.06em;text-transform:uppercase">c. 1973</div>
+          <div style="text-align:right"><a href="#" style="font-size:12px;font-weight:600;color:#D4860A;text-decoration:none;letter-spacing:0.04em" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Shop →</a></div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <a href="#" style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.boxShadow='0 4px 20px rgba(26,26,24,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <div style="height:380px;overflow:hidden;background:var(--pale-grey);display:flex;align-items:center;justify-content:center">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,26,24,0.25)">Product Photo</div>
+          </div>
+          <div style="padding:18px 20px">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Vintage and New</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--near-black);margin-bottom:6px">Pultec EQP-1A</div>
+            <div style="font-size:13px;color:var(--mid-grey)">Originals from $3,500 · Reissues available</div>
+          </div>
+        </a>
+        <a href="#" style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.boxShadow='0 4px 20px rgba(26,26,24,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <div style="height:380px;overflow:hidden;background:var(--pale-grey);display:flex;align-items:center;justify-content:center">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,26,24,0.25)">Product Photo</div>
+          </div>
+          <div style="padding:18px 20px">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">New</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--near-black);margin-bottom:6px">API 550A</div>
+            <div style="font-size:13px;color:var(--mid-grey)">From $499 · In stock</div>
+          </div>
+        </a>
+        <a href="#" style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.boxShadow='0 4px 20px rgba(26,26,24,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <div style="height:380px;overflow:hidden;background:var(--pale-grey);display:flex;align-items:center;justify-content:center">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,26,24,0.25)">Product Photo</div>
+          </div>
+          <div style="padding:18px 20px">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Vintage</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--near-black);margin-bottom:6px">Neve 1084</div>
+            <div style="font-size:13px;color:var(--mid-grey)">Originals from $2,800 · Contact us</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineer quote strip 4 (dark bg for contrast after light EQ section) -->
+  <div style="background:var(--near-black);padding:48px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;display:flex;gap:32px;align-items:center">
+      <div style="width:4px;background:#D4860A;align-self:stretch;border-radius:2px;flex-shrink:0"></div>
+      <div>
+        <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;font-style:italic;color:#fff;line-height:1.55;margin:0 0 14px">"The Pultec on the low end is not optional. There is no other way to get that weight without making everything heavy. It is the trick every engineer learns and never stops using."</p>
+        <div style="font-size:12px;font-weight:600;color:#D4860A;letter-spacing:0.08em;text-transform:uppercase">Glyn Johns — Producer, The Rolling Stones · The Who · Eagles</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CATEGORY 5 — CONSOLES (warm amber-dark)
+  ══════════════════════════════════════ -->
+  <div id="hof-consoles" style="background:#1E1A10;padding:80px 0 64px">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px">
+      <div style="display:flex;align-items:baseline;gap:24px;margin-bottom:8px;padding-bottom:20px;border-bottom:1px solid rgba(212,134,10,0.30)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A">Category V</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin:0">Mixing Consoles</h2>
+        <div style="margin-left:auto;font-size:13px;color:rgba(255,255,255,0.35);font-weight:500">3 inductees</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:48px">
+        <div style="display:grid;grid-template-columns:200px 1fr 160px 120px;gap:0;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.07)">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff">SSL 4000 E/G</div>
+          <div style="padding:0 24px"><div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6">The defining console of 1980s and 90s commercial recording. Built-in compressor and gate on every channel. Total recall. Michael Jackson, Phil Collins, Def Leppard — essentially every major record of its era.</div></div>
+          <div style="font-size:12px;font-weight:500;color:rgba(212,134,10,0.80);letter-spacing:0.06em;text-transform:uppercase">c. 1979</div>
+          <div style="text-align:right"><a href="#" style="font-size:12px;font-weight:600;color:#D4860A;text-decoration:none;letter-spacing:0.04em" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Shop →</a></div>
+        </div>
+        <div style="display:grid;grid-template-columns:200px 1fr 160px 120px;gap:0;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.07)">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff">Neve 8078</div>
+          <div style="padding:0 24px"><div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6">The large-format Neve console at the heart of the warmest-sounding rock recordings ever made. Led Zeppelin at Headley Grange. The Rolling Stones at Stargroves. Thick, musical, irreplaceable.</div></div>
+          <div style="font-size:12px;font-weight:500;color:rgba(212,134,10,0.80);letter-spacing:0.06em;text-transform:uppercase">c. 1972</div>
+          <div style="text-align:right"><a href="#" style="font-size:12px;font-weight:600;color:#D4860A;text-decoration:none;letter-spacing:0.04em" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Shop →</a></div>
+        </div>
+        <div style="display:grid;grid-template-columns:200px 1fr 160px 120px;gap:0;align-items:center;padding:22px 0">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff">API 1608</div>
+          <div style="padding:0 24px"><div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6">Modern API console that brought the classic 2520 op-amp sound into a full-format desk. Sixteen channels of pure API character. The choice of engineers who refuse to track without transformer-coupled hardware.</div></div>
+          <div style="font-size:12px;font-weight:500;color:rgba(212,134,10,0.80);letter-spacing:0.06em;text-transform:uppercase">c. 2008</div>
+          <div style="text-align:right"><a href="#" style="font-size:12px;font-weight:600;color:#D4860A;text-decoration:none;letter-spacing:0.04em" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">Shop →</a></div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <a href="#" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#1a180c 0%,#2a2410 50%,#181408 100%);display:flex;align-items:center;justify-content:center">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
+          </div>
+          <div style="padding:18px 20px">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Vintage</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:6px">SSL 4000 E/G</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.40)">Contact for availability</div>
+          </div>
+        </a>
+        <a href="#" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#181408 0%,#241e0a 50%,#161208 100%);display:flex;align-items:center;justify-content:center">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
+          </div>
+          <div style="padding:18px 20px">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Vintage · Rare</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:6px">Neve 8078</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.40)">Contact for availability</div>
+          </div>
+        </a>
+        <a href="#" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:3px;text-decoration:none;overflow:hidden;display:block" onmouseover="this.style.borderColor='rgba(212,134,10,0.50)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'">
+          <div style="height:380px;overflow:hidden;background:linear-gradient(160deg,#141010 0%,#201c10 50%,#120e0c 100%);display:flex;align-items:center;justify-content:center">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(212,134,10,0.35)">Product Photo</div>
+          </div>
+          <div style="padding:18px 20px">
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">New</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:6px">API 1608</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.40)">Contact for pricing</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineer quote strip 5 -->
+  <div style="background:var(--off-white);border-top:2px solid var(--pale-grey);border-bottom:2px solid var(--pale-grey);padding:48px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;display:flex;gap:32px;align-items:center">
+      <div style="width:4px;background:#D4860A;align-self:stretch;border-radius:2px;flex-shrink:0"></div>
+      <div>
+        <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--near-black);line-height:1.55;margin:0 0 14px">"When I walked into a room with a Neve 8078, I knew the session would sound good before I touched a single fader. The console did half the work."</p>
+        <div style="font-size:12px;font-weight:600;color:#D4860A;letter-spacing:0.08em;text-transform:uppercase">Bob Ludwig — Mastering Engineer, Rolling Stones · Nirvana · U2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BY ENGINEER ── -->
+  <div id="hof-by-engineer" style="background:#fff;padding:80px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px">
+      <div style="margin-bottom:48px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+          <div style="width:24px;height:3px;background:#D4860A;border-radius:2px"></div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A">By Engineer</div>
+        </div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:var(--near-black);line-height:1.08;margin:0 0 16px">The Setups Behind<br>the Records.</h2>
+        <p style="font-size:17px;color:var(--mid-grey);line-height:1.70;max-width:580px;margin:0">Every engineer has a short list of gear they reach for first. These are the Hall of Fame pieces that defined how some of the greatest recordings were made.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+
+        <div style="background:var(--off-white);border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:32px">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--near-black);margin-bottom:4px">Al Schmitt</div>
+          <div style="font-size:12px;color:#D4860A;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px">23 Grammy Awards</div>
+          <div style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin-bottom:20px">Frank Sinatra. Diana Krall. Paul McCartney. Bob Dylan. Al built his sound around a handful of pieces he never let leave the room.</div>
+          <div style="border-top:1px solid var(--pale-grey);padding-top:20px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--near-black);margin-bottom:12px">Signature Gear</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Neumann U 47 — main vocal mic</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Neve 1073 — mic preamp</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Fairchild 670 — bus compression</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Pultec EQP-1A — low-end shaping</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--off-white);border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:32px">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--near-black);margin-bottom:4px">Glyn Johns</div>
+          <div style="font-size:12px;color:#D4860A;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px">Rolling Stones · The Who · Eagles</div>
+          <div style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin-bottom:20px">The Glyn Johns drum miking method is still taught in recording schools worldwide. His gear list was short, deliberate, and always included these.</div>
+          <div style="border-top:1px solid var(--pale-grey);padding-top:20px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--near-black);margin-bottom:12px">Signature Gear</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Neve 8078 — tracking console</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Telefunken V72 — preamp</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Coles 4038 — room and overheads</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Pultec EQP-1A — mix EQ</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--off-white);border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:32px">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--near-black);margin-bottom:4px">Joe Chiccarelli</div>
+          <div style="font-size:12px;color:#D4860A;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px">White Stripes · Beck · Morrissey</div>
+          <div style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin-bottom:20px">One of the most versatile producers working across rock, indie, and alternative. Known for using vintage gear to bring warmth and character to modern recordings.</div>
+          <div style="border-top:1px solid var(--pale-grey);padding-top:20px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--near-black);margin-bottom:12px">Signature Gear</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Neve 1073 — every vocal, every session</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">UREI 1176LN — drums and guitars</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">Teletronix LA-2A — bass and vocals</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;background:#D4860A;border-radius:50%;flex-shrink:0"></div><span style="font-size:13px;color:var(--near-black)">API 550A — guitars and drums EQ</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -437,7 +663,8 @@ def build():
               <option>Compressors</option>
               <option>Mic Preamps</option>
               <option>Microphones</option>
-              <option>EQ / Filters</option>
+              <option>EQs &amp; Filters</option>
+              <option>Mixing Consoles</option>
               <option>Other</option>
             </select>
           </div>
