@@ -1,0 +1,25 @@
+---
+description: vk-secondary-pages — standalone HTML + navigator; do not edit core prototype files
+globs: "**/*"
+alwaysApply: true
+---
+
+# VK Secondary Pages — boundaries
+
+This workspace is **`vk-secondary-pages` only**: standalone secondary `.html` pages and **`navigator.html`** (roadmap / inventory).
+
+## Do not edit the core prototype from here
+
+- **Do not** modify, import, or copy content **into** `VintageKing-Redesign-*.html` or other files under the separate **vintage-king-redesign** project as part of agent work in this repo.
+- **Do not** paste the whole prototype into this repo.
+
+## Navigator (`navigator.html`) is allowed to preview the demo
+
+- **`navigator.html`** may use **`file://`** links and **`Open →`** to the **local** single-file demo on disk so you can compare hashes. That is a **preview** affordance, not a request to edit those files from this repo.
+- **Section A** = core transactional screens that already live in the main prototype (rebuild focus is **not** here).
+- **Sections B onward** = standalone page work (see `HANDOFF.md` filenames).
+
+## Building pages here
+
+- Add **one `.html` file per secondary page** in this repo when building.
+- Read **`HANDOFF.md`** and **`CLAUDE.md`** before substantive edits.

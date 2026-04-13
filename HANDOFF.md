@@ -5,13 +5,20 @@
 
 ---
 
+## Guardrails (non‑negotiable)
+
+1. **This repo is for standalone secondary `.html` pages** (one file per page when building).
+2. **Do not edit** the **core single-file prototype** or other files in the separate **vintage-king-redesign** project **from this repo** (no agent changes, no copying the big file in here).
+3. **`navigator.html`** is the **roadmap**. It may use **local `file://` links** and **Open →** to **preview** the demo on your machine. That does not mean we rebuild Section A as standalone HTML — Section A is **done in the prototype** (preview only). **About VK:** confirm on `#about` in the demo; standalone `about.html` is still **TBD**.
+4. Cursor agents: **`.cursor/rules/vk-secondary-pages.mdc`** is always on — follow it.
+
+---
+
 ## What this repo is
 
 Standalone secondary page demos for the Vintage King redesign. Each page is its own `.html` file. **This repo has zero connection to the core demo** (`VintageKing-Redesign-v2_67-Mar2026.html`). Never import, embed, or edit that file from here.
 
-The core demo lives at:  
-`/Users/andrewnehra/Alternate-projects/vintage-king-redesign/VintageKing-Redesign-v2_67-Mar2026.html`  
-**Do not touch it.**
+The core demo lives **outside this repo** (design lead’s machine / separate project). **Do not touch it from here.**
 
 ---
 
@@ -177,6 +184,6 @@ This gives a restore point for every page. Never work more than one page without
 
 ---
 
-## Integration with demo dashboard
+## Integration with the main prototype (optional — design lead only)
 
-Once pages are built, add a link in `VK-Prototype-Index.html` pointing to `file:///Users/andrewnehra/vk-secondary-pages/navigator.html`. One line added to the index — no other changes to the core demo.
+Do **not** edit the core prototype or its index from this repo. If the team later wants a single entry point, that is a **manual, approved** change in the **other** project — not something agents do from `vk-secondary-pages`.

@@ -1,0 +1,11 @@
+Secondary Pages roadmap (navigator)
+
+After you start the local server, open this in your browser:
+
+http://127.0.0.1:8765/navigator.html
+
+Start the server one of these ways:
+- Double-click: open-navigator.command
+- Terminal: cd to this folder, then: python3 -m http.server 8765
+
+file:// links often fail when clicked from chat — use the http:// link above instead.

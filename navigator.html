@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0099)file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VK-SecondaryPages-Navigator.html -->
+<!-- vk-secondary-pages: roadmap inventory. Open → uses local prototype file path below (doLaunch). -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VK Secondary Pages — Navigator and Progress</title>
-<link href="./VK Secondary Pages — Navigator and Progress_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 <style>
 :root {
   --vk-red: #C0392B;
@@ -46,6 +48,17 @@ a { text-decoration: none; color: inherit; }
 .hdr-link-primary:hover { opacity: 0.88; }
 .hdr-link-ghost { border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.6); }
 .hdr-link-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+
+.roadmap-strip {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 12px 32px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.52);
+}
+.roadmap-strip strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+.roadmap-strip code { font-family: 'DM Sans', ui-monospace, monospace; font-size: 10px; color: rgba(255,255,255,0.45); }
 
 /* ── LAYOUT ── */
 .nav-body {
@@ -208,6 +221,10 @@ a { text-decoration: none; color: inherit; }
   </div>
 </header>
 
+<div class="roadmap-strip">
+  <strong>Roadmap (standalone rebuild):</strong> Section A is the ecommerce core — already built in the single-file demo. Use Open → to preview there; we are not rebuilding those as separate HTML. Work here is company, brand, and long-tail pages from B onward. <strong>About VK:</strong> confirm in demo on <code>#about</code>; a separate <code>about.html</code> is still TBD.
+</div>
+
 <!-- BODY -->
 <div class="nav-body">
 
@@ -222,8 +239,8 @@ a { text-decoration: none; color: inherit; }
       <div class="col-h">Open</div>
     </div>
 
-    <!-- A: CORE TRANSACTIONAL — ALL DONE -->
-    <div class="group-title">A — Core transactional pages (all built ✅)</div>
+    <!-- A: CORE — in main prototype (preview only for this rebuild) -->
+    <div class="group-title">A — Core transactional (in main prototype · preview only)</div>
 
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
@@ -296,10 +313,10 @@ a { text-decoration: none; color: inherit; }
       <div><button class="page-open" onclick="openLaunch(&#39;Open Box&#39;,&#39;#openbox&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">About VK</div><div class="page-url">#about</div></div>
+      <div class="page-status"><div class="dot dot-next"></div></div>
+      <div><div class="page-name">About VK</div><div class="page-url">#about</div><div class="page-note">Check demo first. Standalone about.html TBD.</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
+      <div class="page-priority p-med">TBD</div>
       <div><button class="page-open" onclick="openLaunch(&#39;About VK&#39;,&#39;#about&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
     </div>
 
@@ -837,8 +854,8 @@ a { text-decoration: none; color: inherit; }
   <div class="launch-popup">
     <div class="lp-header">
       <div>
-        <div class="lp-title" id="lp-title">About VK</div>
-        <div class="lp-url" id="lp-url">#about</div>
+        <div class="lp-title" id="lp-title">Homepage</div>
+        <div class="lp-url" id="lp-url">#home</div>
       </div>
       <button class="lp-close" onclick="closeLaunch()">×</button>
     </div>
@@ -928,9 +945,9 @@ function updateNote() {
 
 function doLaunch() {
   if (!_lp.url) return;
-  // Built pages live in v2.67; url is a hash like #deals or #about
-  var base = 'VintageKing-Redesign-v2_67-Mar2026.html';
-  var target = _lp.url.startsWith('#') ? base + _lp.url : _lp.url;
+  // Absolute path so Open → works from this file no matter which folder you open it from
+  var demoFile = 'file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VintageKing-Redesign-v2_67-Mar2026.html';
+  var target = _lp.url.startsWith('#') ? demoFile + _lp.url : _lp.url;
   window.open(target, '_blank');
   closeLaunch();
 }

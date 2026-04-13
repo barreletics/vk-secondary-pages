@@ -1,7 +1,11 @@
 # CLAUDE.md — Vintage King Redesign Handoff
 
+**Repo scope (`vk-secondary-pages`):** This repository builds **standalone secondary `.html` pages** and maintains **`navigator.html`** as a **local inventory only**. **Do not** link to, open, embed, import, or edit the core single-file prototype (`VintageKing-Redesign-*.html`) or any file under the separate **vintage-king-redesign** project. Tokens and rules below still apply to secondary pages. See **`HANDOFF.md`** and **`.cursor/rules/vk-secondary-pages.mdc`**.
+
+---
+
 ## READ THIS FIRST
-This file is the complete briefing for every new Claude agent on this project. Read it fully before touching any file. Working file is v2.65. Never go back to earlier versions.
+This file is the complete briefing for the Vintage King redesign (including the main prototype). Read it fully before touching design tokens. For **this repo’s** file list and page specs, prefer **`HANDOFF.md`**. Working file for the main prototype is **not** edited here.
 
 ---
 
