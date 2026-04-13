@@ -1,6 +1,10 @@
 Secondary Pages roadmap (navigator)
 
-After you start the local server, open this in your browser:
+Published (same repo, GitHub Pages — use this if you want the latest without a local server):
+
+https://barreletics.github.io/vk-secondary-pages/navigator.html
+
+Local (after you start the server):
 
 http://127.0.0.1:8765/navigator.html
 
