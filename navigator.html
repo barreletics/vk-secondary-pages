@@ -20,7 +20,7 @@
   --warm-white: #FDFCFB;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', sans-serif; background: var(--near-black); color: var(--warm-white); font-size: 13px; line-height: 1.5; }
+body { font-family: 'DM Sans', sans-serif; background: var(--near-black); color: var(--warm-white); font-size: 15px; line-height: 1.55; }
 a { text-decoration: none; color: inherit; }
 
 /* ── HEADER ── */
@@ -36,11 +36,11 @@ a { text-decoration: none; color: inherit; }
   z-index: 100;
 }
 .nav-header-left { display: flex; align-items: baseline; gap: 16px; }
-.nav-header-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 500; color: #fff; }
-.nav-header-sub { font-size: 10px; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; text-transform: uppercase; }
+.nav-header-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500; color: #fff; }
+.nav-header-sub { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; text-transform: uppercase; }
 .nav-header-links { display: flex; gap: 10px; }
 .hdr-link {
-  font-size: 11px; font-weight: 600; padding: 7px 14px;
+  font-size: 12px; font-weight: 600; padding: 8px 16px;
   border-radius: 3px; cursor: pointer; letter-spacing: 0.05em;
   text-transform: uppercase; transition: all 0.15s; border: 1.5px solid transparent;
 }
@@ -52,10 +52,10 @@ a { text-decoration: none; color: inherit; }
 .roadmap-strip {
   background: rgba(255,255,255,0.04);
   border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding: 12px 32px;
-  font-size: 11px;
+  padding: 14px 32px;
+  font-size: 14px;
   line-height: 1.55;
-  color: rgba(255,255,255,0.52);
+  color: rgba(255,255,255,0.62);
 }
 .roadmap-strip strong { color: rgba(255,255,255,0.88); font-weight: 600; }
 .roadmap-strip code { font-family: 'DM Sans', ui-monospace, monospace; font-size: 10px; color: rgba(255,255,255,0.45); }
@@ -73,7 +73,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── SECTION HEADINGS ── */
 .group-title {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(255,255,255,0.3);
   border-bottom: 1px solid rgba(255,255,255,0.07);
   padding-bottom: 8px; margin: 32px 0 12px;
@@ -83,28 +83,26 @@ a { text-decoration: none; color: inherit; }
 /* ── PAGE ROW ── */
 .page-row {
   display: grid;
-  grid-template-columns: 20px 1fr 90px 60px 60px;
+  grid-template-columns: 20px 1fr 100px 72px 130px;
   align-items: start;
-  gap: 10px;
-  padding: 9px 0;
+  gap: 12px;
+  padding: 11px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .page-row:last-child { border-bottom: none; }
 .page-status { margin-top: 2px; }
-.page-name { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500; }
-.page-url { font-size: 10px; color: rgba(255,255,255,0.28); font-family: 'DM Sans', monospace; margin-top: 2px; }
-.page-note { font-size: 11px; color: rgba(255,255,255,0.38); margin-top: 3px; line-height: 1.4; }
+.page-name { font-size: 15px; color: rgba(255,255,255,0.88); font-weight: 500; }
+.page-url { font-size: 11px; color: rgba(255,255,255,0.32); font-family: 'DM Sans', monospace; margin-top: 2px; }
+.page-note { font-size: 12px; color: rgba(255,255,255,0.42); margin-top: 3px; line-height: 1.45; }
 .page-hero { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 7px; border-radius: 2px; white-space: nowrap; margin-top: 2px; display: inline-block; }
 .hero-dark { background: rgba(192,57,43,0.15); color: #e88; }
 .hero-light { background: rgba(212,134,10,0.15); color: #e9a940; }
 .hero-gear { background: rgba(192,57,43,0.2); color: #f9c; }
-.page-priority { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2px; }
+.page-priority { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2px; }
+.page-repo { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; line-height: 1.35; }
 .p-high { color: var(--vk-red); }
 .p-med { color: rgba(255,255,255,0.4); }
 .p-low { color: rgba(255,255,255,0.22); }
-.page-open { font-size: 10px; color: var(--vk-red); font-weight: 700; cursor: pointer; white-space: nowrap; margin-top: 3px; background: none; border: none; font-family: inherit; padding: 0; }
-.page-open:hover { text-decoration: underline; }
-
 /* Status dots */
 .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .dot-done { background: #4CAF50; }
@@ -114,13 +112,13 @@ a { text-decoration: none; color: inherit; }
 /* Col header */
 .col-header {
   display: grid;
-  grid-template-columns: 20px 1fr 90px 60px 60px;
-  gap: 10px;
+  grid-template-columns: 20px 1fr 100px 72px 130px;
+  gap: 12px;
   padding: 0 0 8px;
   border-bottom: 1px solid rgba(255,255,255,0.12);
   margin-bottom: 4px;
 }
-.col-h { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
+.col-h { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
 
 /* ── SIDEBAR ── */
 .sb-section { margin-bottom: 28px; }
@@ -132,7 +130,7 @@ a { text-decoration: none; color: inherit; }
 .sb-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .sb-item:last-child { border-bottom: none; }
 .sb-num { font-size: 10px; color: rgba(255,255,255,0.2); width: 16px; flex-shrink: 0; margin-top: 1px; }
-.sb-text { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.45; }
+.sb-text { font-size: 13px; color: rgba(255,255,255,0.68); line-height: 1.45; }
 .sb-text strong { color: #fff; font-weight: 600; }
 .sb-status { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-top: 4px; display: inline-block; }
 .s-done { background: rgba(76,175,80,0.15); color: #7ed47e; }
@@ -215,14 +213,12 @@ a { text-decoration: none; color: inherit; }
     <div class="nav-header-sub">April 2026 · Internal</div>
   </div>
   <div class="nav-header-links">
-    <a class="hdr-link hdr-link-ghost" href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VK-Prototype-Index.html" target="_blank">Demo hub</a>
-    <a class="hdr-link hdr-link-ghost" href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VintageKing-Redesign-v2_67-Mar2026.html" target="_blank">Full redesign v2.67</a>
-    <a class="hdr-link hdr-link-primary" href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VintageKing-Redesign-v2_67-Mar2026.html" target="_blank">Open demo →</a>
+    <a class="hdr-link hdr-link-primary" href="https://barreletics.github.io/vintage-king-redesign/" target="_blank" rel="noopener">Live main demo →</a>
   </div>
 </header>
 
 <div class="roadmap-strip">
-  <strong>Roadmap (standalone rebuild):</strong> Section A is the ecommerce core — already built in the single-file demo. Use Open → to preview there; we are not rebuilding those as separate HTML. Work here is company, brand, and long-tail pages from B onward. <strong>About VK:</strong> confirm in demo on <code>#about</code>; a separate <code>about.html</code> is still TBD.
+  <strong>This page lists secondary and long-tail builds for this repo.</strong> The ten core shop tabs (home, category, product, etc.) live in the <a href="https://barreletics.github.io/vintage-king-redesign/" target="_blank" rel="noopener" style="color:rgba(255,200,180,0.95);text-decoration:underline">live demo</a> — not duplicated here. <strong>In this repo</strong> = do we have a standalone HTML file yet (yes/no).
 </div>
 
 <!-- BODY -->
@@ -236,251 +232,176 @@ a { text-decoration: none; color: inherit; }
       <div class="col-h">Page</div>
       <div class="col-h">Hero mode</div>
       <div class="col-h">Priority</div>
-      <div class="col-h">Open</div>
-    </div>
-
-    <!-- A: CORE — in main prototype (preview only for this rebuild) -->
-    <div class="group-title">A — Core transactional (in main prototype · preview only)</div>
-    <p style="margin:-4px 0 16px;font-size:13px;color:#555;line-height:1.5;max-width:900px">Standalone copies in this repo (GitHub Pages): <a href="pages/home.html">home</a> · <a href="pages/category.html">category</a> · <a href="pages/product.html">product</a> · <a href="pages/faq.html">faq</a> · <a href="pages/deals.html">deals</a> · <a href="pages/sell.html">sell</a> · <a href="pages/studio.html">studio</a> · <a href="pages/techshop.html">tech shop</a> · <a href="pages/financing.html">financing</a> · <a href="pages/openbox.html">open box</a> — extracted from <code>VK-secondary-pages-source.html</code>.</p>
-
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Homepage</div><div class="page-url">#home</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Homepage&#39;,&#39;#home&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Category / PLP</div><div class="page-url">#category</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Category / PLP&#39;,&#39;#category&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Product / PDP</div><div class="page-url">#product</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Product / PDP&#39;,&#39;#product&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">FAQ / Support</div><div class="page-url">#faq</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;FAQ / Support&#39;,&#39;#faq&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Demo Deals</div><div class="page-url">#deals</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Demo Deals&#39;,&#39;#deals&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Sell or Trade</div><div class="page-url">#sell</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Sell or Trade&#39;,&#39;#sell&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Studio Installations</div><div class="page-url">#studio</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Studio Installations&#39;,&#39;#studio&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Tech Shop</div><div class="page-url">#techshop</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Tech Shop&#39;,&#39;#techshop&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Financing</div><div class="page-url">#fin-page</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Financing&#39;,&#39;#fin-page&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Open Box</div><div class="page-url">#openbox</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Open Box&#39;,&#39;#openbox&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
-    </div>
-    <div class="page-row">
-      <div class="page-status"><div class="dot dot-next"></div></div>
-      <div><div class="page-name">About VK</div><div class="page-url">#about</div><div class="page-note">Check demo first. Standalone about.html TBD.</div></div>
-      <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-med">TBD</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;About VK&#39;,&#39;#about&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="col-h">In this repo</div>
     </div>
 
     <!-- B: COMPANY AND BRAND -->
     <div class="group-title">B — Company and brand</div>
 
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Hall of Fame</div><div class="page-url">#hof</div><div class="page-note">3 categories, 14 inductees, pull quotes, nominate strip</div></div>
+      <div class="page-status"><div class="dot dot-next"></div></div>
+      <div><div class="page-name">About VK</div><div class="page-url">about.html (target)</div><div class="page-note">First build candidate · content from live site About</div></div>
+      <div><span class="page-hero hero-dark">Dark / red</span></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
+    </div>
+    <div class="page-row">
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">Hall of Fame</div><div class="page-url">hall-of-fame.html</div><div class="page-note">3 categories, inductees, quotes, nominate strip</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Hall of Fame&#39;,&#39;#hof&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Make Your Mark</div><div class="page-url">#mym</div><div class="page-note">Light amber hero · 2-card panoramic · 6-card artist grid · submission form</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">Make Your Mark</div><div class="page-url">make-your-mark.html</div><div class="page-note">Light amber hero · 2-card panoramic · 6-card artist grid · submission form</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Make Your Mark&#39;,&#39;#mym&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">PLAYBACK Magazine</div><div class="page-url">#playback</div><div class="page-note">Light amber hero · cover mockup · 4-card panoramic · 7 issue cards · subscribe form</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">PLAYBACK Magazine</div><div class="page-url">playback.html</div><div class="page-note">Light amber hero · cover mockup · 4-card panoramic · 7 issue cards · subscribe form</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;PLAYBACK Magazine&#39;,&#39;#playback&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Careers</div><div class="page-url">#careers</div><div class="page-note">Light amber hero · 4-card culture strip · Audio Consultant role · open resume CTA</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">Careers</div><div class="page-url">careers.html</div><div class="page-note">Light amber hero · 4-card culture strip · Audio Consultant role · open resume CTA</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Careers&#39;,&#39;#careers&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Studio Professionals</div><div class="page-url">#studio-pros</div><div class="page-note">T1 dark · program benefits 6-grid · eligibility · apply CTA</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">Studio Professionals</div><div class="page-url">studio-professionals.html</div><div class="page-note">T1 dark · program benefits 6-grid · eligibility · apply CTA</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Studio Professionals&#39;,&#39;#studio-pros&#39;,[&#39;dark&#39;])">Open →</button></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Trade Program</div><div class="page-url">#trade-prog</div><div class="page-note">T1 dark · 3-step process · what we buy · quote CTA</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">Trade Program</div><div class="page-url">trade-program.html</div><div class="page-note">T1 dark · 3-step process · what we buy · quote CTA</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Trade Program&#39;,&#39;#trade-prog&#39;,[&#39;dark&#39;])">Open →</button></div>
+      <div class="page-priority p-med">High</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Meet Our Audio Consultants</div><div class="page-url">/audio-consultants</div><div class="page-note">Team profiles, consultant bios, phone CTA</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Vintage King Los Angeles</div><div class="page-url">/los-angeles</div><div class="page-note">Location page, showroom, demo gear</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">25 Years of Pro Audio</div><div class="page-url">/25-years-of-pro-audio</div><div class="page-note">Legacy / anniversary editorial</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- C: GEAR HERITAGE -->
     <div class="group-title">C — Gear heritage and Hall of Fame deep pages</div>
 
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">HOF — Neve 1073</div><div class="page-url">#neve1073</div><div class="page-note">T3 deep article · specs · editorial · studio timeline · versions · shop CTA</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">HOF — Neve 1073</div><div class="page-url">neve-1073.html</div><div class="page-note">T3 deep article · specs · editorial · studio timeline · versions · shop CTA</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;HOF — Neve 1073&#39;,&#39;#neve1073&#39;,[&#39;dark&#39;])">Open →</button></div>
+      <div class="page-priority p-med">Medium</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Fairchild 660/670</div><div class="page-url">/fairchild-660-670-compressor-limiter</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Teletronix LA-2A</div><div class="page-url">/teletronix-la-2a-optical-compressor-limiter</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Neumann U47/U48</div><div class="page-url">/neumann-u47-u48-microphone</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — UREI 1176</div><div class="page-url">/urei-universal-audio-1176ln-compressor-limiter</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Neve 1081</div><div class="page-url">/neve-1081-mic-pre-eq</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Telefunken ELA-M 251</div><div class="page-url">/telefunken-ela-m-250-251-microphone</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Neumann U67</div><div class="page-url">/neumann-u67-tube-microphone</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Neumann U47 FET</div><div class="page-url">/neumann-u47-fet-microphone</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Coles 4038</div><div class="page-url">/coles-4038-ribbon-microphone</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — TAB/Telefunken V72/V76</div><div class="page-url">/tab-telefunken-v72-v76-mic-pre</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">HOF — Universal Audio 175B</div><div class="page-url">/universal-audio-175b-compressor-limiter</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Neumann Mic Comparison</div><div class="page-url">/neumann-large-diaphragm-mic-comparison</div><div class="page-note">Comparison editorial — T3 template use</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- D: STUDIOS BY VK -->
@@ -491,60 +412,60 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Classic Studios Gone Modern</div><div class="page-url">/studios-by-vk/classic-studios-gone-modern</div><div class="page-note">Studio case studies / project showcase</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Recording and Mixing at Home</div><div class="page-url">/studios-by-vk/recording-and-mixing-at-home</div><div class="page-note">Home studio guide + gear recs</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Multi-Room Recording Studios</div><div class="page-url">/studios-by-vk/multi-room-recording-and-mixing-studios</div><div class="page-note">Large studio installation showcase</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- E: COMMERCE SUPPORT -->
     <div class="group-title">E — Commerce support</div>
 
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">Section 179</div><div class="page-url">#sec179</div><div class="page-note">T2 light · tax savings · how it works · who qualifies · shop CTA</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">Section 179</div><div class="page-url">section-179.html</div><div class="page-note">T2 light · tax savings · how it works · who qualifies · shop CTA</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;Section 179&#39;,&#39;#sec179&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="page-priority p-med">Medium</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">VK Credit Card</div><div class="page-url">/creditcard</div><div class="page-note">Card benefits, apply CTA, financing tie-in</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Avid Pro Tools Trade-In</div><div class="page-url">/avidtrade</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Avid S4 Control Surface Guide</div><div class="page-url">/avid-s4-control-surface-configurations</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Avid S6 Control Surface Guide</div><div class="page-url">/avid-s6-control-surface-configurations</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- F: SPECIALTY PROGRAMS -->
@@ -555,21 +476,21 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Live Sound / House of Worship</div><div class="page-url">/live-sound-house-of-worship</div><div class="page-note">Vertical landing — live + HOW market</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Universal Audio Promotions</div><div class="page-url">/universal-audio-promotions-and-deals</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">UA Apollo X</div><div class="page-url">/universal-audio-apollo-x-thunderbolt-audio-interfaces</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- G: SEASONAL / CAMPAIGN -->
@@ -580,21 +501,21 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Black Friday — Microphones</div><div class="page-url">/black-friday/microphone-deals</div><div class="page-note">One template covers all 9 Black Friday sub-pages</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">New at NAMM — Microphones</div><div class="page-url">/features/new-at-namm/new-at-namm-microphones</div><div class="page-note">One template covers all 6 NAMM sub-pages</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Back to School</div><div class="page-url">/features/back-to-school</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- H: HELP / POLICY -->
@@ -605,35 +526,35 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Shipping Policy</div><div class="page-url">/faq#free-shipping (anchor today)</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Returns</div><div class="page-url">/returns</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
-      <div class="page-status"><div class="dot dot-done"></div></div>
-      <div><div class="page-name">VK Warranty</div><div class="page-url">#warranty</div><div class="page-note">T2 light · 3-tier coverage · ADH plan · used warranty · confidence strip</div></div>
+      <div class="page-status"><div class="dot dot-planned"></div></div>
+      <div><div class="page-name">VK Warranty</div><div class="page-url">warranty.html</div><div class="page-note">T2 light · 3-tier coverage · ADH plan · used warranty · confidence strip</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
-      <div class="page-priority p-done">Done</div>
-      <div><button class="page-open" onclick="openLaunch(&#39;VK Warranty&#39;,&#39;#warranty&#39;,[&#39;dark&#39;,&#39;light&#39;])">Open →</button></div>
+      <div class="page-priority p-med">Medium</div>
+      <div class="page-repo">No — not built yet</div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
       <div><div class="page-name">Privacy Policy</div><div class="page-url">/privacy-policy</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div></div>
+      <div class="page-repo">No — not built yet</div>
     </div>
 
     <!-- Legend -->
     <div class="legend">
-      <div class="legend-item"><div class="dot dot-done"></div> Built in prototype</div>
-      <div class="legend-item"><div class="dot dot-next"></div> In build queue</div>
-      <div class="legend-item"><div class="dot dot-planned"></div> Planned / not started</div>
+      <div class="legend-item"><div class="dot dot-next"></div> Next up</div>
+      <div class="legend-item"><div class="dot dot-planned"></div> Not started</div>
+      <div class="legend-item" style="margin-left:8px;font-size:11px;color:rgba(255,255,255,0.35)">“In this repo” = standalone HTML file in this project (not the live main demo).</div>
     </div>
 
   </div><!-- /nav-main -->
@@ -645,15 +566,10 @@ a { text-decoration: none; color: inherit; }
     <div class="sb-section progress-wrap">
       <div class="sb-title">Overall progress</div>
       <div class="progress-label">
-        <span style="font-size:11px;color:rgba(255,255,255,0.5)">Core pages</span>
-        <span style="font-size:12px;font-weight:600;color:#fff">11 / 11</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.5)">Standalone files in this repo</span>
+        <span style="font-size:13px;font-weight:600;color:#fff">0 / ~40</span>
       </div>
-      <div class="progress-bar" style="margin-bottom:14px"><div class="progress-fill" style="width:100%"></div></div>
-      <div class="progress-label">
-        <span style="font-size:11px;color:rgba(255,255,255,0.5)">Secondary pages</span>
-        <span style="font-size:12px;font-weight:600;color:#fff">9 / ~38</span>
-      </div>
-      <div class="progress-bar" style="margin-bottom:14px"><div class="progress-fill" style="width:24%"></div></div>
+      <div class="progress-bar" style="margin-bottom:14px"><div class="progress-fill" style="width:2%"></div></div>
       <div class="progress-label">
         <span style="font-size:11px;color:rgba(255,255,255,0.5)">Campaign template</span>
         <span style="font-size:12px;font-weight:600;color:#fff">0 / 1</span>
@@ -661,137 +577,77 @@ a { text-decoration: none; color: inherit; }
       <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
     </div>
 
-    <!-- Phase tracker -->
+    <!-- Build focus -->
     <div class="sb-section">
-      <div class="sb-title">Phase tracker</div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:4px;">
-
-        <div style="background:rgba(255,255,255,0.04);border-radius:3px;padding:10px 12px;border-left:3px solid rgba(255,255,255,0.08);">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-            <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);">Pre-flight</span>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#4ade80;">Done</span>
-          </div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;">About Us regression fix · All &amp; → and in headings</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.04);border-radius:3px;padding:10px 12px;border-left:3px solid #4ade80;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-            <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);">T1 — Dark / Red</span>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#4ade80;">3 Done</span>
-          </div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;">✓ Hall of Fame · ✓ Studio Professionals · ✓ Trade Program</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.04);border-radius:3px;padding:10px 12px;border-left:3px solid var(--amber);">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-            <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);">T2 — Light / Amber</span>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#4ade80;">5 Done</span>
-          </div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;">✓ Make Your Mark · ✓ PLAYBACK · ✓ Careers · ✓ Section 179 · ✓ VK Warranty</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.04);border-radius:3px;padding:10px 12px;border-left:3px solid #4ade80;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-            <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);">T3 — Deep / Article</span>
-            <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#4ade80;">1 Done</span>
-          </div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;">✓ HOF — Neve 1073 · specs · editorial · studio timeline · versions</div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Build queue -->
-    <div class="sb-section">
-      <div class="sb-title">Build queue</div>
+      <div class="sb-title">Build focus (this repo)</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:12px"><strong style="color:#fff">Next:</strong> About VK (<code>about.html</code>). Then the rest of section B in the table order. Old “done” labels referred to work in a prototype file, not files here.</div>
       <div class="sb-item">
         <div class="sb-num">1</div>
         <div>
-          <div class="sb-text"><strong>Hall of Fame</strong> — T1. Dark gear hero, 3-category inductee grid, pull quotes, nominate strip.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>About VK</strong></div>
+          <span class="sb-status s-next">Next</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">2</div>
         <div>
-          <div class="sb-text"><strong>Make Your Mark</strong> — T2. Light amber hero, 2-card panoramic, artist grid, submission form.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>Hall of Fame</strong> — T1 dark</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">3</div>
         <div>
-          <div class="sb-text"><strong>PLAYBACK Magazine</strong> — T2. Cover mockup, 4-card panoramic, 7 issue cards, subscribe form.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>Make Your Mark</strong> — T2 amber</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">4</div>
         <div>
-          <div class="sb-text"><strong>Careers</strong> — T2. Light amber hero, 4-card culture strip, Audio Consultant role card.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>PLAYBACK Magazine</strong> — T2</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">5</div>
         <div>
-          <div class="sb-text"><strong>Studio Professionals</strong> — T1. Program benefits 6-grid, eligibility, apply CTA.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>Careers</strong> — T2</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">6</div>
         <div>
-          <div class="sb-text"><strong>Trade Program</strong> — T1. 3-step process, what we buy grid, quote CTA.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>Studio Professionals</strong> — T1</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">7</div>
         <div>
-          <div class="sb-text"><strong>Section 179</strong> — T2 light. Tax savings, how it works, who qualifies, shop CTA.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>Trade Program</strong> — T1</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">8</div>
         <div>
-          <div class="sb-text"><strong>VK Warranty</strong> — T2 light. 3-tier coverage, ADH plan, used warranty, confidence strip.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>Section 179</strong> — T2</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">9</div>
         <div>
-          <div class="sb-text"><strong>HOF — Neve 1073</strong> — T3 deep article. Specs, editorial, studio timeline, versions, shop CTA.</div>
-          <span class="sb-status s-done">Done</span>
+          <div class="sb-text"><strong>VK Warranty</strong> — T2</div>
+          <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">10</div>
         <div>
-          <div class="sb-text"><strong>Studio Installations</strong> — existing T1. Review and update to match new page template.</div>
-          <span class="sb-status s-next">Next</span>
-        </div>
-      </div>
-      <div class="sb-item">
-        <div class="sb-num">11</div>
-        <div>
-          <div class="sb-text"><strong>Meet Our Audio Consultants</strong> — T2 light. Team profiles, consultant bios, phone CTA.</div>
-          <span class="sb-status s-queued">Queued</span>
-        </div>
-      </div>
-      <div class="sb-item">
-        <div class="sb-num">12</div>
-        <div>
-          <div class="sb-text"><strong>VK Credit Card</strong> — T1 dark. Card benefits, apply CTA, financing tie-in.</div>
-          <span class="sb-status s-queued">Queued</span>
-        </div>
-      </div>
-      <div class="sb-item">
-        <div class="sb-num">13</div>
-        <div>
-          <div class="sb-text"><strong>Live Sound / House of Worship</strong> — T1. Vertical landing, live + HOW market.</div>
+          <div class="sb-text"><strong>HOF — Neve 1073</strong> — T3 article</div>
           <span class="sb-status s-queued">Queued</span>
         </div>
       </div>
@@ -850,112 +706,6 @@ a { text-decoration: none; color: inherit; }
 
 </div><!-- /nav-body -->
 
-<!-- LAUNCH POPUP -->
-<div class="launch-backdrop" id="launch-backdrop" onclick="if(event.target===this)closeLaunch()">
-  <div class="launch-popup">
-    <div class="lp-header">
-      <div>
-        <div class="lp-title" id="lp-title">Homepage</div>
-        <div class="lp-url" id="lp-url">#home</div>
-      </div>
-      <button class="lp-close" onclick="closeLaunch()">×</button>
-    </div>
-    <div class="lp-body">
-      <div class="lp-label">Hero style</div>
-      <div class="lp-options" id="lp-hero-opts">
-        <div class="lp-opt sel" id="lp-hero-dark" onclick="selectHero(&#39;dark&#39;)">Dark</div>
-        <div class="lp-opt" id="lp-hero-light" onclick="selectHero(&#39;light&#39;)" title="">Light / amber</div>
-      </div>
-      <div class="lp-label">Accent color</div>
-      <div class="lp-options" id="lp-accent-opts">
-        <div class="lp-opt sel" id="lp-accent-red" onclick="selectAccent(&#39;red&#39;)">Red</div>
-        <div class="lp-opt" id="lp-accent-amber" onclick="selectAccent(&#39;amber&#39;)">Amber</div>
-      </div>
-      <div class="lp-note" id="lp-note">Dark hero + red accent — standard T1 template. Toggle is in the demo top strip.</div>
-    </div>
-    <div class="lp-footer" style="padding:0 20px 18px;">
-      <button class="lp-cancel" onclick="closeLaunch()">Cancel</button>
-      <button class="lp-launch" id="lp-launch-btn" onclick="doLaunch()">Open in new tab →</button>
-    </div>
-  </div>
-</div>
-
 <div class="nav-footer">Vintage King Audio · Secondary Pages Navigator · April 2026 · Internal — Barreletics Ops</div>
-
-<script>
-var _lp = {
-  url: '', title: '', url_display: '',
-  hero: 'dark', accent: 'red',
-  heroAvail: ['dark'], // 'light' added when T2 pages are built
-};
-
-function openLaunch(title, url, heroAvail) {
-  _lp.title = title;
-  _lp.url = url;
-  _lp.heroAvail = heroAvail || ['dark'];
-  _lp.hero = _lp.heroAvail[0];
-  _lp.accent = 'red';
-  document.getElementById('lp-title').textContent = title;
-  document.getElementById('lp-url').textContent = url;
-  // Hero options
-  var lightOpt = document.getElementById('lp-hero-light');
-  lightOpt.classList.toggle('disabled', !_lp.heroAvail.includes('light'));
-  lightOpt.title = _lp.heroAvail.includes('light') ? '' : 'Light hero coming — queued for T2 build';
-  document.getElementById('lp-hero-dark').classList.toggle('sel', _lp.hero === 'dark');
-  document.getElementById('lp-hero-light').classList.toggle('sel', _lp.hero === 'light');
-  document.getElementById('lp-accent-red').classList.add('sel');
-  document.getElementById('lp-accent-amber').classList.remove('sel');
-  updateNote();
-  document.getElementById('launch-backdrop').classList.add('open');
-}
-
-function closeLaunch() {
-  document.getElementById('launch-backdrop').classList.remove('open');
-}
-
-function selectHero(val) {
-  _lp.hero = val;
-  document.getElementById('lp-hero-dark').classList.toggle('sel', val === 'dark');
-  document.getElementById('lp-hero-light').classList.toggle('sel', val === 'light');
-  if (val === 'light') {
-    _lp.accent = 'amber';
-    document.getElementById('lp-accent-red').classList.remove('sel');
-    document.getElementById('lp-accent-amber').classList.add('sel', 'amber-sel');
-  }
-  updateNote();
-}
-
-function selectAccent(val) {
-  _lp.accent = val;
-  document.getElementById('lp-accent-red').classList.toggle('sel', val === 'red');
-  document.getElementById('lp-accent-red').classList.remove('amber-sel');
-  document.getElementById('lp-accent-amber').classList.toggle('sel', val === 'amber');
-  document.getElementById('lp-accent-amber').classList.toggle('amber-sel', val === 'amber');
-  updateNote();
-}
-
-function updateNote() {
-  var notes = {
-    'dark-red':   'Dark hero + red accent — standard T1 template. Toggle is in the demo top strip.',
-    'dark-amber': 'Dark hero + amber accent — switches secondary CTAs to gold. Toggle is in the demo top strip.',
-    'light-red':  'Light hero + red — T2 editorial template. Note: T1 pages open with dark hero until a light variant is built.',
-    'light-amber':'Light hero + amber — T2 editorial template. Amber accent applies to all CTAs and eyebrows.',
-  };
-  document.getElementById('lp-note').textContent = notes[_lp.hero + '-' + _lp.accent] || '';
-}
-
-function doLaunch() {
-  if (!_lp.url) return;
-  // Absolute path so Open → works from this file no matter which folder you open it from
-  var demoFile = 'file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VintageKing-Redesign-v2_67-Mar2026.html';
-  var target = _lp.url.startsWith('#') ? demoFile + _lp.url : _lp.url;
-  window.open(target, '_blank');
-  closeLaunch();
-}
-
-// Keyboard close
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLaunch(); });
-</script>
-
 
 </body></html>
