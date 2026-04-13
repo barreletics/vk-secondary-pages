@@ -475,24 +475,33 @@ def build():
   </div>
 
   <!-- ── CONFIDENCE STRIP ── -->
-  <div style="background:var(--off-white);border-top:2px solid var(--pale-grey);padding:56px 0">
-    <div style="max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
-      <div style="text-align:center">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--near-black);margin-bottom:8px">Free to Watch</div>
-        <p style="font-size:13px;color:var(--mid-grey);line-height:1.6;margin:0">No account. No paywall. Every episode available to everyone, always.</p>
+  <div style="background:var(--off-white);border-top:2px solid var(--pale-grey);padding:64px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+
+      <div style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:28px 24px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">Always</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--near-black);margin-bottom:10px">Free to Watch</div>
+        <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0">No account. No paywall. Every episode available to everyone, always.</p>
       </div>
-      <div style="text-align:center">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--near-black);margin-bottom:8px">Real Studios</div>
-        <p style="font-size:13px;color:var(--mid-grey);line-height:1.6;margin:0">Filmed on-location at working studios — not a set. Real rooms, real gear, real sessions.</p>
+
+      <div style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:28px 24px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">On Location</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--near-black);margin-bottom:10px">Real Studios</div>
+        <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0">Filmed at working studios — not a set. Real rooms, real gear, real sessions in progress.</p>
       </div>
-      <div style="text-align:center">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--near-black);margin-bottom:8px">New Monthly</div>
-        <p style="font-size:13px;color:var(--mid-grey);line-height:1.6;margin:0">New episodes drop monthly. Subscribe to the VK newsletter and never miss one.</p>
+
+      <div style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:28px 24px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">Every Month</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--near-black);margin-bottom:10px">New Episodes</div>
+        <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0">New episodes drop monthly. Subscribe to the VK newsletter and never miss one.</p>
       </div>
-      <div style="text-align:center">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--near-black);margin-bottom:8px">Submit Your Story</div>
-        <p style="font-size:13px;color:var(--mid-grey);line-height:1.6;margin:0">We feature engineers at every level. If your work is serious, your story belongs here.</p>
+
+      <div style="background:#fff;border:1px solid var(--pale-grey);border-top:3px solid #D4860A;border-radius:3px;padding:28px 24px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">Open to All</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--near-black);margin-bottom:10px">Submit Your Story</div>
+        <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0">We feature engineers at every level. If your work is serious, your story belongs here.</p>
       </div>
+
     </div>
   </div>
 
