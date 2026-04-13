@@ -26,7 +26,9 @@ The core demo lives **outside this repo** (design lead’s machine / separate pr
 
 | File | Status | Notes |
 |---|---|---|
-| `navigator.html` | ✅ Ready | Secondary pages dashboard — open this first |
+| `navigator.html` | ✅ Ready | Secondary pages dashboard — open this first; Section A links to `pages/*.html` standalone extracts |
+| `pages/*.html` | ✅ Ready | Ten core prototype sections split from `VK-secondary-pages-source.html` (not the B-section marketing pages in the table below) |
+| `tools/extract_prototype_pages.py` | ✅ Ready | Regenerate `pages/*.html` after updating the source file |
 | `CLAUDE.md` | ✅ Ready | Design system rules — read before every edit |
 | `about.html` | ❌ Needs build | T1 dark, content from vintageking.com/about |
 | `hall-of-fame.html` | ❌ Needs build | T1 dark, 3 categories, 13 inductees, quote strips |
