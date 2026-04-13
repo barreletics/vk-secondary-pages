@@ -96,7 +96,7 @@ def build():
       <p style="font-family:'Playfair Display',serif;font-size:21px;font-weight:400;font-style:italic;color:var(--near-black);line-height:1.55;margin:0 0 24px">This is not gear review content. Make Your Mark is a documentary series — the engineers and producers who built the sound of recorded music, talking on camera about what they actually use and why.</p>
       <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap">
         <div style="text-align:center">
-          <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#D4860A">9</div>
+          <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#D4860A">18</div>
           <div style="font-size:12px;font-weight:500;color:var(--mid-grey);letter-spacing:0.06em;text-transform:uppercase">Episodes</div>
         </div>
         <div style="text-align:center">
@@ -184,94 +184,114 @@ def build():
       <div class="mym-grid" style="grid-template-columns:repeat(3,1fr);gap:24px">
 
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:var(--near-black);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Al Schmitt</div>
-          </div>
+          <div class="mym-card-thumb" style="background:var(--near-black);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Al Schmitt</div></div>
           <div class="mym-card-studio">Capitol Studios · Los Angeles, CA</div>
           <div class="mym-card-title">"How I track vocals at Capitol Studios"</div>
           <div class="mym-card-meta">8 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#1A1510,#2A1F08);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.3)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.8)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.75)">Glyn Johns</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#1A1510,#2A1F08);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.3)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.75)">Glyn Johns</div></div>
           <div class="mym-card-studio">Olympic Studios · London</div>
           <div class="mym-card-title">"The Neve 8078 — why nothing comes close"</div>
           <div class="mym-card-meta">12 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#1A1208,#2A1C0A);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.30)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.85)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.80)">Dave Cobb</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#1A1208,#2A1C0A);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.30)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.85)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.80)">Dave Cobb</div></div>
           <div class="mym-card-studio">RCA Studio A · Nashville, TN</div>
           <div class="mym-card-title">"How I build a record from the floor up"</div>
           <div class="mym-card-meta">18 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:var(--near-black);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Joe Chiccarelli</div>
-          </div>
+          <div class="mym-card-thumb" style="background:var(--near-black);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Joe Chiccarelli</div></div>
           <div class="mym-card-studio">East Side Sound · New York, NY</div>
           <div class="mym-card-title">"Building the mix from scratch"</div>
           <div class="mym-card-meta">10 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0E1218,#161E2A);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.8)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Bob Clearmountain</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0E1218,#161E2A);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Bob Clearmountain</div></div>
           <div class="mym-card-studio">Los Angeles, CA</div>
           <div class="mym-card-title">"The SSL bus compressor — and when to turn it off"</div>
           <div class="mym-card-meta">14 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#100E14,#1A1820);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Tucker Martine</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#100E14,#1A1820);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Tucker Martine</div></div>
           <div class="mym-card-studio">Flora Recording &amp; Playback · Portland, OR</div>
           <div class="mym-card-title">"Finding the right room — and never leaving"</div>
           <div class="mym-card-meta">11 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#100E08,#1C1A10);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.20)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.70)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.70)">Bob Ludwig</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#100E08,#1C1A10);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.20)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.70)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.70)">Bob Ludwig</div></div>
           <div class="mym-card-studio">Gateway Mastering · Portland, OR</div>
           <div class="mym-card-title">"Mastering for vinyl — what actually changes"</div>
           <div class="mym-card-meta">9 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0C1008,#141810);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Joe Barresi</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0C1008,#141810);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Joe Barresi</div></div>
           <div class="mym-card-studio">JHOC Studio · Pasadena, CA</div>
           <div class="mym-card-title">"Three decades of organic education in recording"</div>
           <div class="mym-card-meta">16 min</div>
         </a>
-
         <a href="#" class="mym-card">
-          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#141008,#201808);position:relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.25)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.75)"/></svg>
-            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.75)">Eric Valentine</div>
-            <div style="position:absolute;top:10px;right:12px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#D4860A;background:rgba(0,0,0,0.50);border:1px solid rgba(212,134,10,0.40);padding:3px 9px;border-radius:2px">New</div>
-          </div>
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#141008,#201808);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.25)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.75)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.75)">Eric Valentine</div></div>
           <div class="mym-card-studio">Barefoot Recording · Topanga, CA</div>
           <div class="mym-card-title">"How I turned a record advance into my own studio"</div>
           <div class="mym-card-meta">13 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0E100E,#161814);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Ken Andrews</div></div>
+          <div class="mym-card-studio">Red Swan Studios · Los Angeles, CA</div>
+          <div class="mym-card-title">"Building the studio Failure always needed"</div>
+          <div class="mym-card-meta">12 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#181410,#241E14);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.20)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.70)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.65)">Rupert Neve</div></div>
+          <div class="mym-card-studio">Rupert Neve Designs · Wimberley, TX</div>
+          <div class="mym-card-title">"The circuit decisions that changed recorded music"</div>
+          <div class="mym-card-meta">20 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0E0C14,#181620);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.75)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Kevin Augunas</div></div>
+          <div class="mym-card-studio">Fairfax Recordings · Los Angeles, CA</div>
+          <div class="mym-card-title">"Running a studio and a label at the same time"</div>
+          <div class="mym-card-meta">11 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#100C0A,#1C1610);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.18)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.65)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.65)">Collin Dupuis</div></div>
+          <div class="mym-card-studio">Nashville, TN</div>
+          <div class="mym-card-title">"Recording Dan Auerbach — getting out of the way"</div>
+          <div class="mym-card-meta">10 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0C1010,#141818);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.8)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Jordan Brooke Hamlin</div></div>
+          <div class="mym-card-studio">MOXE · Nashville, TN</div>
+          <div class="mym-card-title">"Building a studio on the outskirts — and loving it"</div>
+          <div class="mym-card-meta">9 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#10100C,#1A1A10);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.18)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.65)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.65)">Carl Craig</div></div>
+          <div class="mym-card-studio">Detroit, MI</div>
+          <div class="mym-card-title">"Thirty years of pushing electronic music forward"</div>
+          <div class="mym-card-meta">14 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0E0E10,#181820);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.75)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Bill Putnam Jr.</div></div>
+          <div class="mym-card-studio">Universal Audio · Scotts Valley, CA</div>
+          <div class="mym-card-title">"Following in the footsteps — and going further"</div>
+          <div class="mym-card-meta">15 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#14100C,#201A12);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(212,134,10,0.18)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(212,134,10,0.65)"/></svg><div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(212,134,10,0.65)">Matt Grondin</div></div>
+          <div class="mym-card-studio">The Parlor · New Orleans, LA</div>
+          <div class="mym-card-title">"A brand-new room, a Neve console, and room to experiment"</div>
+          <div class="mym-card-meta">10 min</div>
+        </a>
+        <a href="#" class="mym-card">
+          <div class="mym-card-thumb" style="background:linear-gradient(135deg,#0E1008,#181A10);position:relative"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.12)" fill="none" stroke-width="1"/><polygon points="13,10 23,16 13,22" fill="rgba(192,57,43,0.75)"/></svg>
+            <div style="position:absolute;top:10px;right:12px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#D4860A;background:rgba(0,0,0,0.50);border:1px solid rgba(212,134,10,0.40);padding:3px 9px;border-radius:2px">New</div>
+            <div style="position:absolute;bottom:12px;left:12px;font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.65)">Pete Lyman</div></div>
+          <div class="mym-card-studio">Infrasonic Mastering · Los Angeles, CA</div>
+          <div class="mym-card-title">"Cutting vinyl in the streaming era — why it still matters"</div>
+          <div class="mym-card-meta">12 min</div>
         </a>
 
       </div>
