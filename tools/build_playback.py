@@ -114,62 +114,101 @@ def build():
     </div>
   </section>
 
+  <!-- ── DIGITAL MAGAZINE VIEWER ── -->
+  <section style="background:#111;padding:72px 0 64px">
+    <div style="max-width:1160px;margin:0 auto;padding:0 40px;text-align:center">
+      <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px">Issue 07 — Now Available</div>
+      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:#fff;margin:0 0 8px">Read PLAYBACK — Free</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,0.45);margin:0 0 40px">Flip through the latest issue. Subscribe for access to all seven.</p>
+
+      <!-- Flipbook viewer -->
+      <div id="pb-flipbook" style="position:relative;display:inline-flex;align-items:stretch;box-shadow:0 20px 80px rgba(0,0,0,0.6);border-radius:2px;max-width:860px;width:100%">
+
+        <!-- Left page -->
+        <div id="pb-page-left" style="flex:1;background:#fff;min-height:540px;padding:40px 36px;text-align:left;position:relative;border-right:1px solid rgba(0,0,0,0.12);display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;transition:opacity 0.3s">
+          <!-- Page content injected by JS -->
+        </div>
+
+        <!-- Right page -->
+        <div id="pb-page-right" style="flex:1;background:#fff;min-height:540px;padding:40px 36px;text-align:left;position:relative;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;transition:opacity 0.3s">
+          <!-- Page content injected by JS -->
+        </div>
+
+        <!-- Spine shadow -->
+        <div style="position:absolute;left:50%;top:0;bottom:0;width:6px;transform:translateX(-50%);background:linear-gradient(90deg,rgba(0,0,0,0.18),rgba(0,0,0,0.04),rgba(0,0,0,0.18));pointer-events:none"></div>
+      </div>
+
+      <!-- Controls -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-top:24px">
+        <button id="pb-prev" onclick="pbFlip(-1)" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s" aria-label="Previous spread">&#8249;</button>
+        <span id="pb-counter" style="font-size:13px;color:rgba(255,255,255,0.45);min-width:80px;text-align:center">Spread 1 of 5</span>
+        <button id="pb-next" onclick="pbFlip(1)" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s" aria-label="Next spread">&#8250;</button>
+      </div>
+      <div style="margin-top:16px">
+        <a href="https://vintageking.com/playback-magazine" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none">Full interactive edition at vintageking.com ↗</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── INSIDE THIS ISSUE ── -->
-  <section style="background:#1A1A18;padding:64px 0">
+  <section style="background:#fff;padding:72px 0;border-top:1px solid rgba(26,26,24,0.08)">
     <div style="max-width:1160px;margin:0 auto;padding:0 40px">
       <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
-        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);font-weight:600">Issue 07 — Now Available</div>
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.1)"></div>
+        <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--vk-red);font-weight:600">Issue 07</div>
+        <div style="flex:1;height:1px;background:rgba(26,26,24,0.1)"></div>
       </div>
-      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:#fff;margin:0 0 16px;line-height:1.2">Inside This Issue</h2>
-      <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;margin:0 0 16px;max-width:680px">The seventh issue of Vintage King's PLAYBACK celebrates the many paths of today's audio industry. Dive into interviews with Just Blaze, Jett Galindo, Sam Evian, Kris Pooley, and Eva Reistad, plus insights from top producers and engineers in rock and metal.</p>
-      <p style="font-size:14px;color:rgba(255,255,255,0.38);line-height:1.6;margin:0 0 44px;max-width:680px">We also spotlight the latest studio essentials, including the Cranborne Audio Brick Lane 500 Series compressor, Focal Utopia Main monitors, and Focusrite RedNet TNX interface.</p>
+      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--near-black);margin:0 0 16px;line-height:1.2">Inside This Issue</h2>
+      <p style="font-size:15px;color:var(--mid-grey);line-height:1.7;margin:0 0 12px;max-width:680px">The seventh issue of Vintage King's PLAYBACK celebrates the many paths of today's audio industry. Dive into interviews with Just Blaze, Jett Galindo, Sam Evian, Kris Pooley, and Eva Reistad, plus insights from top producers and engineers in rock and metal.</p>
+      <p style="font-size:14px;color:rgba(26,26,24,0.45);line-height:1.6;margin:0 0 44px;max-width:680px">We also spotlight the latest studio essentials, including the Cranborne Audio Brick Lane 500 Series compressor, Focal Utopia Main monitors, and Focusrite RedNet TNX interface.</p>
 
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:20px">More Features From This Issue</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.4);font-weight:600;margin-bottom:20px">More Features From This Issue</div>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
 
         <!-- Feature card 1 — Eva Reistad -->
-        <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
+        <div style="background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.09);border:1px solid rgba(26,26,24,0.07)">
           <div style="background:#2A2018;height:280px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.12)">ER</div>
+            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.15)">ER</div>
           </div>
-          <div style="padding:20px">
+          <div style="padding:22px">
             <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:10px">Interview</div>
-            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:10px">Five Sounds With Eva Reistad</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0">We sat down with GRAMMY Award-winning mixer, producer, and artist Eva Reistad to discuss her approach to making five of her favorite records.</p>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--near-black);line-height:1.3;margin-bottom:10px">Five Sounds With Eva Reistad</div>
+            <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0 0 16px">We sat down with GRAMMY Award-winning mixer, producer, and artist Eva Reistad to discuss her approach to making five of her favorite records.</p>
+            <a href="#subscribe" style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--vk-red);text-decoration:none">Read Free →</a>
           </div>
         </div>
 
         <!-- Feature card 2 — SSL Oracle -->
-        <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
+        <div style="background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.09);border:1px solid rgba(26,26,24,0.07)">
           <div style="background:#181A20;height:280px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.12)">SSL</div>
+            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.15)">SSL</div>
           </div>
-          <div style="padding:20px">
-            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:10px">Buyer's Guide</div>
-            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:10px">SSL Oracle Console</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0">Learn more about SSL's new Oracle console, combining the brand's iconic analog circuitry with new ActiveAnalogue technology.</p>
+          <div style="padding:22px">
+            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.4);font-weight:600;margin-bottom:10px">Buyer's Guide</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--near-black);line-height:1.3;margin-bottom:10px">SSL Oracle Console</div>
+            <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0 0 16px">Learn more about SSL's new Oracle console, combining the brand's iconic analog circuitry with new ActiveAnalogue technology.</p>
+            <a href="#subscribe" style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--vk-red);text-decoration:none">Read Free →</a>
           </div>
         </div>
 
         <!-- Feature card 3 — Allaire Studios -->
-        <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
+        <div style="background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.09);border:1px solid rgba(26,26,24,0.07)">
           <div style="background:#101A12;height:280px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.12)">AS</div>
+            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.15)">AS</div>
           </div>
-          <div style="padding:20px">
-            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:10px">Studio Spotlight</div>
-            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:10px">Allaire Studios</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0">Meet Randall Wallace, musician, photographer, and owner of Allaire Studios in Woodstock, New York.</p>
+          <div style="padding:22px">
+            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.4);font-weight:600;margin-bottom:10px">Studio Spotlight</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--near-black);line-height:1.3;margin-bottom:10px">Allaire Studios</div>
+            <p style="font-size:13px;color:var(--mid-grey);line-height:1.65;margin:0 0 16px">Meet Randall Wallace, musician, photographer, and owner of Allaire Studios in Woodstock, New York.</p>
+            <a href="#subscribe" style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--vk-red);text-decoration:none">Read Free →</a>
           </div>
         </div>
 
       </div>
 
-      <div style="margin-top:32px;display:flex;align-items:center;gap:24px">
-        <a href="#subscribe" style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#fff;text-decoration:none;background:var(--vk-red);padding:11px 22px;border-radius:3px">Get Free Access →</a>
-        <a href="https://vintageking.com/playback-magazine" target="_blank" rel="noopener" style="font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none">Read Full Issue at VintageKing.com ↗</a>
+      <div style="margin-top:36px;display:flex;align-items:center;gap:24px">
+        <a href="#subscribe" style="font-size:13px;font-weight:600;letter-spacing:0.02em;color:#fff;text-decoration:none;background:var(--vk-red);padding:13px 28px;border-radius:3px">Get Free Access →</a>
+        <a href="https://vintageking.com/playback-magazine" target="_blank" rel="noopener" style="font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid-grey);text-decoration:none">Read at VintageKing.com ↗</a>
       </div>
     </div>
   </section>
@@ -381,6 +420,99 @@ def build():
     if (href) window.location.href = href;
   }
   function goToDeals() { window.location.href = 'pages/deals.html'; }
+
+  /* ── PLAYBACK magazine flipbook ── */
+  (function() {
+    var pbSpreads = [
+      {
+        left: '<div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C0392B;font-weight:600;margin-bottom:32px">PLAYBACK &nbsp;·&nbsp; Issue 07</div>' +
+              '<div style="background:#1A1A18;flex:1;margin:-40px -36px 0;display:flex;flex-direction:column;justify-content:flex-end;padding:40px 36px;min-height:320px;position:relative">' +
+              '<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,0.85) 100%)"></div>' +
+              '<div style="position:relative;z-index:1"><div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4860A;font-weight:600;margin-bottom:8px">Issue 07</div>' +
+              '<div style="font-family:\'Playfair Display\',serif;font-size:32px;font-style:italic;color:#fff;line-height:1.15;margin-bottom:12px">The Many<br>Paths of Audio</div>' +
+              '<div style="font-size:12px;color:rgba(255,255,255,0.5)">vintageking.com/playback</div></div></div>',
+        right: '<div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.3);font-weight:600;margin-bottom:28px">Contents</div>' +
+               '<div style="display:flex;flex-direction:column;gap:16px">' +
+               '<div style="display:flex;gap:16px;align-items:baseline;border-bottom:1px solid rgba(26,26,24,0.07);padding-bottom:14px"><span style="font-size:18px;font-family:\'Playfair Display\',serif;color:rgba(26,26,24,0.2);min-width:28px">01</span><div><div style="font-size:13px;font-weight:600;color:#1A1A18;margin-bottom:2px">Five Sounds With Eva Reistad</div><div style="font-size:12px;color:#888">Interview</div></div></div>' +
+               '<div style="display:flex;gap:16px;align-items:baseline;border-bottom:1px solid rgba(26,26,24,0.07);padding-bottom:14px"><span style="font-size:18px;font-family:\'Playfair Display\',serif;color:rgba(26,26,24,0.2);min-width:28px">02</span><div><div style="font-size:13px;font-weight:600;color:#1A1A18;margin-bottom:2px">SSL Oracle Console</div><div style="font-size:12px;color:#888">Buyer\'s Guide</div></div></div>' +
+               '<div style="display:flex;gap:16px;align-items:baseline;border-bottom:1px solid rgba(26,26,24,0.07);padding-bottom:14px"><span style="font-size:18px;font-family:\'Playfair Display\',serif;color:rgba(26,26,24,0.2);min-width:28px">03</span><div><div style="font-size:13px;font-weight:600;color:#1A1A18;margin-bottom:2px">Studio Spotlight: Allaire Studios</div><div style="font-size:12px;color:#888">Studio</div></div></div>' +
+               '<div style="display:flex;gap:16px;align-items:baseline;border-bottom:1px solid rgba(26,26,24,0.07);padding-bottom:14px"><span style="font-size:18px;font-family:\'Playfair Display\',serif;color:rgba(26,26,24,0.2);min-width:28px">04</span><div><div style="font-size:13px;font-weight:600;color:#1A1A18;margin-bottom:2px">Just Blaze: Beyond the Beat</div><div style="font-size:12px;color:#888">Producer Profile</div></div></div>' +
+               '<div style="display:flex;gap:16px;align-items:baseline"><span style="font-size:18px;font-family:\'Playfair Display\',serif;color:rgba(26,26,24,0.2);min-width:28px">05</span><div><div style="font-size:13px;font-weight:600;color:#1A1A18;margin-bottom:2px">Jett Galindo: Mastering Tips</div><div style="font-size:12px;color:#888">Subscriber Bonus</div></div></div>' +
+               '</div>'
+      },
+      {
+        left: '<div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C0392B;font-weight:600;margin-bottom:20px">Interview</div>' +
+              '<div style="font-family:\'Playfair Display\',serif;font-size:28px;font-style:italic;color:#1A1A18;line-height:1.2;margin-bottom:16px">Five Sounds With<br>Eva Reistad</div>' +
+              '<div style="width:40px;height:3px;background:#D4860A;margin-bottom:20px"></div>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:14px">Eva Reistad is one of the most decorated mixing engineers working today. Her credits span pop, electronic, and singer-songwriter genres, with GRAMMY wins for work with Aurora, Kygo, and Sigrid.</p>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75">We sat with her to discuss five records that changed the way she hears sound — and the gear that made them possible.</p>',
+        right: '<div style="background:#F5F0E8;border-radius:3px;height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">' +
+               '<div style="font-family:\'Playfair Display\',serif;font-size:48px;font-style:italic;color:rgba(26,26,24,0.12)">ER</div></div>' +
+               '<p style="font-size:12px;color:#888;line-height:1.6;font-style:italic;margin-bottom:8px">"The room is always the instrument. The gear just decides how much of it you let in."</p>' +
+               '<div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C0392B;font-weight:600">Eva Reistad</div>'
+      },
+      {
+        left: '<div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C0392B;font-weight:600;margin-bottom:20px">Buyer\'s Guide</div>' +
+              '<div style="font-family:\'Playfair Display\',serif;font-size:28px;font-style:italic;color:#1A1A18;line-height:1.2;margin-bottom:16px">SSL Oracle<br>Console</div>' +
+              '<div style="width:40px;height:3px;background:#1A1A18;margin-bottom:20px"></div>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:14px">SSL\'s Oracle combines the iconic analog circuitry of the 4000 and 9000 series with new ActiveAnalogue technology — a hybrid architecture designed for the modern studio that doesn\'t sacrifice the sound that defined pop and rock recording.</p>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75">Our consultants break down every bus, every summing path, and what it means for your sessions.</p>',
+        right: '<div style="background:#0D1218;border-radius:3px;height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">' +
+               '<div style="font-family:\'Playfair Display\',serif;font-size:40px;font-style:italic;color:rgba(255,255,255,0.15)">SSL</div></div>' +
+               '<p style="font-size:12px;color:#888;line-height:1.6;font-style:italic;margin-bottom:8px">"The Oracle is the SSL console for engineers who grew up on SSL consoles."</p>' +
+               '<div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C0392B;font-weight:600">VK Audio Consultant</div>'
+      },
+      {
+        left: '<div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C0392B;font-weight:600;margin-bottom:20px">Studio Spotlight</div>' +
+              '<div style="font-family:\'Playfair Display\',serif;font-size:28px;font-style:italic;color:#1A1A18;line-height:1.2;margin-bottom:16px">Allaire Studios,<br>Woodstock NY</div>' +
+              '<div style="width:40px;height:3px;background:#1A1A18;margin-bottom:20px"></div>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:14px">Randall Wallace — musician, photographer, owner — built Allaire in the Catskill Mountains with one goal: make a room where artists would stay for weeks, not days.</p>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75">The result is one of the most sought-after residential studios in the country, with a live room that sounds as good as it looks.</p>',
+        right: '<div style="background:#101A12;border-radius:3px;height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">' +
+               '<div style="font-family:\'Playfair Display\',serif;font-size:40px;font-style:italic;color:rgba(255,255,255,0.15)">AS</div></div>' +
+               '<p style="font-size:12px;color:#888;line-height:1.6;font-style:italic;margin-bottom:8px">"I wanted guests to forget they were working. If you love where you are, you play better."</p>' +
+               '<div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C0392B;font-weight:600">Randall Wallace — Allaire Studios</div>'
+      },
+      {
+        left: '<div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4860A;font-weight:600;margin-bottom:16px">Subscriber Bonus</div>' +
+              '<div style="font-family:\'Playfair Display\',serif;font-size:24px;font-style:italic;color:#1A1A18;line-height:1.25;margin-bottom:16px">Mastering Tips from<br>Jett Galindo</div>' +
+              '<div style="width:40px;height:3px;background:#D4860A;margin-bottom:20px"></div>' +
+              '<p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:16px">GRAMMY-winning mastering engineer Jett Galindo shares her approach to dynamic range, streaming loudness targets, and why she still reaches for analog gear in an all-digital world.</p>' +
+              '<div style="background:#F5F0E8;border-radius:3px;padding:16px">' +
+              '<div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;font-weight:600;margin-bottom:8px">Exclusive to subscribers</div>' +
+              '<p style="font-size:13px;color:#555;line-height:1.6;margin:0">Subscribe to PLAYBACK to unlock this bonus content and access all seven issues instantly.</p></div>',
+        right: '<div style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px 0">' +
+               '<div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.35);font-weight:600;margin-bottom:20px">PLAYBACK · Issue 07</div>' +
+               '<div style="font-family:\'Playfair Display\',serif;font-size:20px;font-style:italic;color:#1A1A18;margin-bottom:24px">All seven issues.<br>Always free.</div>' +
+               '<a href="#subscribe" onclick="document.getElementById(\'subscribe\').scrollIntoView({behavior:\'smooth\'});return false" style="display:inline-block;background:#C0392B;color:#fff;padding:12px 28px;border-radius:3px;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:0.02em">Subscribe Free →</a>' +
+               '<div style="margin-top:20px;font-size:11px;color:rgba(26,26,24,0.3)">No credit card required</div></div>'
+      }
+    ];
+    var pbCurrent = 0;
+    function pbRender() {
+      var s = pbSpreads[pbCurrent];
+      var L = document.getElementById('pb-page-left');
+      var R = document.getElementById('pb-page-right');
+      var C = document.getElementById('pb-counter');
+      if (!L || !R) return;
+      L.style.opacity = '0';
+      R.style.opacity = '0';
+      setTimeout(function() {
+        L.innerHTML = s.left;
+        R.innerHTML = s.right;
+        L.style.opacity = '1';
+        R.style.opacity = '1';
+        C.textContent = 'Spread ' + (pbCurrent + 1) + ' of ' + pbSpreads.length;
+        document.getElementById('pb-prev').style.opacity = pbCurrent === 0 ? '0.3' : '1';
+        document.getElementById('pb-next').style.opacity = pbCurrent === pbSpreads.length - 1 ? '0.3' : '1';
+      }, 180);
+    }
+    window.pbFlip = function(dir) {
+      pbCurrent = Math.max(0, Math.min(pbSpreads.length - 1, pbCurrent + dir));
+      pbRender();
+    };
+    pbRender();
+  })();
 </script>
 """
 
