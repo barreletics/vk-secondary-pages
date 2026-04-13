@@ -56,3 +56,35 @@ alwaysApply: true
 - Page name col: plain text name + red `filename.html ↗` link below
 - Sidebar blurb: update to reflect latest done page
 - Progress counter: increment by 1, recalculate bar %
+
+## Light Base — All Pages
+- ALL pages start light. No dark heroes. Hero + CTA = `#EDE8E2`. Never a full dark/black first section.
+- At most ONE dark accent block (`#2C2C2A`) per page, never first, optional quote/stat only.
+- Gear heritage pages: large gear image in BODY first content section (min-height `520px`), not a dark hero.
+- Section order: `#EDE8E2` hero → `var(--warm-white)` strip → `var(--off-white)` grid → `#fff` content → `#EDE8E2` CTA/form → `var(--off-white)` values bar → footer.
+
+## No Physical Locations
+- VK has NO showrooms, retail locations, or city offices.
+- NEVER reference Detroit, Los Angeles, Nashville, or any city as a VK physical location.
+- NEVER use "showroom", "visit us", "in-store", "demo room" language.
+- Do NOT build location pages. `los-angeles.html` is cancelled.
+
+## Image Placeholder Sizes
+- Service pages — feature cards: min-height `280px`; portraits: min-height `260px` aspect-ratio `3/4`.
+- Gear heritage pages — body gear image: `520px`; version cards: `320px`; timeline cards: `360px`; shop CTA: `300px`.
+- All placeholders: `background:var(--off-white); border:1px solid rgba(26,26,24,0.08)`.
+
+## Accent Toggle (Red / Amber)
+- Every new page gets a small 2-button dev toggle: `A — Red` / `B — Amber` switching `--page-accent`.
+- Red default: Careers, Studio Professionals, Trade Program, Audio Consultants, About VK.
+- Amber default: PLAYBACK, Make Your Mark, Hall of Fame, all HOF gear pages, 25 Years.
+
+## Mandatory Session Rules
+- Never revert or overwrite completed work.
+- Never revisit or fix anything already completed.
+- No drift from current task. Precision edits only.
+
+## GEO / AI Agent Signals
+- Every page: one JSON-LD block (Service, HowTo, Article, JobPosting, or Product per type).
+- Meta description 140–160 chars, action-oriented. Title: `[Name] — [Hook] | Vintage King`.
+- Speakable class on hero `<p>` for Google SGE.

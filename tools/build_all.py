@@ -25,7 +25,6 @@ PAGES = ROOT / "tools" / "pages"
 REGISTRY = {
     "trade-program":       "trade-program.html",
     "audio-consultants":   "audio-consultants.html",
-    "los-angeles":         "los-angeles.html",
     "neve-1073":           "neve-1073.html",
     "fairchild-660-670":   "fairchild-660-670.html",
     "la-2a":               "la-2a.html",
