@@ -97,7 +97,7 @@ def build():
           <div style="position:absolute;top:14px;left:16px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);font-weight:600">Latest</div>
           <div style="position:relative;z-index:1">
             <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:5px">Issue 07</div>
-            <div style="font-family:var(--font-display);font-size:14px;font-style:italic;color:#fff;line-height:1.3">The New Audio Industry</div>
+            <div style="font-family:var(--font-display);font-size:14px;font-style:italic;color:#fff;line-height:1.3">Many Paths</div>
           </div>
         </div>
         <!-- Issue 06 — raised -->
@@ -114,70 +114,62 @@ def build():
     </div>
   </section>
 
-  <!-- ── ISSUE 7 FEATURE STRIP ── -->
+  <!-- ── INSIDE THIS ISSUE ── -->
   <section style="background:#1A1A18;padding:64px 0">
     <div style="max-width:1160px;margin:0 auto;padding:0 40px">
       <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
         <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);font-weight:600">Issue 07 — Now Available</div>
         <div style="flex:1;height:1px;background:rgba(255,255,255,0.1)"></div>
       </div>
-      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:#fff;margin:0 0 8px;line-height:1.2">The New Audio Industry</h2>
-      <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;margin:0 0 40px;max-width:560px">Featuring Just Blaze, Jett Galindo, Sam Evian, Kris Pooley, and Eva Reistad — plus the SSL Oracle console, Focusrite RedNet TNX, and a studio spotlight on Allaire Studios.</p>
+      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:#fff;margin:0 0 16px;line-height:1.2">Inside This Issue</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;margin:0 0 16px;max-width:680px">The seventh issue of Vintage King's PLAYBACK celebrates the many paths of today's audio industry. Dive into interviews with Just Blaze, Jett Galindo, Sam Evian, Kris Pooley, and Eva Reistad, plus insights from top producers and engineers in rock and metal.</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.38);line-height:1.6;margin:0 0 44px;max-width:680px">We also spotlight the latest studio essentials, including the Cranborne Audio Brick Lane 500 Series compressor, Focal Utopia Main monitors, and Focusrite RedNet TNX interface.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:20px">More Features From This Issue</div>
 
-        <!-- Feature card 1 -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+
+        <!-- Feature card 1 — Eva Reistad -->
         <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
-          <div style="background:#2A2018;height:220px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:28px;font-style:italic;color:rgba(255,255,255,0.15)">E</div>
+          <div style="background:#2A2018;height:280px;display:flex;align-items:center;justify-content:center">
+            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.12)">ER</div>
           </div>
-          <div style="padding:18px">
-            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:8px">Interview</div>
-            <div style="font-family:var(--font-display);font-size:16px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:8px">Five Sounds With Eva Reistad</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin:0">GRAMMY-winning mixer on five records that shaped her approach to sound.</p>
+          <div style="padding:20px">
+            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:10px">Interview</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:10px">Five Sounds With Eva Reistad</div>
+            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0">We sat down with GRAMMY Award-winning mixer, producer, and artist Eva Reistad to discuss her approach to making five of her favorite records.</p>
           </div>
         </div>
 
-        <!-- Feature card 2 -->
+        <!-- Feature card 2 — SSL Oracle -->
         <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
-          <div style="background:#181A20;height:220px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:28px;font-style:italic;color:rgba(255,255,255,0.15)">G</div>
+          <div style="background:#181A20;height:280px;display:flex;align-items:center;justify-content:center">
+            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.12)">SSL</div>
           </div>
-          <div style="padding:18px">
-            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:8px">Buyer's Guide</div>
-            <div style="font-family:var(--font-display);font-size:16px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:8px">SSL Oracle Console</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin:0">Iconic analog circuitry meets new ActiveAnalogue technology in SSL's latest flagship.</p>
+          <div style="padding:20px">
+            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:10px">Buyer's Guide</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:10px">SSL Oracle Console</div>
+            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0">Learn more about SSL's new Oracle console, combining the brand's iconic analog circuitry with new ActiveAnalogue technology.</p>
           </div>
         </div>
 
-        <!-- Feature card 3 -->
+        <!-- Feature card 3 — Allaire Studios -->
         <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
-          <div style="background:#101A12;height:220px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:28px;font-style:italic;color:rgba(255,255,255,0.15)">S</div>
+          <div style="background:#101A12;height:280px;display:flex;align-items:center;justify-content:center">
+            <div style="font-family:var(--font-display);font-size:40px;font-style:italic;color:rgba(255,255,255,0.12)">AS</div>
           </div>
-          <div style="padding:18px">
-            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:8px">Studio Spotlight</div>
-            <div style="font-family:var(--font-display);font-size:16px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:8px">Allaire Studios</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin:0">Randall Wallace on music, photography, and building a legendary space in Woodstock, NY.</p>
-          </div>
-        </div>
-
-        <!-- Feature card 4 -->
-        <div style="background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
-          <div style="background:#1A1210;height:220px;display:flex;align-items:center;justify-content:center">
-            <div style="font-family:var(--font-display);font-size:28px;font-style:italic;color:rgba(255,255,255,0.15)">P</div>
-          </div>
-          <div style="padding:18px">
-            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:8px">Producer Profile</div>
-            <div style="font-family:var(--font-display);font-size:16px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:8px">Just Blaze: Beyond the Beat</div>
-            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin:0">How hip-hop's most influential producer built a studio philosophy around vintage analog gear.</p>
+          <div style="padding:20px">
+            <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:10px">Studio Spotlight</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:10px">Allaire Studios</div>
+            <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0">Meet Randall Wallace, musician, photographer, and owner of Allaire Studios in Woodstock, New York.</p>
           </div>
         </div>
 
       </div>
 
-      <div style="margin-top:28px;text-align:right">
-        <a href="#subscribe" style="font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none">Read Issue 07 Free →</a>
+      <div style="margin-top:32px;display:flex;align-items:center;gap:24px">
+        <a href="#subscribe" style="font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#fff;text-decoration:none;background:var(--vk-red);padding:11px 22px;border-radius:3px">Get Free Access →</a>
+        <a href="https://vintageking.com/playback-magazine" target="_blank" rel="noopener" style="font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none">Read Full Issue at VintageKing.com ↗</a>
       </div>
     </div>
   </section>
@@ -296,7 +288,7 @@ def build():
             <div style="position:absolute;top:20px;left:24px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);font-weight:600">Latest Issue</div>
             <div style="position:relative;z-index:1">
               <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:6px">Issue 07</div>
-              <div style="font-family:var(--font-display);font-size:24px;font-style:italic;color:#fff;line-height:1.2">The New Audio Industry</div>
+              <div style="font-family:var(--font-display);font-size:24px;font-style:italic;color:#fff;line-height:1.2">Many Paths</div>
             </div>
           </div>
           <div style="padding:28px;display:flex;flex-direction:column;justify-content:center">
