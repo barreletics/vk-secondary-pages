@@ -85,79 +85,79 @@ def build():
   </section>
 
   <!-- ── WHO QUALIFIES — segment strip ── -->
-  <section style="background:#111;padding:0;border-bottom:1px solid rgba(255,255,255,0.06)">
+  <section style="background:var(--warm-white);padding:0;border-bottom:1px solid rgba(26,26,24,0.08)">
     <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:flex;align-items:stretch;gap:0;overflow-x:auto">
-      <div style="flex:1;min-width:160px;padding:24px 28px;border-right:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px">
-        <div style="width:6px;height:6px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;white-space:nowrap">Recording Studios</span>
+      <div style="flex:1;min-width:160px;padding:22px 28px;border-right:1px solid rgba(26,26,24,0.07);display:flex;align-items:center;gap:12px">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
+        <span style="font-size:13px;color:var(--near-black);font-weight:500;white-space:nowrap">Recording Studios</span>
       </div>
-      <div style="flex:1;min-width:160px;padding:24px 28px;border-right:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px">
-        <div style="width:6px;height:6px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;white-space:nowrap">Post Production</span>
+      <div style="flex:1;min-width:160px;padding:22px 28px;border-right:1px solid rgba(26,26,24,0.07);display:flex;align-items:center;gap:12px">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
+        <span style="font-size:13px;color:var(--near-black);font-weight:500;white-space:nowrap">Post Production</span>
       </div>
-      <div style="flex:1;min-width:160px;padding:24px 28px;border-right:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px">
-        <div style="width:6px;height:6px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;white-space:nowrap">EDU &amp; Institutional</span>
+      <div style="flex:1;min-width:160px;padding:22px 28px;border-right:1px solid rgba(26,26,24,0.07);display:flex;align-items:center;gap:12px">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
+        <span style="font-size:13px;color:var(--near-black);font-weight:500;white-space:nowrap">EDU &amp; Institutional</span>
       </div>
-      <div style="flex:1;min-width:160px;padding:24px 28px;border-right:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px">
-        <div style="width:6px;height:6px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;white-space:nowrap">Live Sound Venues</span>
+      <div style="flex:1;min-width:160px;padding:22px 28px;border-right:1px solid rgba(26,26,24,0.07);display:flex;align-items:center;gap:12px">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
+        <span style="font-size:13px;color:var(--near-black);font-weight:500;white-space:nowrap">Live Sound Venues</span>
       </div>
-      <div style="flex:1;min-width:160px;padding:24px 28px;border-right:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px">
-        <div style="width:6px;height:6px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;white-space:nowrap">Broadcast &amp; Gaming</span>
+      <div style="flex:1;min-width:160px;padding:22px 28px;border-right:1px solid rgba(26,26,24,0.07);display:flex;align-items:center;gap:12px">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
+        <span style="font-size:13px;color:var(--near-black);font-weight:500;white-space:nowrap">Broadcast &amp; Gaming</span>
       </div>
-      <div style="flex:1;min-width:160px;padding:24px 28px;display:flex;align-items:center;gap:12px">
-        <div style="width:6px;height:6px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:500;white-space:nowrap">Houses of Worship</span>
+      <div style="flex:1;min-width:160px;padding:22px 28px;display:flex;align-items:center;gap:12px">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--vk-red);flex-shrink:0"></div>
+        <span style="font-size:13px;color:var(--near-black);font-weight:500;white-space:nowrap">Houses of Worship</span>
       </div>
     </div>
   </section>
 
   <!-- ── PROGRAM BENEFITS — 6-grid ── -->
-  <section id="benefits" style="background:#1A1A18;padding:80px 0">
+  <section id="benefits" style="background:var(--off-white);padding:80px 0">
     <div style="max-width:1160px;margin:0 auto;padding:0 40px">
       <div style="margin-bottom:52px">
         <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--vk-red);font-weight:600;margin-bottom:12px">Program Benefits</div>
-        <h2 style="font-family:var(--font-display);font-size:36px;font-weight:500;color:#fff;margin:0;line-height:1.2">Built for the way facilities buy.</h2>
+        <h2 style="font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--near-black);margin:0;line-height:1.2">Built for the way facilities buy.</h2>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:4px;overflow:hidden">
 
-        <div style="background:#1A1A18;padding:40px 36px">
+        <div style="background:#fff;padding:40px 36px">
           <div style="width:36px;height:2px;background:var(--vk-red);margin-bottom:24px"></div>
-          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.3">Dedicated Account Manager</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0">One person who knows your facility, your gear, and your budget. No re-explaining every time you call. Priority response guaranteed.</p>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--near-black);margin-bottom:12px;line-height:1.3">Dedicated Account Manager</div>
+          <p style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin:0">One person who knows your facility, your gear, and your budget. No re-explaining every time you call. Priority response guaranteed.</p>
         </div>
 
-        <div style="background:#1A1A18;padding:40px 36px">
+        <div style="background:#fff;padding:40px 36px">
           <div style="width:36px;height:2px;background:var(--vk-red);margin-bottom:24px"></div>
-          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.3">Preferred Pricing</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0">Volume-based preferred rates on gear, bundles, and system builds. High-frequency buyers receive additional savings on recurring orders.</p>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--near-black);margin-bottom:12px;line-height:1.3">Preferred Pricing</div>
+          <p style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin:0">Volume-based preferred rates on gear, bundles, and system builds. High-frequency buyers receive additional savings on recurring orders.</p>
         </div>
 
-        <div style="background:#1A1A18;padding:40px 36px">
+        <div style="background:#fff;padding:40px 36px">
           <div style="width:36px;height:2px;background:var(--vk-red);margin-bottom:24px"></div>
-          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.3">Trade Program Access</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0">Priority trade evaluations with same-day credit toward new purchases. Pro accounts receive preferred trade rates and dedicated trade intake.</p>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--near-black);margin-bottom:12px;line-height:1.3">Trade Program Access</div>
+          <p style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin:0">Priority trade evaluations with same-day credit toward new purchases. Pro accounts receive preferred trade rates and dedicated trade intake.</p>
         </div>
 
-        <div style="background:#1A1A18;padding:40px 36px">
-          <div style="width:36px;height:2px;background:rgba(255,255,255,0.2);margin-bottom:24px"></div>
-          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.3">System Design &amp; Installation</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0">Full-service studio integration from our Design &amp; Integration team. Acoustic planning, gear selection, wiring, patchbay, calibration — turnkey.</p>
+        <div style="background:#fff;padding:40px 36px">
+          <div style="width:36px;height:2px;background:rgba(26,26,24,0.18);margin-bottom:24px"></div>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--near-black);margin-bottom:12px;line-height:1.3">System Design &amp; Installation</div>
+          <p style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin:0">Full-service studio integration from our Design &amp; Integration team. Acoustic planning, gear selection, wiring, patchbay, calibration — turnkey.</p>
         </div>
 
-        <div style="background:#1A1A18;padding:40px 36px">
-          <div style="width:36px;height:2px;background:rgba(255,255,255,0.2);margin-bottom:24px"></div>
-          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.3">Financing &amp; Section 179</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0">0% financing up to 48 months. Stack trade credit, finance, and Section 179 to bring first-year out-of-pocket close to zero on major upgrades.</p>
+        <div style="background:#fff;padding:40px 36px">
+          <div style="width:36px;height:2px;background:rgba(26,26,24,0.18);margin-bottom:24px"></div>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--near-black);margin-bottom:12px;line-height:1.3">Financing &amp; Section 179</div>
+          <p style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin:0">0% financing up to 48 months. Stack trade credit, finance, and Section 179 to bring first-year out-of-pocket close to zero on major upgrades.</p>
         </div>
 
-        <div style="background:#1A1A18;padding:40px 36px">
-          <div style="width:36px;height:2px;background:rgba(255,255,255,0.2);margin-bottom:24px"></div>
-          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;margin-bottom:12px;line-height:1.3">VK Tech Shop Priority</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin:0">Priority servicing for vintage and outboard gear through the VK Tech Shop. 100+ years of combined experience. All work backed by a 1-year warranty.</p>
+        <div style="background:#fff;padding:40px 36px">
+          <div style="width:36px;height:2px;background:rgba(26,26,24,0.18);margin-bottom:24px"></div>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--near-black);margin-bottom:12px;line-height:1.3">VK Tech Shop Priority</div>
+          <p style="font-size:13px;color:var(--mid-grey);line-height:1.7;margin:0">Priority servicing for vintage and outboard gear through the VK Tech Shop. 100+ years of combined experience. All work backed by a 1-year warranty.</p>
         </div>
 
       </div>
