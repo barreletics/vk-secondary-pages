@@ -115,11 +115,11 @@ def build():
   </section>
 
   <!-- ── DIGITAL MAGAZINE VIEWER ── -->
-  <section style="background:#1A1510;padding:72px 0 64px">
+  <section style="background:var(--off-white);padding:72px 0 64px;border-top:1px solid rgba(26,26,24,0.08)">
     <div style="max-width:1160px;margin:0 auto;padding:0 40px;text-align:center">
-      <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px">Issue 07 — Now Available</div>
-      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:#fff;margin:0 0 8px">Read PLAYBACK — Free</h2>
-      <p style="font-size:14px;color:rgba(255,255,255,0.45);margin:0 0 40px">Flip through the latest issue. Subscribe for access to all seven.</p>
+      <div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--vk-red);font-weight:600;margin-bottom:12px">Issue 07 — Now Available</div>
+      <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--near-black);margin:0 0 8px">Read PLAYBACK — Free</h2>
+      <p style="font-size:14px;color:var(--mid-grey);margin:0 0 40px">Flip through the latest issue. Subscribe for access to all seven.</p>
 
       <!-- Flipbook viewer -->
       <div id="pb-flipbook" style="position:relative;display:inline-flex;align-items:stretch;box-shadow:0 20px 80px rgba(0,0,0,0.6);border-radius:2px;max-width:860px;width:100%">
@@ -145,7 +145,7 @@ def build():
         <button id="pb-next" onclick="pbFlip(1)" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s" aria-label="Next spread">&#8250;</button>
       </div>
       <div style="margin-top:16px">
-        <a href="https://vintageking.com/playback-magazine" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none">Full interactive edition at vintageking.com ↗</a>
+        <a href="https://vintageking.com/playback-magazine" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(26,26,24,0.38);text-decoration:none">Full interactive edition at vintageking.com ↗</a>
       </div>
     </div>
   </section>
