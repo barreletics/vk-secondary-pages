@@ -26,6 +26,7 @@ REGISTRY = {
     "trade-program":       "trade-program.html",
     "audio-consultants":   "audio-consultants.html",
     "neve-1073":           "neve-1073.html",
+    "neve-1073-guide":     "neve-1073-guide.html",
     "fairchild-660-670":   "fairchild-660-670.html",
     "la-2a":               "la-2a.html",
     "neumann-u47":         "neumann-u47.html",
