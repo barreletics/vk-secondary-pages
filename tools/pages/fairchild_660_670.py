@@ -29,7 +29,7 @@ TITLE = "Fairchild 660 and 670 — Holy Grail of Compression | Vintage King Audi
 META  = "The definitive guide to the Fairchild 660 and 670 — history, engineering, the studios that owned them, and every version available at Vintage King. Built with 20 tubes and a legacy that never quit."
 
 IMG = {
-    "hero_670":      "images/fairchild/fairchild-670-original.jpg",
+    "hero_670":      "images/fairchild/fairchild-670-hero.webp",
     "abbey_rack":    "images/fairchild/fairchild-660-abbey-road.jpg",
 }
 
@@ -235,7 +235,7 @@ PAGE_BODY = f"""\
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;padding:48px;position:relative">
-      <img src="{IMG['hero_670']}" alt="Fairchild 670 stereo tube compressor-limiter" style="width:100%;height:460px;object-fit:contain;display:block">
+      <img src="{IMG['hero_670']}" alt="Fairchild Model 670 front panel — dual VU meters and time constant controls" style="width:100%;height:460px;object-fit:cover;object-position:center 50%;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif">Fairchild Model 670 — Original Production Unit</div>
     </div>
   </section>
