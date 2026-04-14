@@ -211,6 +211,8 @@ PAGE_BODY = f"""\
     .fc2-stick-ghost:hover {{ color:#fff }}
 
     @media(max-width:900px){{
+      .fc2-hero-split {{ grid-template-columns:1fr!important;min-height:auto!important }}
+      .fc2-hero-img {{ height:260px!important;position:relative!important;inset:auto!important;width:100%!important }}
       .fc2-studios,.fc2-records,.fc2-guide,.fc2-alts,.fc2-more {{ grid-template-columns:1fr }}
       .fc2-stats-inner {{ flex-wrap:wrap }}
       .fc2-stat {{ min-width:50% }}
@@ -220,23 +222,21 @@ PAGE_BODY = f"""\
     }}
   </style>
 
-  <!-- HERO ─────────────────────────────────────────────────────────────── -->
-  <section style="background:#EDE8E2;padding:80px 48px 56px;overflow:visible">
-    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:end">
-      <div>
-        <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
-        <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 24px">Fairchild<br>660 / 670</h1>
-        <p style="font-size:18px;color:#3A3A38;line-height:1.7;max-width:520px;margin:0 0 12px;font-family:'DM Sans',sans-serif">The most imitated compressor ever built. Fewer than 1,000 stereo units were ever made. Records through one and you're in the company of the Beatles, Miles Davis, Led Zeppelin, and Jimi Hendrix.</p>
-        <p style="font-size:15px;color:rgba(26,26,24,0.5);font-family:'DM Sans',sans-serif;margin:0 0 32px">Designed 1955. Still irreplaceable in 2026.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a href="https://vintageking.com/fairchild-660-670-compressor-limiter" target="_blank" style="background:#C0392B;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All Fairchild</a>
-          <a href="#which-fairchild" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which One is Right for Me?</a>
-        </div>
+  <!-- HERO — full-bleed split ───────────────────────────────────────── -->
+  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 480px;min-height:560px;overflow:hidden">
+    <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
+      <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 24px">Fairchild<br>660 / 670</h1>
+      <p style="font-size:18px;color:#3A3A38;line-height:1.7;max-width:520px;margin:0 0 12px;font-family:'DM Sans',sans-serif">The most imitated compressor ever built. Fewer than 1,000 stereo units were ever made. Records through one and you're in the company of the Beatles, Miles Davis, Led Zeppelin, and Jimi Hendrix.</p>
+      <p style="font-size:15px;color:rgba(26,26,24,0.5);font-family:'DM Sans',sans-serif;margin:0 0 32px">Designed 1955. Still irreplaceable in 2026.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://vintageking.com/fairchild-660-670-compressor-limiter" target="_blank" style="background:#C0392B;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All Fairchild</a>
+        <a href="#which-fairchild" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which One is Right for Me?</a>
       </div>
-      <div style="text-align:center;padding-bottom:0">
-        <img src="{IMG['hero_670']}" alt="Fairchild 670 stereo tube compressor-limiter" style="width:100%;max-height:380px;object-fit:cover;object-position:center 35%;display:block">
-        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-top:10px;font-family:'DM Sans',sans-serif">Fairchild Model 670 — Original Production Unit</div>
-      </div>
+    </div>
+    <div style="position:relative">
+      <img src="{IMG['hero_670']}" alt="Fairchild 670 stereo tube compressor-limiter" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block">
+      <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif">Fairchild Model 670 — Original Production Unit</div>
     </div>
   </section>
 
