@@ -362,7 +362,7 @@ PAGE_BODY = f"""\
       <h2>Available Formats</h2>
       <div class="nv2-versions">
         <div class="nv2-ver">
-          <div class="nv2-ver-img"><img src="{IMG['h_left_sm']}" alt="Neve 1073 Classic H"></div>
+          <div class="nv2-ver-img" style="background:#fff"><img src="{IMG['h_left_sm']}" alt="Neve 1073 Classic H"></div>
           <div class="nv2-ver-body">
             <div class="nv2-ver-name">1073 Classic H</div>
             <div class="nv2-ver-price">$4,115 at Vintage King</div>
