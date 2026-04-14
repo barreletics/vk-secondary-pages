@@ -273,10 +273,16 @@ PAGE_BODY = f"""\
       <h2>The Sound: Why Engineers Still Reach for It</h2>
       <p>The 1073 imposes itself on the signal. Low-end is tight and authoritative. Upper-mid presence cuts through a dense mix without harshness. The source of this character is the <strong>Marinair input and output transformers</strong> — custom designs exclusive to Neve that introduce gentle second-harmonic saturation at higher signal levels, combined with Class A discrete transistor circuitry and hand-crafted inductor EQ coils.</p>
       <p>No third party has ever licensed or duplicated the Marinair specification. Every 1073 sold by AMS Neve today uses the same transformer models — 10468 mic input, 31267 line input, LO1166 output — as Rupert Neve's original 1970 drawings.</p>
+      <p>The transistors Rupert chose for the 1073 circuit — the <strong>BC182 and BC184 silicon transistors</strong> — were selected after extensive experimentation with earlier BC107 and BC108 designs. The BC182/BC184 combination produced better noise figures and more predictable performance than anything that had come before. That specific transistor selection, combined with the transformer spec and the hand-wired board layout, is what the Neve engineering team — several of whom worked with Rupert in the 1960s — continues to replicate in Burnley today. AMS Neve describes it plainly: <em>"We even use some pencil-on-paper details never published in the public domain."</em></p>
 
       <div class="nv2-pull">
         <p>"When I walked into a room with a Neve 8078, I knew the session would sound good before I touched a single fader."</p>
         <cite>Bob Ludwig — Mastering Engineer · Stones · Nirvana · U2</cite>
+      </div>
+
+      <div class="nv2-pull" style="margin-top:20px">
+        <p>"Neve Consoles are the Rolls-Royce of the industry... you've got to do the right thing by your business."</p>
+        <cite>Sir George Martin — Record Producer · The Beatles</cite>
       </div>
 
       <h2>The Records It Made</h2>
@@ -288,6 +294,11 @@ PAGE_BODY = f"""\
         <li><div><div class="nv2-rt">Brothers in Arms — Dire Straits</div><div class="nv2-rs">AIR Studios Montserrat (Custom Neve)</div></div><div class="nv2-ry">1985</div></li>
         <li><div><div class="nv2-rt">Nevermind — Nirvana</div><div class="nv2-rs">Sound City, Van Nuys (Neve 8028)</div></div><div class="nv2-ry">1991</div></li>
       </ul>
+      <p style="font-size:13px;color:rgba(26,26,24,0.45);line-height:1.6;margin-top:12px">The Sound City Neve 8028 — loaded with 1084 modules, the 1073's direct sibling — was immortalized in Dave Grohl's 2013 documentary. It now resides in Grohl's personal studio in Studio City.</p>
+
+      <h2>How "Outboard" Was Born</h2>
+      <p>The word "outboard" — now standard vocabulary in every studio on earth — traces directly back to the 1073. As studios closed and 80 Series consoles were decommissioned through the late 1970s and 1980s, engineers began pulling individual 1073 modules from the frames and racking them in 19-inch cases. These portable units followed engineers from session to session, city to city. The demand for modules quickly outpaced supply; vintage 1073s became rare, then valuable, then nearly impossible to source. The modern secondary market for vintage studio gear — and the entire concept of carrying your own outboard — started with engineers who refused to give up the sound of their Neve channels.</p>
+      <p>Today authentic 1970s 1073 modules — when they surface — sell for <strong>$9,995 and above</strong> depending on provenance and console origin. Vintage King sources, inspects, and authenticates these units. Current availability on request.</p>
 
     </div>
 
@@ -320,13 +331,41 @@ PAGE_BODY = f"""\
         </table>
       </div>
 
+      <h2>Which 1073 Is Right for You?</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 48px">
+        <div style="border:1px solid rgba(26,26,24,0.08);padding:24px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:8px">Home Studio / Portable</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:6px">1073LB or 1073SPX</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin-bottom:12px">Recording at home or tracking across multiple rooms. 500 Series format drops into any lunchbox. Marinair transformer topology in a portable format.</div>
+          <div style="font-size:14px;font-weight:700;color:#1A1A18">From $1,285 <span style="font-size:12px;color:rgba(26,26,24,0.45);font-weight:400">at Vintage King</span></div>
+        </div>
+        <div style="border:1px solid rgba(26,26,24,0.08);padding:24px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:8px">Single Channel · Original Format</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:6px">1073 Classic H</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin-bottom:12px">The original horizontal module chassis. Hand-wired in Burnley to the 1970 specification. The purest single-channel expression of the 1073 circuit available today.</div>
+          <div style="font-size:14px;font-weight:700;color:#1A1A18">$4,115 <span style="font-size:12px;color:rgba(26,26,24,0.45);font-weight:400">at Vintage King</span></div>
+        </div>
+        <div style="border:1px solid rgba(26,26,24,0.08);padding:24px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:8px">Pro Studio · 8 Channels</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:6px">1073OPX</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin-bottom:12px">Eight complete 1073 circuits in 3U. Individual phantom, pad, and polarity per channel. Optional Dante/USB card for direct DAW integration. The standard for serious tracking rooms.</div>
+          <div style="font-size:14px;font-weight:700;color:#1A1A18">From $4,585 <span style="font-size:12px;color:rgba(26,26,24,0.45);font-weight:400">at Vintage King</span></div>
+        </div>
+        <div style="border:1px solid rgba(26,26,24,0.08);padding:24px;background:rgba(212,134,10,0.03)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:8px">Vintage · Authenticated</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:6px">Original 1970s Module</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin-bottom:12px">A genuine 1073 module pulled from a decommissioned 80 Series console. Sourced, inspected, and authenticated by VK. Limited availability — contact us to be notified when units become available.</div>
+          <div style="font-size:14px;font-weight:700;color:#1A1A18">From $9,995 <span style="font-size:12px;color:rgba(26,26,24,0.45);font-weight:400">· inquire for availability</span></div>
+        </div>
+      </div>
+
       <h2>Available Formats</h2>
       <div class="nv2-versions">
         <div class="nv2-ver">
           <div class="nv2-ver-img"><img src="{IMG['h_left_sm']}" alt="Neve 1073 Classic H"></div>
           <div class="nv2-ver-body">
             <div class="nv2-ver-name">1073 Classic H</div>
-            <div class="nv2-ver-price">Inquire for pricing</div>
+            <div class="nv2-ver-price">$4,115 at Vintage King</div>
             <div class="nv2-ver-desc">Single module. Original transformer spec. Hand-wired UK. The purest expression of the 1073 circuit.</div>
           </div>
         </div>
@@ -334,7 +373,7 @@ PAGE_BODY = f"""\
           <div class="nv2-ver-img" style="background:#1A1A18"><img src="{IMG['vertical_80s']}" alt="Neve 1073 500 Series module"></div>
           <div class="nv2-ver-body">
             <div class="nv2-ver-name">1073 SPX / 500 Series</div>
-            <div class="nv2-ver-price">From $799</div>
+            <div class="nv2-ver-price">From $1,285 at Vintage King</div>
             <div class="nv2-ver-desc">500 Series format. Marinair transformer topology. Compatible with any 500 Series lunchbox.</div>
           </div>
         </div>
@@ -342,7 +381,7 @@ PAGE_BODY = f"""\
           <div class="nv2-ver-img" style="background:#1A1A18"><img src="{IMG['rack_front2']}" alt="Neve 1073 OPX 8-channel rack"></div>
           <div class="nv2-ver-body">
             <div class="nv2-ver-name">1073OPX — 8 Channel</div>
-            <div class="nv2-ver-price">From $6,499</div>
+            <div class="nv2-ver-price">From $4,585 at Vintage King</div>
             <div class="nv2-ver-desc">Eight 1073 circuits in 3U. Individual phantom, pad, polarity per channel. Same transformer spec throughout.</div>
           </div>
         </div>
