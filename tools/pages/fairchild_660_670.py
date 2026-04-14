@@ -223,7 +223,7 @@ PAGE_BODY = f"""\
   </style>
 
   <!-- HERO — full-bleed split ───────────────────────────────────────── -->
-  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 480px;min-height:560px;overflow:hidden">
+  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden">
     <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
       <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
       <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 24px">Fairchild<br>660 / 670</h1>
