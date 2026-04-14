@@ -224,8 +224,8 @@ PAGE_BODY = f"""\
         <a href="#which-u47" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which Version is Right for Me?</a>
       </div>
     </div>
-    <div style="position:relative">
-      <img src="{IMG['hero']}" alt="Neumann U 47 large diaphragm tube condenser microphone, 1949" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+    <div style="display:flex;align-items:center;justify-content:center;padding:48px;position:relative">
+      <img src="{IMG['hero']}" alt="Neumann U 47 large diaphragm tube condenser microphone, 1949" style="max-width:100%;max-height:460px;object-fit:contain;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif">Neumann U 47 — Original Production, 1949</div>
     </div>
   </section>

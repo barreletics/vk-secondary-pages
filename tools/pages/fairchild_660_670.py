@@ -212,7 +212,7 @@ PAGE_BODY = f"""\
 
     @media(max-width:900px){{
       .fc2-hero-split {{ grid-template-columns:1fr!important;min-height:auto!important }}
-      .fc2-hero-img {{ height:260px!important;position:relative!important;inset:auto!important;width:100%!important }}
+      .fc2-hero-img {{ height:260px!important;width:100%!important }}
       .fc2-studios,.fc2-records,.fc2-guide,.fc2-alts,.fc2-more {{ grid-template-columns:1fr }}
       .fc2-stats-inner {{ flex-wrap:wrap }}
       .fc2-stat {{ min-width:50% }}
@@ -234,8 +234,8 @@ PAGE_BODY = f"""\
         <a href="#which-fairchild" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which One is Right for Me?</a>
       </div>
     </div>
-    <div style="position:relative">
-      <img src="{IMG['hero_670']}" alt="Fairchild 670 stereo tube compressor-limiter" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block">
+    <div style="display:flex;align-items:center;justify-content:center;padding:48px;position:relative">
+      <img src="{IMG['hero_670']}" alt="Fairchild 670 stereo tube compressor-limiter" style="max-width:100%;max-height:460px;object-fit:contain;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif">Fairchild Model 670 — Original Production Unit</div>
     </div>
   </section>
