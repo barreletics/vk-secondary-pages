@@ -222,7 +222,7 @@ PAGE_BODY = f"""\
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;padding:48px;position:relative">
-      <img src="{IMG['hero']}" alt="Teletronix LA-2A leveling amplifier front panel" style="max-width:100%;max-height:460px;object-fit:contain;display:block">
+      <img src="{IMG['hero']}" alt="Teletronix LA-2A leveling amplifier front panel" style="width:100%;height:460px;object-fit:contain;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif">Teletronix LA-2A — PatchWerk Recording Studios, Atlanta</div>
     </div>
   </section>
