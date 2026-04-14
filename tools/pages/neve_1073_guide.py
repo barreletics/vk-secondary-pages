@@ -89,11 +89,11 @@ PAGE_BODY = f"""\
     /* Figures */
     .ng-figure {{ margin:40px 0;overflow:hidden }}
     .ng-figure img {{ width:100%;display:block;object-fit:cover;border:1px solid rgba(26,26,24,0.07) }}
-    .ng-figure figcaption {{ padding:10px 16px;background:#1A1A18;font-size:12px;color:rgba(255,255,255,0.5);font-style:italic }}
-    .ng-figure figcaption strong {{ color:rgba(255,255,255,0.78);font-style:normal }}
+    .ng-figure figcaption {{ padding:9px 0 0;font-size:12px;color:rgba(26,26,24,0.48);font-style:italic;border-top:1px solid rgba(26,26,24,0.09) }}
+    .ng-figure figcaption strong {{ color:rgba(26,26,24,0.68);font-style:normal }}
 
     /* Console pair — two dark cards side by side */
-    .ng-console-pair {{ display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:44px 0 }}
+    .ng-console-pair {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:44px 0 }}
     .ng-console-card {{ background:#1A1A18;overflow:hidden }}
     .ng-console-img {{ height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden }}
     .ng-console-label {{ position:absolute;top:14px;left:14px;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;background:rgba(0,0,0,0.55);padding:4px 10px }}
@@ -224,30 +224,42 @@ PAGE_BODY = f"""\
         <cite>— Vintage King Audio</cite>
       </div>
 
-      <!-- TWO CONSOLE CARDS -->
+      <!-- CLASSIC STUDIO LEGACY CARDS — rooms that ran Neve 8068 / 8078 -->
       <div class="ng-console-pair">
         <div class="ng-console-card">
-          <div class="ng-console-img" style="background:linear-gradient(160deg,#181408 0%,#241e0a 50%,#181408 100%)">
-            <div class="ng-console-label">Console Restoration</div>
-            <svg width="72" height="72" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12"><rect x="4" y="14" width="48" height="28" rx="2" stroke="#fff" stroke-width="1.5"/><line x1="4" y1="24" x2="52" y2="24" stroke="#fff" stroke-width="1" opacity=".5"/><circle cx="10" cy="19" r="2" stroke="#fff" stroke-width="1"/><circle cx="17" cy="19" r="2" stroke="#fff" stroke-width="1"/><rect x="8" y="28" width="8" height="8" rx="1" stroke="#fff" stroke-width="1" opacity=".4"/><rect x="20" y="28" width="8" height="8" rx="1" stroke="#fff" stroke-width="1" opacity=".4"/><rect x="32" y="28" width="8" height="8" rx="1" stroke="#fff" stroke-width="1" opacity=".4"/></svg>
-            <div style="position:absolute;bottom:12px;right:14px;font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:0.08em;text-transform:uppercase">VK Photography</div>
+          <div class="ng-console-img" style="background:linear-gradient(160deg,#0d1108 0%,#161c0e 55%,#0d1108 100%)">
+            <div class="ng-console-label">Neve 8078</div>
+            <svg width="64" height="64" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.14"><rect x="4" y="18" width="48" height="20" rx="1" stroke="#fff" stroke-width="1.2"/><line x1="4" y1="26" x2="52" y2="26" stroke="#fff" stroke-width="0.8" opacity=".4"/><rect x="7" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="15" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="23" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="31" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="39" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><circle cx="44" cy="21" r="2" stroke="#D4860A" stroke-width="0.8"/><circle cx="38" cy="21" r="2" stroke="#fff" stroke-width="0.8" opacity=".3"/></svg>
+            <div style="position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:rgba(255,255,255,0.22);letter-spacing:0.06em">Est. 1970 · Greenwich Village, NYC</div>
           </div>
           <div class="ng-console-body">
-            <div class="ng-console-name">Neve 8078</div>
-            <div class="ng-console-sub">Electric Lady Studios — New York, NY</div>
-            <p class="ng-console-desc">Full premium restoration completed by VK in 3.5 months — every channel strip rebuilt, wiring harness replaced, cosmetics restored to factory spec. One of the most significant console restorations in VK history. Jimi Hendrix built Electric Lady specifically around this console.</p>
+            <div class="ng-console-name">Electric Lady Studios</div>
+            <div class="ng-console-sub">New York, NY · 1970 – Present</div>
+            <p class="ng-console-desc">Built by Jimi Hendrix in 1970, Electric Lady ran a Neve 8078 at the heart of Studio A. David Bowie recorded <em>Scary Monsters</em> here. AC/DC tracked <em>Back in Black</em>. Daft Punk returned to this console for <em>Random Access Memories</em>. Still operating today.</p>
           </div>
         </div>
         <div class="ng-console-card">
-          <div class="ng-console-img" style="background:linear-gradient(160deg,#0e1018 0%,#161e28 50%,#0c1018 100%)">
-            <div class="ng-console-label">Console Restoration</div>
-            <svg width="72" height="72" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12"><rect x="4" y="14" width="48" height="28" rx="2" stroke="#fff" stroke-width="1.5"/><line x1="4" y1="24" x2="52" y2="24" stroke="#fff" stroke-width="1" opacity=".5"/><circle cx="10" cy="19" r="2" stroke="#fff" stroke-width="1"/><circle cx="17" cy="19" r="2" stroke="#fff" stroke-width="1"/><rect x="8" y="28" width="8" height="8" rx="1" stroke="#fff" stroke-width="1" opacity=".4"/><rect x="20" y="28" width="8" height="8" rx="1" stroke="#fff" stroke-width="1" opacity=".4"/><rect x="32" y="28" width="8" height="8" rx="1" stroke="#fff" stroke-width="1" opacity=".4"/></svg>
-            <div style="position:absolute;bottom:12px;right:14px;font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:0.08em;text-transform:uppercase">VK Photography</div>
+          <div class="ng-console-img" style="background:linear-gradient(160deg,#080e18 0%,#0e1828 55%,#060e18 100%)">
+            <div class="ng-console-label">Custom Neve 8078</div>
+            <svg width="64" height="64" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.14"><rect x="4" y="18" width="48" height="20" rx="1" stroke="#fff" stroke-width="1.2"/><line x1="4" y1="26" x2="52" y2="26" stroke="#fff" stroke-width="0.8" opacity=".4"/><rect x="7" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="15" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="23" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="31" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="39" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><circle cx="44" cy="21" r="2" stroke="#D4860A" stroke-width="0.8"/><circle cx="38" cy="21" r="2" stroke="#fff" stroke-width="0.8" opacity=".3"/></svg>
+            <div style="position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:rgba(255,255,255,0.22);letter-spacing:0.06em">Est. 1979 · Montserrat, Caribbean</div>
           </div>
           <div class="ng-console-body">
-            <div class="ng-console-name">Helios Console</div>
-            <div class="ng-console-sub">Olympic Studios Heritage — Private Collection</div>
-            <p class="ng-console-desc">Originally commissioned by Olympic Studios in 1969 — one of the rarest British consoles in existence. Led Zeppelin, The Rolling Stones, and Jimi Hendrix all recorded at Olympic. VK sources original Helios components critical to authentic restoration that preserves the desk's signature sound and long-term value.</p>
+            <div class="ng-console-name">AIR Studios Montserrat</div>
+            <div class="ng-console-sub">George Martin · 1979 – 1989</div>
+            <p class="ng-console-desc">George Martin built AIR Montserrat around a custom Neve A4792 — the 8078 variant wired to his specification. Dire Straits' <em>Brothers in Arms</em> was recorded here. The Police, Paul McCartney, and Jimmy Buffett all tracked at this desk. Lost to Hurricane Hugo in 1989.</p>
+          </div>
+        </div>
+        <div class="ng-console-card">
+          <div class="ng-console-img" style="background:linear-gradient(160deg,#180808 0%,#280e0e 55%,#180808 100%)">
+            <div class="ng-console-label">Neve 8078</div>
+            <svg width="64" height="64" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.14"><rect x="4" y="18" width="48" height="20" rx="1" stroke="#fff" stroke-width="1.2"/><line x1="4" y1="26" x2="52" y2="26" stroke="#fff" stroke-width="0.8" opacity=".4"/><rect x="7" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="15" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="23" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="31" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="39" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><circle cx="44" cy="21" r="2" stroke="#D4860A" stroke-width="0.8"/><circle cx="38" cy="21" r="2" stroke="#fff" stroke-width="0.8" opacity=".3"/></svg>
+            <div style="position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:rgba(255,255,255,0.22);letter-spacing:0.06em">Est. 1958 · Miami, FL</div>
+          </div>
+          <div class="ng-console-body">
+            <div class="ng-console-name">Criteria Recording Studios</div>
+            <div class="ng-console-sub">Miami, FL · 1958 – Present</div>
+            <p class="ng-console-desc">Criteria's Neve 8078 made it the definitive room for the mid-1970s mainstream. The Eagles' <em>Hotel California</em>. Eric Clapton's <em>461 Ocean Boulevard</em>. The Bee Gees' run of disco-era albums. The 8078's extended high-frequency response defined the sound of that era.</p>
           </div>
         </div>
       </div>
