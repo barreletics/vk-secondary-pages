@@ -80,9 +80,9 @@ PAGE_BODY = f"""\
     .nv2-pull cite {{ display:block;margin-top:10px;font-size:12px;font-style:normal;color:rgba(26,26,24,0.42);letter-spacing:0.08em;text-transform:uppercase }}
 
     /* Full-width gear photo strip */
-    .nv2-strip {{ margin:52px 0;overflow:hidden }}
-    .nv2-strip img {{ width:100%;display:block;object-fit:cover;max-height:420px }}
-    .nv2-strip-cap {{ max-width:860px;margin:0 auto;padding:9px 32px 0;font-size:12px;color:rgba(26,26,24,0.48);font-style:italic;border-top:1px solid rgba(26,26,24,0.09) }}
+    .nv2-strip {{ margin:52px 0;background:#fff;padding:48px }}
+    .nv2-strip img {{ display:block;max-width:100%;max-height:400px;margin:0 auto;object-fit:contain }}
+    .nv2-strip-cap {{ max-width:860px;margin:12px auto 0;padding:9px 0 0;font-size:12px;color:rgba(26,26,24,0.48);font-style:italic;border-top:1px solid rgba(26,26,24,0.09) }}
     .nv2-strip-cap strong {{ color:rgba(26,26,24,0.65);font-style:normal }}
 
     /* Studio grid — 3 col, full-width */
@@ -365,6 +365,34 @@ PAGE_BODY = f"""\
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- EXPLORE OTHER PAGES -->
+  <div style="background:var(--off-white,#F7F5F2);padding:64px 48px;border-top:1px solid rgba(26,26,24,0.07)">
+    <div style="max-width:1280px;margin:0 auto">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,26,24,0.38);margin-bottom:10px">Explore Vintage King</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1A1A18;margin:0 0 32px">More From VK</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+        <a href="hall-of-fame.html" style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:28px;text-decoration:none;display:block">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:10px">Hall of Fame</div>
+          <div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#1A1A18;margin-bottom:8px">Legendary Gear &amp; Rooms</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.5);line-height:1.6">The consoles, microphones, and outboard that defined recording history — sourced and documented by VK.</div>
+          <div style="margin-top:16px;font-size:12px;font-weight:700;color:#D4860A;letter-spacing:0.06em">Explore →</div>
+        </a>
+        <a href="audio-consultants.html" style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:28px;text-decoration:none;display:block">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:10px">Expert Consulting</div>
+          <div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#1A1A18;margin-bottom:8px">Talk to an Audio Consultant</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.5);line-height:1.6">Our team has tracked sessions on vintage Neve desks. Call, chat, or email — we know this gear from both sides of the glass.</div>
+          <div style="margin-top:16px;font-size:12px;font-weight:700;color:#D4860A;letter-spacing:0.06em">Call 888.653.1184 →</div>
+        </a>
+        <a href="neve-1073.html" style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:28px;text-decoration:none;display:block">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:10px">Gear Overview</div>
+          <div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#1A1A18;margin-bottom:8px">Neve 1073 — All Formats</div>
+          <div style="font-size:13px;color:rgba(26,26,24,0.5);line-height:1.6">Compare every current version — Classic H, 500 Series SPX, OPX 8-channel rack — with specs and pricing side by side.</div>
+          <div style="margin-top:16px;font-size:12px;font-weight:700;color:#D4860A;letter-spacing:0.06em">See All Formats →</div>
+        </a>
+      </div>
     </div>
   </div>
 
