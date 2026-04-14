@@ -6,7 +6,7 @@ TITLE = "Neumann U 47 — The Undisputed King of Vocal Microphones | Vintage Kin
 META  = "The definitive guide to the Neumann U 47 and U 48. History, the VF14 tube, the M7 capsule, every version, and every alternative at Vintage King. From Frank Sinatra to The Beatles to Adele."
 
 IMG = {
-    "hero":  "images/u47/u47-1949.jpg",
+    "hero":  "images/u47/u47-studio.jpg",
     "tube":  "images/u47/u47-tube.jpg",
 }
 
@@ -225,7 +225,7 @@ PAGE_BODY = f"""\
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;padding:48px;position:relative">
-      <img src="{IMG['hero']}" alt="Neumann U 47 large diaphragm tube condenser microphone, 1949" style="width:100%;height:460px;object-fit:contain;display:block">
+      <img src="{IMG['hero']}" alt="Neumann U 47 and U 87 microphones in recording studio" style="width:100%;height:460px;object-fit:cover;object-position:center 40%;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif">Neumann U 47 — Original Production, 1949</div>
     </div>
   </section>
