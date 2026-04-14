@@ -77,7 +77,7 @@ PAGE_BODY = f"""\
     /* Pull quote — amber accent */
     .nv2-pull {{ border-left:3px solid #D4860A;padding:20px 28px;margin:44px 0;background:rgba(212,134,10,0.05) }}
     .nv2-pull p {{ font-family:'Playfair Display',serif;font-size:22px;font-style:italic;line-height:1.5;color:#1A1A18;margin:0!important }}
-    .nv2-pull cite {{ display:block;margin-top:10px;font-size:12px;font-style:normal;color:rgba(26,26,24,0.42);letter-spacing:0.08em;text-transform:uppercase }}
+    .nv2-pull cite {{ display:block;margin-top:12px;font-size:12px;font-style:normal;color:#D4860A;letter-spacing:0.1em;text-transform:uppercase;font-weight:600 }}
 
     /* Full-width gear photo strip */
     .nv2-strip {{ margin:52px 0;background:#fff;padding:48px }}
@@ -114,13 +114,13 @@ PAGE_BODY = f"""\
     .nv2-records li:last-child {{ border-bottom:none }}
     .nv2-rt {{ font-weight:600;color:#1A1A18 }}
     .nv2-rs {{ font-size:12px;color:rgba(26,26,24,0.42);margin-top:2px }}
-    .nv2-ry {{ font-size:12px;color:rgba(26,26,24,0.35);flex-shrink:0;margin-left:16px }}
+    .nv2-ry {{ font-size:12px;color:#D4860A;font-weight:600;flex-shrink:0;margin-left:16px;letter-spacing:0.04em }}
 
     /* Timeline */
     .nv2-tl {{ margin:32px 0 }}
     .nv2-tl-item {{ display:grid;grid-template-columns:68px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid rgba(26,26,24,0.07) }}
     .nv2-tl-item:last-child {{ border-bottom:none }}
-    .nv2-tl-yr {{ font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#D4860A;padding-top:3px }}
+    .nv2-tl-yr {{ font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#D4860A;padding:2px 10px 2px 0;border-right:2px solid #D4860A;line-height:1 }}
     .nv2-tl-txt {{ font-size:14px;color:#3A3A38;line-height:1.65 }}
     .nv2-tl-txt strong {{ color:#1A1A18 }}
 
