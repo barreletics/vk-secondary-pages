@@ -213,7 +213,7 @@ PAGE_BODY = f"""\
   </style>
 
   <!-- HERO — split full-bleed ────────────────────────────────────────── -->
-  <section class="u47-hero-split" style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:580px;overflow:hidden">
+  <section class="u47-hero-split" style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:620px;overflow:hidden">
     <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
       <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
       <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 24px">Neumann<br>U 47</h1>
@@ -224,8 +224,8 @@ PAGE_BODY = f"""\
         <a href="#which-u47" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which Version is Right for Me?</a>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;padding:48px;background:#fff;position:relative">
-      <img src="{IMG['hero']}" alt="Neumann U 47 large diaphragm tube condenser microphone" style="width:100%;height:460px;object-fit:contain;display:block">
+    <div style="display:flex;align-items:center;justify-content:center;padding:32px;background:#fff;position:relative">
+      <img src="{IMG['hero']}" alt="Neumann U 47 large diaphragm tube condenser microphone" style="width:100%;height:520px;object-fit:contain;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif">Neumann U 47 — Original Production, 1949</div>
     </div>
   </section>

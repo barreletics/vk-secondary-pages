@@ -223,7 +223,7 @@ PAGE_BODY = f"""\
   </style>
 
   <!-- HERO — full-bleed split ───────────────────────────────────────── -->
-  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden">
+  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:620px;overflow:hidden">
     <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
       <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
       <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 24px">Fairchild<br>660 / 670</h1>
@@ -234,8 +234,8 @@ PAGE_BODY = f"""\
         <a href="#which-fairchild" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which One is Right for Me?</a>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;padding:48px;position:relative">
-      <img src="{IMG['hero_670']}" alt="Fairchild Model 670 front panel — dual VU meters and time constant controls" style="width:100%;height:460px;object-fit:cover;object-position:center 50%;display:block">
+    <div style="display:flex;align-items:center;justify-content:center;padding:32px;position:relative">
+      <img src="{IMG['hero_670']}" alt="Fairchild Model 670 front panel — dual VU meters and time constant controls" style="width:100%;height:520px;object-fit:cover;object-position:center 50%;display:block">
       <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif">Fairchild Model 670 — Original Production Unit</div>
     </div>
   </section>
