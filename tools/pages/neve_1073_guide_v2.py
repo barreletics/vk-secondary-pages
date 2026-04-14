@@ -136,7 +136,7 @@ PAGE_BODY = f"""\
     /* Inline product cards */
     .nv2-versions {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin:32px 0 }}
     .nv2-ver {{ background:#fff;border:1px solid rgba(26,26,24,0.08);overflow:hidden }}
-    .nv2-ver-img {{ height:160px;overflow:hidden;background:var(--off-white,#F7F5F2);display:flex;align-items:center;justify-content:center }}
+    .nv2-ver-img {{ height:160px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center }}
     .nv2-ver-img img {{ max-height:100%;width:auto;max-width:100%;object-fit:contain;padding:12px }}
     .nv2-ver-body {{ padding:16px }}
     .nv2-ver-name {{ font-weight:600;color:#1A1A18;font-size:14px;margin-bottom:4px }}
@@ -370,7 +370,7 @@ PAGE_BODY = f"""\
           </div>
         </div>
         <div class="nv2-ver">
-          <div class="nv2-ver-img" style="background:#1A1A18"><img src="{IMG['vertical_80s']}" alt="Neve 1073 500 Series module"></div>
+          <div class="nv2-ver-img"><img src="{IMG['vertical_80s']}" alt="Neve 1073 500 Series module"></div>
           <div class="nv2-ver-body">
             <div class="nv2-ver-name">1073 SPX / 500 Series</div>
             <div class="nv2-ver-price">From $1,285 at Vintage King</div>
@@ -378,7 +378,7 @@ PAGE_BODY = f"""\
           </div>
         </div>
         <div class="nv2-ver">
-          <div class="nv2-ver-img" style="background:#1A1A18"><img src="{IMG['rack_front2']}" alt="Neve 1073 OPX 8-channel rack"></div>
+          <div class="nv2-ver-img"><img src="{IMG['rack_front2']}" alt="Neve 1073 OPX 8-channel rack"></div>
           <div class="nv2-ver-body">
             <div class="nv2-ver-name">1073OPX — 8 Channel</div>
             <div class="nv2-ver-price">From $4,585 at Vintage King</div>
