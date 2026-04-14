@@ -86,9 +86,12 @@ PAGE_BODY = f"""\
     .nv2-strip-cap strong {{ color:rgba(26,26,24,0.65);font-style:normal }}
 
     /* Studio grid — 3 col, full-width */
-    .nv2-studios {{ max-width:1280px;margin:52px auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px }}
+    .nv2-studios {{ max-width:1280px;margin:52px auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:16px }}
     .nv2-sc {{ background:#1A1A18;overflow:hidden }}
-    .nv2-sc-img {{ height:380px;position:relative;display:flex;align-items:center;justify-content:center }}
+    .nv2-sc-sm {{ grid-column:1 }}
+    .nv2-sc-lg {{ grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column }}
+    .nv2-sc-lg .nv2-sc-img {{ flex:1;min-height:480px }}
+    .nv2-sc-img {{ height:260px;position:relative;display:flex;align-items:center;justify-content:center }}
     .nv2-sc-badge {{ position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;background:rgba(0,0,0,0.6);padding:3px 9px }}
     .nv2-sc-loc {{ position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:11px;color:rgba(255,255,255,0.22);letter-spacing:0.06em }}
     .nv2-sc-body {{ padding:28px 24px 32px }}
@@ -221,8 +224,8 @@ PAGE_BODY = f"""\
       <p style="font-size:16px;color:rgba(26,26,24,0.55);max-width:600px;margin:0 0 40px">The 8078 was the last and largest of the hand-wired 80 Series consoles. Studios that had one built careers around it.</p>
     </div>
     <div class="nv2-studios">
-      <!-- Electric Lady -->
-      <div class="nv2-sc">
+      <!-- Electric Lady — top left (small) -->
+      <div class="nv2-sc nv2-sc-sm">
         <div class="nv2-sc-img" style="background:linear-gradient(160deg,#0d1108 0%,#161c0e 55%,#0d1108 100%)">
           <div class="nv2-sc-badge">Neve 8078</div>
           <svg width="110" height="110" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.14"><rect x="4" y="18" width="48" height="20" rx="1" stroke="#fff" stroke-width="1.2"/><line x1="4" y1="26" x2="52" y2="26" stroke="#fff" stroke-width="0.8" opacity=".4"/><rect x="7" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="15" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="23" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="31" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="39" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/></svg>
@@ -234,8 +237,8 @@ PAGE_BODY = f"""\
           <p class="nv2-sc-desc">Built by Jimi Hendrix. Studio A's Neve 8078 has since recorded David Bowie (<em>Scary Monsters</em>), AC/DC (<em>Back in Black</em>), and Daft Punk (<em>Random Access Memories</em>). Still operating.</p>
         </div>
       </div>
-      <!-- AIR Montserrat -->
-      <div class="nv2-sc">
+      <!-- AIR Montserrat — bottom left (small) -->
+      <div class="nv2-sc nv2-sc-sm">
         <div class="nv2-sc-img" style="background:linear-gradient(160deg,#080e18 0%,#0e1828 55%,#060e18 100%)">
           <div class="nv2-sc-badge">Custom Neve 8078</div>
           <svg width="110" height="110" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.14"><rect x="4" y="18" width="48" height="20" rx="1" stroke="#fff" stroke-width="1.2"/><line x1="4" y1="26" x2="52" y2="26" stroke="#fff" stroke-width="0.8" opacity=".4"/><rect x="7" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="15" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="23" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="31" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="39" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/></svg>
@@ -247,8 +250,8 @@ PAGE_BODY = f"""\
           <p class="nv2-sc-desc">George Martin built AIR Montserrat around a custom Neve A4792. Dire Straits' <em>Brothers in Arms</em>, The Police, Paul McCartney. Destroyed by Hurricane Hugo, 1989.</p>
         </div>
       </div>
-      <!-- Criteria -->
-      <div class="nv2-sc">
+      <!-- Criteria — full height right (large) -->
+      <div class="nv2-sc nv2-sc-lg">
         <div class="nv2-sc-img" style="background:linear-gradient(160deg,#180808 0%,#280e0e 55%,#180808 100%)">
           <div class="nv2-sc-badge">Neve 8078</div>
           <svg width="110" height="110" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.14"><rect x="4" y="18" width="48" height="20" rx="1" stroke="#fff" stroke-width="1.2"/><line x1="4" y1="26" x2="52" y2="26" stroke="#fff" stroke-width="0.8" opacity=".4"/><rect x="7" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="15" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="23" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="31" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/><rect x="39" y="29" width="5" height="5" rx="0.5" stroke="#fff" stroke-width="0.8" opacity=".35"/></svg>
