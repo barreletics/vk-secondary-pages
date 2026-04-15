@@ -172,7 +172,7 @@ PAGE_BODY = f"""\
     .la2-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#C0392B;margin-bottom:12px }}
     .la2-gc p {{ font-size:13px;color:#3A3A38;line-height:1.6;margin:0 0 14px }}
     .la2-gc a {{ font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3) }}
-    .la2-gc-tag {{ position:absolute;top:-1px;right:16px;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:0.08em;text-transform:uppercase;color:#fff }}
+    .la2-gc-tag {{ display:inline-block;font-size:10px;font-weight:700;padding:4px 10px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;border-radius:2px;margin-bottom:10px }}
 
     /* FAQ */
     .la2-faq {{ border-top:1px solid rgba(26,26,24,0.1) }}
