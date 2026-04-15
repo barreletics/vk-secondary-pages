@@ -522,6 +522,35 @@ PAGE_BODY = f"""\
     </div>
   </section>
 
+  <!-- VIDEOS ─────────────────────────────────────────────────────────── -->
+  <section style="background:#fff;padding:80px 0;border-top:1px solid rgba(26,26,24,0.08)">
+    <div class="u47-wrap">
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">See and Hear</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1A1A18;margin:0 0 8px">Shootouts and Studio Sessions</h2>
+      <p style="font-size:15px;color:rgba(26,26,24,0.55);font-family:'DM Sans',sans-serif;margin:0 0 40px">The FLEA 47 NEXT head-to-head against a vintage Neumann original — and a look inside a historic matched pair from Vintage King.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+        <div>
+          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1A1A18">
+            <iframe src="https://www.youtube.com/embed/-XxAPb4YXwI" title="Vintage Neumann U47 vs FLEA 47 Tube Microphone Shootout" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+          </div>
+          <div style="margin-top:14px">
+            <div style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin-bottom:4px">Vintage Neumann U47 vs FLEA 47 — Head-to-Head</div>
+            <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55)">Direct A/B comparison. Same source, same signal chain. How close does the FLEA 47 NEXT get?</div>
+          </div>
+        </div>
+        <div>
+          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1A1A18">
+            <iframe src="https://www.youtube.com/embed/0T9hPWTZr6s" title="A Look At A Historic Pair Of Neumann U47 Microphones From Vintage King" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+          </div>
+          <div style="margin-top:14px">
+            <div style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin-bottom:4px">A Historic Matched Pair — Vintage King</div>
+            <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55)">Inside a rare matched pair of vintage Neumann U 47s sourced by Vintage King. What makes these originals worth $20,000+.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ ──────────────────────────────────────────────────────────────── -->
   <section style="background:#fff;padding:80px 0">
     <div class="u47-wrap">
