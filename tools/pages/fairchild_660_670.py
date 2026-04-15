@@ -153,7 +153,7 @@ PAGE_BODY = f"""\
     /* Records list */
     .fc2-records {{ display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(26,26,24,0.08) }}
     .fc2-rec {{ background:#fff;padding:18px 24px;display:flex;align-items:baseline;gap:16px }}
-    .fc2-ry  {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#C0392B;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #C0392B;line-height:1 }}
+    .fc2-ry  {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#D4860A;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #D4860A;line-height:1 }}
     .fc2-rt  {{ font-size:14px;color:#1A1A18;font-weight:500 }}
     .fc2-ra  {{ font-size:13px;color:rgba(26,26,24,0.65);margin-top:2px }}
 
@@ -164,7 +164,7 @@ PAGE_BODY = f"""\
     .fc2-tc-table tr:last-child td {{ border-bottom:none }}
     .fc2-tc-table td:first-child {{ font-weight:600;color:#1A1A18;width:90px }}
     .fc2-tc-table tr:hover td {{ background:rgba(212,134,10,0.04) }}
-    .fc2-tc-badge {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-left:8px;vertical-align:middle;color:#C0392B }}
+    .fc2-tc-badge {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-left:8px;vertical-align:middle;color:#D4860A }}
 
     /* Which Fairchild? decision guide */
     .fc2-guide {{ display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px }}
@@ -174,7 +174,7 @@ PAGE_BODY = f"""\
     .fc2-guide-card p {{ font-size:14px;color:#3A3A38;line-height:1.6;margin:0 0 16px }}
     .fc2-guide-card a {{ display:inline-block;font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3) }}
     .fc2-guide-card a:hover {{ border-bottom-color:#C0392B }}
-    .fc2-gc-tag {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px 0;color:#C0392B }}
+    .fc2-gc-tag {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px 0;color:#D4860A }}
 
     /* Product alt cards */
     .fc2-alts {{ display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(26,26,24,0.06) }}
@@ -195,7 +195,7 @@ PAGE_BODY = f"""\
     /* Explore more */
     .fc2-more {{ display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(26,26,24,0.06) }}
     .fc2-more-card {{ background:#fff;padding:28px 24px }}
-    .fc2-more-card span {{ display:block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#C0392B;margin-bottom:8px }}
+    .fc2-more-card span {{ display:block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4860A;margin-bottom:8px }}
     .fc2-more-card h4 {{ font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 10px;line-height:1.3 }}
     .fc2-more-card p {{ font-size:14px;color:rgba(26,26,24,0.55);line-height:1.65;margin:0 0 16px }}
     .fc2-more-card a {{ font-size:13px;font-weight:600;color:#C0392B;text-decoration:none }}
@@ -225,7 +225,7 @@ PAGE_BODY = f"""\
   <!-- HERO — full-bleed split ───────────────────────────────────────── -->
   <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:620px;overflow:hidden">
     <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:16px">Pro Audio Hall of Fame</div>
       <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 24px">Fairchild<br>660 / 670</h1>
       <p style="font-size:18px;color:#3A3A38;line-height:1.7;max-width:520px;margin:0 0 12px;font-family:'DM Sans',sans-serif">The most imitated compressor ever built. Fewer than 1,000 stereo units were ever made. Records through one and you're in the company of the Beatles, Miles Davis, Led Zeppelin, and Jimi Hendrix.</p>
       <p style="font-size:15px;color:rgba(26,26,24,0.5);font-family:'DM Sans',sans-serif;margin:0 0 32px">Designed 1955. Still irreplaceable in 2026.</p>
@@ -373,7 +373,7 @@ PAGE_BODY = f"""\
   <!-- STUDIO CARDS ─────────────────────────────────────────────────────── -->
   <section style="background:var(--off-white,#F7F5F2);padding:80px 0">
     <div class="fc2-wide" style="margin-bottom:40px">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">The Rooms That Owned One</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:12px">The Rooms That Owned One</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1A1A18;margin:0;line-height:1.15">Three Studios. Three Legends.<br>One Compressor.</h2>
     </div>
     <div class="fc2-studios">
@@ -467,7 +467,7 @@ PAGE_BODY = f"""\
   <!-- RECORDS LIST ─────────────────────────────────────────────────────── -->
   <section style="background:#fff;padding:80px 0">
     <div class="fc2-wrap">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">The Discography</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:12px">The Discography</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 32px;line-height:1.2">Records Made Through a Fairchild</h2>
     </div>
     <div class="fc2-wrap">
@@ -499,7 +499,7 @@ PAGE_BODY = f"""\
   <!-- WHICH FAIRCHILD? ─────────────────────────────────────────────────── -->
   <section id="which-fairchild" style="background:#EDE8E2;padding:80px 0">
     <div class="fc2-wrap">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">Buyer's Guide</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:12px">Buyer's Guide</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 10px">Which Fairchild Is Right for You?</h2>
       <p style="font-size:15px;color:rgba(26,26,24,0.55);font-family:'DM Sans',sans-serif;margin:0 0 8px">From $29 plug-in to $29,500 reissue. Every option reviewed honestly.</p>
     </div>
@@ -559,7 +559,7 @@ PAGE_BODY = f"""\
   <!-- ALTERNATIVES AT VK ───────────────────────────────────────────────── -->
   <section style="background:var(--off-white,#F7F5F2);padding:80px 0">
     <div class="fc2-wide" style="margin-bottom:40px">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">Available at Vintage King</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:12px">Available at Vintage King</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0;line-height:1.2">Every Fairchild Format — One Place</h2>
     </div>
     <div class="fc2-wide">
@@ -607,7 +607,7 @@ PAGE_BODY = f"""\
   <!-- FAQ ──────────────────────────────────────────────────────────────── -->
   <section style="background:#fff;padding:80px 0">
     <div class="fc2-wrap">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">Common Questions</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:12px">Common Questions</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 40px">Fairchild FAQ</h2>
       <div class="fc2-faq">
         <details>
@@ -641,7 +641,7 @@ PAGE_BODY = f"""\
   <!-- EXPLORE MORE ─────────────────────────────────────────────────────── -->
   <section style="background:var(--off-white,#F7F5F2);padding:80px 0">
     <div class="fc2-wide" style="margin-bottom:36px">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">More From Vintage King</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:12px">More From Vintage King</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0">Continue Exploring</h2>
     </div>
     <div class="fc2-wide">
@@ -671,7 +671,7 @@ PAGE_BODY = f"""\
   <!-- CTA SECTION ──────────────────────────────────────────────────────── -->
   <section style="background:#EDE8E2;padding:80px 48px">
     <div style="max-width:680px;margin:0 auto;text-align:center">
-      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:16px">Vintage King Audio</div>
+      <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;font-family:'DM Sans',sans-serif;margin-bottom:16px">Vintage King Audio</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1A1A18;margin:0 0 20px;line-height:1.2">Ready to Find Your Fairchild?</h2>
       <p style="font-size:16px;color:#3A3A38;line-height:1.7;margin:0 0 36px">Whether you want the UAD plug-in or a vintage original, our team has handled more Fairchild transactions than anyone else in the business. We know the market, we know the units, and we know exactly which one fits your room.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
