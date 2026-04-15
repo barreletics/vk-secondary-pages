@@ -170,7 +170,12 @@ PAGE_BODY = f"""\
 
     /* Buyer guide */
     .u47-guide {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(26,26,24,0.06) }}
-    .u47-gc {{ background:#fff;padding:28px 24px;position:relative }}
+    .u47-gc {{ background:#fff;padding:0 0 24px;position:relative;overflow:hidden }}
+    .u47-gc-img {{ width:100%;height:200px;background:#F7F5F2;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:20px }}
+    .u47-gc-img img {{ width:100%;height:100%;object-fit:contain;padding:16px }}
+    .u47-gc-img .u47-gc-noimg {{ font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,26,24,0.3) }}
+    .u47-gc h4,.u47-gc-price,.u47-gc p,.u47-gc a,.u47-gc-tag {{ padding-left:20px;padding-right:20px }}
+    .u47-gc-tag {{ left:0;top:0;right:auto }}
     .u47-gc h4 {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1A1A18;margin:0 0 6px }}
     .u47-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#C0392B;margin-bottom:12px }}
     .u47-gc p {{ font-size:13px;color:#3A3A38;line-height:1.6;margin:0 0 14px }}
@@ -466,6 +471,7 @@ PAGE_BODY = f"""\
       <div class="u47-guide">
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><img src="images/u47-guide/roswell-mini-k47.jpg" alt="Roswell Mini K47 large diaphragm condenser microphone"></div>
           <div class="u47-gc-tag" style="background:#D4860A">Entry Point</div>
           <h4>Roswell Mini K47</h4>
           <div class="u47-gc-price">$439</div>
@@ -474,6 +480,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
           <h4>Pearlman TM-1</h4>
           <div class="u47-gc-price">$1,760</div>
           <p>Hand-built in the USA by David Pearlman, who has studied vintage U 47 units extensively. Tube-based, transformer-coupled, with a German tube. Pearlman's designs are widely respected as among the best U 47-inspired builds at their price point.</p>
@@ -481,6 +488,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><img src="images/u47-guide/telefunken-tf47.jpg" alt="Telefunken TF47 large diaphragm tube condenser microphone"></div>
           <h4>Telefunken TF47</h4>
           <div class="u47-gc-price">$1,895</div>
           <p>From the company that originally made the VF14 tube and distributed the U 47. The TF47 uses a modern EF732 tube and new K47-style capsule. Telefunken's direct lineage to the original gives this mic a legitimacy beyond most alternatives at this price.</p>
@@ -488,6 +496,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
           <h4>Pearlman TM-47</h4>
           <div class="u47-gc-price">$2,280</div>
           <p>Pearlman's dedicated U 47 tribute — cardioid and omni, hand-built, with a K47-style capsule. Step up from the TM-1 with a dedicated U 47 circuit topology. Consistently rated among the best U 47-style mics available under $5,000.</p>
@@ -495,6 +504,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
           <div class="u47-gc-tag" style="background:#1A1A18">Pro Studio</div>
           <h4>FLEA 47 NEXT</h4>
           <div class="u47-gc-price">$4,409</div>
@@ -503,6 +513,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><img src="images/u47-guide/telefunken-u47-reissue.jpg" alt="Telefunken U47 large diaphragm tube condenser microphone reissue"></div>
           <div class="u47-gc-tag" style="background:#C0392B">Reference</div>
           <h4>Telefunken U47</h4>
           <div class="u47-gc-price">$9,995</div>
@@ -511,6 +522,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
+          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
           <div class="u47-gc-tag" style="background:#1A1A18">Figure-Eight</div>
           <h4>Telefunken U48</h4>
           <div class="u47-gc-price">~$9,995</div>
