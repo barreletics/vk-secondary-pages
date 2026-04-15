@@ -55,7 +55,7 @@ PAGE_BODY = """\
   .sg-do-dont { display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden;margin-top:24px }
   .sg-do { background:#fff;padding:24px 28px }
   .sg-dont { background:#fff;padding:24px 28px }
-  .sg-do-label { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#22863a;margin-bottom:14px }
+  .sg-do-label { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
   .sg-dont-label { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B;margin-bottom:14px }
   .sg-do-item,.sg-dont-item { font-size:13px;color:rgba(26,26,24,0.7);line-height:1.7;padding:3px 0 }
   @media print {
