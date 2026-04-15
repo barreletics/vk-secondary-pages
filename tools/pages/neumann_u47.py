@@ -113,7 +113,7 @@ PAGE_BODY = f"""\
     .u47-wide {{ max-width:1280px;margin:0 auto;padding:0 48px }}
     .u47-bread {{ max-width:1280px;margin:0 auto;padding:14px 48px;font-size:13px;color:rgba(26,26,24,0.42);font-family:'DM Sans',sans-serif }}
     .u47-bread a {{ color:rgba(26,26,24,0.42);text-decoration:none }}
-    .u47-bread a:hover {{ color:#D4860A }}
+    .u47-bread a:hover {{ color:#C0392B }}
     .u47-bread span {{ margin:0 8px }}
 
     .u47-body h2 {{ font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;margin:56px 0 16px;line-height:1.2 }}
@@ -122,9 +122,9 @@ PAGE_BODY = f"""\
     .u47-body strong {{ color:#1A1A18;font-weight:600 }}
     .u47-body ul {{ margin:14px 0 18px 22px;font-size:16px;color:#3A3A38;line-height:1.85 }}
 
-    .u47-pull {{ border-left:3px solid #D4860A;padding:20px 28px;margin:44px 0;background:rgba(212,134,10,0.05) }}
+    .u47-pull {{ border-left:3px solid #C0392B;padding:20px 28px;margin:44px 0;background:rgba(26,26,24,0.04) }}
     .u47-pull p {{ font-family:'Playfair Display',serif;font-size:22px;font-style:italic;line-height:1.5;color:#1A1A18;margin:0!important }}
-    .u47-pull cite {{ display:block;margin-top:12px;font-size:12px;font-style:normal;color:#D4860A;letter-spacing:0.1em;text-transform:uppercase;font-weight:600 }}
+    .u47-pull cite {{ display:block;margin-top:12px;font-size:12px;font-style:normal;color:#C0392B;letter-spacing:0.1em;text-transform:uppercase;font-weight:600 }}
 
     /* Stat bar */
     .u47-stats {{ background:var(--warm-white,#FDFCFB);border-top:1px solid rgba(26,26,24,0.1);border-bottom:1px solid rgba(26,26,24,0.1) }}
@@ -139,14 +139,14 @@ PAGE_BODY = f"""\
     .u47-anatomy-inner {{ max-width:1280px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center }}
     .u47-anatomy h3 {{ font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FDFCFB;margin:0 0 24px }}
     .u47-anatomy-item {{ margin-bottom:28px }}
-    .u47-anatomy-item h4 {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin:0 0 6px }}
+    .u47-anatomy-item h4 {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C0392B;margin:0 0 6px }}
     .u47-anatomy-item p {{ font-size:15px;color:rgba(253,252,251,0.65);line-height:1.7;margin:0 }}
 
     /* Variants timeline */
     .u47-tl {{ border-left:2px solid rgba(26,26,24,0.1);padding-left:32px;margin-top:16px }}
     .u47-tl-item {{ position:relative;margin-bottom:36px }}
-    .u47-tl-item::before {{ content:'';position:absolute;left:-40px;top:6px;width:10px;height:10px;border-radius:50%;background:#D4860A;border:2px solid #D4860A }}
-    .u47-tl-yr {{ font-size:12px;font-weight:600;color:#D4860A;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;font-family:'DM Sans',sans-serif }}
+    .u47-tl-item::before {{ content:'';position:absolute;left:-40px;top:6px;width:10px;height:10px;border-radius:50%;background:#C0392B;border:2px solid #C0392B }}
+    .u47-tl-yr {{ font-size:12px;font-weight:600;color:#C0392B;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;font-family:'DM Sans',sans-serif }}
     .u47-tl-item h4 {{ font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }}
     .u47-tl-item p {{ font-size:14px;color:#3A3A38;line-height:1.65;margin:0 }}
 
@@ -156,7 +156,7 @@ PAGE_BODY = f"""\
     .u47-sc-img {{ height:320px;background-size:cover;background-position:center;transition:transform .5s }}
     .u47-sc:hover .u47-sc-img {{ transform:scale(1.03) }}
     .u47-sc-body {{ padding:24px 28px 28px }}
-    .u47-sc-yr {{ font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4860A;font-weight:600;margin-bottom:8px;font-family:'DM Sans',sans-serif }}
+    .u47-sc-yr {{ font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#C0392B;font-weight:600;margin-bottom:8px;font-family:'DM Sans',sans-serif }}
     .u47-sc-name {{ font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#1A1A18;margin-bottom:5px;line-height:1.25 }}
     .u47-sc-loc {{ font-size:13px;color:rgba(26,26,24,0.45);margin-bottom:12px;font-family:'DM Sans',sans-serif }}
     .u47-sc-text {{ font-size:14px;color:#3A3A38;line-height:1.65 }}
@@ -164,9 +164,9 @@ PAGE_BODY = f"""\
     /* Records */
     .u47-records {{ display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(26,26,24,0.08) }}
     .u47-rec {{ background:#fff;padding:18px 24px;display:flex;align-items:baseline;gap:16px }}
-    .u47-ry {{ font-size:13px;font-weight:600;color:#D4860A;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #D4860A;line-height:1;font-family:'DM Sans',sans-serif }}
+    .u47-ry {{ font-size:13px;font-weight:600;color:#C0392B;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #C0392B;line-height:1;font-family:'DM Sans',sans-serif }}
     .u47-rt {{ font-size:14px;color:#1A1A18;font-weight:500 }}
-    .u47-ra {{ font-size:13px;color:rgba(26,26,24,0.48);margin-top:2px }}
+    .u47-ra {{ font-size:13px;color:rgba(26,26,24,0.65);margin-top:2px }}
 
     /* Buyer guide */
     .u47-guide {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(26,26,24,0.08) }}
