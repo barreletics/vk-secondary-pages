@@ -152,6 +152,12 @@ PAGE_BODY = f"""\
     .nv2-shopbar-primary {{ background:#D4860A;color:#fff }}
     .nv2-shopbar-secondary {{ background:rgba(255,255,255,0.1);color:#fff }}
     .nv2-shopbar-close {{ background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.3);font-size:20px;padding:0 0 0 8px;line-height:1 }}
+    .vk-stick {{ position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B }}
+    .vk-stick-title {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB }}
+    .vk-stick-sub {{ font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }}
+    .vk-stick-cta {{ background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em }}
+    .vk-stick-ghost {{ color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0 }}
+    @media(max-width:700px){{.vk-stick{{padding:12px 20px}}}}
   </style>
 
   <!-- BREADCRUMB -->
@@ -162,17 +168,16 @@ PAGE_BODY = f"""\
     The Neve 1073 — Editorial
   </div>
 
-  <!-- ── HERO — LIGHT ── -->
-  <section style="background:#EDE8E2;padding:72px 0 48px;overflow:visible">
-    <div class="nv2-wide" style="display:grid;grid-template-columns:1fr 340px;gap:72px;align-items:end">
-      <div style="padding-bottom:64px">
-        <p style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:14px">Gear Guide · AMS Neve</p>
-        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,68px);font-weight:700;line-height:1.04;color:#1A1A18;margin-bottom:22px">The Neve 1073<br><span style="font-style:italic;color:rgba(26,26,24,0.48);font-size:0.82em">The Rooms. The Record. The Sound.</span></h1>
-        <p class="speakable" style="font-size:17px;color:rgba(26,26,24,0.62);line-height:1.7;max-width:560px;margin-bottom:0">Rupert Neve finalized the 1073 in 1970. Electric Lady. AIR Montserrat. Criteria Miami. Every room that mattered ran this circuit — and you can own it today in the same configuration.</p>
-      </div>
-      <div style="align-self:end;display:flex;align-items:flex-end;justify-content:center">
-        <img src="{IMG['vertical_80s']}" alt="AMS Neve 1073 80-series module vertical" style="max-height:340px;width:auto;display:block;filter:drop-shadow(0 10px 36px rgba(26,26,24,0.16))">
-      </div>
+  <!-- ── HERO — LIGHT 50/50 ── -->
+  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden">
+    <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:14px">Gear Guide · AMS Neve</p>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,68px);font-weight:700;line-height:1.04;color:#1A1A18;margin-bottom:22px">The Neve 1073<br><span style="font-style:italic;color:rgba(26,26,24,0.48);font-size:0.82em">The Rooms. The Record. The Sound.</span></h1>
+      <p class="speakable" style="font-size:17px;color:rgba(26,26,24,0.62);line-height:1.7;max-width:560px;margin-bottom:0">Rupert Neve finalized the 1073 in 1970. Electric Lady. AIR Montserrat. Criteria Miami. Every room that mattered ran this circuit — and you can own it today in the same configuration.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;padding:32px;background:#fff;position:relative">
+      <img src="{IMG['vertical_80s']}" alt="AMS Neve 1073 80-series module vertical" style="width:100%;height:460px;object-fit:contain;display:block">
+      <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,24,0.35);font-family:'DM Sans',sans-serif">AMS Neve 1073 — 80-series module</div>
     </div>
   </section>
 
@@ -462,6 +467,18 @@ PAGE_BODY = f"""\
   </div>
 
   <div id="footer-neve-1073-guide-v2"></div>
+
+  <div class="vk-stick">
+    <div>
+      <div class="vk-stick-title">Neve 1073</div>
+      <div class="vk-stick-sub">500 Series from $499 · Rackmount from $1,295 · Vintage originals by request</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="https://vintageking.com/neve-1073" target="_blank" class="vk-stick-cta">Shop at Vintage King</a>
+      <a href="audio-consultants.html" class="vk-stick-ghost">Ask an Expert</a>
+    </div>
+  </div>
+  <div style="height:68px"></div>
 </div>
 """
 

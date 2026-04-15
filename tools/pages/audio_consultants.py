@@ -290,6 +290,19 @@ PAGE_BODY = """\
   </section>
 
   <div id="footer-audio-consultants"></div>
+
+  <style>.vk-stick{position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B}.vk-stick-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB}.vk-stick-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}.vk-stick-cta{background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em}.vk-stick-ghost{color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0}@media(max-width:700px){.vk-stick{padding:12px 20px}}</style>
+  <div class="vk-stick">
+    <div>
+      <div class="vk-stick-title">Talk to an Expert</div>
+      <div class="vk-stick-sub">Free consultation · No sales pressure · 888-653-1184</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="#book" class="vk-stick-cta">Book a Consultation</a>
+      <a href="tel:+18886531184" class="vk-stick-ghost">Call Now</a>
+    </div>
+  </div>
+  <div style="height:68px"></div>
 </div>
 """
 

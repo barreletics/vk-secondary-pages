@@ -158,6 +158,12 @@ PAGE_BODY = f"""\
     .ng-sb-product-img img {{ width:100%;height:100%;object-fit:cover }}
     .ng-sb-product-name {{ font-size:13px;font-weight:600;color:#1A1A18;line-height:1.3;margin-bottom:3px }}
     .ng-sb-product-price {{ font-size:12px;color:#C0392B;font-weight:600 }}
+    .vk-stick {{ position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B }}
+    .vk-stick-title {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB }}
+    .vk-stick-sub {{ font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }}
+    .vk-stick-cta {{ background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em }}
+    .vk-stick-ghost {{ color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0 }}
+    @media(max-width:700px){{.vk-stick{{padding:12px 20px}}}}
   </style>
 
   <!-- BREADCRUMB -->
@@ -168,32 +174,30 @@ PAGE_BODY = f"""\
     The Neve 1073
   </div>
 
-  <!-- ── HERO — LIGHT ── -->
-  <section style="background:#EDE8E2;padding:72px 48px 0;overflow:hidden">
-    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:end">
-      <div style="padding-bottom:64px">
-        <p style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:16px">Gear Guide · Neve Electronics</p>
-        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(40px,4.5vw,62px);font-weight:700;line-height:1.06;color:#1A1A18;margin-bottom:20px">The Neve 1073<br><em style="font-style:italic;color:rgba(26,26,24,0.55)">History, Legacy and Sound</em></h1>
-        <p class="speakable" style="font-size:18px;color:rgba(26,26,24,0.65);line-height:1.65;margin-bottom:36px;max-width:520px">The mic preamp and EQ module that defined modern recording — hand-wired in England since 1970, heard on every record that mattered.</p>
-        <div style="display:flex;gap:36px">
-          <div style="border-left:2px solid #D4860A;padding-left:16px">
-            <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;line-height:1">1970</div>
-            <div style="font-size:12px;color:rgba(26,26,24,0.48);margin-top:4px">Year of origin</div>
-          </div>
-          <div style="border-left:2px solid #D4860A;padding-left:16px">
-            <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;line-height:1">+80dB</div>
-            <div style="font-size:12px;color:rgba(26,26,24,0.48);margin-top:4px">Max mic gain</div>
-          </div>
-          <div style="border-left:2px solid #D4860A;padding-left:16px">
-            <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;line-height:1">50+</div>
-            <div style="font-size:12px;color:rgba(26,26,24,0.48);margin-top:4px">Years in production</div>
-          </div>
+  <!-- ── HERO — LIGHT 50/50 ── -->
+  <section style="background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden">
+    <div style="padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:16px">Gear Guide · Neve Electronics</p>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(40px,4.5vw,62px);font-weight:700;line-height:1.06;color:#1A1A18;margin-bottom:20px">The Neve 1073<br><em style="font-style:italic;color:rgba(26,26,24,0.55)">History, Legacy and Sound</em></h1>
+      <p class="speakable" style="font-size:18px;color:rgba(26,26,24,0.65);line-height:1.65;margin-bottom:36px;max-width:520px">The mic preamp and EQ module that defined modern recording — hand-wired in England since 1970, heard on every record that mattered.</p>
+      <div style="display:flex;gap:36px">
+        <div style="border-left:2px solid #D4860A;padding-left:16px">
+          <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;line-height:1">1970</div>
+          <div style="font-size:12px;color:rgba(26,26,24,0.48);margin-top:4px">Year of origin</div>
+        </div>
+        <div style="border-left:2px solid #D4860A;padding-left:16px">
+          <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;line-height:1">+80dB</div>
+          <div style="font-size:12px;color:rgba(26,26,24,0.48);margin-top:4px">Max mic gain</div>
+        </div>
+        <div style="border-left:2px solid #D4860A;padding-left:16px">
+          <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1A1A18;line-height:1">50+</div>
+          <div style="font-size:12px;color:rgba(26,26,24,0.48);margin-top:4px">Years in production</div>
         </div>
       </div>
-      <!-- Vertical 1073 standing upright, sits bottom-flush in hero -->
-      <div style="align-self:end;display:flex;align-items:flex-end;justify-content:center">
-        <img src="{IMG['vertical_80s']}" alt="AMS Neve 1073 80-series module — vertical standing" style="max-height:400px;width:auto;display:block;filter:drop-shadow(0 8px 32px rgba(26,26,24,0.18))">
-      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;padding:32px;background:#fff;position:relative">
+      <img src="{IMG['vertical_80s']}" alt="AMS Neve 1073 80-series module — vertical standing" style="width:100%;height:460px;object-fit:contain;display:block">
+      <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,24,0.35);font-family:'DM Sans',sans-serif">AMS Neve 1073 — 80-series module</div>
     </div>
   </section>
 
@@ -403,6 +407,18 @@ PAGE_BODY = f"""\
   </div>
 
   <div id="footer-neve-1073-guide"></div>
+
+  <div class="vk-stick">
+    <div>
+      <div class="vk-stick-title">Neve 1073</div>
+      <div class="vk-stick-sub">500 Series from $499 · Rackmount from $1,295 · Vintage originals by request</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="https://vintageking.com/neve-1073" target="_blank" class="vk-stick-cta">Shop at Vintage King</a>
+      <a href="audio-consultants.html" class="vk-stick-ghost">Ask an Expert</a>
+    </div>
+  </div>
+  <div style="height:68px"></div>
 </div>
 """
 
