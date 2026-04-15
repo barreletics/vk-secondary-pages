@@ -2604,6 +2604,12 @@
   .sg-do-label { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#22863a;margin-bottom:14px }
   .sg-dont-label { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B;margin-bottom:14px }
   .sg-do-item,.sg-dont-item { font-size:13px;color:rgba(26,26,24,0.7);line-height:1.7;padding:3px 0 }
+  @media print {
+    .sg-copy, button { display:none!important }
+    .sg-wrap { padding:0 20px }
+    .sg-section { page-break-inside:avoid;padding:40px 0 }
+    body { background:#fff!important }
+  }
 </style>
 
 <div id="nav-style-guide"></div>
@@ -2614,12 +2620,13 @@
     <div style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px">Design System</div>
     <h1 style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">VK Style Guide</h1>
     <p style="font-size:18px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:560px;margin:0 0 32px">Color rules, typography scale, badge system, hero patterns, and page type classification for all secondary pages.</p>
-    <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center">
       <a href="#colors" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid #D4860A;padding-bottom:2px">Colors</a>
       <a href="#typography" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Typography</a>
       <a href="#badges" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Badges</a>
       <a href="#heroes" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Hero Patterns</a>
       <a href="#pages" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Page Types</a>
+      <button onclick="window.print()" style="margin-left:8px;background:#1A1A18;color:#fff;border:none;padding:10px 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;cursor:pointer;border-radius:2px">Download / Print PDF</button>
     </div>
   </div>
 </section>
