@@ -153,9 +153,9 @@ PAGE_BODY = f"""\
     /* Records list */
     .fc2-records {{ display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(26,26,24,0.08) }}
     .fc2-rec {{ background:#fff;padding:18px 24px;display:flex;align-items:baseline;gap:16px }}
-    .fc2-ry  {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#D4860A;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #D4860A;line-height:1 }}
+    .fc2-ry  {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#C0392B;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #C0392B;line-height:1 }}
     .fc2-rt  {{ font-size:14px;color:#1A1A18;font-weight:500 }}
-    .fc2-ra  {{ font-size:13px;color:rgba(26,26,24,0.48);margin-top:2px }}
+    .fc2-ra  {{ font-size:13px;color:rgba(26,26,24,0.65);margin-top:2px }}
 
     /* Time-constant table */
     .fc2-tc-table {{ width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:14px;margin:24px 0 }}
@@ -164,7 +164,7 @@ PAGE_BODY = f"""\
     .fc2-tc-table tr:last-child td {{ border-bottom:none }}
     .fc2-tc-table td:first-child {{ font-weight:600;color:#1A1A18;width:90px }}
     .fc2-tc-table tr:hover td {{ background:rgba(212,134,10,0.04) }}
-    .fc2-tc-badge {{ display:inline-block;background:#D4860A;color:#fff;font-size:10px;font-weight:600;padding:2px 7px;border-radius:2px;letter-spacing:0.06em;text-transform:uppercase;margin-left:8px;vertical-align:middle }}
+    .fc2-tc-badge {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-left:8px;vertical-align:middle;color:#C0392B }}
 
     /* Which Fairchild? decision guide */
     .fc2-guide {{ display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px }}
@@ -174,7 +174,7 @@ PAGE_BODY = f"""\
     .fc2-guide-card p {{ font-size:14px;color:#3A3A38;line-height:1.6;margin:0 0 16px }}
     .fc2-guide-card a {{ display:inline-block;font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3) }}
     .fc2-guide-card a:hover {{ border-bottom-color:#C0392B }}
-    .fc2-gc-tag {{ position:absolute;top:-1px;right:20px;background:#D4860A;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;letter-spacing:0.08em;text-transform:uppercase }}
+    .fc2-gc-tag {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px 0;color:#C0392B }}
 
     /* Product alt cards */
     .fc2-alts {{ display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(26,26,24,0.06) }}
@@ -508,6 +508,7 @@ PAGE_BODY = f"""\
 
         <div class="fc2-guide-card" style="background:#fff">
           <div class="fc2-gc-tag">In the Box</div>
+
           <h4>Plug-in Emulation</h4>
           <div class="fc2-gc-price">From $29.99 — UAD, Waves, Acustica</div>
           <p>If your studio is primarily in-the-box, the UAD Fairchild Tube Limiter Collection and Waves PuigChild are genuinely excellent starting points. The UAD emulation in particular is considered the reference-standard plug-in clone — used on major label records daily. Best choice for home studios, bedroom producers, or anyone testing Fairchild compression before investing in hardware.</p>
@@ -529,7 +530,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="fc2-guide-card" style="background:#fff">
-          <div class="fc2-gc-tag" style="background:#1A1A18">Studio Reference</div>
+          <div class="fc2-gc-tag">Studio Reference</div>
           <h4>UnFairchild 670M II</h4>
           <div class="fc2-gc-price">UnderTone Audio — $9,995</div>
           <p>UnderTone Audio built the UnFairchild from the original schematics with one goal: the most accurate modern reproduction of the 670 circuit possible, built for working studios. Hand-wired, point-to-point construction. Can be specced with NOS 6386 valves. Revered in mastering rooms and high-end mix suites worldwide. This is for engineers who want to own a Fairchild reference and use it in serious production daily.</p>
@@ -544,7 +545,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="fc2-guide-card" style="background:#fff">
-          <div class="fc2-gc-tag" style="background:#D4860A">Contact VK</div>
+          <div class="fc2-gc-tag">Contact VK</div>
           <h4>Vintage Original</h4>
           <div class="fc2-gc-price">$30,000+ — When Available</div>
           <p>Vintage originals appear rarely and sell immediately. When a working, serviced 660 or 670 comes through Vintage King, it goes to the waitlist first. If owning an original is your goal, the best move is to contact our team now — we know every legitimate original Fairchild that surfaces on the market, and we can advise on condition, servicing costs, and realistic expectations for the 6386 tube situation.</p>
