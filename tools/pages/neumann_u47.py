@@ -169,7 +169,7 @@ PAGE_BODY = f"""\
     .u47-ra {{ font-size:13px;color:rgba(26,26,24,0.48);margin-top:2px }}
 
     /* Buyer guide */
-    .u47-guide {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(26,26,24,0.06) }}
+    .u47-guide {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(26,26,24,0.08) }}
     .u47-gc {{ background:#fff;padding:0 0 24px;position:relative;overflow:hidden }}
     .u47-gc-img {{ width:100%;height:200px;background:#F7F5F2;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:20px }}
     .u47-gc-img img {{ width:100%;height:100%;object-fit:contain;padding:16px }}
@@ -461,7 +461,7 @@ PAGE_BODY = f"""\
   </section>
 
   <!-- WHICH U47? ───────────────────────────────────────────────────────── -->
-  <section id="which-u47" style="background:#EDE8E2;padding:80px 0">
+  <section id="which-u47" style="background:#fff;padding:80px 0">
     <div class="u47-wrap">
       <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;font-family:'DM Sans',sans-serif;margin-bottom:12px">Buyer's Guide</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1A1A18;margin:0 0 8px">Which U 47 / U 48 is Right for You?</h2>
