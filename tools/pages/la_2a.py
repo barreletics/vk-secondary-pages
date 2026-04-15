@@ -135,9 +135,9 @@ PAGE_BODY = f"""\
     /* Version timeline */
     .la2-timeline {{ position:relative;padding-left:0 }}
     .la2-tl-item {{ display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:36px;align-items:start }}
-    .la2-tl-yr {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#D4860A;padding:4px 12px 4px 0;border-right:2px solid #D4860A;text-align:right;letter-spacing:0.06em }}
+    .la2-tl-yr {{ font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#C0392B;padding:4px 12px 4px 0;border-right:2px solid #C0392B;text-align:right;letter-spacing:0.06em }}
     .la2-tl-body h4 {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1A1A18;margin:0 0 4px }}
-    .la2-tl-body .la2-tl-tag {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;margin-bottom:6px }}
+    .la2-tl-body .la2-tl-tag {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0;margin-bottom:6px;color:#C0392B }}
     .la2-tl-body p {{ font-size:14px;color:#3A3A38;line-height:1.65;margin:0 }}
 
     /* Studio cards */
@@ -154,9 +154,9 @@ PAGE_BODY = f"""\
     /* Records */
     .la2-records {{ display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(26,26,24,0.08) }}
     .la2-rec {{ background:#fff;padding:18px 24px;display:flex;align-items:baseline;gap:16px }}
-    .la2-ry {{ font-size:13px;font-weight:600;color:#D4860A;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #D4860A;line-height:1;font-family:'DM Sans',sans-serif }}
+    .la2-ry {{ font-size:13px;font-weight:600;color:#C0392B;letter-spacing:0.04em;min-width:38px;padding:2px 10px 2px 0;border-right:2px solid #C0392B;line-height:1;font-family:'DM Sans',sans-serif }}
     .la2-rt {{ font-size:14px;color:#1A1A18;font-weight:500 }}
-    .la2-ra {{ font-size:13px;color:rgba(26,26,24,0.48);margin-top:2px }}
+    .la2-ra {{ font-size:13px;color:rgba(26,26,24,0.65);margin-top:2px }}
 
     /* T4 explainer */
     .la2-t4 {{ background:#1A1A18;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center }}
@@ -223,7 +223,6 @@ PAGE_BODY = f"""\
     </div>
     <div style="display:flex;align-items:center;justify-content:center;padding:32px;position:relative;background:#fff">
       <img src="{IMG['hero']}" alt="Teletronix LA-2A leveling amplifier front panel" style="width:100%;height:520px;object-fit:contain;display:block">
-      <div style="position:absolute;bottom:14px;right:16px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,26,24,0.35);font-family:'DM Sans',sans-serif">Teletronix LA-2A — PatchWerk Recording Studios, Atlanta</div>
     </div>
   </section>
 
@@ -336,7 +335,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">1962–1965</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#D4860A">Rev 1 — "Grayface"</div>
+            <div class="la2-tl-tag">Rev 1 — "Grayface"</div>
             <h4>Original Teletronix Engineering Co.</h4>
             <p>Painted battleship-gray faceplate, red Teletronix logo. Serial numbers 001–572 (approx.). Input transformer: UTC HA-100X. T4A opto cell. The first 10 units were hand-assembled by Lawrence himself. The Grayface is the most sought-after vintage LA-2A — rarely available and immediately bought when it surfaces.</p>
           </div>
@@ -344,7 +343,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">1965–1967</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#6B6B68">Rev 2A — "Silverface" Babcock</div>
+            <div class="la2-tl-tag">Rev 2A — "Silverface" Babcock</div>
             <h4>Teletronix Division of Babcock Electronics</h4>
             <p>Brushed aluminum faceplate with red "Teletronix Div. of Babcock" logo. Lawrence sold the company in 1965. Serial numbers ~573–1000. UTC HA-100X input transformer, T4A cell. Rear panel compress/limit switch added from SN 573. Early units still used original gray faceplate from leftover stock.</p>
           </div>
@@ -352,7 +351,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">1967</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#6B6B68">Rev 2B — Licensed Version</div>
+            <div class="la2-tl-tag">Rev 2B — Licensed Version</div>
             <h4>Studio Electronics Corporation (Bill Putnam)</h4>
             <p>Putnam's company licensed the Teletronix patent from Babcock. Serial numbers ~1001–1200. Cosmetically similar to Babcock units — brushed aluminum with "Teletronix" logo, rear metallic sticker noting Studio Electronics manufacture. UTC HA-100X transformer, T4A cell.</p>
           </div>
@@ -360,7 +359,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">1967–1969</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#6B6B68">Rev 2C — UREI</div>
+            <div class="la2-tl-tag">Rev 2C — UREI</div>
             <h4>United Recording Electronics Industries</h4>
             <p>Studio Electronics renamed UREI and acquired Babcock's broadcast division outright. Serial numbers ~1201–1800. <strong>Key change from SN ~1640:</strong> input transformer switched to UTC A-10, opto cell upgraded to T4B. Later units have black "UREI" logo on the brushed aluminum faceplate. T4B units are considered slightly smoother in release character than T4A.</p>
           </div>
@@ -368,7 +367,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">1979</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#2C2C2A">Reissue 1 — UREI Limited Edition</div>
+            <div class="la2-tl-tag">Reissue 1 — UREI Limited Edition</div>
             <h4>UREI Limited Edition (~300 units)</h4>
             <p>Demand never stopped. UREI responded with approximately 300 new units — brushed aluminum, T4B cell, UTC A-10 transformer. Added a safety switch that cuts power when the front panel is opened. SN range 101–400 (approx.). These "UREI Reissues" are collectible in their own right.</p>
           </div>
@@ -376,7 +375,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">1992</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#2C2C2A">Reissue 2 — Harman/JBL Limited Edition</div>
+            <div class="la2-tl-tag">Reissue 2 — Harman/JBL Limited Edition</div>
             <h4>Harman Electronics (~235 units)</h4>
             <p>UREI was acquired by Harman/JBL around 1985. In 1992, Harman assembled approximately 235 additional units from remaining available parts. SN range ~3000–3235. T4B cell, UTC A-10. The last vintage-parts production units.</p>
           </div>
@@ -384,7 +383,7 @@ PAGE_BODY = f"""\
         <div class="la2-tl-item">
           <div class="la2-tl-yr">2000–Now</div>
           <div class="la2-tl-body">
-            <div class="la2-tl-tag" style="background:#C0392B">Current — Universal Audio</div>
+            <div class="la2-tl-tag">Current — Universal Audio</div>
             <h4>Universal Audio Reissue (2000–Present)</h4>
             <p>Bill Putnam's sons re-established Universal Audio in 1999. Their LA-2A reissue was the second product released. Custom copy of the original UTC HA-100X transformer, T4B cell, hand-wired construction, XLR I/O on the rear panel. Compress/limit switch moved to front panel. The front panel is no longer hinged. This is the unit in production today at <strong>$4,999</strong> — and the reference-standard hardware for any working studio.</p>
           </div>
