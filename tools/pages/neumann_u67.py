@@ -100,7 +100,7 @@ PAGE_BODY = """\
     .n67-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
     .n67-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden }
     .n67-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
-    .n67-hero-img { position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#EDE8E2;padding:32px }
+    .n67-hero-img { position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;padding:32px }
     .n67-hero-img img { max-height:380px;width:auto;object-fit:contain;display:block }
     .n67-hero-caption { position:absolute;bottom:12px;right:16px;font-size:11px;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif }
     .n67-hero-stats { display:flex;gap:24px;margin-top:24px }
