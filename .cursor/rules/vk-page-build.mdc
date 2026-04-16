@@ -6,28 +6,28 @@ alwaysApply: true
 # VK Secondary Pages — Build Rules
 
 ## Section Rhythm (always follow this order)
-1. **Hero** — `#EDE8E2` warm light, dark text, red eyebrow, red CTA button
+1. **Hero** — `#EDE8E2` warm light, dark text, amber eyebrow, amber CTA button
 2. **Strip / credential bar** — `var(--warm-white)`, thin border, no padding
 3. **Grid / cards** — `var(--off-white)` bg, `#fff` cards, 1px rgba gap
 4. **Content / body** — `#fff` bg, dark text
-5. **CTA / form** — `#EDE8E2` bg, white inputs, red button
+5. **CTA / form** — `#EDE8E2` bg, white inputs, amber button
 6. **Values bar** — `var(--off-white)` bg, `#fff` tiles, program-exclusive benefits only
 7. **Footer** — standard template
 
 ## Color Rules
-- `--vk-red: #C0392B` — all CTAs, eyebrows, accents on secondary pages
+- `--vk-red: #C0392B` — nav chrome, "Talk to an Expert" button, cart badge, form focus borders. Reserved for core ecommerce screens (pages/ folder).
+- `--amber / --page-accent: #D4860A` — ALL secondary page accents: CTAs, eyebrows, accent lines, step indicators, list bullets.
 - `--near-black: #1A1A18` — all body text
-- `--amber: #D4860A` — VINTAGE/USED content only. Never on new pages.
-- `--amber-bg: #F5E6C8` — VINTAGE/USED only. Never on secondary program pages.
+- `--amber-bg: #F5E6C8` — credential bars, info boxes
 - `#EDE8E2` — hero and CTA section bg on all secondary pages
 - BANNED: `rgba(192,57,43,0.04–0.08)` as standalone bg. Use `var(--off-white)`.
 - BANNED: `#fde8e6`. Use `rgba(26,26,24,0.07)` for neutral pills.
-- Form focus borders: always `var(--vk-red)` regardless of section bg.
+- Form focus borders: always `var(--vk-red)` regardless of page accent.
 
 ## Typography
 - Display/headings: Playfair Display — H1 48–56px, H2 32–40px, H3 18–22px
 - Body: DM Sans — 13–17px
-- Eyebrows: DM Sans, 12px, 0.18–0.22em letter-spacing, uppercase, `var(--vk-red)`
+- Eyebrows: DM Sans, 12px, 0.18–0.22em letter-spacing, uppercase, `#D4860A` (amber on all secondary pages)
 - Pricing: DM Sans only, font-weight 500, `var(--near-black)`. NEVER Playfair on numbers.
 - Min font size: 12px everywhere.
 
@@ -74,10 +74,12 @@ alwaysApply: true
 - Gear heritage pages — body gear image: `520px`; version cards: `320px`; timeline cards: `360px`; shop CTA: `300px`.
 - All placeholders: `background:var(--off-white); border:1px solid rgba(26,26,24,0.08)`.
 
-## Accent Toggle (Red / Amber)
-- Every new page gets a small 2-button dev toggle: `A — Red` / `B — Amber` switching `--page-accent`.
-- Red default: Careers, Studio Professionals, Trade Program, Audio Consultants, About VK.
-- Amber default: PLAYBACK, Make Your Mark, Hall of Fame, all HOF gear pages, 25 Years.
+## Accent Rule (LOCKED — Option B)
+- ALL secondary pages use amber (`#D4860A`) as their accent color. No exceptions.
+- Red (`#C0392B`) is reserved for core ecommerce screens only (pages/ folder: homepage, category, product, FAQ, deals, sell, studio, techshop, financing, open box).
+- Nav chrome (mega menu, expert button, cart badge) stays red on all pages — it is shared chrome, not page accent.
+- Form focus borders stay `var(--vk-red)` on all pages per design system rule.
+- The old A/B red/amber toggle is no longer used. Remove if encountered on new pages.
 
 ## Mandatory Session Rules
 - Never revert or overwrite completed work.

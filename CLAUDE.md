@@ -23,11 +23,12 @@ Vintage King Audio (VK) website redesign and Shopify Plus migration prototype. A
   - - PRICING RULE: DM Sans ONLY, font-weight:500, color:var(--near-black). Never Playfair on numbers.
     - - --vk-red: #C0392B — primary CTA, eyebrow accents on ecommerce pages
       - - --near-black: #1A1A18 — primary text
-        - - --amber: #D4860A — Vintage/Used ONLY. Never use on new gear.
+        - - --amber: #D4860A — ALL secondary pages accent (eyebrows, CTAs, accent lines). Also Vintage/Used content in core ecommerce.
           - - --warm-white: #FDFCFB — primary background
             - - --off-white: #F7F5F2 — section backgrounds
               - - --amber-bg: #F5E6C8 — credential bars, info boxes
-                - - --secondary-accent: var(--vk-red) — global toggle for all secondary pages
+                - - --secondary-accent: #D4860A — all secondary pages use amber. Red reserved for core ecommerce screens only (pages/ folder).
+                - - --page-accent: #D4860A — per-page accent variable, always amber on secondary pages.
                   - - Blue #2563EB / #EEF4FF — informational elements only (Open Box badge, buyer guide)
                     - - **BANNED: #fde8e6** — too pinkish on uncalibrated screens. Use rgba(26,26,24,0.07) for neutral badge/pill backgrounds instead.
                     - - **BANNED: rgba(192,57,43,0.04–0.08) as a standalone background** — looks pinkish. Use var(--off-white) or rgba(26,26,24,0.04–0.08) for light tint backgrounds.
