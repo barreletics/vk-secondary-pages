@@ -39,6 +39,8 @@ REGISTRY = {
     "coles-4038":          "coles-4038.html",
     "25-years":            "25-years.html",
     "style-guide":         "style-guide.html",
+    "warranty":            "warranty.html",
+    "section-179":         "section-179.html",
 }
 
 def slice_lines(path, start, end):
