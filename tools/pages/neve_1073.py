@@ -150,7 +150,7 @@ PAGE_BODY = """\
             <span style="font-size:11px;font-family:'DM Sans',sans-serif;color:rgba(26,26,24,0.3);letter-spacing:0.1em;text-transform:uppercase">[1073N Photo]</span>
           </div>
           <div style="padding:22px 20px 24px">
-            <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C0392B;margin-bottom:6px">Current Production</div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Current Production</div>
             <h3 style="font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:8px;font-family:'Playfair Display',serif">AMS Neve 1073N</h3>
             <p style="font-size:13px;color:rgba(26,26,24,0.6);line-height:1.55;margin-bottom:14px">500-series version of the original 1073 circuit. Neve-wound transformers. Closest current-production equivalent to the vintage module. Stacks in any standard 500 rack.</p>
             <div style="font-size:13px;font-weight:600;color:#1A1A18">From $799 · In Stock</div>
@@ -162,7 +162,7 @@ PAGE_BODY = """\
             <span style="font-size:11px;font-family:'DM Sans',sans-serif;color:rgba(26,26,24,0.3);letter-spacing:0.1em;text-transform:uppercase">[1073OPX Photo]</span>
           </div>
           <div style="padding:22px 20px 24px">
-            <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C0392B;margin-bottom:6px">Current Production</div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Current Production</div>
             <h3 style="font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:8px;font-family:'Playfair Display',serif">AMS Neve 1073OPX</h3>
             <p style="font-size:13px;color:rgba(26,26,24,0.6);line-height:1.55;margin-bottom:14px">8-channel rackmount version. Same 1073 circuit in every channel, with individual phantom, pad, and polarity controls per strip. The professional studio workhorse.</p>
             <div style="font-size:13px;font-weight:600;color:#1A1A18">From $6,499 · In Stock</div>
@@ -367,7 +367,7 @@ PAGE_BODY = """\
 
   <div id="footer-neve-1073"></div>
 
-  <style>.vk-stick{position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B}.vk-stick-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB}.vk-stick-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}.vk-stick-cta{background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em}.vk-stick-ghost{color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0}@media(max-width:700px){.vk-stick{padding:12px 20px}}</style>
+  <style>.vk-stick{position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #D4860A}.vk-stick-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB}.vk-stick-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}.vk-stick-cta{background:#D4860A;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em}.vk-stick-ghost{color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0}@media(max-width:700px){.vk-stick{padding:12px 20px}}</style>
   <div class="vk-stick">
     <div>
       <div class="vk-stick-title">Neve 1073</div>

@@ -170,19 +170,19 @@ PAGE_BODY = f"""\
     .fc2-guide {{ display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px }}
     .fc2-guide-card {{ background:#fff;border:1px solid rgba(26,26,24,0.1);padding:28px;position:relative }}
     .fc2-guide-card h4 {{ font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 8px }}
-    .fc2-guide-card .fc2-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#C0392B;margin-bottom:14px }}
+    .fc2-guide-card .fc2-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#D4860A;margin-bottom:14px }}
     .fc2-guide-card p {{ font-size:14px;color:#3A3A38;line-height:1.6;margin:0 0 16px }}
-    .fc2-guide-card a {{ display:inline-block;font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3) }}
-    .fc2-guide-card a:hover {{ border-bottom-color:#C0392B }}
+    .fc2-guide-card a {{ display:inline-block;font-size:13px;font-weight:600;color:#D4860A;text-decoration:none;border-bottom:1px solid rgba(212,134,10,0.3) }}
+    .fc2-guide-card a:hover {{ border-bottom-color:#D4860A }}
     .fc2-gc-tag {{ display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px 0;color:#D4860A }}
 
     /* Product alt cards */
     .fc2-alts {{ display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(26,26,24,0.06) }}
     .fc2-alt {{ background:#fff;padding:28px 24px;text-align:center }}
     .fc2-alt-name {{ font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1A1A18;margin-bottom:6px }}
-    .fc2-alt-price {{ font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:#C0392B;margin-bottom:12px }}
+    .fc2-alt-price {{ font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:#D4860A;margin-bottom:12px }}
     .fc2-alt-desc {{ font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin-bottom:16px }}
-    .fc2-alt a {{ font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3) }}
+    .fc2-alt a {{ font-size:13px;font-weight:600;color:#D4860A;text-decoration:none;border-bottom:1px solid rgba(212,134,10,0.3) }}
 
     /* FAQ */
     .fc2-faq {{ border-top:1px solid rgba(26,26,24,0.1) }}
@@ -198,14 +198,14 @@ PAGE_BODY = f"""\
     .fc2-more-card span {{ display:block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4860A;margin-bottom:8px }}
     .fc2-more-card h4 {{ font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 10px;line-height:1.3 }}
     .fc2-more-card p {{ font-size:14px;color:rgba(26,26,24,0.55);line-height:1.65;margin:0 0 16px }}
-    .fc2-more-card a {{ font-size:13px;font-weight:600;color:#C0392B;text-decoration:none }}
+    .fc2-more-card a {{ font-size:13px;font-weight:600;color:#D4860A;text-decoration:none }}
 
     /* Sticky bar */
-    .fc2-stick {{ position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B }}
+    .fc2-stick {{ position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #D4860A }}
     .fc2-stick-title {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB }}
     .fc2-stick-sub {{ font-size:12px;color:rgba(255,255,255,0.48);margin-top:2px }}
     .fc2-stick-actions {{ display:flex;gap:12px;align-items:center }}
-    .fc2-stick-cta {{ background:#C0392B;color:#fff;border:none;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-decoration:none;display:inline-block }}
+    .fc2-stick-cta {{ background:#D4860A;color:#fff;border:none;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.04em;text-decoration:none;display:inline-block }}
     .fc2-stick-cta:hover {{ background:#a93226 }}
     .fc2-stick-ghost {{ color:rgba(255,255,255,0.65);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0 }}
     .fc2-stick-ghost:hover {{ color:#fff }}
@@ -230,7 +230,7 @@ PAGE_BODY = f"""\
       <p style="font-size:18px;color:#3A3A38;line-height:1.7;max-width:520px;margin:0 0 12px;font-family:'DM Sans',sans-serif">The most imitated compressor ever built. Fewer than 1,000 stereo units were ever made. Records through one and you're in the company of the Beatles, Miles Davis, Led Zeppelin, and Jimi Hendrix.</p>
       <p style="font-size:15px;color:rgba(26,26,24,0.5);font-family:'DM Sans',sans-serif;margin:0 0 32px">Designed 1955. Still irreplaceable in 2026.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="https://vintageking.com/fairchild-660-670-compressor-limiter" target="_blank" style="background:#C0392B;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All Fairchild</a>
+        <a href="https://vintageking.com/fairchild-660-670-compressor-limiter" target="_blank" style="background:#D4860A;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All Fairchild</a>
         <a href="#which-fairchild" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which One is Right for Me?</a>
       </div>
     </div>
@@ -675,7 +675,7 @@ PAGE_BODY = f"""\
       <h2 style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1A1A18;margin:0 0 20px;line-height:1.2">Ready to Find Your Fairchild?</h2>
       <p style="font-size:16px;color:#3A3A38;line-height:1.7;margin:0 0 36px">Whether you want the UAD plug-in or a vintage original, our team has handled more Fairchild transactions than anyone else in the business. We know the market, we know the units, and we know exactly which one fits your room.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="https://vintageking.com/fairchild-660-670-compressor-limiter" target="_blank" style="background:#C0392B;color:#fff;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All Fairchild</a>
+        <a href="https://vintageking.com/fairchild-660-670-compressor-limiter" target="_blank" style="background:#D4860A;color:#fff;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All Fairchild</a>
         <a href="audio-consultants.html" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:16px 28px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;text-decoration:none">Talk to an Expert</a>
       </div>
     </div>

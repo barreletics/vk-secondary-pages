@@ -177,9 +177,9 @@ PAGE_BODY = f"""\
     .u47-gc h4,.u47-gc-price,.u47-gc p,.u47-gc a,.u47-gc-tag {{ padding-left:20px;padding-right:20px }}
     .u47-gc-tag {{ left:0;top:0;right:auto }}
     .u47-gc h4 {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1A1A18;margin:0 0 6px }}
-    .u47-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#C0392B;margin-bottom:12px }}
+    .u47-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#D4860A;margin-bottom:12px }}
     .u47-gc p {{ font-size:13px;color:#3A3A38;line-height:1.6;margin:0 0 14px;flex:1 }}
-    .u47-gc a {{ font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3);margin-top:auto }}
+    .u47-gc a {{ font-size:13px;font-weight:600;color:#D4860A;text-decoration:none;border-bottom:1px solid rgba(212,134,10,0.3);margin-top:auto }}
     .u47-gc-tag {{ position:absolute;top:-1px;right:16px;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:0.08em;text-transform:uppercase;color:#fff }}
 
     /* FAQ */
@@ -199,10 +199,10 @@ PAGE_BODY = f"""\
     .u47-mc a {{ font-size:13px;font-weight:600;color:#D4860A;text-decoration:none }}
 
     /* Sticky bar */
-    .u47-stick {{ position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B }}
+    .u47-stick {{ position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #D4860A }}
     .u47-stick-title {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB }}
     .u47-stick-sub {{ font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }}
-    .u47-stick-cta {{ background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em }}
+    .u47-stick-cta {{ background:#D4860A;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em }}
     .u47-stick-ghost {{ color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0 }}
 
     @media(max-width:900px){{
@@ -225,7 +225,7 @@ PAGE_BODY = f"""\
       <p style="font-size:18px;color:#3A3A38;line-height:1.7;max-width:520px;margin:0 0 12px;font-family:'DM Sans',sans-serif">Frank Sinatra called it "Telly" and refused to record without one. The Beatles used it from their first session at Abbey Road. Ella Fitzgerald. Adele. Every voice that defined an era passed through a U 47.</p>
       <p style="font-size:15px;color:rgba(26,26,24,0.5);font-family:'DM Sans',sans-serif;margin:0 0 32px">First produced 1949. Discontinued 1963. Irreplaceable ever since.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="https://vintageking.com/neumann-u47-u48-microphone" target="_blank" style="background:#C0392B;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All U 47</a>
+        <a href="https://vintageking.com/neumann-u47-u48-microphone" target="_blank" style="background:#D4860A;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All U 47</a>
         <a href="#which-u47" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none">Which Version is Right for Me?</a>
       </div>
     </div>
@@ -690,7 +690,7 @@ PAGE_BODY = f"""\
       <h2 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 20px;line-height:1.2">Ready to Find Your U 47?</h2>
       <p style="font-size:16px;color:#3A3A38;line-height:1.7;margin:0 0 36px">From K47-inspired condensers to the Telefunken reissue and genuine vintage originals — our team has handled more U 47 transactions than any dealer in the country. We know every unit on the market and will tell you honestly what each one sounds like.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="https://vintageking.com/neumann-u47-u48-microphone" target="_blank" style="background:#C0392B;color:#fff;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All U 47</a>
+        <a href="https://vintageking.com/neumann-u47-u48-microphone" target="_blank" style="background:#D4860A;color:#fff;padding:16px 36px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:0.04em">Shop All U 47</a>
         <a href="audio-consultants.html" style="background:transparent;color:#1A1A18;border:1px solid rgba(26,26,24,0.35);padding:16px 28px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;text-decoration:none">Talk to an Expert</a>
       </div>
     </div>
