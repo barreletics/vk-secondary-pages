@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Studios Gone Modern — Hybrid Recording Studio Design | Vintage King</title>
+<!--
+  VINTAGE KING REDESIGN CONCEPT
+  Version: 1.0
+  Date: April 2026
+  Page: Classic Studios Gone Modern
+  Author: AJ / Barreletics Ops — built with Claude
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vk-red: #C0392B;
+    --vk-red-dark: #922B21;
+    --off-white: #F7F5F2;
+    --warm-white: #FDFCFB;
+    --near-black: #1A1A18;
+    --charcoal: #2C2C2A;
+    --mid-grey: #6B6B68;
+    --light-grey: #D8D6D2;
+    --pale-grey: #EDEDEA;
+    --amber: #D4860A;
+    --amber-bg: #F5E6C8;
+    --nav-height: 80px;
+    --nav-h: 80px;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --page-accent: #D4860A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { overflow-x: clip; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--warm-white);
+    color: var(--near-black);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .header-toggle {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: #fff;
+    border-bottom: 1px solid var(--pale-grey);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 24px;
+    height: 44px;
+  }
+  .header-toggle span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: #999;
+    margin-right: 16px;
+    white-space: nowrap;
+  }
+  .header-toggle button {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0 16px;
+    height: 44px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .header-toggle button.active {
+    color: var(--vk-red);
+    border-bottom-color: var(--vk-red);
+  }
+
+  :root { --tech-accent: #D4860A; --tech-cta: var(--page-accent); --secondary-cta: var(--page-accent); --secondary-accent: var(--page-accent); }
+
+  .page-switcher {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(26,26,24,0.92);
+    padding: 10px 16px;
+    border-radius: 40px;
+    z-index: 9999;
+    backdrop-filter: blur(12px);
+  }
+  .page-switcher button {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .page-switcher button.active,
+  .page-switcher button:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+  }
+  .page-switcher button.active { color: var(--vk-red); }
+
+  /* ── TOPBAR ── */
+  .utility-bar {
+    background: var(--warm-white);
+    border-bottom: 1px solid rgba(26,26,24,0.08);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .utility-bar-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .utility-bar-links a {
+    font-size: 12px;
+    color: rgba(26,26,24,0.68);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    padding: 0 12px;
+    border-right: 1px solid rgba(26,26,24,0.12);
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .utility-bar-links a:first-child { padding-left: 0; }
+  .utility-bar-links a:last-child { border-right: none; }
+  .utility-bar-links a:hover { color: rgba(26,26,24,0.85); }
+  .utility-bar-phone {
+    font-size: 12.5px;
+    color: var(--vk-red);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.15s;
+  }
+  .utility-bar-phone:hover { color: rgba(26,26,24,0.85); }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--near-black); height: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; font-size: 12px; color: rgba(255,255,255,0.92); font-weight: 500;
+  }
+  .topbar a { color: rgba(255,255,255,0.92); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+  .topbar a:hover { color: rgba(255,255,255,0.85); }
+  .topbar-left { display: flex; gap: 24px; align-items: center; }
+  .topbar-right { display: flex; gap: 20px; align-items: center; }
+  .topbar-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.15); }
+  .topbar-highlight { color: var(--vk-red); font-weight: 500; }
+
+  /* ── PRIMARY NAV ── */
+  .site-nav {
+    position: sticky; top: 32px; z-index: 199;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--light-grey);
+    height: var(--nav-h);
+  }
+  .nav-inner {
+    max-width: 1440px; margin: 0 auto; padding: 0 40px; height: 100%;
+    display: flex; align-items: center; gap: 0;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; margin-right: 32px; }
+  .logo-tube { width: 28px; height: 44px; flex-shrink: 0; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .name { font-family: "Roboto", "DM Sans", sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--near-black); }
+  .logo-text .tagline { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); margin-top: 3px; }
+
+  .nav-items { display: flex; align-items: stretch; height: 100%; list-style: none; flex: 1; }
+  .nav-item { height: 100%; position: relative; }
+  .nav-item > a {
+    display: flex; align-items: center; gap: 4px; height: 100%;
+    padding: 0 14px; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.025em; color: var(--charcoal); text-decoration: none;
+    white-space: nowrap; transition: color 0.15s;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .nav-item > a:hover, .nav-item.open > a { color: var(--near-black); border-bottom-color: var(--vk-red); }
+  .nav-item.vintage > a { color: var(--amber); }
+  .nav-item.vintage > a:hover, .nav-item.vintage.open > a { color: var(--near-black); border-bottom-color: var(--amber); }
+  .nav-item.deals > a { color: var(--vk-red); font-weight: 600; margin-left: 16px; }
+  .nav-chevron { width: 10px; height: 10px; transition: transform 0.2s ease; opacity: 0.4; }
+  .nav-item.open .nav-chevron { transform: rotate(180deg); opacity: 0.7; }
+
+  .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; flex-shrink: 0; }
+  .nav-search-wrap {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--off-white); border: 1px solid var(--light-grey);
+    border-radius: 4px; padding: 7px 12px; transition: border-color 0.15s;
+  }
+  .nav-search-wrap:focus-within { border-color: var(--charcoal); }
+  .nav-search-wrap input { border: none; background: none; font-family: var(--font-body); font-size: 12.5px; color: var(--charcoal); outline: none; width: 180px; }
+  .nav-search-wrap input::placeholder { color: var(--mid-grey); }
+  .nav-icon { background: none; border: none; cursor: pointer; color: var(--charcoal); padding: 6px; display: flex; align-items: center; transition: color 0.15s; position: relative; }
+  .nav-icon:hover { color: var(--vk-red); }
+  .cart-count { position: absolute; top: 0; right: 0; background: var(--vk-red); color: #fff; font-size: 12px; font-weight: 600; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-expert-btn { display: flex; align-items: center; gap: 7px; background: var(--vk-red); color: #fff; border: none; cursor: pointer; padding: 9px 16px; border-radius: 3px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.05em; white-space: nowrap; transition: background 0.15s; }
+  .nav-expert-btn:hover { background: var(--vk-red-dark); }
+  .pulse-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+
+  .ask-wrap { position: relative; }
+  .ask-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 220px;
+    background: var(--warm-white);
+    border: 1px solid var(--light-grey);
+    border-top: 2px solid var(--vk-red);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    border-radius: 0 0 3px 3px;
+    z-index: 400;
+    overflow: hidden;
+  }
+  .ask-wrap:hover .ask-dropdown { display: block; }
+  .ask-dropdown-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 16px;
+    text-decoration: none;
+    color: var(--charcoal);
+    font-size: 13px;
+    font-weight: 400;
+    border-bottom: 1px solid var(--pale-grey);
+    transition: background 0.12s, color 0.12s;
+  }
+  .ask-dropdown-item:last-child { border-bottom: none; }
+  .ask-dropdown-item:hover { background: var(--off-white); color: var(--vk-red); }
+  .ask-dropdown-item svg { flex-shrink: 0; color: var(--vk-red); }
+
+  /* ══ MEGA MENU SYSTEM ══ */
+  .mega {
+    display: none;
+    position: fixed;
+    left: 0; right: 0;
+    background: var(--warm-white);
+    border-top: 2px solid var(--vk-red);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+    z-index: 300;
+    flex-direction: column;
+    animation: menuIn 0.18s ease;
+    min-height: 420px;
+    max-height: calc(100vh - 140px);
+    overflow: clip;
+  }
+  .nav-item.open > .mega { display: grid; grid-template-columns: 1fr 260px; grid-template-rows: 1fr auto; }
+  .mega-body { display: contents; }
+  .mega-cats { grid-column: 1; grid-row: 1; min-width: 0; }
+  .mega-panel { grid-column: 2; grid-row: 1 / 4; min-width: 260px; max-width: 260px; flex-shrink: 0; display: flex; flex-direction: column; background: var(--near-black); position: relative; overflow: hidden; }
+  .mega-tiles-outer { grid-column: 1; grid-row: 2; min-width: 0; align-self: end; background: var(--off-white); border-top: 1px solid var(--light-grey); width: 100%; }
+  .mega-bar { grid-column: 1; grid-row: 3; min-width: 0; background: var(--off-white); border-top: 1px solid rgba(26,26,24,0.12); }
+
+  @keyframes menuIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+
+  .mega-body { max-width: 1440px; margin: 0 auto; width: 100%; }
+  .mega-cats { flex: 1; display: flex; padding: 20px 32px 0 40px; gap: 0; min-width: 0; }
+
+  .mega-col { flex: 1; padding-right: 28px; border-right: 1px solid var(--pale-grey); margin-right: 28px; }
+  .mega-col:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .mega-col-head { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--pale-grey); }
+  .mega-col ul { list-style: none; }
+  .mega-col ul li { margin-bottom: 1px; }
+  .mega-col ul li a { display: block; font-size: 13px; color: var(--charcoal); text-decoration: none; padding: 5px 0; transition: color 0.12s, padding-left 0.12s; }
+  .mega-col ul li a:hover { color: var(--vk-red); padding-left: 5px; }
+  .mega-col ul li a.bold { font-weight: 500; color: var(--near-black); }
+  .mega-col .view-all { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vk-red); text-decoration: none; margin-top: 12px; transition: gap 0.15s; }
+  .mega-col .view-all:hover { gap: 7px; }
+  .mega-col-head-secondary { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-grey); margin-top: 18px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--pale-grey); }
+
+  .mega-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .mega-panel.vintage-panel { background: linear-gradient(165deg, #1C1A10 0%, #2A2412 100%); }
+  .mega-panel.vintage-panel::before { background: radial-gradient(ellipse at 70% 30%, rgba(212,134,10,0.2) 0%, transparent 65%); }
+  .mega-panel.studio-panel { background: linear-gradient(165deg, #0E1218 0%, #1A2030 100%); }
+  .mega-panel.studio-panel::before { background: radial-gradient(ellipse at 60% 40%, rgba(59,130,246,0.12) 0%, transparent 65%); }
+
+  .panel-feature { flex: 1; padding: 22px 22px 16px; display: flex; flex-direction: column; position: relative; cursor: pointer; }
+  .panel-sponsor { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+  .panel-img { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px 0; position: relative; }
+  .panel-img-tag { position: absolute; top: 0; left: 0; }
+  .panel-brand { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .panel-name { font-family: var(--font-display); font-size: 16px; color: #fff; line-height: 1.25; margin-bottom: 6px; }
+  .panel-price { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+  .panel-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--vk-red); border: none; cursor: pointer; padding: 8px 14px; border-radius: 2px; text-decoration: none; transition: background 0.15s; align-self: flex-start; }
+  .panel-cta:hover { opacity: 0.85; }
+
+  .panel-expert { padding: 13px 18px; border-top: 1px solid rgba(255,255,255,0.07); background: var(--vk-red); display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; transition: background 0.15s; flex-shrink: 0; margin-top: auto; }
+  .panel-expert:hover { background: var(--vk-red-dark); }
+  .panel-expert-title { font-size: 12px; font-weight: 500; color: #fff; margin-bottom: 1px; }
+  .panel-expert-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+
+  .mega-tiles { display: flex; gap: 6px; padding: 12px 40px; max-width: 1440px; margin: 0 auto; flex: 1; }
+  .itile { flex: 1; display: flex; flex-direction: row; text-decoration: none; border-radius: 3px; overflow: hidden; cursor: pointer; border: 1px solid rgba(26,26,24,0.12); min-width: 0; min-height: 72px; }
+  .itile-img { position: relative; width: 120px; flex-shrink: 0; overflow: hidden; background: var(--near-black); }
+  .itile-bg { position: absolute; inset: 0; transition: transform 0.3s ease; }
+  .itile:hover .itile-img .itile-bg { transform: scale(1.03); }
+  .itile-arrow { position: absolute; top: 6px; right: 6px; color: rgba(255,255,255,0.6); font-size: 12px; z-index: 2; transition: color 0.15s; }
+  .itile:hover .itile-arrow { color: rgba(255,255,255,0.9); }
+  .itile-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.18); }
+  .itile-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 10px 14px; background: var(--off-white); min-width: 0; border-left: 1px solid rgba(26,26,24,0.08); }
+  .itile-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vk-red); font-weight: 600; margin-bottom: 4px; }
+  .itile-name { font-size: 12.5px; font-weight: 600; color: var(--near-black); line-height: 1.2; margin-bottom: 3px; }
+  .itile-sub { font-size: 12px; color: var(--mid-grey); line-height: 1.3; }
+  .itile-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); pointer-events: none; z-index: 1; }
+  .itile-cta { display: inline-block; margin-top: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--vk-red); color: #fff; padding: 3px 8px; border-radius: 2px; align-self: flex-start; }
+
+  .mega-panel-light {
+    grid-column: 2; grid-row: 1 / 4; min-width: 260px; max-width: 260px;
+    flex-shrink: 0; display: flex; flex-direction: column;
+    background: var(--warm-white); border-left: 1px solid var(--light-grey);
+    overflow: hidden;
+  }
+  .panel-light-block {
+    display: block; padding: 16px 20px;
+    border-bottom: 1px solid var(--light-grey);
+    text-decoration: none; transition: background 0.12s; cursor: pointer;
+  }
+  .panel-light-block:hover { background: var(--off-white); }
+  .panel-light-label { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 5px; }
+  .panel-light-title { font-size: 13px; font-weight: 500; color: var(--near-black); line-height: 1.3; margin-bottom: 5px; }
+  .panel-light-sub { font-size: 12px; color: var(--mid-grey); line-height: 1.4; margin-bottom: 8px; }
+  .panel-light-cta { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vk-red); }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #F0EDE8; padding: 56px 0 32px; margin-bottom: 80px; }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand-name { font-family: "Roboto", "DM Sans", sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--near-black); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .footer-brand-desc { font-size: 13px; color: var(--mid-grey); line-height: 1.7; max-width: 260px; }
+  .footer-col-title { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-grey); font-weight: 500; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13px; color: var(--charcoal); text-decoration: none; transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--near-black); }
+  .footer-bottom { border-top: 1px solid var(--light-grey); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--mid-grey); }
+  .footer-bottom a { color: var(--mid-grey); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--near-black); }
+  .footer-email-wrap { display:flex; gap:0; margin-top:16px; }
+  .footer-email-input { flex:1; font-family:var(--font-body); font-size:13px; color:var(--near-black); background:var(--warm-white); border:1px solid var(--light-grey); border-right:none; border-radius:3px 0 0 3px; padding:9px 14px; outline:none; }
+  .footer-email-input::placeholder { color:var(--mid-grey); }
+  .footer-email-btn { font-family:var(--font-body); font-size:12px; font-weight:500; letter-spacing:0.05em; background:var(--near-black); color:#fff; border:none; cursor:pointer; padding:9px 16px; border-radius:0 3px 3px 0; white-space:nowrap; transition:background 0.15s; }
+  .footer-email-btn:hover { background:var(--charcoal); }
+  .footer-social { display:flex; gap:10px; margin-top:16px; }
+  .footer-social-link { width:32px; height:32px; border-radius:50%; background:var(--pale-grey); display:flex; align-items:center; justify-content:center; text-decoration:none; color:var(--charcoal); transition:background 0.15s; }
+  .footer-social-link:hover { background:var(--light-grey); }
+  .footer-trust { display:flex; align-items:center; gap:16px; }
+  .footer-trust-badge { display:flex; align-items:center; gap:5px; font-size: 12px; color:var(--mid-grey); white-space:nowrap; }
+  .footer-trust-badge svg { color:var(--mid-grey); flex-shrink:0; }
+
+  .mobile-menu-btn { display: none; }
+  svg { vertical-align: middle; }
+
+</style>
+  <meta name="description" content="Explore how Vintage King equips hybrid recording studios with the perfect blend of analog warmth and digital precision. Real studio projects, gear guides, and expert consultation.">
+  <style id="vk-standalone-patch">.page{display:block!important}</style>
+</head>
+<body>
+<nav class="vk-secondary-chrome" aria-label="Secondary pages nav" style="position:sticky;top:0;z-index:400;background:#1A1A18;color:#FDFCFB;padding:10px 20px;font-size:12px;font-family:var(--font-body);display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <a href="navigator.html" style="color:#FDFCFB;font-weight:600;text-decoration:none">Demo Dashboard</a>
+  <span style="opacity:0.35">|</span>
+  <a href="trade-program.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Trade Program</a>
+  <span style="opacity:0.35">|</span>
+  <a href="section-179.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Section 179</a>
+  <span style="opacity:0.35">|</span>
+  <span style="opacity:0.75">Classic Studios Gone Modern</span>
+</nav>
+<template id="nav-template">
+<!-- ── TOPBAR ── -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="#">Free shipping on orders over $99</a>
+    <div class="topbar-divider"></div>
+    <a href="#">0% financing up to 48 months — Learn more</a>
+  </div>
+</div>
+
+<!-- ── PRIMARY NAV ── -->
+<div class="utility-bar">
+  <div class="utility-bar-links">
+    <a href="#">Studio Professionals</a>
+    <a href="#">Trade Program</a>
+    <a href="#">Studio Installations</a>
+    <a href="#" style="color:var(--vk-red);font-weight:500">Sell or Trade</a>
+    <a href="#">Financing</a>
+    <a href="#">Section 179</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:0">
+    <a href="tel:8886531184" class="utility-bar-phone"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.83 2 2 0 0 1 3.58 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>888.653.1184</a>
+    <span style="color:rgba(26,26,24,0.2);padding:0 10px;font-size:12px">·</span>
+    <a href="#" style="font-size:12.5px;font-weight:600;color:rgba(26,26,24,0.55);text-decoration:none;letter-spacing:0.03em;transition:color 0.15s">Sign In</a>
+  </div>
+</div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-text">
+        <span class="name">Vintage King</span>
+        <span class="tagline">New · Used · Vintage · Pro Audio</span>
+      </div>
+    </a>
+    <ul class="nav-items">
+      <li class="nav-item" id="item-mics"><a href="#" onclick="return false">Microphones <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item" id="item-outboard"><a href="#" onclick="return false">Outboard <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item" id="item-consoles"><a href="#" onclick="return false">Consoles <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item vintage" id="item-vintage"><a href="#" onclick="return false">Vintage and Used <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item" id="item-studio"><a href="#" onclick="return false">Studio Design <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item" id="item-monitoring"><a href="#" onclick="return false">Monitoring <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item" id="item-learn"><a href="#" onclick="return false">Learn <svg class="nav-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></a></li>
+      <li class="nav-item deals"><a href="#">Deals</a></li>
+    </ul>
+    <button class="mobile-menu-btn" id="mob-open-btn" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B68" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search 50,000+ products...">
+      </div>
+      <button class="nav-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="nav-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <div class="cart-count">2</div>
+      </button>
+      <div class="ask-wrap">
+        <button class="nav-expert-btn">
+          <div class="pulse-dot"></div>
+          Ask
+        </button>
+        <div class="ask-dropdown">
+          <a href="#" class="ask-dropdown-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Live Chat
+          </a>
+          <a href="#" class="ask-dropdown-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.83 2 2 0 0 1 3.58 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+            Request a Callback
+          </a>
+          <a href="#" class="ask-dropdown-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Video Chat
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</template>
+<template id="footer-template">
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">
+          <svg width="16" height="24" viewBox="0 0 22 34" fill="none"><rect x="7" y="1" width="8" height="20" rx="4" stroke="#C0392B" stroke-width="1.5" fill="none"/><line x1="11" y1="21" x2="11" y2="28" stroke="#C0392B" stroke-width="1.5"/><line x1="5" y1="28" x2="17" y2="28" stroke="#C0392B" stroke-width="1.5"/><circle cx="11" cy="10" r="2.5" fill="#C0392B" opacity="0.7"/></svg>
+          VINTAGE KING
+        </div>
+        <p class="footer-brand-desc">The pro audio outfitter for all of your sonic journeys. Serving engineers and artists since 1993.</p>
+        <div style="margin-top:20px;margin-bottom:6px;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid-grey)">Stay in the loop</div>
+        <div class="footer-email-wrap">
+          <input type="email" class="footer-email-input" placeholder="Your email address">
+          <button class="footer-email-btn">Subscribe</button>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="X / Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Shop</div>
+        <ul>
+          <li><a href="#">Microphones</a></li>
+          <li><a href="#">Outboard Gear</a></li>
+          <li><a href="#">Consoles</a></li>
+          <li><a href="#">Monitoring</a></li>
+          <li><a href="#">Vintage and Used</a></li>
+          <li><a href="#">Open Box</a></li>
+          <li><a href="#">Deals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="#">About VK</a></li>
+          <li><a href="#">Tech Shop</a></li>
+          <li><a href="#">Studio Installations</a></li>
+          <li><a href="#">PLAYBACK Magazine</a></li>
+          <li><a href="#">Make Your Mark</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+        <div style="margin-top:20px">
+          <div class="footer-col-title">Hours</div>
+          <div style="font-size:13px;color:var(--charcoal);line-height:1.7">Mon - Fri: 9AM - 8PM ET<br>Saturday: 10AM - 6PM ET</div>
+          <a href="tel:8886531184" style="display:block;font-size:13px;font-weight:500;color:var(--vk-red);text-decoration:none;margin-top:8px">888.653.1184</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Help</div>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Financing</a></li>
+          <li><a href="#">Sell or Trade</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <span>&copy; 2026 Vintage King Audio, Inc. All rights reserved.</span>
+        <div style="display:flex;gap:16px;margin-top:8px">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+      <div class="footer-trust">
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>SSL Secured</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Secure Checkout</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-Day Returns</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Free 1-Year Warranty</div>
+      </div>
+    </div>
+  </div>
+</footer>
+</template>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Classic Studios Gone Modern — Hybrid Recording Studio Design",
+      "description": "Explore how Vintage King equips hybrid recording studios with the perfect blend of analog warmth and digital precision. Real studio projects, gear guides, and expert consultation.",
+      "author": {
+        "@type": "Organization",
+        "name": "Vintage King Audio"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vintage King Audio",
+        "url": "https://www.vintageking.com"
+      },
+      "mainEntityOfPage": "https://www.vintageking.com/classic-studios-gone-modern"
+    },
+    {
+      "@type": "Service",
+      "name": "Hybrid Studio Design and Equipment Consultation",
+      "description": "Vintage King helps studios bridge analog and digital workflows with expert consultation, equipment selection, and installation services.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Vintage King Audio",
+        "url": "https://www.vintageking.com"
+      },
+      "serviceType": "Pro Audio Consultation and Equipment Sales",
+      "areaServed": "US"
+    }
+  ]
+}
+</script>
+
+<div id="classic-studios-gone-modern" class="page active">
+  <div id="nav-classic-studios-gone-modern"></div>
+  <div id="footer-classic-studios-gone-modern" style="display:none"></div>
+
+  <style>
+    .csgm-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
+    .csgm-eyebrow { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--page-accent);margin-bottom:14px }
+
+    /* ── HERO ── */
+    .csgm-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden }
+    .csgm-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
+    .csgm-hero-img { position:relative;overflow:hidden }
+    .csgm-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .csgm-hero-caption { position:absolute;bottom:12px;right:16px;font-size:12px;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif }
+
+    /* ── STAT BAR ── */
+    .csgm-stat-bar { background:var(--warm-white);border-top:1px solid rgba(26,26,24,0.06);border-bottom:1px solid rgba(26,26,24,0.06);padding:28px 0 }
+    .csgm-stat-grid { display:flex;justify-content:center;gap:48px }
+    .csgm-stat { text-align:center }
+    .csgm-stat-num { font-family:'DM Sans',sans-serif;font-size:28px;font-weight:700;color:var(--page-accent);line-height:1.1 }
+    .csgm-stat-label { font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(26,26,24,0.45);margin-top:4px }
+
+    /* ── SECTIONS ── */
+    .csgm-section { padding:64px 0 }
+    .csgm-section-off { background:var(--off-white) }
+    .csgm-section-white { background:#fff }
+    .csgm-section-cta { background:#EDE8E2 }
+    .csgm-h2 { font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 8px;line-height:1.15 }
+    .csgm-sub { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.55);margin:0 0 40px;line-height:1.6;max-width:680px }
+
+    /* ── FEATURED PROJECTS ── */
+    .csgm-projects-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
+    .csgm-project { background:#fff;padding:0;display:flex;flex-direction:column;transition:box-shadow .3s ease,transform .3s ease }
+    .csgm-project:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .csgm-project-img { height:240px;background:var(--off-white);overflow:hidden;position:relative;border:1px solid rgba(26,26,24,0.08) }
+    .csgm-project-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .csgm-project:hover .csgm-project-img img { transform:scale(1.04) }
+    .csgm-project-body { padding:24px 28px 28px }
+    .csgm-project-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:8px }
+    .csgm-project-title { font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#1A1A18;margin:0 0 6px;line-height:1.25 }
+    .csgm-project-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 0 16px }
+    .csgm-project-link { font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--page-accent);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap 0.15s }
+    .csgm-project-link:hover { gap:8px }
+
+    /* ── GEAR CATEGORIES ── */
+    .csgm-gear-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px }
+    .csgm-gear-grid.row2 { grid-template-columns:repeat(3,1fr);max-width:880px;margin-top:20px }
+    .csgm-gear-card { background:var(--off-white);border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow .3s ease,transform .3s ease;border:1px solid rgba(26,26,24,0.06) }
+    .csgm-gear-card:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .csgm-gear-icon { height:140px;display:flex;align-items:center;justify-content:center;background:var(--off-white) }
+    .csgm-gear-icon svg { color:var(--page-accent);opacity:0.5 }
+    .csgm-gear-body { padding:16px 20px 20px }
+    .csgm-gear-name { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;margin-bottom:4px }
+    .csgm-gear-sub { font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(26,26,24,0.45) }
+
+    /* ── BUYERS GUIDES ── */
+    .csgm-guides-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
+    .csgm-guide { background:#fff;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;transition:background 0.15s;text-decoration:none }
+    .csgm-guide:hover { background:var(--off-white) }
+    .csgm-guide-title { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18 }
+    .csgm-guide-arrow { font-size:14px;color:var(--page-accent);font-weight:600 }
+
+    /* ── HOW-TO ── */
+    .csgm-howto-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
+    .csgm-howto { background:#fff;padding:0;display:flex;flex-direction:column;transition:box-shadow .3s ease,transform .3s ease }
+    .csgm-howto:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .csgm-howto-img { height:200px;background:var(--off-white);overflow:hidden;position:relative;border:1px solid rgba(26,26,24,0.08) }
+    .csgm-howto-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .csgm-howto:hover .csgm-howto-img img { transform:scale(1.04) }
+    .csgm-howto-body { padding:20px 24px }
+    .csgm-howto-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:6px }
+    .csgm-howto-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#1A1A18;margin:0 0 6px;line-height:1.25 }
+    .csgm-howto-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+
+    /* ── CTA ── */
+    .csgm-cta-section { background:#EDE8E2;padding:64px 0;text-align:center }
+
+    /* ── EXPLORE ── */
+    .csgm-explore { background:#EDE8E2;padding:64px 0 }
+    .csgm-explore-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .csgm-explore-card { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow .3s ease,transform .3s ease }
+    .csgm-explore-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .csgm-explore-img { height:180px;background:var(--off-white);overflow:hidden }
+    .csgm-explore-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .csgm-explore-card:hover .csgm-explore-img img { transform:scale(1.06) }
+    .csgm-explore-body { padding:20px 24px }
+    .csgm-explore-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:6px }
+    .csgm-explore-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }
+    .csgm-explore-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+
+    /* ── STICKY BAR ── */
+    .csgm-stick { position:fixed;bottom:0;left:0;right:0;z-index:500;background:#1A1A18;color:#FDFCFB;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;font-family:'DM Sans',sans-serif;transform:translateY(100%);transition:transform 0.3s }
+    .csgm-stick.visible { transform:translateY(0) }
+    .csgm-stick-title { font-size:15px;font-weight:600 }
+    .csgm-stick-sub { font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }
+    .csgm-stick-cta { background:var(--page-accent);color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px }
+    .csgm-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
+  </style>
+  <script>
+    (function(){
+      var bar=null;
+      window.addEventListener('scroll',function(){
+        if(!bar)bar=document.getElementById('csgm-stick');
+        if(!bar)return;
+        bar.classList.toggle('visible',window.scrollY>500);
+      });
+    })();
+  </script>
+
+  <!-- ── HERO ── -->
+  <section class="csgm-hero">
+    <div class="csgm-hero-text">
+      <div class="csgm-eyebrow">Hybrid Studios</div>
+      <h1 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">Hybrid Recording<br>and Mix Studios</h1>
+      <p class="speakable" style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">Mastering the fusion of analog and digital for your hybrid studio. Real projects, expert gear selection, and proven signal chains from working studios across the country.</p>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#csgm-contact" style="display:inline-block;background:var(--page-accent);color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em">Talk to an Expert</a>
+        <a href="#csgm-projects" style="font-size:13px;font-weight:500;color:rgba(26,26,24,0.5);text-decoration:none;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:6px;transition:color 0.15s">See Projects <span style="font-size:16px">&#8595;</span></a>
+      </div>
+    </div>
+    <div class="csgm-hero-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Neve_81_Series_Mixing_Console.jpg/1280px-Neve_81_Series_Mixing_Console.jpg" alt="Hybrid recording studio mixing console" loading="eager">
+      <span class="csgm-hero-caption">Photo: Wikimedia CC BY-SA 4.0</span>
+    </div>
+  </section>
+
+  <!-- ── STAT BAR ── -->
+  <section class="csgm-stat-bar">
+    <div class="csgm-wrap">
+      <div class="csgm-stat-grid">
+        <div class="csgm-stat"><div class="csgm-stat-num">500+</div><div class="csgm-stat-label">Studios Equipped</div></div>
+        <div class="csgm-stat"><div class="csgm-stat-num">30+</div><div class="csgm-stat-label">Years Experience</div></div>
+        <div class="csgm-stat"><div class="csgm-stat-num">100+</div><div class="csgm-stat-label">Brands Available</div></div>
+        <div class="csgm-stat"><div class="csgm-stat-num">Nationwide</div><div class="csgm-stat-label">Service and Support</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PROJECTS ── -->
+  <section class="csgm-section csgm-section-off" id="csgm-projects">
+    <div class="csgm-wrap">
+      <div class="csgm-eyebrow">Featured Projects</div>
+      <h2 class="csgm-h2">Real Hybrid Studios, Real Results</h2>
+      <p class="csgm-sub">See how engineers and producers are bridging the gap between analog warmth and digital workflow with carefully curated gear from Vintage King.</p>
+
+      <div class="csgm-projects-grid">
+        <div class="csgm-project">
+          <div class="csgm-project-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Bearsville_Studios_Control_Room_Repaired_%282019%29.jpg/1280px-Bearsville_Studios_Control_Room_Repaired_%282019%29.jpg" alt="Jon Lundin studio with Barefoot Sound MicroMain monitors" loading="lazy">
+          </div>
+          <div class="csgm-project-body">
+            <div class="csgm-project-tag">Case Study</div>
+            <h3 class="csgm-project-title">Jon Lundin and Barefoot Sound MicroMain</h3>
+            <p class="csgm-project-desc">How Nashville mix engineer Jon Lundin chose the Barefoot MicroMain 27 Gen2 as the centerpiece of his hybrid monitoring chain, pairing transparent digital processing with room-corrected analog summing.</p>
+            <a href="https://www.vintageking.com/blog" class="csgm-project-link">Read the Story <span>&#8594;</span></a>
+          </div>
+        </div>
+
+        <div class="csgm-project">
+          <div class="csgm-project-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tonstudio_Neos_2023_Dolby_Atmos_Room.jpg/1280px-Tonstudio_Neos_2023_Dolby_Atmos_Room.jpg" alt="Brent Barcus Dolby Atmos studio with Apogee Symphony" loading="lazy">
+          </div>
+          <div class="csgm-project-body">
+            <div class="csgm-project-tag">Case Study</div>
+            <h3 class="csgm-project-title">Brent Barcus and Dolby Atmos with Apogee Symphony</h3>
+            <p class="csgm-project-desc">A deep look at building a Dolby Atmos mixing environment from the ground up, anchored by the Apogee Symphony I/O Mk II and a 7.1.4 Genelec monitoring array.</p>
+            <a href="https://www.vintageking.com/blog" class="csgm-project-link">Read the Story <span>&#8594;</span></a>
+          </div>
+        </div>
+
+        <div class="csgm-project">
+          <div class="csgm-project-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/EMI_TG12345_Mk._III_recording_console%2C_Abbey_Road_Studios.jpg/1280px-EMI_TG12345_Mk._III_recording_console%2C_Abbey_Road_Studios.jpg" alt="Dan Horne UHF Studios Neve BCM10/2 Mk2" loading="lazy">
+          </div>
+          <div class="csgm-project-body">
+            <div class="csgm-project-tag">Case Study</div>
+            <h3 class="csgm-project-title">Dan Horne UHF Studios and Neve BCM10/2 Mk2</h3>
+            <p class="csgm-project-desc">Psych-rock multi-instrumentalist Dan Horne built his UHF Studios around a Neve BCM10/2 Mk2 console, blending vintage tracking with a modern Pro Tools backbone for maximum creative flexibility.</p>
+            <a href="https://www.vintageking.com/blog" class="csgm-project-link">Read the Story <span>&#8594;</span></a>
+          </div>
+        </div>
+
+        <div class="csgm-project">
+          <div class="csgm-project-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Neve_VR_console_at_Studios_La_Fabrique.jpg/1280px-Neve_VR_console_at_Studios_La_Fabrique.jpg" alt="Sean Motley studio with Neve Genesys G32 and ATC SCM45" loading="lazy">
+          </div>
+          <div class="csgm-project-body">
+            <div class="csgm-project-tag">Case Study</div>
+            <h3 class="csgm-project-title">Sean Motley and Neve Genesys G32 with ATC SCM45</h3>
+            <p class="csgm-project-desc">Grammy-winning engineer Sean Motley paired the Neve Genesys G32 inline console with ATC SCM45A monitors, creating a hybrid workflow that handles both tracking and immersive mixing without compromise.</p>
+            <a href="https://www.vintageking.com/blog" class="csgm-project-link">Read the Story <span>&#8594;</span></a>
+          </div>
+        </div>
+
+        <div class="csgm-project">
+          <div class="csgm-project-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/API_Legacy_AXS_console_at_Grandmaster_Recorders.jpg/1280px-API_Legacy_AXS_console_at_Grandmaster_Recorders.jpg" alt="SuSuSound Studio API 1608-II Console" loading="lazy">
+          </div>
+          <div class="csgm-project-body">
+            <div class="csgm-project-tag">Case Study</div>
+            <h3 class="csgm-project-title">SuSuSound Studio and API 1608-II Console</h3>
+            <p class="csgm-project-desc">Philadelphia's SuSuSound Studio built around the API 1608-II recording console, combining classic API summing and tone with Dante networking and a fully integrated digital recall system.</p>
+            <a href="https://www.vintageking.com/blog" class="csgm-project-link">Read the Story <span>&#8594;</span></a>
+          </div>
+        </div>
+
+        <div class="csgm-project">
+          <div class="csgm-project-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="Notes for Notes youth music studio" loading="lazy">
+          </div>
+          <div class="csgm-project-body">
+            <div class="csgm-project-tag">Community</div>
+            <h3 class="csgm-project-title">Notes for Notes: Youth Music Spaces</h3>
+            <p class="csgm-project-desc">Vintage King helped outfit Notes for Notes studios with professional-grade hybrid recording environments, giving young musicians access to industry-standard analog and digital tools.</p>
+            <a href="https://www.vintageking.com/blog" class="csgm-project-link">Read the Story <span>&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GEAR CATEGORIES ── -->
+  <section class="csgm-section csgm-section-white">
+    <div class="csgm-wrap">
+      <div class="csgm-eyebrow">Shop by Category</div>
+      <h2 class="csgm-h2">Essential Gear for Hybrid Studios</h2>
+      <p class="csgm-sub">The building blocks of a modern hybrid recording and mixing environment. Every category hand-selected for seamless analog-digital integration.</p>
+
+      <div class="csgm-gear-grid">
+        <a href="https://www.vintageking.com/500-series" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="14" width="32" height="20" rx="2"/><line x1="16" y1="14" x2="16" y2="34"/><line x1="24" y1="14" x2="24" y2="34"/><line x1="32" y1="14" x2="32" y2="34"/><circle cx="12" cy="24" r="2" fill="currentColor" opacity="0.3"/><circle cx="20" cy="24" r="2" fill="currentColor" opacity="0.3"/><circle cx="28" cy="24" r="2" fill="currentColor" opacity="0.3"/><circle cx="36" cy="24" r="2" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">500 Series</div>
+            <div class="csgm-gear-sub">Modular preamps, EQs, compressors</div>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/microphones" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="18" y="6" width="12" height="24" rx="6"/><path d="M12 24c0 6.63 5.37 12 12 12s12-5.37 12-12"/><line x1="24" y1="36" x2="24" y2="42"/><line x1="18" y1="42" x2="30" y2="42"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">Microphones</div>
+            <div class="csgm-gear-sub">Condenser, ribbon, dynamic</div>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/audio-interfaces" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="16" width="36" height="16" rx="2"/><circle cx="16" cy="24" r="3"/><circle cx="32" cy="24" r="3"/><line x1="6" y1="20" x2="42" y2="20" stroke-opacity="0.3"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">Audio Interfaces</div>
+            <div class="csgm-gear-sub">AD/DA converters, Thunderbolt, USB</div>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/studio-monitors" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="12" y="8" width="24" height="32" rx="3"/><circle cx="24" cy="28" r="8"/><circle cx="24" cy="28" r="3" fill="currentColor" opacity="0.2"/><circle cx="24" cy="14" r="3"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">Monitors</div>
+            <div class="csgm-gear-sub">Nearfield, midfield, mastering</div>
+          </div>
+        </a>
+      </div>
+      <div class="csgm-gear-grid row2">
+        <a href="https://www.vintageking.com/headphones" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 28V24c0-7.73 6.27-14 14-14s14 6.27 14 14v4"/><rect x="6" y="28" width="8" height="12" rx="2"/><rect x="34" y="28" width="8" height="12" rx="2"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">Studio Headphones</div>
+            <div class="csgm-gear-sub">Reference, closed-back, open-back</div>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/daw-software" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="32" height="22" rx="2"/><line x1="8" y1="36" x2="40" y2="36"/><line x1="20" y1="32" x2="28" y2="36"/><rect x="14" y="16" width="20" height="3" rx="1" fill="currentColor" opacity="0.15"/><rect x="14" y="22" width="14" height="3" rx="1" fill="currentColor" opacity="0.15"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">DAW Software</div>
+            <div class="csgm-gear-sub">Pro Tools, Logic, Ableton, more</div>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/control-surfaces" class="csgm-gear-card">
+          <div class="csgm-gear-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="14" width="36" height="20" rx="2"/><line x1="14" y1="20" x2="14" y2="28"/><line x1="22" y1="18" x2="22" y2="28"/><line x1="30" y1="22" x2="30" y2="28"/><line x1="38" y1="16" x2="38" y2="28"/><circle cx="14" cy="22" r="2" fill="currentColor" opacity="0.3"/><circle cx="22" cy="20" r="2" fill="currentColor" opacity="0.3"/><circle cx="30" cy="24" r="2" fill="currentColor" opacity="0.3"/><circle cx="38" cy="18" r="2" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <div class="csgm-gear-body">
+            <div class="csgm-gear-name">Control Surfaces</div>
+            <div class="csgm-gear-sub">Fader packs, DAW controllers</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUYER'S GUIDES ── -->
+  <section class="csgm-section csgm-section-off">
+    <div class="csgm-wrap">
+      <div class="csgm-eyebrow">Buying Guides</div>
+      <h2 class="csgm-h2">Gear Guides for Hybrid Studios</h2>
+      <p class="csgm-sub">In-depth comparisons and recommendations from our Audio Consultants to help you build the right signal chain.</p>
+
+      <div class="csgm-guides-grid">
+        <a href="https://www.vintageking.com/blog" class="csgm-guide">
+          <div class="csgm-guide-title">Best 500 Series Modules Under $1,500</div>
+          <span class="csgm-guide-arrow">&#8594;</span>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-guide">
+          <div class="csgm-guide-title">Best Stereo Bus Compressors Under $3,500</div>
+          <span class="csgm-guide-arrow">&#8594;</span>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-guide">
+          <div class="csgm-guide-title">Best Ribbon Mics Under $1,500</div>
+          <span class="csgm-guide-arrow">&#8594;</span>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-guide">
+          <div class="csgm-guide-title">10+ Modern 1073-Style Preamps</div>
+          <span class="csgm-guide-arrow">&#8594;</span>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-guide">
+          <div class="csgm-guide-title">Best Compressors Under $1,500</div>
+          <span class="csgm-guide-arrow">&#8594;</span>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-guide">
+          <div class="csgm-guide-title">Best EQs Under $1,500</div>
+          <span class="csgm-guide-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW-TO GUIDES ── -->
+  <section class="csgm-section csgm-section-white">
+    <div class="csgm-wrap">
+      <div class="csgm-eyebrow">How-To</div>
+      <h2 class="csgm-h2">Build Your Hybrid Rig</h2>
+      <p class="csgm-sub">Step-by-step guides for assembling tracking, mixing, and immersive audio workflows with gear that works together.</p>
+
+      <div class="csgm-howto-grid">
+        <a href="https://www.vintageking.com/blog" class="csgm-howto" style="text-decoration:none">
+          <div class="csgm-howto-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Surround_Sound_Studio%2C_2009.jpg/1280px-Surround_Sound_Studio%2C_2009.jpg" alt="Immersive mixing rig with Ex Machina and Dangerous Music" loading="lazy">
+          </div>
+          <div class="csgm-howto-body">
+            <div class="csgm-howto-tag">How-To</div>
+            <h3 class="csgm-howto-title">Build an Immersive Mixing Rig with Ex Machina and Dangerous Music</h3>
+            <p class="csgm-howto-desc">Combine the Ex Machina Pulsar with Dangerous Music monitor control for a scalable Atmos mixing environment.</p>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-howto" style="text-decoration:none">
+          <div class="csgm-howto-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Rupert_Neve_Designs_5088_console.jpg/1280px-Rupert_Neve_Designs_5088_console.jpg" alt="Budget mix rig with Rupert Neve Designs" loading="lazy">
+          </div>
+          <div class="csgm-howto-body">
+            <div class="csgm-howto-tag">How-To</div>
+            <h3 class="csgm-howto-title">Building a Mix Rig on a Budget with Rupert Neve Designs</h3>
+            <p class="csgm-howto-desc">A step-by-step approach to a quality hybrid mix setup using the RND 5060 Centerpiece and 500 Series modules.</p>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-howto" style="text-decoration:none">
+          <div class="csgm-howto-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Genelec_1031A_studio_monitors.jpg/1024px-Genelec_1031A_studio_monitors.jpg" alt="Immersive mixing with Genelec monitors" loading="lazy">
+          </div>
+          <div class="csgm-howto-body">
+            <div class="csgm-howto-tag">How-To</div>
+            <h3 class="csgm-howto-title">Build an Immersive Mixing Rig with Genelec</h3>
+            <p class="csgm-howto-desc">Configure a full Genelec SAM monitoring system for Dolby Atmos, including subwoofer integration and GLM calibration.</p>
+          </div>
+        </a>
+        <a href="https://www.vintageking.com/blog" class="csgm-howto" style="text-decoration:none">
+          <div class="csgm-howto-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/AEA_R44C_and_Royer_R-121_ribbon_microphones.jpg/800px-AEA_R44C_and_Royer_R-121_ribbon_microphones.jpg" alt="Royer R-10 ribbon microphone" loading="lazy">
+          </div>
+          <div class="csgm-howto-body">
+            <div class="csgm-howto-tag">How-To</div>
+            <h3 class="csgm-howto-title">Mic Any Instrument with the Royer R-10</h3>
+            <p class="csgm-howto-desc">Techniques for using the Royer R-10 ribbon mic on guitar amps, drums, strings, brass, and vocals in a hybrid studio context.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="csgm-cta-section" id="csgm-contact">
+    <div class="csgm-wrap" style="text-align:center">
+      <div class="csgm-eyebrow">Expert Help</div>
+      <h2 class="csgm-h2" style="margin:0 auto 16px">Need Help Choosing the Right Gear?</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.6);max-width:520px;margin:0 auto 32px;line-height:1.6">Our Audio Consultants have built hundreds of hybrid studios. Tell us your workflow, budget, and goals, and we will recommend the right signal chain for your room.</p>
+      <a href="https://www.vintageking.com/audio-consultants" style="display:inline-block;background:var(--page-accent);color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-right:12px">Contact an Expert</a>
+      <a href="https://www.vintageking.com" style="display:inline-block;background:transparent;color:#1A1A18;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(26,26,24,0.25);border-radius:2px">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ── CONTINUE EXPLORING ── -->
+  <section class="csgm-explore">
+    <div class="csgm-wrap">
+      <div class="csgm-eyebrow">Continue Exploring</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0 0 32px">More from Vintage King</h2>
+      <div class="csgm-explore-grid">
+        <a href="trade-program.html" class="csgm-explore-card">
+          <div class="csgm-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UREI_1176LN_%28Silver%29_x6.jpg/600px-UREI_1176LN_%28Silver%29_x6.jpg" alt="Trade Program gear" loading="lazy"></div>
+          <div class="csgm-explore-body">
+            <div class="csgm-explore-tag">Trade Program</div>
+            <div class="csgm-explore-title">Sell or Trade Your Gear</div>
+            <p class="csgm-explore-desc">Get top dollar or trade credit for your existing equipment. Fast offers, hassle-free process.</p>
+          </div>
+        </a>
+        <a href="warranty.html" class="csgm-explore-card">
+          <div class="csgm-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="VK Warranty" loading="lazy"></div>
+          <div class="csgm-explore-body">
+            <div class="csgm-explore-tag">Buyer Protection</div>
+            <div class="csgm-explore-title">VK Warranty</div>
+            <p class="csgm-explore-desc">+1 free year on every purchase. No registration. Optional ADH coverage.</p>
+          </div>
+        </a>
+        <a href="section-179.html" class="csgm-explore-card">
+          <div class="csgm-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Neve_81_Series_Mixing_Console.jpg/1280px-Neve_81_Series_Mixing_Console.jpg" alt="Section 179 tax savings" loading="lazy"></div>
+          <div class="csgm-explore-body">
+            <div class="csgm-explore-tag">Tax Savings</div>
+            <div class="csgm-explore-title">Section 179 Deduction</div>
+            <p class="csgm-explore-desc">Deduct the full cost of qualifying studio equipment in the year you buy it.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <div id="footer-classic-studios-gone-modern-inner"></div>
+
+  <!-- ── STICKY BAR ── -->
+  <div class="csgm-stick" id="csgm-stick">
+    <div>
+      <div class="csgm-stick-title">Classic Studios Gone Modern</div>
+      <div class="csgm-stick-sub">Hybrid studio gear, guides, and expert consultation</div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://www.vintageking.com/audio-consultants" class="csgm-stick-cta">Talk to an Expert</a>
+      <a href="https://www.vintageking.com" class="csgm-stick-ghost">Shop Now</a>
+    </div>
+  </div>
+  <div style="height:68px"></div>
+
+</div>
+
+<script>
+  let closeTimer = null;
+
+  function updateMenuPositions() {
+    const nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    const bottom = nav.getBoundingClientRect().bottom;
+    document.querySelectorAll('.mega').forEach(m => {
+      m.style.top = bottom + 'px';
+    });
+  }
+
+  function setupNav() {
+    updateMenuPositions();
+    window.addEventListener('scroll', updateMenuPositions);
+    window.addEventListener('resize', updateMenuPositions);
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+      if (!item.querySelector('.mega')) return;
+
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimer);
+        updateMenuPositions();
+        document.querySelectorAll('.nav-item.open').forEach(o => {
+          if (o !== item) o.classList.remove('open');
+        });
+        item.classList.add('open');
+      });
+
+      item.addEventListener('mouseleave', () => {
+        closeTimer = setTimeout(() => item.classList.remove('open'), 120);
+      });
+
+      const mega = item.querySelector('.mega');
+      if (mega) {
+        mega.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+        mega.addEventListener('mouseleave', () => {
+          closeTimer = setTimeout(() => item.classList.remove('open'), 120);
+        });
+      }
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.nav-item.open').forEach(o => o.classList.remove('open'));
+      }
+    });
+  }
+</script>
+<script>
+  (function() {
+    var p = 'classic-studios-gone-modern';
+    var navTarget    = document.getElementById('nav-' + p);
+    var footerTarget = document.getElementById('footer-' + p + '-inner');
+    var navTpl    = document.getElementById('nav-template');
+    var footerTpl = document.getElementById('footer-template');
+    if (navTarget && navTpl)        navTarget.innerHTML    = navTpl.innerHTML;
+    if (footerTarget && footerTpl)  footerTarget.innerHTML = footerTpl.innerHTML;
+    setupNav();
+  })();
+  var __vkPageFiles = {
+    home:'pages/home.html', category:'pages/category.html', product:'pages/product.html',
+    faq:'pages/faq.html', deals:'pages/deals.html', sell:'pages/sell.html',
+    studio:'pages/studio.html', techshop:'pages/techshop.html',
+    'fin-page':'pages/financing.html', openbox:'pages/openbox.html'
+  };
+  function injectShared() {}
+  function showPage(id) { var href = __vkPageFiles[id]; if (href) window.location.href = href; }
+</script>
+</body>
+</html>

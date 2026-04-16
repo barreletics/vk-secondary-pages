@@ -1,0 +1,55 @@
+MIGRATION PHASE: WHAT SHOULD SHIP WITH THE NEW DESIGN AT LAUNCH
+Summary for VK Marketing Leadership
+April 2026
+
+
+THE SITUATION
+
+The agency is migrating Magento to Shopify Plus (headed, Horizon theme) on a tight timeline. The goal is to stabilize the existing site on Shopify first, then layer in the new design. The question: are there things from the new design that MUST go in at migration time to avoid painful rework later?
+
+
+YES -- THESE SHOULD GO IN AT MIGRATION TIME
+
+These are low-effort items that prevent expensive rework if skipped:
+
+1. Design tokens (CSS custom properties)
+   Install our color, font, and spacing variables into the Horizon theme from day one. This is a single block of CSS that costs nothing to add now but avoids a massive find-and-replace across every template later. The agency just drops our :root block into their base stylesheet.
+
+2. Font loading (Playfair Display + DM Sans)
+   Add the Google Fonts link at migration time. Even if the existing Magento design ships initially, having the fonts loaded means any template that gets the new design later does not need a separate font migration step.
+
+3. Navigation structure (6 parent categories)
+   The new design locks to six parent categories in the mega menu. If the agency builds the Shopify menu structure around our six categories from the start, every template inherits the right nav automatically as the new design rolls out. Rebuilding the menu hierarchy after launch is disruptive -- every page is affected.
+
+4. URL and redirect architecture
+   70,000 redirects are happening regardless. But the URL patterns should match what the new design expects (clean collection handles, no legacy Magento URL structures carried forward). Getting this right once at migration avoids a second redirect pass later.
+
+5. Load More pagination with static URLs
+   If the agency implements pagination on collection pages, use Load More (not infinite scroll) with real paginated URLs (?page=2, ?page=3). This is an SEO architecture decision. Changing it post-launch requires re-indexing.
+
+
+DISCUSS WITH THE AGENCY BUT NOT BLOCKERS
+
+These are worth raising but can wait for Phase 2 if the timeline is too tight:
+
+- Mega menu visual design -- the new mega menu is a significant departure from the current nav. The agency could build a Liquid mega menu section with the right data structure now (pulling from Shopify linklists) but keep the current visual styling. When Phase 2a arrives, they restyle the section without rebuilding the data layer.
+
+- Footer structure -- same logic as the mega menu. Build the Liquid section with the right link groups now, restyle later.
+
+- Collection template layout -- if the agency is building collection pages anyway, having them use a sidebar filter layout (even with basic styling) avoids a layout rewrite when the new category design ships. The visual polish comes later; the structural skeleton is what matters.
+
+
+DO NOT ADD DURING MIGRATION (WAIT FOR PHASE 2)
+
+These create extra work with no rework savings:
+
+- New homepage design -- this is a full creative build. Do not try to squeeze it into migration.
+- New PDP layout -- depends on the design being fully implemented. The current PDP works fine on Shopify and can be restyled later.
+- Secondary pages (About, Careers, Hall of Fame, etc.) -- these are entirely new pages that do not exist on the current site. They ship when ready, no rework risk from waiting.
+- Editorial content pages (PLAYBACK, Make Your Mark, gear deep-dives) -- same as above, net new content.
+- Mobile responsive design -- we have not designed mobile yet. Do not block migration on this.
+
+
+THE BOTTOM LINE
+
+The agency should install four things during migration that cost almost nothing now but save significant rework later: design tokens, fonts, the six-category nav structure, and correct URL patterns. Everything else layers in cleanly after the site is stable on Shopify. The new design was built specifically to roll out in phases on top of a headed Shopify Plus store -- that is why we chose Horizon and Liquid over headless.

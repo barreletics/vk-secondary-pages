@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recording at Home — Build Your Perfect Home Studio | Vintage King</title>
+<!--
+  VINTAGE KING REDESIGN CONCEPT
+  Version: 1.0
+  Date: April 2026
+  Page: Recording and Mixing at Home
+  Author: AJ / Barreletics Ops — built with Claude
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vk-red: #C0392B;
+    --vk-red-dark: #922B21;
+    --off-white: #F7F5F2;
+    --warm-white: #FDFCFB;
+    --near-black: #1A1A18;
+    --charcoal: #2C2C2A;
+    --mid-grey: #6B6B68;
+    --light-grey: #D8D6D2;
+    --pale-grey: #EDEDEA;
+    --amber: #D4860A;
+    --amber-bg: #F5E6C8;
+    --nav-height: 80px;
+    --nav-h: 80px;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --page-accent: #D4860A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { overflow-x: clip; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--warm-white);
+    color: var(--near-black);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .page-switcher {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(26,26,24,0.92);
+    padding: 10px 16px;
+    border-radius: 40px;
+    z-index: 9999;
+    backdrop-filter: blur(12px);
+  }
+  .page-switcher button {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .page-switcher button.active,
+  .page-switcher button:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+  }
+  .page-switcher button.active { color: var(--vk-red); }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--near-black); height: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; font-size: 11px; color: rgba(255,255,255,0.92); font-weight: 500;
+  }
+  .topbar a { color: rgba(255,255,255,0.92); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+  .topbar a:hover { color: rgba(255,255,255,0.85); }
+  .topbar-left { display: flex; gap: 24px; align-items: center; }
+  .topbar-right { display: flex; gap: 20px; align-items: center; }
+  .topbar-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.15); }
+
+  /* ── UTILITY BAR ── */
+  .utility-bar {
+    background: var(--warm-white);
+    border-bottom: 1px solid rgba(26,26,24,0.08);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .utility-bar-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .utility-bar-links a {
+    font-size: 12px;
+    color: rgba(26,26,24,0.68);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    padding: 0 12px;
+    border-right: 1px solid rgba(26,26,24,0.12);
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .utility-bar-links a:first-child { padding-left: 0; }
+  .utility-bar-links a:last-child { border-right: none; }
+  .utility-bar-links a:hover { color: rgba(26,26,24,0.85); }
+  .utility-bar-phone {
+    font-size: 12.5px;
+    color: var(--vk-red);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.15s;
+  }
+  .utility-bar-phone:hover { color: rgba(26,26,24,0.85); }
+
+  /* ── PRIMARY NAV ── */
+  .site-nav {
+    position: sticky; top: 32px; z-index: 199;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--light-grey);
+    height: var(--nav-h);
+  }
+  .nav-inner {
+    max-width: 1440px; margin: 0 auto; padding: 0 40px; height: 100%;
+    display: flex; align-items: center; gap: 0;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; margin-right: 32px; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .name { font-family: "Roboto", "DM Sans", sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--near-black); }
+  .logo-text .tagline { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); margin-top: 3px; }
+
+  .nav-items { display: flex; align-items: stretch; height: 100%; list-style: none; flex: 1; }
+  .nav-item { height: 100%; position: relative; }
+  .nav-item > a {
+    display: flex; align-items: center; gap: 4px; height: 100%;
+    padding: 0 14px; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.025em; color: var(--charcoal); text-decoration: none;
+    white-space: nowrap; transition: color 0.15s;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .nav-item > a:hover, .nav-item.open > a { color: var(--near-black); border-bottom-color: var(--vk-red); }
+  .nav-item.vintage > a { color: var(--amber); }
+  .nav-item.vintage > a:hover, .nav-item.vintage.open > a { color: var(--near-black); border-bottom-color: var(--amber); }
+  .nav-item.deals > a { color: var(--vk-red); font-weight: 600; margin-left: 16px; }
+  .nav-chevron { width: 10px; height: 10px; transition: transform 0.2s ease; opacity: 0.4; }
+  .nav-item.open .nav-chevron { transform: rotate(180deg); opacity: 0.7; }
+
+  .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; flex-shrink: 0; }
+  .nav-search-wrap {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--off-white); border: 1px solid var(--light-grey);
+    border-radius: 4px; padding: 7px 12px; transition: border-color 0.15s;
+  }
+  .nav-search-wrap:focus-within { border-color: var(--charcoal); }
+  .nav-search-wrap input { border: none; background: none; font-family: var(--font-body); font-size: 12.5px; color: var(--charcoal); outline: none; width: 180px; }
+  .nav-search-wrap input::placeholder { color: var(--mid-grey); }
+  .nav-icon { background: none; border: none; cursor: pointer; color: var(--charcoal); padding: 6px; display: flex; align-items: center; transition: color 0.15s; position: relative; }
+  .nav-icon:hover { color: var(--vk-red); }
+  .cart-count { position: absolute; top: 0; right: 0; background: var(--vk-red); color: #fff; font-size: 9px; font-weight: 600; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-expert-btn { display: flex; align-items: center; gap: 7px; background: var(--vk-red); color: #fff; border: none; cursor: pointer; padding: 9px 16px; border-radius: 3px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.05em; white-space: nowrap; transition: background 0.15s; }
+  .nav-expert-btn:hover { background: var(--vk-red-dark); }
+  .pulse-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+
+  .ask-wrap { position: relative; }
+  .ask-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 220px;
+    background: var(--warm-white);
+    border: 1px solid var(--light-grey);
+    border-top: 2px solid var(--vk-red);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    border-radius: 0 0 3px 3px;
+    z-index: 400;
+    overflow: hidden;
+  }
+  .ask-wrap:hover .ask-dropdown { display: block; }
+  .ask-dropdown-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 16px;
+    text-decoration: none;
+    color: var(--charcoal);
+    font-size: 13px;
+    font-weight: 400;
+    border-bottom: 1px solid var(--pale-grey);
+    transition: background 0.12s, color 0.12s;
+  }
+  .ask-dropdown-item:last-child { border-bottom: none; }
+  .ask-dropdown-item:hover { background: var(--off-white); color: var(--vk-red); }
+  .ask-dropdown-item svg { flex-shrink: 0; color: var(--vk-red); }
+
+  /* ── MEGA MENU SYSTEM ── */
+  .mega {
+    display: none;
+    position: fixed;
+    left: 0; right: 0;
+    background: var(--warm-white);
+    border-top: 2px solid var(--vk-red);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+    z-index: 300;
+    flex-direction: column;
+    animation: menuIn 0.18s ease;
+    min-height: 420px;
+    max-height: calc(100vh - 140px);
+    overflow: clip;
+  }
+  .nav-item.open > .mega { display: grid; grid-template-columns: 1fr 260px; grid-template-rows: 1fr auto; }
+  .mega-body { display: contents; }
+  .mega-cats { grid-column: 1; grid-row: 1; min-width: 0; flex: 1; display: flex; padding: 20px 32px 0 40px; gap: 0; }
+  .mega-panel { grid-column: 2; grid-row: 1 / 4; min-width: 260px; max-width: 260px; flex-shrink: 0; display: flex; flex-direction: column; background: var(--near-black); position: relative; overflow: hidden; }
+  .mega-tiles-outer { grid-column: 1; grid-row: 2; min-width: 0; align-self: end; background: var(--off-white); border-top: 1px solid var(--light-grey); width: 100%; }
+  .mega-bar { grid-column: 1; grid-row: 3; min-width: 0; background: var(--off-white); border-top: 1px solid rgba(26,26,24,0.12); }
+
+  @keyframes menuIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+
+  .mega-body { max-width: 1440px; margin: 0 auto; width: 100%; }
+  .mega-col { flex: 1; padding-right: 28px; border-right: 1px solid var(--pale-grey); margin-right: 28px; }
+  .mega-col:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .mega-col-head { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--pale-grey); }
+  .mega-col ul { list-style: none; }
+  .mega-col ul li { margin-bottom: 1px; }
+  .mega-col ul li a { display: block; font-size: 13px; color: var(--charcoal); text-decoration: none; padding: 5px 0; transition: color 0.12s, padding-left 0.12s; }
+  .mega-col ul li a:hover { color: var(--vk-red); padding-left: 5px; }
+  .mega-col ul li a.bold { font-weight: 500; color: var(--near-black); }
+  .mega-col .view-all { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vk-red); text-decoration: none; margin-top: 12px; transition: gap 0.15s; }
+  .mega-col .view-all:hover { gap: 7px; }
+
+  .mega-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .mega-panel.vintage-panel { background: linear-gradient(165deg, #1C1A10 0%, #2A2412 100%); }
+  .mega-panel.vintage-panel::before { background: radial-gradient(ellipse at 70% 30%, rgba(212,134,10,0.2) 0%, transparent 65%); }
+  .mega-panel.studio-panel { background: linear-gradient(165deg, #0E1218 0%, #1A2030 100%); }
+  .mega-panel.studio-panel::before { background: radial-gradient(ellipse at 60% 40%, rgba(59,130,246,0.12) 0%, transparent 65%); }
+
+  .panel-feature { flex: 1; padding: 22px 22px 16px; display: flex; flex-direction: column; position: relative; cursor: pointer; }
+  .panel-sponsor { font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+  .panel-img { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px 0; position: relative; }
+  .panel-brand { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .panel-name { font-family: var(--font-display); font-size: 16px; color: #fff; line-height: 1.25; margin-bottom: 6px; }
+  .panel-price { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+  .panel-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--vk-red); border: none; cursor: pointer; padding: 8px 14px; border-radius: 2px; text-decoration: none; transition: background 0.15s; align-self: flex-start; }
+  .panel-cta:hover { opacity: 0.85; }
+  .panel-expert { padding: 13px 18px; border-top: 1px solid rgba(255,255,255,0.07); background: var(--vk-red); display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; transition: background 0.15s; flex-shrink: 0; margin-top: auto; }
+  .panel-expert:hover { background: var(--vk-red-dark); }
+  .panel-expert-title { font-size: 12px; font-weight: 500; color: #fff; margin-bottom: 1px; }
+  .panel-expert-sub { font-size: 10px; color: rgba(255,255,255,0.6); }
+
+  .mega-tiles { display: flex; gap: 6px; padding: 12px 40px; max-width: 1440px; margin: 0 auto; flex: 1; }
+  .itile { flex: 1; display: flex; flex-direction: row; text-decoration: none; border-radius: 3px; overflow: hidden; cursor: pointer; border: 1px solid rgba(26,26,24,0.12); min-width: 0; min-height: 72px; }
+  .itile-img { position: relative; width: 120px; flex-shrink: 0; overflow: hidden; background: var(--near-black); }
+  .itile-bg { position: absolute; inset: 0; transition: transform 0.3s ease; }
+  .itile:hover .itile-img .itile-bg { transform: scale(1.03); }
+  .itile-arrow { position: absolute; top: 6px; right: 6px; color: rgba(255,255,255,0.6); font-size: 11px; z-index: 2; transition: color 0.15s; }
+  .itile:hover .itile-arrow { color: rgba(255,255,255,0.9); }
+  .itile-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.18); }
+  .itile-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 10px 14px; background: var(--off-white); min-width: 0; border-left: 1px solid rgba(26,26,24,0.08); }
+  .itile-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vk-red); font-weight: 600; margin-bottom: 4px; }
+  .itile-name { font-size: 12.5px; font-weight: 600; color: var(--near-black); line-height: 1.2; margin-bottom: 3px; }
+  .itile-sub { font-size: 10px; color: var(--mid-grey); line-height: 1.3; }
+  .itile-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 7.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); pointer-events: none; z-index: 1; }
+  .itile-cta { display: inline-block; margin-top: 4px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--vk-red); color: #fff; padding: 3px 8px; border-radius: 2px; align-self: flex-start; }
+
+  .mega-panel-light {
+    grid-column: 2; grid-row: 1 / 4; min-width: 260px; max-width: 260px;
+    flex-shrink: 0; display: flex; flex-direction: column;
+    background: var(--warm-white); border-left: 1px solid var(--light-grey);
+    overflow: hidden;
+  }
+  .panel-light-block {
+    display: block; padding: 16px 20px;
+    border-bottom: 1px solid var(--light-grey);
+    text-decoration: none; transition: background 0.12s; cursor: pointer;
+  }
+  .panel-light-block:hover { background: var(--off-white); }
+  .panel-light-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 5px; }
+  .panel-light-title { font-size: 13px; font-weight: 500; color: var(--near-black); line-height: 1.3; margin-bottom: 5px; }
+  .panel-light-sub { font-size: 11px; color: var(--mid-grey); line-height: 1.4; margin-bottom: 8px; }
+  .panel-light-cta { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vk-red); }
+  .mega-cats-wrap { padding-bottom: 16px; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--near-black);
+    color: rgba(255,255,255,0.65);
+    padding: 56px 0 32px;
+  }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Roboto", "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+  .footer-brand-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.45);
+    max-width: 260px;
+  }
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s;
+  }
+  .footer-col ul li a:hover { color: #fff; }
+  .footer-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid-grey);
+  }
+  .footer-bottom a { color: var(--mid-grey); text-decoration: none; }
+  .footer-bottom a:hover { color: #fff; }
+  .footer-email-wrap { display:flex; gap:0; margin-top:16px; }
+  .footer-email-input { flex:1; font-family:var(--font-body); font-size:13px; color:var(--near-black); background:var(--warm-white); border:1px solid var(--light-grey); border-right:none; border-radius:3px 0 0 3px; padding:9px 14px; outline:none; }
+  .footer-email-input::placeholder { color:var(--mid-grey); }
+  .footer-email-btn { font-family:var(--font-body); font-size:12px; font-weight:500; letter-spacing:0.05em; background:var(--near-black); color:#fff; border:none; cursor:pointer; padding:9px 16px; border-radius:0 3px 3px 0; white-space:nowrap; transition:background 0.15s; }
+  .footer-email-btn:hover { background:var(--charcoal); }
+  .footer-social { display:flex; gap:10px; margin-top:16px; }
+  .footer-social-link { width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; text-decoration:none; color:rgba(255,255,255,0.5); transition:background 0.15s; }
+  .footer-social-link:hover { background:rgba(255,255,255,0.12); }
+  .footer-trust { display:flex; align-items:center; gap:16px; }
+  .footer-trust-badge { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--mid-grey); white-space:nowrap; }
+  .footer-trust-badge svg { color:var(--mid-grey); flex-shrink:0; }
+
+  /* ── MOBILE NAV ── */
+  .mobile-menu-btn { display: none; }
+
+  /* ── REVIEWER RAIL ── */
+  .vk-reviewer-rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 10px;
+    padding: 8px 12px;
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    font-size: 11px;
+    line-height: 1.35;
+    background: #0d0d0c;
+    color: rgba(255,255,255,0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .vk-reviewer-rail a { color: #fff; text-decoration: none; font-weight: 500; }
+  .vk-reviewer-rail a:hover { color: var(--vk-red); }
+  .vk-reviewer-rail .vk-rr-here { color: #fff; font-weight: 600; }
+  .vk-reviewer-rail .vk-rr-sep { color: rgba(255,255,255,0.35); user-select: none; }
+  body.vk-reviewer-pad { padding-top: 38px; }
+  html { scroll-padding-top: 44px; }
+
+</style>
+</head>
+<meta name="description" content="Build your dream home studio with expert guidance from Vintage King. Gear recommendations for every budget, buyer's guides, and real studio stories from project studio owners.">
+<style id="vk-standalone-patch">.page{{display:block!important}}</style>
+
+</head>
+<body>
+<nav class="vk-secondary-chrome" aria-label="Secondary pages nav" style="position:sticky;top:0;z-index:400;background:#1A1A18;color:#FDFCFB;padding:10px 20px;font-size:12px;font-family:var(--font-body);display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <a href="navigator.html" style="color:#FDFCFB;font-weight:600;text-decoration:none">Demo Dashboard</a>
+  <span style="opacity:0.35">|</span>
+  <a href="section-179.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Section 179</a>
+  <span style="opacity:0.35">|</span>
+  <a href="trade-program.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Trade Program</a>
+  <span style="opacity:0.35">|</span>
+  <span style="opacity:0.75">Recording at Home</span>
+</nav>
+
+<template id="nav-template">
+<!-- ── TOPBAR ── -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="#">Free shipping on orders over $99</a>
+    <div class="topbar-divider"></div>
+    <a href="#">0% financing up to 48 months — Learn more</a>
+  </div>
+</div>
+
+<!-- ── PRIMARY NAV ── -->
+<div class="utility-bar">
+  <div class="utility-bar-links">
+    <a href="#">Studio Professionals</a>
+    <a href="#">Trade Program</a>
+    <a href="#">Studio Installations</a>
+    <a href="#" style="color:var(--vk-red);font-weight:500">Sell or Trade</a>
+    <a href="#">Financing</a>
+    <a href="#">Section 179</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:0">
+    <a href="tel:8886531184" class="utility-bar-phone"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.83 2 2 0 0 1 3.58 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>888.653.1184</a>
+    <span style="color:rgba(26,26,24,0.2);padding:0 10px;font-size:10px">·</span>
+    <a href="#" style="font-size:12.5px;font-weight:600;color:rgba(26,26,24,0.55);text-decoration:none;letter-spacing:0.03em;transition:color 0.15s">Sign In</a>
+  </div>
+</div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg width="28" height="44" viewBox="0 0 28 44" fill="none"><rect x="6" y="2" width="16" height="28" rx="8" stroke="var(--vk-red)" stroke-width="1.8" fill="none"/><line x1="14" y1="30" x2="14" y2="38" stroke="var(--vk-red)" stroke-width="1.8"/><line x1="7" y1="38" x2="21" y2="38" stroke="var(--vk-red)" stroke-width="1.8"/><circle cx="14" cy="16" r="4" fill="var(--vk-red)" opacity="0.6"/></svg>
+      <div class="logo-text">
+        <span class="name">Vintage King</span>
+        <span class="tagline">New · Used · Vintage · Pro Audio</span>
+      </div>
+    </a>
+    <ul class="nav-items">
+      <li class="nav-item"><a href="#">Microphones</a></li>
+      <li class="nav-item"><a href="#">Outboard</a></li>
+      <li class="nav-item"><a href="#">Consoles</a></li>
+      <li class="nav-item vintage"><a href="#">Vintage and Used</a></li>
+      <li class="nav-item"><a href="#">Studio Design</a></li>
+      <li class="nav-item"><a href="#">Monitoring</a></li>
+      <li class="nav-item"><a href="#">Learn</a></li>
+      <li class="nav-item deals"><a href="#">Deals</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B68" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search 50,000+ products...">
+      </div>
+      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><div class="cart-count">2</div></button>
+      <div class="ask-wrap">
+        <button class="nav-expert-btn"><div class="pulse-dot"></div>Ask</button>
+        <div class="ask-dropdown">
+          <a href="#" class="ask-dropdown-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Live Chat</a>
+          <a href="#" class="ask-dropdown-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.83 2 2 0 0 1 3.58 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>Request a Callback</a>
+          <a href="#" class="ask-dropdown-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>Video Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</template>
+<template id="footer-template">
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">
+          <svg width="16" height="24" viewBox="0 0 22 34" fill="none"><rect x="7" y="1" width="8" height="20" rx="4" stroke="#C0392B" stroke-width="1.5" fill="none"/><line x1="11" y1="21" x2="11" y2="28" stroke="#C0392B" stroke-width="1.5"/><line x1="5" y1="28" x2="17" y2="28" stroke="#C0392B" stroke-width="1.5"/><circle cx="11" cy="10" r="2.5" fill="#C0392B" opacity="0.7"/></svg>
+          VINTAGE KING
+        </div>
+        <p class="footer-brand-desc">The pro audio outfitter for all of your sonic journeys. Serving engineers and artists since 1993.</p>
+        <div style="margin-top:20px;margin-bottom:6px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid-grey)">Stay in the loop</div>
+        <div class="footer-email-wrap">
+          <input type="email" class="footer-email-input" placeholder="Your email address">
+          <button class="footer-email-btn">Subscribe</button>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="X / Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Shop</div>
+        <ul>
+          <li><a href="#">Microphones</a></li>
+          <li><a href="#">Outboard Gear</a></li>
+          <li><a href="#">Consoles</a></li>
+          <li><a href="#">Monitoring</a></li>
+          <li><a href="#">Vintage and Used</a></li>
+          <li><a href="#">Open Box</a></li>
+          <li><a href="#">Deals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="#">About VK</a></li>
+          <li><a href="#">Tech Shop</a></li>
+          <li><a href="#">Studio Installations</a></li>
+          <li><a href="#">PLAYBACK Magazine</a></li>
+          <li><a href="#">Make Your Mark</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+        <div style="margin-top:20px">
+          <div class="footer-col-title">Hours</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7">Mon - Fri: 9AM - 8PM ET<br>Saturday: 10AM - 6PM ET</div>
+          <a href="tel:8886531184" style="display:block;font-size:13px;font-weight:500;color:var(--vk-red);text-decoration:none;margin-top:8px">888.653.1184</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Help</div>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Financing</a></li>
+          <li><a href="#">Sell or Trade</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <span>© 2026 Vintage King Audio, Inc. All rights reserved.</span>
+        <div style="display:flex;gap:16px;margin-top:8px">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+      <div class="footer-trust">
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>SSL Secured</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Secure Checkout</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-Day Returns</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Free 1-Year Warranty</div>
+      </div>
+    </div>
+  </div>
+</footer>
+</template>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Recording and Mixing at Home — Build Your Perfect Home Studio",
+      "description": "Build your dream home studio with expert guidance from Vintage King. Gear recommendations for every budget, buyer's guides, and real studio stories from project studio owners.",
+      "author": {
+        "@type": "Organization",
+        "name": "Vintage King Audio",
+        "url": "https://vintageking.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vintage King Audio",
+        "url": "https://vintageking.com"
+      },
+      "mainEntityOfPage": "https://vintageking.com/recording-and-mixing-at-home"
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to Build a Home Recording Studio",
+      "description": "A step-by-step guide to building a professional home studio at any budget level.",
+      "step": [
+        {"@type": "HowToStep", "name": "Define your budget", "text": "Determine your budget tier: Starter ($500-2,000), Intermediate ($2,000-10,000), or Professional ($10,000+). Each level delivers quality recordings with the right gear choices."},
+        {"@type": "HowToStep", "name": "Choose your core gear", "text": "Start with an audio interface, microphone, headphones, and monitors. These four pieces form the foundation of any home studio."},
+        {"@type": "HowToStep", "name": "Treat your room", "text": "Add acoustic treatment to control reflections and bass buildup. Even basic treatment dramatically improves recording and mixing accuracy."},
+        {"@type": "HowToStep", "name": "Expand with outboard and software", "text": "Add preamps, compressors, 500 series modules, and plug-ins as your needs grow. Talk to a Vintage King Audio Consultant for personalized recommendations."}
+      ]
+    }
+  ]
+}
+</script>
+
+<div id="recording-at-home" class="page active">
+  <div id="nav-recording-at-home"></div>
+
+  <style>
+    .rah-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
+    .rah-eyebrow { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--page-accent);margin-bottom:14px }
+
+    /* HERO */
+    .rah-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden }
+    .rah-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
+    .rah-hero-img { position:relative;overflow:hidden;background:var(--off-white) }
+    .rah-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .rah-hero-caption { position:absolute;bottom:12px;right:16px;font-size:12px;color:rgba(26,26,24,0.4);font-family:'DM Sans',sans-serif }
+    .rah-hero p.speakable { font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px }
+
+    /* SECTIONS */
+    .rah-section { padding:64px 0 }
+    .rah-section-off { background:var(--off-white) }
+    .rah-section-white { background:#fff }
+    .rah-section-cta { background:#EDE8E2 }
+    .rah-h2 { font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 8px;line-height:1.15 }
+    .rah-sub { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.55);margin:0 0 40px;line-height:1.6;max-width:680px }
+
+    /* BUDGET TIERS */
+    .rah-tiers { display:grid;grid-template-columns:repeat(3,1fr);gap:24px }
+    .rah-tier { background:#fff;border-radius:4px;border:1px solid rgba(26,26,24,0.08);border-top:3px solid var(--page-accent);padding:32px 28px;transition:box-shadow 0.3s ease,transform 0.3s ease }
+    .rah-tier:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .rah-tier-label { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:8px }
+    .rah-tier-price { font-family:'DM Sans',sans-serif;font-size:24px;font-weight:700;color:#1A1A18;margin-bottom:16px }
+    .rah-tier h3 { font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 12px }
+    .rah-tier ul { list-style:none;margin:0;padding:0 }
+    .rah-tier ul li { font-size:14px;color:rgba(26,26,24,0.65);line-height:1.7;padding:4px 0;padding-left:20px;position:relative }
+    .rah-tier ul li::before { content:'';position:absolute;left:0;top:12px;width:8px;height:8px;border-radius:50%;background:var(--page-accent);opacity:0.35 }
+    .rah-tier-cta { display:inline-block;margin-top:20px;background:var(--page-accent);color:#fff;padding:10px 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;transition:opacity 0.15s }
+    .rah-tier-cta:hover { opacity:0.9 }
+
+    /* STORY CARDS */
+    .rah-stories { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .rah-story { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow 0.3s ease,transform 0.3s ease }
+    .rah-story:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .rah-story-img { height:200px;background:var(--off-white);overflow:hidden;position:relative }
+    .rah-story-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease }
+    .rah-story:hover .rah-story-img img { transform:scale(1.06) }
+    .rah-story-placeholder { height:200px;background:var(--off-white);border:1px solid rgba(26,26,24,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--mid-grey);letter-spacing:0.06em;text-transform:uppercase }
+    .rah-story-body { padding:20px 24px }
+    .rah-story-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--page-accent);margin-bottom:6px }
+    .rah-story-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px;line-height:1.3 }
+    .rah-story-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+
+    /* GEAR CATEGORIES */
+    .rah-gear-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px }
+    .rah-gear-grid .rah-gear-card:nth-child(n+5) { grid-column:auto }
+    .rah-gear-card { background:var(--off-white);border-radius:4px;overflow:hidden;text-decoration:none;transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:pointer;border:1px solid rgba(26,26,24,0.06) }
+    .rah-gear-card:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .rah-gear-img { height:160px;background:var(--pale-grey);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--mid-grey);letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(26,26,24,0.08) }
+    .rah-gear-body { padding:16px 20px }
+    .rah-gear-name { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;margin-bottom:4px }
+    .rah-gear-count { font-family:'DM Sans',sans-serif;font-size:13px;color:var(--mid-grey) }
+
+    /* BUYER'S GUIDES */
+    .rah-guides { display:grid;grid-template-columns:repeat(3,1fr);gap:16px }
+    .rah-guide { background:#fff;border-radius:3px;padding:24px;border:1px solid rgba(26,26,24,0.08);text-decoration:none;transition:box-shadow 0.3s ease,transform 0.3s ease }
+    .rah-guide:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .rah-guide-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--page-accent);margin-bottom:8px }
+    .rah-guide-title { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;line-height:1.35;margin-bottom:6px }
+    .rah-guide-arrow { font-size:13px;color:var(--page-accent);font-weight:600 }
+
+    /* HOW-TO */
+    .rah-howto { display:grid;grid-template-columns:repeat(2,1fr);gap:20px }
+    .rah-howto-card { background:var(--off-white);border-radius:4px;overflow:hidden;text-decoration:none;transition:box-shadow 0.3s ease,transform 0.3s ease;border:1px solid rgba(26,26,24,0.06) }
+    .rah-howto-card:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .rah-howto-img { height:220px;background:var(--pale-grey);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--mid-grey);letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid rgba(26,26,24,0.08) }
+    .rah-howto-body { padding:24px }
+    .rah-howto-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--page-accent);margin-bottom:6px }
+    .rah-howto-title { font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1A1A18;line-height:1.25;margin-bottom:8px }
+    .rah-howto-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+
+    /* CTA */
+    .rah-cta-section { text-align:center }
+    .rah-cta-section .rah-h2 { margin:0 auto 16px }
+
+    /* EXPLORE */
+    .rah-explore-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .rah-explore-card { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow 0.3s ease,transform 0.3s ease }
+    .rah-explore-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .rah-explore-img { height:180px;background:var(--off-white);overflow:hidden }
+    .rah-explore-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease }
+    .rah-explore-card:hover .rah-explore-img img { transform:scale(1.06) }
+    .rah-explore-body { padding:20px 24px }
+    .rah-explore-tag { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:6px }
+    .rah-explore-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }
+    .rah-explore-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+
+    /* STICKY BAR */
+    .rah-stick { position:fixed;bottom:0;left:0;right:0;z-index:500;background:#1A1A18;color:#FDFCFB;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;font-family:'DM Sans',sans-serif;transform:translateY(100%);transition:transform 0.3s }
+    .rah-stick.visible { transform:translateY(0) }
+    .rah-stick-title { font-size:15px;font-weight:600 }
+    .rah-stick-sub { font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }
+    .rah-stick-cta { background:var(--page-accent);color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px;transition:opacity 0.15s }
+    .rah-stick-cta:hover { opacity:0.9 }
+    .rah-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
+
+    /* 7 cards: 4+3 layout */
+    @media (min-width:900px) {
+      .rah-gear-row-bottom { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px }
+    }
+  </style>
+
+  <script>
+    (function(){
+      var bar=null;
+      window.addEventListener('scroll',function(){
+        if(!bar)bar=document.getElementById('rah-stick');
+        if(!bar)return;
+        bar.classList.toggle('visible',window.scrollY>500);
+      });
+    })();
+  </script>
+
+  <!-- ── HERO ── -->
+  <section class="rah-hero">
+    <div class="rah-hero-text">
+      <div class="rah-eyebrow">Home Studio</div>
+      <h1 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">Project and Home Studios for Recording and Mixing</h1>
+      <p class="speakable" style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">Delivering professional sound for your project and home studio. Whether you are building your first bedroom studio or outfitting a dedicated control room, we have the expertise and gear to get you there.</p>
+      <a href="https://vintageking.com/audio-consultants" target="_blank" style="display:inline-block;background:var(--page-accent);color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Talk to an Expert</a>
+    </div>
+    <div class="rah-hero-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Tonstudio.jpg/1280px-Tonstudio.jpg" alt="Home recording studio with monitors and audio interface" loading="lazy">
+      <span class="rah-hero-caption">Photo: Wikimedia CC</span>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <section class="rah-section rah-section-white">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">Overview</div>
+      <h2 class="rah-h2">Make Professional Recordings at Home</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px">Whether you're building out your first bedroom studio or constructing a professionally-designed control room in your basement, it's possible to make high-quality recordings, mixes and masters from the comfort of your own home. The key is choosing the right gear for your budget, your room, and your workflow.</p>
+      <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0">Vintage King has helped thousands of engineers and musicians build project studios that punch well above their weight. From a simple interface-and-mic setup to a fully outfitted mixing room with outboard processing, we can guide you through every stage of the process.</p>
+    </div>
+  </section>
+
+  <!-- ── BUDGET TIERS ── -->
+  <section class="rah-section rah-section-white" style="padding-top:0">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">Build by Budget</div>
+      <h2 class="rah-h2">Three Tiers, One Goal: Great Sound</h2>
+      <p class="rah-sub">No matter your budget, professional results are within reach. Here is what we recommend at each level.</p>
+
+      <div class="rah-tiers">
+        <div class="rah-tier">
+          <div class="rah-tier-label">Starter</div>
+          <div class="rah-tier-price">$500 - $2,000</div>
+          <h3>Your First Studio</h3>
+          <ul>
+            <li>Audio interface (USB or Thunderbolt)</li>
+            <li>Large-diaphragm condenser mic</li>
+            <li>Closed-back studio headphones</li>
+            <li>Nearfield studio monitors (pair)</li>
+            <li>Basic cables, stands, and pop filter</li>
+          </ul>
+          <a href="https://vintageking.com" target="_blank" class="rah-tier-cta">Shop Starter Gear</a>
+        </div>
+
+        <div class="rah-tier">
+          <div class="rah-tier-label">Intermediate</div>
+          <div class="rah-tier-price">$2,000 - $10,000</div>
+          <h3>Serious Home Recording</h3>
+          <ul>
+            <li>Multi-channel interface with quality preamps</li>
+            <li>Multiple microphones (condenser, dynamic, ribbon)</li>
+            <li>Dedicated mic preamp or channel strip</li>
+            <li>Higher-end monitors with room calibration</li>
+            <li>Acoustic treatment (panels, bass traps)</li>
+          </ul>
+          <a href="https://vintageking.com" target="_blank" class="rah-tier-cta">Shop Mid-Range Gear</a>
+        </div>
+
+        <div class="rah-tier">
+          <div class="rah-tier-label">Professional</div>
+          <div class="rah-tier-price">$10,000+</div>
+          <h3>Commercial-Quality Studio</h3>
+          <ul>
+            <li>High-end AD/DA converters</li>
+            <li>Outboard compressors and EQ</li>
+            <li>500 Series rack with select modules</li>
+            <li>Reference-grade monitoring system</li>
+            <li>Professional acoustic treatment and design</li>
+          </ul>
+          <a href="https://vintageking.com" target="_blank" class="rah-tier-cta">Shop Pro Gear</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED STORIES ── -->
+  <section class="rah-section rah-section-off">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">Studio Stories</div>
+      <h2 class="rah-h2">Real Studios, Real Engineers</h2>
+      <p class="rah-sub">See how project studio owners are making world-class recordings at home with Vintage King gear.</p>
+
+      <div class="rah-stories">
+        <a href="#" class="rah-story">
+          <div class="rah-story-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Neve_8424_console_at_Rancho_De_La_Luna.jpg/1280px-Neve_8424_console_at_Rancho_De_La_Luna.jpg" alt="Notes for Notes youth music space" loading="lazy">
+          </div>
+          <div class="rah-story-body">
+            <div class="rah-story-tag">Community</div>
+            <div class="rah-story-title">Notes for Notes Youth Music Spaces</div>
+            <p class="rah-story-desc">Building free recording studios inside community centers for underserved youth across the country.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-story">
+          <div class="rah-story-placeholder">Studio Photo</div>
+          <div class="rah-story-body">
+            <div class="rah-story-tag">Project Studio</div>
+            <div class="rah-story-title">Melody Hunting Lodge and the API 2448</div>
+            <p class="rah-story-desc">How an API 2448 console became the centerpiece of a destination project studio built for artists.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-story">
+          <div class="rah-story-placeholder">Studio Photo</div>
+          <div class="rah-story-body">
+            <div class="rah-story-tag">Project Studio</div>
+            <div class="rah-story-title">Grady Leavens: Four Arrows Studio and the API 2448</div>
+            <p class="rah-story-desc">A songwriter's custom studio designed around the API 2448 for tracking and mixing at home.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-story">
+          <div class="rah-story-placeholder">Studio Photo</div>
+          <div class="rah-story-body">
+            <div class="rah-story-tag">Conversion</div>
+            <div class="rah-story-title">Jim Salamone: Cambridge Sound and BURL Converters</div>
+            <p class="rah-story-desc">How BURL converters transformed a basement project studio into a professional mixing environment.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-story">
+          <div class="rah-story-placeholder">Studio Photo</div>
+          <div class="rah-story-body">
+            <div class="rah-story-tag">Project Studio</div>
+            <div class="rah-story-title">Adam Friedman: Neve-Equipped Project Studio</div>
+            <p class="rah-story-desc">Building a Neve-centered tracking room in a residential space without compromising on sound.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-story">
+          <div class="rah-story-placeholder">Studio Photo</div>
+          <div class="rah-story-body">
+            <div class="rah-story-tag">Full Build</div>
+            <div class="rah-story-title">Peter Eddins Recording Studio</div>
+            <p class="rah-story-desc">A ground-up home studio build combining acoustic design with a carefully selected signal chain.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GEAR CATEGORIES ── -->
+  <section class="rah-section rah-section-white">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">Shop by Category</div>
+      <h2 class="rah-h2">Gear for Your Home Studio</h2>
+      <p class="rah-sub">Browse the essentials. Every category hand-picked for project and home studio applications.</p>
+
+      <div class="rah-gear-grid">
+        <a href="https://vintageking.com/500-series" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">500 Series</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">500 Series</div>
+            <div class="rah-gear-count">Preamps, EQs, Compressors</div>
+          </div>
+        </a>
+        <a href="https://vintageking.com/microphones" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">Microphones</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">Microphones</div>
+            <div class="rah-gear-count">Condenser, Dynamic, Ribbon</div>
+          </div>
+        </a>
+        <a href="https://vintageking.com/audio-interfaces" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">Audio Interfaces</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">Audio Interfaces</div>
+            <div class="rah-gear-count">USB, Thunderbolt, Dante</div>
+          </div>
+        </a>
+        <a href="https://vintageking.com/studio-monitors" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">Monitors</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">Studio Monitors</div>
+            <div class="rah-gear-count">Nearfield, Midfield, Subs</div>
+          </div>
+        </a>
+      </div>
+      <div class="rah-gear-row-bottom" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+        <a href="https://vintageking.com/studio-headphones" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">Studio Headphones</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">Studio Headphones</div>
+            <div class="rah-gear-count">Closed, Open, Reference</div>
+          </div>
+        </a>
+        <a href="https://vintageking.com/audio-plug-ins" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">Audio Plug-Ins</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">Audio Plug-Ins</div>
+            <div class="rah-gear-count">UAD, Waves, Plugin Alliance</div>
+          </div>
+        </a>
+        <a href="https://vintageking.com/keyboards-synths" target="_blank" class="rah-gear-card">
+          <div class="rah-gear-img">Keyboards and Synths</div>
+          <div class="rah-gear-body">
+            <div class="rah-gear-name">Keyboards and Synths</div>
+            <div class="rah-gear-count">Analog, Digital, MIDI</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUYER'S GUIDES ── -->
+  <section class="rah-section rah-section-off">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">Buying Guides</div>
+      <h2 class="rah-h2">Expert Recommendations</h2>
+      <p class="rah-sub">Curated guides to help you find the best gear at every price point.</p>
+
+      <div class="rah-guides">
+        <a href="#" class="rah-guide">
+          <div class="rah-guide-tag">Buyer's Guide</div>
+          <div class="rah-guide-title">Best 500 Series Modules Under $1,500</div>
+          <span class="rah-guide-arrow">Read Guide &#8594;</span>
+        </a>
+        <a href="#" class="rah-guide">
+          <div class="rah-guide-tag">Buyer's Guide</div>
+          <div class="rah-guide-title">Best Stereo Bus Compressors Under $3,500</div>
+          <span class="rah-guide-arrow">Read Guide &#8594;</span>
+        </a>
+        <a href="#" class="rah-guide">
+          <div class="rah-guide-tag">Buyer's Guide</div>
+          <div class="rah-guide-title">Best Ribbon Microphones Under $1,500</div>
+          <span class="rah-guide-arrow">Read Guide &#8594;</span>
+        </a>
+        <a href="#" class="rah-guide">
+          <div class="rah-guide-tag">Buyer's Guide</div>
+          <div class="rah-guide-title">10+ Modern 1073-Style Preamps Worth Owning</div>
+          <span class="rah-guide-arrow">Read Guide &#8594;</span>
+        </a>
+        <a href="#" class="rah-guide">
+          <div class="rah-guide-tag">Buyer's Guide</div>
+          <div class="rah-guide-title">Best Compressors Under $1,500</div>
+          <span class="rah-guide-arrow">Read Guide &#8594;</span>
+        </a>
+        <a href="#" class="rah-guide">
+          <div class="rah-guide-tag">Buyer's Guide</div>
+          <div class="rah-guide-title">Best Audio Interfaces Under $1,000</div>
+          <span class="rah-guide-arrow">Read Guide &#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW-TO GUIDES ── -->
+  <section class="rah-section rah-section-white">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">How-To</div>
+      <h2 class="rah-h2">Learn and Improve</h2>
+      <p class="rah-sub">Practical guides to help you get the most out of your home studio.</p>
+
+      <div class="rah-howto">
+        <a href="#" class="rah-howto-card">
+          <div class="rah-howto-img">Guide Photo</div>
+          <div class="rah-howto-body">
+            <div class="rah-howto-tag">Recording</div>
+            <div class="rah-howto-title">How to Mic Any Instrument with the Royer R-10</div>
+            <p class="rah-howto-desc">A practical guide to ribbon mic placement for guitar, drums, brass, strings, and vocals in a home studio environment.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-howto-card">
+          <div class="rah-howto-img">Guide Photo</div>
+          <div class="rah-howto-body">
+            <div class="rah-howto-tag">Immersive Audio</div>
+            <div class="rah-howto-title">Upgrading Your Studio for Immersive Mixing</div>
+            <p class="rah-howto-desc">What you need to add Dolby Atmos and spatial audio mixing capabilities to your existing project studio.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-howto-card">
+          <div class="rah-howto-img">Guide Photo</div>
+          <div class="rah-howto-body">
+            <div class="rah-howto-tag">Acoustics</div>
+            <div class="rah-howto-title">Acoustic Treatment Tips for Home Studios</div>
+            <p class="rah-howto-desc">Where to place panels and bass traps to get the most improvement from your room without a full build-out.</p>
+          </div>
+        </a>
+        <a href="#" class="rah-howto-card">
+          <div class="rah-howto-img">Guide Photo</div>
+          <div class="rah-howto-body">
+            <div class="rah-howto-tag">Monitoring</div>
+            <div class="rah-howto-title">Do I Need a Subwoofer in My Home Studio?</div>
+            <p class="rah-howto-desc">When a sub makes sense, when it does not, and how to integrate one properly with your nearfield monitors.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="rah-section rah-section-cta">
+    <div class="rah-wrap rah-cta-section">
+      <div class="rah-eyebrow">Need Help?</div>
+      <h2 class="rah-h2">Need Help Choosing the Right Gear?</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.6);max-width:520px;margin:0 auto 32px;line-height:1.6">Our Audio Consultants are musicians and engineers who use this gear every day. Tell us about your room, your budget, and your goals, and we will put together a personalized recommendation.</p>
+      <a href="https://vintageking.com/audio-consultants" target="_blank" style="display:inline-block;background:var(--page-accent);color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-right:12px">Contact an Audio Consultant</a>
+      <a href="https://vintageking.com" target="_blank" style="display:inline-block;background:transparent;color:#1A1A18;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(26,26,24,0.25);border-radius:2px">Shop All Gear</a>
+    </div>
+  </section>
+
+  <!-- ── CONTINUE EXPLORING ── -->
+  <section class="rah-section rah-section-cta" style="padding-top:0">
+    <div class="rah-wrap">
+      <div class="rah-eyebrow">Continue Exploring</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0 0 32px">More from Vintage King</h2>
+      <div class="rah-explore-grid">
+        <a href="section-179.html" class="rah-explore-card">
+          <div class="rah-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Neve_81_Series_Mixing_Console.jpg/1280px-Neve_81_Series_Mixing_Console.jpg" alt="Studio console" loading="lazy"></div>
+          <div class="rah-explore-body">
+            <div class="rah-explore-tag">Tax Savings</div>
+            <div class="rah-explore-title">Section 179 Tax Deduction</div>
+            <p class="rah-explore-desc">Deduct the full cost of qualifying studio gear in the year you buy it. New or used.</p>
+          </div>
+        </a>
+        <a href="warranty.html" class="rah-explore-card">
+          <div class="rah-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="Studio gear" loading="lazy"></div>
+          <div class="rah-explore-body">
+            <div class="rah-explore-tag">Buyer Protection</div>
+            <div class="rah-explore-title">VK Warranty</div>
+            <p class="rah-explore-desc">+1 free year on every purchase. No registration required. Optional ADH coverage.</p>
+          </div>
+        </a>
+        <a href="trade-program.html" class="rah-explore-card">
+          <div class="rah-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/API_2500_Stereo_Bus_Compressor_%28angled%29.jpg/960px-API_2500_Stereo_Bus_Compressor_%28angled%29.jpg" alt="API 2500 compressor" loading="lazy"></div>
+          <div class="rah-explore-body">
+            <div class="rah-explore-tag">Dealer Program</div>
+            <div class="rah-explore-title">VK Trade Program</div>
+            <p class="rah-explore-desc">Preferred pricing, dedicated account management, and trade credit for qualifying businesses.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY BAR -->
+  <div class="rah-stick" id="rah-stick">
+    <div>
+      <div class="rah-stick-title">Recording at Home</div>
+      <div class="rah-stick-sub">Expert guidance for your home studio build</div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://vintageking.com/audio-consultants" target="_blank" class="rah-stick-cta">Talk to an Expert</a>
+      <a href="https://vintageking.com" target="_blank" class="rah-stick-ghost">Shop Gear</a>
+    </div>
+  </div>
+  <div style="height:68px"></div>
+
+  <div id="footer-recording-at-home"></div>
+</div>
+
+<script>
+  function setupNav() {
+    var updateMenuPositions = function() {
+      var nav = document.querySelector('.site-nav');
+      if (!nav) return;
+      var bottom = nav.getBoundingClientRect().bottom;
+      document.querySelectorAll('.mega').forEach(function(m) {
+        m.style.top = bottom + 'px';
+      });
+    };
+    updateMenuPositions();
+    window.addEventListener('scroll', updateMenuPositions);
+    window.addEventListener('resize', updateMenuPositions);
+  }
+</script>
+<script>
+  (function() {
+    var p = 'recording-at-home';
+    var navTarget    = document.getElementById('nav-' + p);
+    var footerTarget = document.getElementById('footer-' + p);
+    var navTpl    = document.getElementById('nav-template');
+    var footerTpl = document.getElementById('footer-template');
+    if (navTarget && navTpl)        navTarget.innerHTML    = navTpl.innerHTML;
+    if (footerTarget && footerTpl)  footerTarget.innerHTML = footerTpl.innerHTML;
+  })();
+  var __vkPageFiles = {
+    home:'pages/home.html', category:'pages/category.html', product:'pages/product.html',
+    faq:'pages/faq.html', deals:'pages/deals.html', sell:'pages/sell.html',
+    studio:'pages/studio.html', techshop:'pages/techshop.html',
+    'fin-page':'pages/financing.html', openbox:'pages/openbox.html'
+  };
+  function injectShared() {}
+  function showPage(id) { var href = __vkPageFiles[id]; if (href) window.location.href = href; }
+  function goToDeals() { window.location.href = 'pages/deals.html'; }
+</script>
+</body>
+</html>

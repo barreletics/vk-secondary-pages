@@ -1,0 +1,33 @@
+Chris,
+
+Since the plan is to migrate the existing site to Shopify first and roll out the new design after stabilization, there are a few things I want to make sure we get Hammer's input on. My concern is that certain setup decisions made during migration could either save us significant time later or create rework if they are not accounted for now.
+
+Can you pass these along to Hammer? And when you have your next meeting with them, I would like to sit in so I can understand what they think is the best way to eliminate unnecessary work that would otherwise need to happen simultaneously with the migration.
+
+Here are the specific items:
+
+1. Design tokens -- We have a complete set of colors, fonts, and spacing values for the new design defined as CSS variables. Can Hammer drop these into the theme during migration? It will not change anything visually but means every template built later automatically picks up the right values instead of a find-and-replace across the whole theme.
+
+2. Font loading -- The new design uses Playfair Display and DM Sans. Adding the font files to the theme now costs nothing and avoids a separate font migration step later.
+
+3. Navigation -- I know we are carrying over the existing menu structure during migration and updating it after stable. Can Hammer build the nav so the menu content is driven by Shopify menu management rather than hardcoded? That way when we update to the new structure later it is a content change in the admin, not a code rewrite.
+
+4. URL patterns -- I know we have discussed this but I am not quite clear yet. With 70,000+ redirects, are the new Shopify URLs being set up clean or replicating the Magento structure? Getting this right once avoids a second round of redirects later.
+
+5. Collection pagination -- When browsing a category with hundreds of products, will Hammer use a Load More button or infinite scroll? From what I understand, Load More with real page URLs (page 1, page 2, page 3) allows Google to find and index every product in a collection, while infinite scroll typically only lets Google see the first batch -- meaning products deeper in the catalog may never appear in search results. The new design uses Load More. If infinite scroll goes in now, we would need to switch later and Google would have to re-crawl every collection page.
+
+6. Prototype review -- I would like Hammer to see the design prototype early so they understand where the site is heading. Happy to walk them through it or they can review on their own.
+
+Here is the updated demo dashboard:
+https://barreletics.github.io/vintage-king-redesign
+
+The secondary page dashboard with navigation, inventory, and status is here:
+https://barreletics.github.io/vk-secondary-pages/navigator.html
+
+The updated style guide is here:
+https://barreletics.github.io/vk-secondary-pages/style-guide.html
+
+The core screens are complete. Secondary pages are in progress with roughly 30 hours of work remaining -- they can be found in the secondary page dashboard as they are completed.
+
+Thanks,
+AJ

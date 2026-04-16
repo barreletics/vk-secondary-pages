@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VK Credit Card — 0% Financing Up to 48 Months | Vintage King</title>
+<meta name="description" content="Apply for the Vintage King Credit Card powered by Synchrony. Get 0% financing for up to 48 months on pro audio gear. Quick decision, no impact to your credit score to prequalify.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vk-red: #C0392B;
+    --vk-red-dark: #922B21;
+    --off-white: #F7F5F2;
+    --warm-white: #FDFCFB;
+    --near-black: #1A1A18;
+    --charcoal: #2C2C2A;
+    --mid-grey: #6B6B68;
+    --light-grey: #D8D6D2;
+    --pale-grey: #EDEDEA;
+    --amber: #D4860A;
+    --amber-bg: #F5E6C8;
+    --nav-height: 80px;
+    --nav-h: 80px;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --page-accent: #D4860A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { overflow-x: clip; }
+  body {
+    font-family: var(--font-body);
+    background: var(--warm-white);
+    color: var(--near-black);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--near-black); height: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; font-size: 11px; color: rgba(255,255,255,0.92); font-weight: 500;
+  }
+  .topbar a { color: rgba(255,255,255,0.92); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+  .topbar a:hover { color: rgba(255,255,255,0.85); }
+  .topbar-left { display: flex; gap: 24px; align-items: center; }
+  .topbar-right { display: flex; gap: 20px; align-items: center; }
+  .topbar-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.15); }
+  .topbar-highlight { color: var(--vk-red); font-weight: 500; }
+
+  .utility-bar {
+    background: var(--warm-white);
+    border-bottom: 1px solid rgba(26,26,24,0.08);
+    height: 30px;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 40px;
+  }
+  .utility-bar-links { display: flex; align-items: center; gap: 0; }
+  .utility-bar-links a { font-size: 12px; color: rgba(26,26,24,0.68); text-decoration: none; letter-spacing: 0.03em; padding: 0 12px; border-right: 1px solid rgba(26,26,24,0.12); line-height: 1; transition: color 0.15s; }
+  .utility-bar-links a:first-child { padding-left: 0; }
+  .utility-bar-links a:last-child { border-right: none; }
+  .utility-bar-links a:hover { color: rgba(26,26,24,0.85); }
+  .utility-bar-phone { font-size: 12.5px; color: var(--vk-red); font-weight: 600; letter-spacing: 0.03em; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.15s; }
+  .utility-bar-phone:hover { color: rgba(26,26,24,0.85); }
+
+  .site-nav { position: sticky; top: 32px; z-index: 199; background: var(--warm-white); border-bottom: 1px solid var(--light-grey); height: var(--nav-h); }
+  .nav-inner { max-width: 1440px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; gap: 0; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; margin-right: 32px; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .name { font-family: "Roboto", "DM Sans", sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--near-black); }
+  .logo-text .tagline { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); margin-top: 3px; }
+  .nav-items { display: flex; align-items: stretch; height: 100%; list-style: none; flex: 1; }
+  .nav-item { height: 100%; position: relative; }
+  .nav-item > a { display: flex; align-items: center; gap: 4px; height: 100%; padding: 0 14px; font-size: 14px; font-weight: 500; letter-spacing: 0.025em; color: var(--charcoal); text-decoration: none; white-space: nowrap; transition: color 0.15s; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .nav-item > a:hover { color: var(--near-black); border-bottom-color: var(--vk-red); }
+  .nav-item.vintage > a { color: var(--amber); }
+  .nav-item.vintage > a:hover { color: var(--near-black); border-bottom-color: var(--amber); }
+  .nav-item.deals > a { color: var(--vk-red); font-weight: 600; margin-left: 16px; }
+  .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; flex-shrink: 0; }
+  .nav-search-wrap { display: flex; align-items: center; gap: 8px; background: var(--off-white); border: 1px solid var(--light-grey); border-radius: 4px; padding: 7px 12px; transition: border-color 0.15s; }
+  .nav-search-wrap:focus-within { border-color: var(--charcoal); }
+  .nav-search-wrap input { border: none; background: none; font-family: var(--body); font-size: 12.5px; color: var(--charcoal); outline: none; width: 180px; }
+  .nav-search-wrap input::placeholder { color: var(--mid-grey); }
+  .nav-icon { background: none; border: none; cursor: pointer; color: var(--charcoal); padding: 6px; display: flex; align-items: center; transition: color 0.15s; position: relative; }
+  .nav-icon:hover { color: var(--vk-red); }
+  .cart-count { position: absolute; top: 0; right: 0; background: var(--vk-red); color: #fff; font-size: 9px; font-weight: 600; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-expert-btn { display: flex; align-items: center; gap: 7px; background: var(--vk-red); color: #fff; border: none; cursor: pointer; padding: 9px 16px; border-radius: 3px; font-family: var(--body); font-size: 13px; font-weight: 500; letter-spacing: 0.05em; white-space: nowrap; transition: background 0.15s; }
+  .nav-expert-btn:hover { background: var(--vk-red-dk); }
+  .pulse-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+  .ask-wrap { position: relative; }
+  .ask-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; width: 220px; background: var(--warm-white); border: 1px solid var(--light-grey); border-top: 2px solid var(--vk-red); box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-radius: 0 0 3px 3px; z-index: 400; overflow: hidden; }
+  .ask-wrap:hover .ask-dropdown { display: block; }
+  .ask-dropdown-item { display: flex; align-items: center; gap: 12px; padding: 13px 16px; text-decoration: none; color: var(--charcoal); font-size: 13px; font-weight: 400; border-bottom: 1px solid var(--pale-grey); transition: background 0.12s, color 0.12s; }
+  .ask-dropdown-item:last-child { border-bottom: none; }
+  .ask-dropdown-item:hover { background: var(--off-white); color: var(--vk-red); }
+  .ask-dropdown-item svg { flex-shrink: 0; color: var(--vk-red); }
+  .section { padding: 64px 0; }
+  .section-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+  /* FOOTER */
+  .site-footer { background: #F0EDE8; padding: 56px 0 32px; margin-bottom: 80px; }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand-name { font-family: "Roboto", "DM Sans", sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--near-black); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .footer-brand-desc { font-size: 13px; color: var(--mid-grey); line-height: 1.7; max-width: 260px; }
+  .footer-col-title { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-grey); font-weight: 500; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13px; color: var(--charcoal); text-decoration: none; transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--near-black); }
+  .footer-bottom { border-top: 1px solid var(--light-grey); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--mid-grey); }
+  .footer-bottom a { color: var(--mid-grey); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--near-black); }
+  .footer-email-wrap { display:flex; gap:0; margin-top:16px; }
+  .footer-email-input { flex:1; font-family:var(--font-body); font-size:13px; color:var(--near-black); background:var(--warm-white); border:1px solid var(--light-grey); border-right:none; border-radius:3px 0 0 3px; padding:9px 14px; outline:none; }
+  .footer-email-input::placeholder { color:var(--mid-grey); }
+  .footer-email-btn { font-family:var(--font-body); font-size:12px; font-weight:500; letter-spacing:0.05em; background:var(--near-black); color:#fff; border:none; cursor:pointer; padding:9px 16px; border-radius:0 3px 3px 0; white-space:nowrap; transition:background 0.15s; }
+  .footer-email-btn:hover { background:var(--charcoal); }
+  .footer-social { display:flex; gap:10px; margin-top:16px; }
+  .footer-social-link { width:32px; height:32px; border-radius:50%; background:var(--pale-grey); display:flex; align-items:center; justify-content:center; text-decoration:none; color:var(--charcoal); transition:background 0.15s; }
+  .footer-social-link:hover { background:var(--light-grey); }
+  .footer-trust { display:flex; align-items:center; gap:16px; }
+  .footer-trust-badge { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--mid-grey); white-space:nowrap; }
+  .footer-trust-badge svg { color:var(--mid-grey); flex-shrink:0; }
+  .mobile-menu-btn { display: none; }
+  svg { vertical-align: middle; }
+</style>
+<style id="vk-standalone-patch">.page{display:block!important}</style>
+</head>
+<body>
+<nav class="vk-secondary-chrome" aria-label="Secondary pages nav" style="position:sticky;top:0;z-index:400;background:#1A1A18;color:#FDFCFB;padding:10px 20px;font-size:12px;font-family:var(--font-body);display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <a href="navigator.html" style="color:#FDFCFB;font-weight:600;text-decoration:none">Demo Dashboard</a>
+  <span style="opacity:0.35">|</span>
+  <a href="section-179.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Section 179</a>
+  <span style="opacity:0.35">|</span>
+  <a href="trade-program.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Trade Program</a>
+  <span style="opacity:0.35">|</span>
+  <span style="opacity:0.75">VK Credit Card</span>
+</nav>
+<template id="nav-template">
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="#">Free shipping on orders over $99</a>
+    <div class="topbar-divider"></div>
+    <a href="#">0% financing up to 48 months — Learn more</a>
+  </div>
+</div>
+<div class="utility-bar">
+  <div class="utility-bar-links">
+    <a href="#">Studio Professionals</a>
+    <a href="#">Trade Program</a>
+    <a href="#">Studio Installations</a>
+    <a href="#" style="color:var(--vk-red);font-weight:500">Sell or Trade</a>
+    <a href="#">Financing</a>
+    <a href="#">Section 179</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:0">
+    <a href="tel:8886531184" class="utility-bar-phone"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.83 2 2 0 0 1 3.58 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>888.653.1184</a>
+    <span style="color:rgba(26,26,24,0.2);padding:0 10px;font-size:10px">·</span>
+    <a href="#" style="font-size:12.5px;font-weight:600;color:rgba(26,26,24,0.55);text-decoration:none;letter-spacing:0.03em;transition:color 0.15s">Sign In</a>
+  </div>
+</div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><div class="logo-text"><span class="name">Vintage King</span><span class="tagline">New · Used · Vintage · Pro Audio</span></div></a>
+    <ul class="nav-items">
+      <li class="nav-item"><a href="#">Microphones</a></li>
+      <li class="nav-item"><a href="#">Outboard</a></li>
+      <li class="nav-item"><a href="#">Consoles</a></li>
+      <li class="nav-item vintage"><a href="#">Vintage and Used ✦</a></li>
+      <li class="nav-item"><a href="#">Studio Design</a></li>
+      <li class="nav-item"><a href="#">Monitoring</a></li>
+      <li class="nav-item"><a href="#">Learn</a></li>
+      <li class="nav-item deals"><a href="#">Deals</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B68" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search 50,000+ products…">
+      </div>
+      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><div class="cart-count">2</div></button>
+      <div class="ask-wrap">
+        <button class="nav-expert-btn"><div class="pulse-dot"></div> Ask</button>
+        <div class="ask-dropdown">
+          <a href="#" class="ask-dropdown-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Live Chat</a>
+          <a href="#" class="ask-dropdown-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4 19.79 19.79 0 0 1 1.61 4.83 2 2 0 0 1 3.58 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg> Request a Callback</a>
+          <a href="#" class="ask-dropdown-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> Video Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</template>
+<template id="footer-template">
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">
+          <svg width="16" height="24" viewBox="0 0 22 34" fill="none"><rect x="7" y="1" width="8" height="20" rx="4" stroke="#C0392B" stroke-width="1.5" fill="none"/><line x1="11" y1="21" x2="11" y2="28" stroke="#C0392B" stroke-width="1.5"/><line x1="5" y1="28" x2="17" y2="28" stroke="#C0392B" stroke-width="1.5"/><circle cx="11" cy="10" r="2.5" fill="#C0392B" opacity="0.7"/></svg>
+          VINTAGE KING
+        </div>
+        <p class="footer-brand-desc">The pro audio outfitter for all of your sonic journeys. Serving engineers and artists since 1993.</p>
+        <div style="margin-top:20px;margin-bottom:6px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid-grey)">Stay in the loop</div>
+        <div class="footer-email-wrap"><input type="email" class="footer-email-input" placeholder="Your email address"><button class="footer-email-btn">Subscribe</button></div>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="X / Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><div class="footer-col-title">Shop</div><ul><li><a href="#">Microphones</a></li><li><a href="#">Outboard Gear</a></li><li><a href="#">Consoles</a></li><li><a href="#">Monitoring</a></li><li><a href="#">Vintage and Used</a></li><li><a href="#">Open Box</a></li><li><a href="#">Deals</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="#">About VK</a></li><li><a href="#">Tech Shop</a></li><li><a href="#">Studio Installations</a></li><li><a href="#">PLAYBACK Magazine</a></li><li><a href="#">Make Your Mark</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li></ul><div style="margin-top:20px"><div class="footer-col-title">Hours</div><div style="font-size:13px;color:var(--charcoal);line-height:1.7">Mon – Fri: 9AM – 8PM ET<br>Saturday: 10AM – 6PM ET</div><a href="tel:8886531184" style="display:block;font-size:13px;font-weight:500;color:var(--vk-red);text-decoration:none;margin-top:8px">888.653.1184</a></div></div>
+      <div class="footer-col"><div class="footer-col-title">Help</div><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns</a></li><li><a href="#">Warranty</a></li><li><a href="#">Financing</a></li><li><a href="#">Sell or Trade</a></li><li><a href="#">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div><span>© 2026 Vintage King Audio, Inc. All rights reserved.</span><div style="display:flex;gap:16px;margin-top:8px"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Accessibility</a></div></div>
+      <div class="footer-trust">
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SSL Secured</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> Secure Checkout</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 30-Day Returns</div>
+        <div class="footer-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Free 1-Year Warranty</div>
+      </div>
+    </div>
+  </div>
+</footer>
+</template>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Vintage King Credit Card",
+      "provider": {"@type": "Organization", "name": "Vintage King Audio", "url": "https://vintageking.com"},
+      "description": "Apply for the Vintage King Credit Card powered by Synchrony. Get 0% promotional financing for up to 48 months on qualifying pro audio gear purchases.",
+      "areaServed": "US",
+      "serviceType": "Retail Financing"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Can I use a Synchrony card from another store at Vintage King?", "acceptedAnswer": {"@type": "Answer", "text": "No. The only Synchrony Bank issued credit card you can use to finance a Vintage King purchase is the Vintage King credit card."}},
+        {"@type": "Question", "name": "Does the VK Credit Card work for used and vintage gear?", "acceptedAnswer": {"@type": "Answer", "text": "Promotional financing (6–48 month offers) applies to new items from select brands only. Used, vintage, B-stock, and Demo Deal items are excluded from promotional financing but can be purchased with the card at the standard APR."}},
+        {"@type": "Question", "name": "Will checking if I prequalify affect my credit score?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pre-qualification uses a soft inquiry that does not impact your credit score. A hard inquiry only occurs if you proceed with a full application."}}
+      ]
+    }
+  ]
+}
+</script>
+<div id="vk-credit-card" class="page active">
+  <div id="nav-vk-credit-card"></div>
+
+  <style>
+    .vkcc-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
+    .vkcc-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--page-accent);margin-bottom:14px }
+    .vkcc-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden }
+    .vkcc-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
+    .vkcc-hero-img { position:relative;overflow:hidden;background:var(--off-white);display:flex;align-items:center;justify-content:center;padding:48px }
+    .vkcc-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .vkcc-card-visual { width:340px;height:214px;background:linear-gradient(135deg,#1A1A18 0%,#2C2C2A 50%,#3A3A38 100%);border-radius:14px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 60px rgba(0,0,0,0.25);transform:rotate(-3deg);position:relative;overflow:hidden }
+    .vkcc-card-visual::before { content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(212,134,10,0.25) 0%,transparent 70%) }
+    .vkcc-card-chip { width:36px;height:28px;background:linear-gradient(135deg,#D4860A 0%,#B87408 100%);border-radius:4px;opacity:0.9 }
+    .vkcc-card-name { font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;color:rgba(255,255,255,0.85);letter-spacing:0.12em;text-transform:uppercase }
+    .vkcc-card-bottom { display:flex;justify-content:space-between;align-items:flex-end }
+    .vkcc-card-vk { font-family:'Roboto','DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6) }
+    .vkcc-card-sync { font-family:'DM Sans',sans-serif;font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.06em }
+    .vkcc-section { padding:64px 0 }
+    .vkcc-section-off { background:var(--off-white) }
+    .vkcc-section-white { background:#fff }
+    .vkcc-section-cta { background:#EDE8E2 }
+    .vkcc-h2 { font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 8px;line-height:1.15 }
+    .vkcc-sub { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.55);margin:0 0 40px;line-height:1.6;max-width:680px }
+    .vkcc-body { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px }
+    .vkcc-steps { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
+    .vkcc-step { background:#fff;padding:36px 28px;transition:box-shadow .3s ease,transform .3s ease;border-top:3px solid var(--page-accent) }
+    .vkcc-step:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .vkcc-step-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:var(--page-accent);line-height:1;margin-bottom:16px }
+    .vkcc-step h3 { font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 8px }
+    .vkcc-step p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.65;margin:0 }
+    .vkcc-tiers { display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
+    .vkcc-tier { background:#fff;padding:32px 20px;text-align:center;transition:box-shadow .3s ease,transform .3s ease;border-top:3px solid var(--page-accent) }
+    .vkcc-tier:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
+    .vkcc-tier-num { font-family:'DM Sans',sans-serif;font-size:40px;font-weight:700;color:var(--page-accent);line-height:1 }
+    .vkcc-tier-label { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.5);margin-top:6px }
+    .vkcc-tier-type { font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:#1A1A18;margin-top:12px;text-transform:uppercase;letter-spacing:0.06em }
+    .vkcc-dark { background:#1A1A18;padding:64px 0 }
+    .vkcc-dark-inner { max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center }
+    .vkcc-dark h3 { font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FDFCFB;margin:0 0 16px }
+    .vkcc-dark p { font-size:15px;color:rgba(253,252,251,0.6);line-height:1.75;margin-bottom:14px }
+    .vkcc-dark-cta { display:inline-block;background:var(--page-accent);color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-top:8px }
+    .vkcc-benefits { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
+    .vkcc-benefit { background:#fff;padding:28px 24px;text-align:center }
+    .vkcc-benefit h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--page-accent);margin:0 0 6px }
+    .vkcc-benefit p { font-size:13px;color:rgba(26,26,24,0.5);margin:0;line-height:1.5 }
+    .vkcc-faq details { margin-bottom:2px }
+    .vkcc-faq summary { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;padding:18px 24px;background:#fff;cursor:pointer;list-style:none;border-bottom:1px solid rgba(26,26,24,0.06) }
+    .vkcc-faq summary::-webkit-details-marker { display:none }
+    .vkcc-faq summary::after { content:'+';float:right;font-size:18px;font-weight:400;color:rgba(26,26,24,0.3) }
+    .vkcc-faq details[open] summary::after { content:'\2212' }
+    .vkcc-faq .vkcc-faq-a { font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(26,26,24,0.65);line-height:1.7;padding:16px 24px 24px;background:#fff }
+    .vkcc-stick { position:fixed;bottom:0;left:0;right:0;z-index:500;background:#1A1A18;color:#FDFCFB;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;font-family:'DM Sans',sans-serif;transform:translateY(100%);transition:transform 0.3s }
+    .vkcc-stick.visible { transform:translateY(0) }
+    .vkcc-stick-title { font-size:15px;font-weight:600 }
+    .vkcc-stick-sub { font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }
+    .vkcc-stick-cta { background:var(--vk-red);color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px }
+    .vkcc-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
+    .vkcc-explore { background:#EDE8E2;padding:64px 0 }
+    .vkcc-explore-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .vkcc-explore-card { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow .3s ease,transform .3s ease }
+    .vkcc-explore-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .vkcc-explore-img { height:180px;background:#F7F5F2;overflow:hidden }
+    .vkcc-explore-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .vkcc-explore-card:hover .vkcc-explore-img img { transform:scale(1.06) }
+    .vkcc-explore-body { padding:20px 24px }
+    .vkcc-explore-tag { font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:6px }
+    .vkcc-explore-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }
+    .vkcc-explore-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+  </style>
+  <script>
+    (function(){
+      var bar=null;
+      window.addEventListener('scroll',function(){
+        if(!bar)bar=document.getElementById('vkcc-stick');
+        if(!bar)return;
+        bar.classList.toggle('visible',window.scrollY>500);
+      });
+    })();
+  </script>
+
+  <!-- HERO -->
+  <section class="vkcc-hero">
+    <div class="vkcc-hero-text">
+      <div class="vkcc-eyebrow">VK Credit Card</div>
+      <h1 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">Fuel Your Passion</h1>
+      <p style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 12px" class="speakable">Financing options to help you make your mark. Vintage King Audio has teamed up with Synchrony to bring you a step closer to your recording dreams.</p>
+      <p style="font-size:14px;color:rgba(26,26,24,0.5);line-height:1.6;max-width:460px;margin:0 0 28px">See if you prequalify now — receive a quick decision in seconds with no impact to your credit score.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=565510A04C0A508A3E08D786CA77FC9F0DC80B988FB135A4&preQual=Y" target="_blank" style="display:inline-block;background:var(--vk-red);color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em">See If You Prequalify</a>
+        <a href="https://www.mysynchrony.com/mysyf/home.html" target="_blank" style="display:inline-block;background:transparent;color:#1A1A18;padding:13px 24px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(26,26,24,0.25);border-radius:2px">Manage Your Card</a>
+      </div>
+    </div>
+    <div class="vkcc-hero-img">
+      <div class="vkcc-card-visual">
+        <div><div class="vkcc-card-chip"></div></div>
+        <div class="vkcc-card-name">Vintage King</div>
+        <div class="vkcc-card-bottom">
+          <div class="vkcc-card-vk">Credit Card</div>
+          <div class="vkcc-card-sync">Powered by Synchrony</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="vkcc-section vkcc-section-white">
+    <div class="vkcc-wrap">
+      <div class="vkcc-eyebrow">How It Works</div>
+      <h2 class="vkcc-h2">Three Steps to Start</h2>
+      <p class="vkcc-sub">Apply online, get a decision in seconds, and start shopping the same day.</p>
+      <div class="vkcc-steps">
+        <div class="vkcc-step">
+          <div class="vkcc-step-num">1</div>
+          <h3>Apply in Minutes</h3>
+          <p>Complete the online application. Quick, secure, and no obligation. See if you prequalify first with no impact to your credit score.</p>
+        </div>
+        <div class="vkcc-step">
+          <div class="vkcc-step-num">2</div>
+          <h3>Quick Decision</h3>
+          <p>Receive a credit decision in seconds. If approved, your credit line and promotional financing options are available immediately.</p>
+        </div>
+        <div class="vkcc-step">
+          <div class="vkcc-step-num">3</div>
+          <h3>Start Using Today</h3>
+          <p>If approved, use your new Vintage King Credit Card online or by phone right away. No waiting for a physical card to arrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCING TIERS -->
+  <section class="vkcc-section vkcc-section-off">
+    <div class="vkcc-wrap">
+      <div class="vkcc-eyebrow">Financing Tiers</div>
+      <h2 class="vkcc-h2">Up to 48 Months on 110+ Brands</h2>
+      <p class="vkcc-sub">Select manufacturers' products qualify for special promotional financing. Terms vary by brand and purchase amount.</p>
+      <div class="vkcc-tiers">
+        <div class="vkcc-tier">
+          <div class="vkcc-tier-num">6</div>
+          <div class="vkcc-tier-label">Months</div>
+          <div class="vkcc-tier-type">No Interest**</div>
+        </div>
+        <div class="vkcc-tier">
+          <div class="vkcc-tier-num">12</div>
+          <div class="vkcc-tier-label">Months</div>
+          <div class="vkcc-tier-type">No Interest**</div>
+        </div>
+        <div class="vkcc-tier">
+          <div class="vkcc-tier-num">24</div>
+          <div class="vkcc-tier-label">Months</div>
+          <div class="vkcc-tier-type">Equal Payments*</div>
+        </div>
+        <div class="vkcc-tier">
+          <div class="vkcc-tier-num">36</div>
+          <div class="vkcc-tier-label">Months</div>
+          <div class="vkcc-tier-type">Equal Payments*</div>
+        </div>
+        <div class="vkcc-tier">
+          <div class="vkcc-tier-num">48</div>
+          <div class="vkcc-tier-label">Months</div>
+          <div class="vkcc-tier-type">Equal Payments*</div>
+        </div>
+      </div>
+      <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div style="background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:3px;padding:24px">
+          <h4 style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:#1A1A18;margin:0 0 8px">No Interest If Paid in Full (6 and 12 Months)**</h4>
+          <p style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.65;margin:0">On qualifying purchases of select brands. Interest will be charged to your account from the purchase date if the promotional balance is not paid in full within the promo period. Minimum monthly payments required.</p>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:3px;padding:24px">
+          <h4 style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:#1A1A18;margin:0 0 8px">No Interest with Equal Monthly Payments (24, 36, 48 Months)*</h4>
+          <p style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.65;margin:0">On purchases of select manufacturers' products. No interest will be charged on promo purchase balance and equal monthly payments are required until it is paid in full. Payments equal the amount financed divided by the number of months in the promo period.</p>
+        </div>
+      </div>
+      <p style="font-size:12px;color:rgba(26,26,24,0.35);margin-top:16px;line-height:1.65">*/**Subject to credit approval. See full Synchrony disclosure at bottom of page.</p>
+    </div>
+  </section>
+
+  <!-- DARK — PREQUALIFY -->
+  <div class="vkcc-dark">
+    <div class="vkcc-dark-inner">
+      <div>
+        <h3>See If You Prequalify</h3>
+        <p>Check your eligibility in seconds with no impact to your credit score. Pre-qualification is a soft inquiry — it will not appear on your credit report.</p>
+        <p>If you choose to proceed with a full application, a hard inquiry will be performed at that time.</p>
+        <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=565510A04C0A508A3E08D786CA77FC9F0DC80B988FB135A4&preQual=Y" target="_blank" class="vkcc-dark-cta">Check Pre-Qualification</a>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:3px;padding:32px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(253,252,251,0.35);margin-bottom:20px">Powered by Synchrony</div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px"><span style="color:rgba(253,252,251,0.5)">Promotional APR</span><span style="color:#FDFCFB;font-weight:600">0%</span></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px"><span style="color:rgba(253,252,251,0.5)">Terms available</span><span style="color:#FDFCFB;font-weight:600">6–48 months</span></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px"><span style="color:rgba(253,252,251,0.5)">Qualifying brands</span><span style="color:#FDFCFB;font-weight:600">110+</span></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:14px"><span style="color:rgba(253,252,251,0.5)">Pre-qualify impact</span><span style="color:#4ade80;font-weight:600">No credit impact</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section class="vkcc-section vkcc-section-white">
+    <div class="vkcc-wrap">
+      <div class="vkcc-eyebrow">Card Benefits</div>
+      <h2 class="vkcc-h2">Why the VK Credit Card?</h2>
+      <p class="vkcc-sub">Designed specifically for pro audio professionals and enthusiasts.</p>
+      <div class="vkcc-benefits">
+        <div class="vkcc-benefit"><h4>0% Promo Financing</h4><p>Up to 48 months on qualifying purchases from 110+ brands</p></div>
+        <div class="vkcc-benefit"><h4>Instant Decision</h4><p>Apply online and get a credit decision in seconds</p></div>
+        <div class="vkcc-benefit"><h4>Use Same Day</h4><p>If approved, start using your card immediately — no waiting</p></div>
+        <div class="vkcc-benefit"><h4>Combine with Section 179</h4><p>Finance your purchase and still claim the full tax deduction</p></div>
+      </div>
+      <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px;background:var(--off-white);border:1px solid rgba(26,26,24,0.08);border-radius:3px;padding:24px">
+          <h4 style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:#1A1A18;margin:0 0 8px">Already Have a VK Credit Card?</h4>
+          <p style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin:0 0 12px">Use your card online, over the phone, or place an order with your Audio Consultant. Call <a href="tel:8886531184" style="color:var(--page-accent);font-weight:600;text-decoration:none">888.653.1184</a></p>
+          <a href="https://www.mysynchrony.com/mysyf/home.html" target="_blank" style="font-size:13px;color:var(--page-accent);font-weight:600;text-decoration:none">Manage Your Account →</a>
+        </div>
+        <div style="flex:1;min-width:280px;background:var(--off-white);border:1px solid rgba(26,26,24,0.08);border-radius:3px;padding:24px">
+          <h4 style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:#1A1A18;margin:0 0 8px">Need Account Help?</h4>
+          <p style="font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin:0 0 12px"><a href="https://www.mysynchrony.com/mysyf/home.html" target="_blank" style="color:var(--page-accent);font-weight:600;text-decoration:none">Sign in to your account</a> or <a href="https://www.synchronyfinancial.com/contact-us.html#forconsumers" target="_blank" style="color:var(--page-accent);font-weight:600;text-decoration:none">contact Synchrony</a> for balance, payment, and account questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="vkcc-section vkcc-section-off">
+    <div class="vkcc-wrap">
+      <div class="vkcc-eyebrow">Frequently Asked Questions</div>
+      <h2 class="vkcc-h2" style="margin-bottom:32px">VK Credit Card FAQ</h2>
+      <div class="vkcc-faq">
+        <details><summary>Can I use a Synchrony card from another store at Vintage King?</summary><div class="vkcc-faq-a">No. The only Synchrony Bank issued credit card you can use to finance a Vintage King purchase is the Vintage King credit card. Cards issued by Synchrony for other retailers cannot be used at Vintage King.</div></details>
+        <details><summary>Does promotional financing apply to used and vintage gear?</summary><div class="vkcc-faq-a">Promotional financing (6–48 month offers) applies to new items from select brands only. Used, vintage, B-stock, and Demo Deal items are excluded from promotional financing but can be purchased with the card at the standard APR.</div></details>
+        <details><summary>Will checking if I prequalify affect my credit score?</summary><div class="vkcc-faq-a">No. Pre-qualification uses a soft inquiry that does not impact your credit score. A hard inquiry only occurs if you proceed with a full application after pre-qualifying.</div></details>
+        <details><summary>How do I manage my existing VK Credit Card account?</summary><div class="vkcc-faq-a">Sign in at mysynchrony.com to view your balance, make payments, check promotional financing details, and manage your account. You can also contact Synchrony customer service directly for account questions.</div></details>
+        <details><summary>Can I combine financing with other promotions?</summary><div class="vkcc-faq-a">Promotional financing cannot be combined with other discounts or promotions. The qualifying purchase amount must be on one receipt. Contact an Audio Consultant at 888.653.1184 for details on current offers.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="vkcc-section vkcc-section-cta">
+    <div class="vkcc-wrap" style="text-align:center">
+      <div class="vkcc-eyebrow">Ready to Get Started?</div>
+      <h2 class="vkcc-h2" style="margin:0 auto 16px">Apply for the VK Credit Card</h2>
+      <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.6);max-width:520px;margin:0 auto 32px;line-height:1.6">Check if you prequalify with no impact to your credit score, or apply now and get a decision in seconds.</p>
+      <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=565510A04C0A508A3E08D786CA77FC9F0DC80B988FB135A4&preQual=Y" target="_blank" style="display:inline-block;background:var(--vk-red);color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-right:12px">Apply Now</a>
+      <a href="https://www.mysynchrony.com/mysyf/home.html" target="_blank" style="display:inline-block;background:transparent;color:#1A1A18;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(26,26,24,0.25);border-radius:2px">Manage Your Card</a>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section class="vkcc-explore">
+    <div class="vkcc-wrap">
+      <div class="vkcc-eyebrow">Continue Exploring</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0 0 32px">More from Vintage King</h2>
+      <div class="vkcc-explore-grid">
+        <a href="section-179.html" class="vkcc-explore-card">
+          <div class="vkcc-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Rack_Outboard_Location_Recording.jpg" alt="Outboard gear rack" loading="lazy"></div>
+          <div class="vkcc-explore-body">
+            <div class="vkcc-explore-tag">Tax Savings</div>
+            <div class="vkcc-explore-title">Section 179 Deduction</div>
+            <p class="vkcc-explore-desc">Write off the full cost of qualifying equipment the year you buy it.</p>
+          </div>
+        </a>
+        <a href="trade-program.html" class="vkcc-explore-card">
+          <div class="vkcc-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="Studio outboard racks" loading="lazy"></div>
+          <div class="vkcc-explore-body">
+            <div class="vkcc-explore-tag">Trade Program</div>
+            <div class="vkcc-explore-title">Sell or Trade Your Gear</div>
+            <p class="vkcc-explore-desc">Get top dollar for your equipment. Fair appraisals, fast payment.</p>
+          </div>
+        </a>
+        <a href="warranty.html" class="vkcc-explore-card">
+          <div class="vkcc-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UREI_1176LN_%28Silver%29_x6.jpg/600px-UREI_1176LN_%28Silver%29_x6.jpg" alt="UREI 1176 compressors" loading="lazy"></div>
+          <div class="vkcc-explore-body">
+            <div class="vkcc-explore-tag">Buyer Protection</div>
+            <div class="vkcc-explore-title">VK Warranty</div>
+            <p class="vkcc-explore-desc">+1 free year on every purchase. No registration. Optional ADH coverage.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYNCHRONY COMPLIANCE DISCLAIMER -->
+  <section style="background:#fff;padding:48px 0;border-top:1px solid rgba(26,26,24,0.08)">
+    <div class="vkcc-wrap">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(26,26,24,0.35);margin-bottom:16px">Disclaimer</div>
+      <div style="font-size:12px;color:rgba(26,26,24,0.4);line-height:1.75">
+        <p style="margin-bottom:12px">*Offer applies to NEW items from select brands only. Excludes sE Electronics items under $199, BAE items under $900, and Rupert Neve consoles. Focusrite special financing only applies to products in the RedNet and ISA lines. Offer applies only to single-receipt qualifying purchases. No interest will be charged on promo purchase balance and equal monthly payments are required on promo purchase until it is paid in full. The payments equal the amount financed divided by the number of months in the promo period, rounded up to the next whole dollar. These payments may be higher than the payments that would be required if this purchase was a non-promo purchase. During the last month(s) of the promo period the required monthly payment may be reduced due to the prior months' rounding. Regular account terms apply to non-promo purchases. New Accounts as of 07/31/2025: Purchase APR is 34.99%. Penalty APR is 39.99%. Min Interest Charge is $2. Existing cardholders: See your credit card agreement terms. Subject to credit approval.</p>
+        <p style="margin-bottom:12px">**Cannot be combined with other promos. Qualifying purchase amount must be on one receipt. No interest will be charged on the promo balance if you pay it off, in full, within the promo period. If you do not, interest will be charged on the promo balance from the purchase date. The required minimum monthly payments may or may not pay off the promo balance before the end of the promo period, depending on purchase amount, promo length and payment allocation. Regular account terms apply to non-promo purchases and, after promo period ends, to the promo balance. New Accounts as of 07/31/2025: Purchase APR is 34.99%. Penalty APR is 39.99%. Min Interest Charge is $2. Existing cardholders: See your credit card agreement terms. Subject to credit approval. We reserve the right to discontinue or alter the terms of this offer any time.</p>
+        <p>Excludes used, vintage, B-stock and Demo Deal items. Financing cannot be combined with other discounts or promotions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY BAR -->
+  <div class="vkcc-stick" id="vkcc-stick">
+    <div>
+      <div class="vkcc-stick-title">VK Credit Card</div>
+      <div class="vkcc-stick-sub">0% financing up to 48 months · 110+ qualifying brands</div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=565510A04C0A508A3E08D786CA77FC9F0DC80B988FB135A4&preQual=Y" target="_blank" class="vkcc-stick-cta">Apply Now</a>
+      <a href="https://www.mysynchrony.com/mysyf/home.html" target="_blank" class="vkcc-stick-ghost">Manage Card</a>
+    </div>
+  </div>
+  <div style="height:68px"></div>
+
+  <div id="footer-vk-credit-card"></div>
+</div>
+<script>
+  (function() {
+    var p = 'vk-credit-card';
+    var navTarget    = document.getElementById('nav-' + p);
+    var footerTarget = document.getElementById('footer-' + p);
+    var navTpl    = document.getElementById('nav-template');
+    var footerTpl = document.getElementById('footer-template');
+    if (navTarget && navTpl)        navTarget.innerHTML    = navTpl.innerHTML;
+    if (footerTarget && footerTpl)  footerTarget.innerHTML = footerTpl.innerHTML;
+  })();
+  var __vkPageFiles = {
+    home:'pages/home.html', category:'pages/category.html', product:'pages/product.html',
+    faq:'pages/faq.html', deals:'pages/deals.html', sell:'pages/sell.html',
+    studio:'pages/studio.html', techshop:'pages/techshop.html',
+    'fin-page':'pages/financing.html', openbox:'pages/openbox.html'
+  };
+  function injectShared() {}
+  function showPage(id) { var href = __vkPageFiles[id]; if (href) window.location.href = href; }
+  function goToDeals() { window.location.href = 'pages/deals.html'; }
+</script>
+</body>
+</html>

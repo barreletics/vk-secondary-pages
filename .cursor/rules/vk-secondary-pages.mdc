@@ -13,6 +13,16 @@ This workspace is **`vk-secondary-pages` only**: standalone secondary `.html` pa
 - **Do not** modify, import, or copy content **into** `VintageKing-Redesign-*.html` or other files under the separate **vintage-king-redesign** project as part of agent work in this repo.
 - **Do not** paste the whole prototype into this repo.
 
+## Protected files — never touch without explicit approval
+
+The following files in the **vintage-king-redesign** project are **locked**. Do not read, edit, overwrite, or make any changes to them unless the user explicitly approves the specific change in the current session. **You must ask first and receive a yes.**
+
+- `mega-menu/VintageKing-MegaMenu-CursorLab-v2.html` (live mega menu demo)
+- `mega-menu/VK-Microphones-CategoryDemo-v4-refined.html` (live filters/PLP demo)
+- `VintageKing-Redesign-v2_67-Mar2026.html` (core full redesign prototype)
+
+If any task requires touching these files, **stop and ask the user for approval before proceeding**. State exactly what you plan to change and why. Do not proceed until you get a clear yes.
+
 ## Navigator (`navigator.html`) is allowed to preview the demo
 
 - **`navigator.html`** may use **`file://`** links and **`Open →`** to the **local** single-file demo on disk so you can compare hashes. That is a **preview** affordance, not a request to edit those files from this repo.
