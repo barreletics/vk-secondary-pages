@@ -137,7 +137,7 @@ PAGE_BODY = """\
 
     /* revision cards */
     .u76-rev-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden;margin-bottom:40px }
-    .u76-rev { background:#fff;padding:28px 24px;border-top:3px solid #D4860A }
+    .u76-rev { background:#fff;padding:28px 24px }
     .u76-rev-name { font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1A1A18;margin-bottom:4px }
     .u76-rev-serial { font-size:12px;color:#D4860A;font-weight:600;letter-spacing:0.04em;margin-bottom:8px }
     .u76-rev p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.6;margin:0 }
@@ -169,7 +169,7 @@ PAGE_BODY = """\
 
     /* buyer guide */
     .u76-gc-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
-    .u76-gc { background:#fff;padding:24px 24px 24px;display:flex;flex-direction:column;border-top:3px solid #D4860A }
+    .u76-gc { background:#fff;padding:24px 24px 24px;display:flex;flex-direction:column }
     .u76-gc-tag { display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px 0;color:#D4860A }
     .u76-gc h4 { font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 6px }
     .u76-gc-price { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:#1A1A18;margin:0 0 8px }
