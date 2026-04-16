@@ -98,7 +98,7 @@ PAGE_BODY = """\
   <style>
     .n67-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
     .n67-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
-    .n67-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:600px;overflow:hidden }
+    .n67-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden }
     .n67-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
     .n67-hero-img { position:relative;overflow:hidden }
     .n67-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
@@ -109,7 +109,7 @@ PAGE_BODY = """\
     .n67-section { padding:64px 0 }
     .n67-section-off { background:var(--off-white,#F7F5F2) }
     .n67-section-white { background:#fff }
-    .n67-h2 { font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 8px;line-height:1.15 }
+    .n67-h2 { font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1A1A18;margin:0 0 8px;line-height:1.15;padding-bottom:14px;border-bottom:2px solid #D4860A;display:inline-block }
     .n67-sub { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.55);margin:0 0 40px;line-height:1.6;max-width:680px }
     .n67-body { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px }
     .n67-quote { border-left:3px solid #D4860A;padding:24px 0 24px 32px;margin:40px 0 }
@@ -122,19 +122,19 @@ PAGE_BODY = """\
     .n67-tl-body .n67-tl-tag { display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0;margin-bottom:6px;color:#D4860A }
     .n67-tl-body p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.65;margin:0 }
     .n67-feat-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden;margin-bottom:40px }
-    .n67-feat { background:#fff;padding:24px }
-    .n67-feat h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin:0 0 6px }
+    .n67-feat { background:#fff;padding:24px;border-top:3px solid #D4860A }
+    .n67-feat h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#D4860A;margin:0 0 6px }
     .n67-feat p { font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin:0 }
     .n67-gc-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
-    .n67-gc { background:#fff;padding:24px;display:flex;flex-direction:column }
+    .n67-gc { background:#fff;padding:24px;display:flex;flex-direction:column;border-top:3px solid #D4860A }
     .n67-gc-tag { display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 0 10px 0;color:#D4860A }
     .n67-gc h4 { font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 6px }
     .n67-gc-price { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:#1A1A18;margin:0 0 8px }
     .n67-gc p { font-size:13px;color:#3A3A38;line-height:1.6;margin:0 0 14px;flex:1 }
-    .n67-gc a { font-size:13px;font-weight:600;color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.3);margin-top:auto }
-    .n67-gc a:hover { border-bottom-color:#C0392B }
-    .n67-ra { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.65;margin-bottom:8px }
-    .n67-ra a { color:#C0392B;text-decoration:none;border-bottom:1px solid rgba(192,57,43,0.25) }
+    .n67-gc a { font-size:13px;font-weight:600;color:#D4860A;text-decoration:none;border-bottom:1px solid rgba(212,134,10,0.3);margin-top:auto }
+    .n67-gc a:hover { border-bottom-color:#D4860A }
+    .n67-ra { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.65);line-height:1.65;margin-bottom:12px }
+    .n67-ra a { color:#D4860A;text-decoration:none;border-bottom:1px solid rgba(212,134,10,0.25) }
     .n67-faq details { margin-bottom:2px }
     .n67-faq summary { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;padding:18px 24px;background:#fff;cursor:pointer;list-style:none;border-bottom:1px solid rgba(26,26,24,0.06) }
     .n67-faq summary::-webkit-details-marker { display:none }
@@ -146,7 +146,7 @@ PAGE_BODY = """\
     .n67-stick-title { font-size:15px;font-weight:600 }
     .n67-stick-sub { font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }
     .n67-stick-actions { display:flex;gap:10px;align-items:center }
-    .n67-stick-cta { background:#C0392B;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em }
+    .n67-stick-cta { background:#D4860A;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em }
     .n67-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
 
     /* explore strip */
@@ -195,7 +195,7 @@ PAGE_BODY = """\
       <div class="n67-eyebrow">Pro Audio Hall of Fame</div>
       <h1 style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">The Neumann U67</h1>
       <p style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">The "Sound of Tomorrow." Neumann's successor to the U47 — a tube mic so advanced its K67 capsule is still in production over 60 years later.</p>
-      <a href="https://vintageking.com/neumann-u67-tube-microphone" target="_blank" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Shop U67 Models</a>
+      <a href="https://vintageking.com/neumann-u67-tube-microphone" target="_blank" style="display:inline-block;background:#D4860A;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Shop U67 Models</a>
       <div class="n67-hero-stats">
         <div><div class="n67-hero-stat-num">1960</div><div class="n67-hero-stat-label">First produced</div></div>
         <div><div class="n67-hero-stat-num">K67</div><div class="n67-hero-stat-label">Capsule</div></div>

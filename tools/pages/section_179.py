@@ -85,7 +85,7 @@ PAGE_BODY = """\
   <style>
     .s179-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
     .s179-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
-    .s179-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:600px;overflow:hidden }
+    .s179-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden }
     .s179-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
     .s179-hero-img { position:relative;overflow:hidden }
     .s179-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
@@ -101,15 +101,15 @@ PAGE_BODY = """\
     .s179-sub { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.55);margin:0 0 40px;line-height:1.6;max-width:680px }
     .s179-body { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px }
     .s179-steps { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
-    .s179-step { background:#fff;padding:36px 28px;transition:box-shadow .3s ease,transform .3s ease }
+    .s179-step { background:#fff;padding:36px 28px;transition:box-shadow .3s ease,transform .3s ease;border-top:3px solid #D4860A }
     .s179-step:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
     .s179-step-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#D4860A;line-height:1;margin-bottom:16px }
     .s179-step h3 { font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 8px }
     .s179-step p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.65;margin:0 }
     .s179-who-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
-    .s179-who { background:#fff;padding:28px 24px;text-align:center;transition:box-shadow .3s ease,transform .3s ease }
+    .s179-who { background:#fff;padding:28px 24px;text-align:center;transition:box-shadow .3s ease,transform .3s ease;border-top:3px solid #D4860A }
     .s179-who:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
-    .s179-who h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin:0 0 6px }
+    .s179-who h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#D4860A;margin:0 0 6px }
     .s179-who p { font-size:13px;color:rgba(26,26,24,0.5);margin:0;line-height:1.5 }
     .s179-what-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
     .s179-what { background:#fff;padding:24px;text-align:center }
@@ -137,7 +137,7 @@ PAGE_BODY = """\
     .s179-stick.visible { transform:translateY(0) }
     .s179-stick-title { font-size:15px;font-weight:600 }
     .s179-stick-sub { font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }
-    .s179-stick-cta { background:#C0392B;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px }
+    .s179-stick-cta { background:#D4860A;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px }
     .s179-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
 
     /* explore strip */
@@ -170,7 +170,7 @@ PAGE_BODY = """\
       <div class="s179-eyebrow">Tax Savings</div>
       <h1 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">Section 179 Tax Deduction</h1>
       <p style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">Write off the full cost of qualifying studio equipment in the year you buy it. New or used. Purchased, financed, or leased.</p>
-      <a href="https://vintageking.com/audio-consultants" target="_blank" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Talk to an Expert</a>
+      <a href="https://vintageking.com/audio-consultants" target="_blank" style="display:inline-block;background:#D4860A;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Talk to an Expert</a>
       <div class="s179-hero-stats-inline">
         <div><div class="s179-hero-stat-num">$1.22M</div><div class="s179-hero-stat-label">2025 limit</div></div>
         <div><div class="s179-hero-stat-num">100%</div><div class="s179-hero-stat-label">Year-one write-off</div></div>
@@ -178,8 +178,8 @@ PAGE_BODY = """\
       </div>
     </div>
     <div class="s179-hero-img">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Rack_Outboard_Location_Recording.jpg" alt="Professional outboard gear rack" loading="lazy">
-      <span class="s179-hero-caption">Photo: Milkstudios / Wikimedia CC BY-SA 3.0</span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Neve_81_Series_Mixing_Console.jpg/1280px-Neve_81_Series_Mixing_Console.jpg" alt="Neve 81 Series mixing console in studio control room" loading="lazy">
+      <span class="s179-hero-caption">Photo: Cashlee69 / Wikimedia CC BY-SA 4.0</span>
     </div>
   </section>
 
@@ -299,7 +299,7 @@ PAGE_BODY = """\
       <div class="s179-eyebrow">Ready to Save?</div>
       <h2 class="s179-h2" style="margin:0 auto 16px">Plan Your Section 179 Purchase</h2>
       <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.6);max-width:520px;margin:0 auto 32px;line-height:1.6">Talk to an Audio Consultant about qualifying equipment, financing options, and delivery timelines. Start saving before December 31.</p>
-      <a href="audio-consultants.html" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-right:12px">Talk to an Expert</a>
+      <a href="audio-consultants.html" style="display:inline-block;background:#D4860A;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-right:12px">Talk to an Expert</a>
       <a href="https://vintageking.com" target="_blank" style="display:inline-block;background:transparent;color:#1A1A18;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(26,26,24,0.25);border-radius:2px">Shop Now</a>
     </div>
   </section>
