@@ -2622,15 +2622,14 @@
   <style>
     .n67-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
     .n67-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
-    .n67-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden }
+    .n67-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:600px;overflow:hidden }
     .n67-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
-    .n67-hero-img { display:flex;align-items:center;justify-content:center;padding:32px;background:#fff;position:relative }
-    .n67-hero-img img { width:100%;max-height:460px;object-fit:contain;display:block }
-    .n67-hero-caption { position:absolute;bottom:12px;right:16px;font-size:11px;color:rgba(26,26,24,0.35);font-family:'DM Sans',sans-serif }
-    .n67-stats { display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(26,26,24,0.08);border-top:1px solid rgba(26,26,24,0.08);border-bottom:1px solid rgba(26,26,24,0.08) }
-    .n67-stat { background:#fff;padding:28px 20px;text-align:center }
-    .n67-stat-num { font-family:'DM Sans',sans-serif;font-size:28px;font-weight:700;color:#1A1A18;line-height:1.1 }
-    .n67-stat-label { font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,26,24,0.5);margin-top:6px;letter-spacing:0.04em }
+    .n67-hero-img { position:relative;overflow:hidden }
+    .n67-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .n67-hero-caption { position:absolute;bottom:12px;right:16px;font-size:11px;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif }
+    .n67-hero-stats { display:flex;gap:24px;margin-top:24px }
+    .n67-hero-stat-num { font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:#D4860A;line-height:1.1 }
+    .n67-hero-stat-label { font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,26,24,0.45);margin-top:3px }
     .n67-section { padding:64px 0 }
     .n67-section-off { background:var(--off-white,#F7F5F2) }
     .n67-section-white { background:#fff }
@@ -2674,6 +2673,19 @@
     .n67-stick-cta { background:#C0392B;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em }
     .n67-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
 
+    /* explore strip */
+    .n67-explore { background:#EDE8E2;padding:64px 0 }
+    .n67-explore-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .n67-explore-card { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow .3s ease,transform .3s ease }
+    .n67-explore-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .n67-explore-img { height:180px;background:#F7F5F2;overflow:hidden }
+    .n67-explore-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .n67-explore-card:hover .n67-explore-img img { transform:scale(1.06) }
+    .n67-explore-body { padding:20px 24px }
+    .n67-explore-tag { font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:6px }
+    .n67-explore-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }
+    .n67-explore-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
+
     /* dark capsule section */
     .n67-dark { background:#1A1A18;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center }
     .n67-dark h3 { font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FDFCFB;margin:0 0 16px }
@@ -2686,7 +2698,9 @@
     .n67-dark-spec dd { font-size:14px;font-weight:600;color:#D4860A;margin:0 0 12px }
 
     /* buyer guide images */
-    .n67-gc-img { width:100%;height:160px;object-fit:contain;background:#F7F5F2;border-radius:2px;margin-bottom:12px }
+    .n67-gc-img-wrap { width:100%;height:220px;overflow:hidden;border-radius:2px;margin-bottom:12px;background:#F7F5F2 }
+    .n67-gc-img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .n67-gc:hover .n67-gc-img { transform:scale(1.06) }
   </style>
   <script>
     (function(){
@@ -2706,22 +2720,17 @@
       <h1 style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">The Neumann U67</h1>
       <p style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">The "Sound of Tomorrow." Neumann's successor to the U47 — a tube mic so advanced its K67 capsule is still in production over 60 years later.</p>
       <a href="https://vintageking.com/neumann-u67-tube-microphone" target="_blank" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Shop U67 Models</a>
+      <div class="n67-hero-stats">
+        <div><div class="n67-hero-stat-num">1960</div><div class="n67-hero-stat-label">First produced</div></div>
+        <div><div class="n67-hero-stat-num">K67</div><div class="n67-hero-stat-label">Capsule</div></div>
+        <div><div class="n67-hero-stat-num">60+ yrs</div><div class="n67-hero-stat-label">Of influence</div></div>
+      </div>
     </div>
     <div class="n67-hero-img">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Microphone_Neumann_U-67_%281953%29.jpg/500px-Microphone_Neumann_U-67_%281953%29.jpg" alt="Vintage Neumann U67 tube condenser microphone" loading="lazy">
       <span class="n67-hero-caption">Photo: Goldfinger / Wikimedia CC BY-SA 3.0</span>
     </div>
   </section>
-
-  <!-- ── STATS ── -->
-  <div class="n67-stats">
-    <div class="n67-stat"><div class="n67-stat-num">1960</div><div class="n67-stat-label">First production</div></div>
-    <div class="n67-stat"><div class="n67-stat-num">10,000+</div><div class="n67-stat-label">Units built</div></div>
-    <div class="n67-stat"><div class="n67-stat-num">3</div><div class="n67-stat-label">Polar patterns</div></div>
-    <div class="n67-stat"><div class="n67-stat-num">K67</div><div class="n67-stat-label">Capsule (still made)</div></div>
-    <div class="n67-stat"><div class="n67-stat-num">EF86</div><div class="n67-stat-label">Vacuum tube</div></div>
-    <div class="n67-stat"><div class="n67-stat-num">60+</div><div class="n67-stat-label">Years of influence</div></div>
-  </div>
 
   <!-- ── HISTORY ── -->
   <section class="n67-section n67-section-white">
@@ -2860,7 +2869,7 @@
 
       <div class="n67-gc-grid">
         <div class="n67-gc">
-          <img class="n67-gc-img" src="https://vintageking.com/media/catalog/product/n/e/neumann-u67_97358_1.jpg" alt="Neumann U67 Reissue" loading="lazy">
+          <div class="n67-gc-img-wrap"><img class="n67-gc-img" src="https://vintageking.com/media/catalog/product/n/e/neumann-u67_97358_1.jpg" alt="Neumann U67 Reissue" loading="lazy"></div>
           <div class="n67-gc-tag">Official reissue</div>
           <h4>Neumann U67 Reissue</h4>
           <div class="n67-gc-price">$8,299</div>
@@ -2868,7 +2877,7 @@
           <a href="https://vintageking.com/neumann-u67-microphone-reissue" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="n67-gc">
-          <img class="n67-gc-img" src="https://vintageking.com/media/catalog/product/w/u/wunder-cm-67-2.jpg" alt="Wunder Audio CM67 S" loading="lazy">
+          <div class="n67-gc-img-wrap"><img class="n67-gc-img" src="https://vintageking.com/media/catalog/product/w/u/wunder-cm-67-2.jpg" alt="Wunder Audio CM67 S" loading="lazy"></div>
           <div class="n67-gc-tag">Alternative</div>
           <h4>Wunder Audio CM67 S</h4>
           <div class="n67-gc-price">$4,695</div>
@@ -2876,7 +2885,7 @@
           <a href="https://vintageking.com/wunder-audio-cm67-s" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="n67-gc">
-          <img class="n67-gc-img" src="https://vintageking.com/media/catalog/product/p/e/peluso_p-67_set.jpg" alt="Peluso P-67" loading="lazy">
+          <div class="n67-gc-img-wrap"><img class="n67-gc-img" src="https://vintageking.com/media/catalog/product/p/e/peluso_p-67_set.jpg" alt="Peluso P-67" loading="lazy"></div>
           <div class="n67-gc-tag">Budget alternative</div>
           <h4>Peluso P-67</h4>
           <div class="n67-gc-price">$2,599</div>
@@ -2913,6 +2922,40 @@
         <details><summary>What is the U67 best for?</summary><div class="n67-faq-a">The U67 is considered one of the most versatile studio microphones ever made. It excels on vocals (all types), drum overheads, acoustic guitar, electric guitar amps, strings, brass, and woodwinds. Its slightly forward midrange and rich texture make it outstanding on virtually any source.</div></details>
         <details><summary>U67 vs M269 vs M367 — what is the difference?</summary><div class="n67-faq-a">All three share the same basic design. The M269 (Germany) uses an AC701(k) tube and has continuously variable remote pattern switching like the M49. The M367 (France) also uses the AC701(k) but has the same 3-position switch as the U67. Both have a different tonal character due to the Telefunken tube.</div></details>
         <details><summary>How much is a vintage U67 worth?</summary><div class="n67-faq-a">Vintage U67s in excellent condition typically range from $8,000 to $12,000+ depending on condition, year, and whether all original components are present. The M269 and M367 variants can command similar or higher prices. Contact Vintage King's Audio Consultants for current availability and pricing on vintage units.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTINUE EXPLORING ── -->
+  <section class="n67-explore">
+    <div class="n67-wrap">
+      <div class="n67-eyebrow">Continue Exploring</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0 0 32px">More from Vintage King</h2>
+      <div class="n67-explore-grid">
+        <a href="urei-1176.html" class="n67-explore-card">
+          <div class="n67-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UREI_1176LN_%28Silver%29_x6.jpg/600px-UREI_1176LN_%28Silver%29_x6.jpg" alt="UREI 1176" loading="lazy"></div>
+          <div class="n67-explore-body">
+            <div class="n67-explore-tag">Hall of Fame</div>
+            <div class="n67-explore-title">The Universal Audio 1176</div>
+            <p class="n67-explore-desc">The most-used compressor in recording history. Solid-state FET design since 1967.</p>
+          </div>
+        </a>
+        <a href="warranty.html" class="n67-explore-card">
+          <div class="n67-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="Studio gear" loading="lazy"></div>
+          <div class="n67-explore-body">
+            <div class="n67-explore-tag">Buyer Protection</div>
+            <div class="n67-explore-title">VK Warranty</div>
+            <p class="n67-explore-desc">+1 free year on every purchase. No registration. Optional ADH coverage.</p>
+          </div>
+        </a>
+        <a href="section-179.html" class="n67-explore-card">
+          <div class="n67-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Rack_Outboard_Location_Recording.jpg" alt="Outboard gear rack" loading="lazy"></div>
+          <div class="n67-explore-body">
+            <div class="n67-explore-tag">Tax Savings</div>
+            <div class="n67-explore-title">Section 179 Deduction</div>
+            <p class="n67-explore-desc">Write off the full cost of qualifying equipment the year you buy it.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>

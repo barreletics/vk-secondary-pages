@@ -85,12 +85,14 @@ PAGE_BODY = """\
   <style>
     .s179-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
     .s179-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
-    .s179-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:520px;overflow:hidden }
+    .s179-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:600px;overflow:hidden }
     .s179-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
-    .s179-hero-stats { background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:0 }
-    .s179-hero-stat { display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center }
-    .s179-hero-stat-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#1A1A18;line-height:1.1 }
-    .s179-hero-stat-label { font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(26,26,24,0.5);margin-top:8px;letter-spacing:0.04em }
+    .s179-hero-img { position:relative;overflow:hidden }
+    .s179-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .s179-hero-caption { position:absolute;bottom:12px;right:16px;font-size:11px;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif }
+    .s179-hero-stats-inline { display:flex;gap:24px;margin-top:24px }
+    .s179-hero-stat-num { font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:#D4860A;line-height:1.1 }
+    .s179-hero-stat-label { font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,26,24,0.45);margin-top:3px }
     .s179-section { padding:64px 0 }
     .s179-section-off { background:var(--off-white,#F7F5F2) }
     .s179-section-white { background:#fff }
@@ -99,12 +101,14 @@ PAGE_BODY = """\
     .s179-sub { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.55);margin:0 0 40px;line-height:1.6;max-width:680px }
     .s179-body { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px }
     .s179-steps { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
-    .s179-step { background:#fff;padding:36px 28px }
+    .s179-step { background:#fff;padding:36px 28px;transition:box-shadow .3s ease,transform .3s ease }
+    .s179-step:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
     .s179-step-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#D4860A;line-height:1;margin-bottom:16px }
     .s179-step h3 { font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 8px }
     .s179-step p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.65;margin:0 }
     .s179-who-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
-    .s179-who { background:#fff;padding:28px 24px;text-align:center }
+    .s179-who { background:#fff;padding:28px 24px;text-align:center;transition:box-shadow .3s ease,transform .3s ease }
+    .s179-who:hover { transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,26,24,0.08) }
     .s179-who h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin:0 0 6px }
     .s179-who p { font-size:13px;color:rgba(26,26,24,0.5);margin:0;line-height:1.5 }
     .s179-what-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
@@ -135,6 +139,19 @@ PAGE_BODY = """\
     .s179-stick-sub { font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px }
     .s179-stick-cta { background:#C0392B;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px }
     .s179-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
+
+    /* explore strip */
+    .s179-explore { background:#EDE8E2;padding:64px 0 }
+    .s179-explore-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .s179-explore-card { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow .3s ease,transform .3s ease }
+    .s179-explore-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .s179-explore-img { height:180px;background:#F7F5F2;overflow:hidden }
+    .s179-explore-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .s179-explore-card:hover .s179-explore-img img { transform:scale(1.06) }
+    .s179-explore-body { padding:20px 24px }
+    .s179-explore-tag { font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:6px }
+    .s179-explore-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }
+    .s179-explore-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
   </style>
   <script>
     (function(){
@@ -154,12 +171,15 @@ PAGE_BODY = """\
       <h1 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">Section 179 Tax Deduction</h1>
       <p style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">Write off the full cost of qualifying studio equipment in the year you buy it. New or used. Purchased, financed, or leased.</p>
       <a href="https://vintageking.com/audio-consultants" target="_blank" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Talk to an Expert</a>
+      <div class="s179-hero-stats-inline">
+        <div><div class="s179-hero-stat-num">$1.22M</div><div class="s179-hero-stat-label">2025 limit</div></div>
+        <div><div class="s179-hero-stat-num">100%</div><div class="s179-hero-stat-label">Year-one write-off</div></div>
+        <div><div class="s179-hero-stat-num">Dec 31</div><div class="s179-hero-stat-label">Annual deadline</div></div>
+      </div>
     </div>
-    <div class="s179-hero-stats">
-      <div class="s179-hero-stat"><div class="s179-hero-stat-num">$1.22M</div><div class="s179-hero-stat-label">2025 deduction limit</div></div>
-      <div class="s179-hero-stat"><div class="s179-hero-stat-num">100%</div><div class="s179-hero-stat-label">First-year write-off</div></div>
-      <div class="s179-hero-stat"><div class="s179-hero-stat-num">Dec 31</div><div class="s179-hero-stat-label">Annual deadline</div></div>
-      <div class="s179-hero-stat"><div class="s179-hero-stat-num">New + Used</div><div class="s179-hero-stat-label">Both qualify</div></div>
+    <div class="s179-hero-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Rack_Outboard_Location_Recording.jpg" alt="Professional outboard gear rack" loading="lazy">
+      <span class="s179-hero-caption">Photo: Milkstudios / Wikimedia CC BY-SA 3.0</span>
     </div>
   </section>
 
@@ -281,6 +301,40 @@ PAGE_BODY = """\
       <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.6);max-width:520px;margin:0 auto 32px;line-height:1.6">Talk to an Audio Consultant about qualifying equipment, financing options, and delivery timelines. Start saving before December 31.</p>
       <a href="audio-consultants.html" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 32px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;margin-right:12px">Talk to an Expert</a>
       <a href="https://vintageking.com" target="_blank" style="display:inline-block;background:transparent;color:#1A1A18;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(26,26,24,0.25);border-radius:2px">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ── CONTINUE EXPLORING ── -->
+  <section class="s179-explore">
+    <div class="s179-wrap">
+      <div class="s179-eyebrow">Continue Exploring</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0 0 32px">More from Vintage King</h2>
+      <div class="s179-explore-grid">
+        <a href="urei-1176.html" class="s179-explore-card">
+          <div class="s179-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UREI_1176LN_%28Silver%29_x6.jpg/600px-UREI_1176LN_%28Silver%29_x6.jpg" alt="UREI 1176" loading="lazy"></div>
+          <div class="s179-explore-body">
+            <div class="s179-explore-tag">Hall of Fame</div>
+            <div class="s179-explore-title">The Universal Audio 1176</div>
+            <p class="s179-explore-desc">The most-used compressor in recording history. FET design since 1967.</p>
+          </div>
+        </a>
+        <a href="neumann-u67.html" class="s179-explore-card">
+          <div class="s179-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Microphone_Neumann_U-67_%281953%29.jpg/500px-Microphone_Neumann_U-67_%281953%29.jpg" alt="Neumann U67" loading="lazy"></div>
+          <div class="s179-explore-body">
+            <div class="s179-explore-tag">Hall of Fame</div>
+            <div class="s179-explore-title">The Neumann U67</div>
+            <p class="s179-explore-desc">Neumann's legendary tube condenser — K67 capsule that shaped modern recording.</p>
+          </div>
+        </a>
+        <a href="warranty.html" class="s179-explore-card">
+          <div class="s179-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="Studio gear" loading="lazy"></div>
+          <div class="s179-explore-body">
+            <div class="s179-explore-tag">Buyer Protection</div>
+            <div class="s179-explore-title">VK Warranty</div>
+            <p class="s179-explore-desc">+1 free year on every purchase. No registration. Optional ADH coverage.</p>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 

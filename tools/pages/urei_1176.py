@@ -106,17 +106,16 @@ PAGE_BODY = """\
     .u76-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
 
     /* hero */
-    .u76-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden }
+    .u76-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:600px;overflow:hidden }
     .u76-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
-    .u76-hero-img { display:flex;align-items:center;justify-content:center;padding:32px;background:#fff;position:relative }
-    .u76-hero-img img { width:100%;max-height:460px;object-fit:contain;display:block }
-    .u76-hero-caption { position:absolute;bottom:12px;right:16px;font-size:11px;color:rgba(26,26,24,0.35);font-family:'DM Sans',sans-serif }
+    .u76-hero-img { position:relative;overflow:hidden }
+    .u76-hero-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .u76-hero-caption { position:absolute;bottom:12px;right:16px;font-size:11px;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif }
 
-    /* stats */
-    .u76-stats { display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(26,26,24,0.08);border-top:1px solid rgba(26,26,24,0.08);border-bottom:1px solid rgba(26,26,24,0.08) }
-    .u76-stat { background:#fff;padding:28px 20px;text-align:center }
-    .u76-stat-num { font-family:'DM Sans',sans-serif;font-size:28px;font-weight:700;color:#1A1A18;line-height:1.1 }
-    .u76-stat-label { font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,26,24,0.5);margin-top:6px;letter-spacing:0.04em }
+    /* hero inline stats */
+    .u76-hero-stats { display:flex;gap:24px;margin-top:24px }
+    .u76-hero-stat-num { font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:#D4860A;line-height:1.1 }
+    .u76-hero-stat-label { font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,26,24,0.45);margin-top:3px }
 
     /* sections */
     .u76-section { padding:64px 0 }
@@ -159,7 +158,9 @@ PAGE_BODY = """\
     .u76-dark-btn { display:inline-flex;align-items:center;gap:6px;background:rgba(212,134,10,0.15);border:1px solid rgba(212,134,10,0.3);color:#D4860A;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:8px 14px;border-radius:2px;margin:6px 3px }
 
     /* buyer guide image */
-    .u76-gc-img { width:100%;height:140px;object-fit:contain;background:#F7F5F2;border-radius:2px;margin-bottom:12px }
+    .u76-gc-img-wrap { width:100%;height:220px;overflow:hidden;border-radius:2px;margin-bottom:12px;background:#F7F5F2 }
+    .u76-gc-img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .u76-gc:hover .u76-gc-img { transform:scale(1.06) }
 
     /* pull quote */
     .u76-quote { border-left:3px solid #D4860A;padding:24px 0 24px 32px;margin:40px 0 }
@@ -196,6 +197,19 @@ PAGE_BODY = """\
     .u76-stick-actions { display:flex;gap:10px;align-items:center }
     .u76-stick-cta { background:#C0392B;color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em }
     .u76-stick-ghost { color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:10px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:2px }
+
+    /* explore strip */
+    .u76-explore { background:#EDE8E2;padding:64px 0 }
+    .u76-explore-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px }
+    .u76-explore-card { background:#fff;border-radius:3px;overflow:hidden;text-decoration:none;transition:box-shadow .3s ease,transform .3s ease }
+    .u76-explore-card:hover { transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,0.1) }
+    .u76-explore-img { height:180px;background:#F7F5F2;overflow:hidden }
+    .u76-explore-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }
+    .u76-explore-card:hover .u76-explore-img img { transform:scale(1.06) }
+    .u76-explore-body { padding:20px 24px }
+    .u76-explore-tag { font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:6px }
+    .u76-explore-title { font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1A1A18;margin:0 0 6px }
+    .u76-explore-desc { font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.55;margin:0 }
   </style>
   <script>
     (function(){
@@ -215,22 +229,17 @@ PAGE_BODY = """\
       <h1 style="font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#1A1A18;line-height:1.06;margin:0 0 20px">The Universal Audio 1176</h1>
       <p style="font-size:17px;color:rgba(26,26,24,0.6);line-height:1.65;max-width:460px;margin:0 0 28px">The "True Peak Limiter." Bill Putnam's solid-state masterpiece, in continuous production since 1967. The most-used compressor in professional recording history.</p>
       <a href="https://vintageking.com/urei-universal-audio-1176ln-compressor-limiter" target="_blank" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Shop 1176 Models</a>
+      <div class="u76-hero-stats">
+        <div><div class="u76-hero-stat-num">1967</div><div class="u76-hero-stat-label">First produced</div></div>
+        <div><div class="u76-hero-stat-num">20 &micro;s</div><div class="u76-hero-stat-label">Attack</div></div>
+        <div><div class="u76-hero-stat-num">57 yrs</div><div class="u76-hero-stat-label">In production</div></div>
+      </div>
     </div>
     <div class="u76-hero-img">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UREI_1176LN_%28Silver%29_x6.jpg/600px-UREI_1176LN_%28Silver%29_x6.jpg" alt="Rack of six UREI 1176LN Silverface compressor-limiters" loading="lazy">
       <span class="u76-hero-caption">Photo: Ville Hyvonen / Wikimedia CC BY-SA 2.0</span>
     </div>
   </section>
-
-  <!-- ── STAT BAR ── -->
-  <div class="u76-stats">
-    <div class="u76-stat"><div class="u76-stat-num">1967</div><div class="u76-stat-label">First production</div></div>
-    <div class="u76-stat"><div class="u76-stat-num">9</div><div class="u76-stat-label">Major revisions</div></div>
-    <div class="u76-stat"><div class="u76-stat-num">20 &micro;s</div><div class="u76-stat-label">Fastest attack</div></div>
-    <div class="u76-stat"><div class="u76-stat-num">45 dB</div><div class="u76-stat-label">Max gain</div></div>
-    <div class="u76-stat"><div class="u76-stat-num">12,000+</div><div class="u76-stat-label">Units produced</div></div>
-    <div class="u76-stat"><div class="u76-stat-num">57</div><div class="u76-stat-label">Years in production</div></div>
-  </div>
 
   <!-- ── INTRO ── -->
   <section class="u76-section u76-section-white">
@@ -453,7 +462,7 @@ PAGE_BODY = """\
 
       <div class="u76-gc-grid">
         <div class="u76-gc">
-          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_1176ln_1_1.jpg" alt="Universal Audio 1176LN" loading="lazy">
+          <div class="u76-gc-img-wrap"><img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_1176ln_1_1.jpg" alt="Universal Audio 1176LN" loading="lazy"></div>
           <div class="u76-gc-tag">Modern reissue</div>
           <h4>Universal Audio 1176LN</h4>
           <div class="u76-gc-price">$2,999</div>
@@ -461,7 +470,7 @@ PAGE_BODY = """\
           <a href="https://vintageking.com/features/universal-audio-1176-ln" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
-          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_6176_1_1.jpg" alt="Universal Audio 6176" loading="lazy">
+          <div class="u76-gc-img-wrap"><img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_6176_1_1.jpg" alt="Universal Audio 6176" loading="lazy"></div>
           <div class="u76-gc-tag">Channel strip</div>
           <h4>Universal Audio 6176</h4>
           <div class="u76-gc-price">$2,999</div>
@@ -469,7 +478,7 @@ PAGE_BODY = """\
           <a href="https://vintageking.com/universal-audio-6176" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
-          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/p/u/purple-audio-mc77_259_1.jpg" alt="Purple Audio MC77" loading="lazy">
+          <div class="u76-gc-img-wrap"><img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/p/u/purple-audio-mc77_259_1.jpg" alt="Purple Audio MC77" loading="lazy"></div>
           <div class="u76-gc-tag">Alternative</div>
           <h4>Purple Audio MC77</h4>
           <div class="u76-gc-price">$1,850</div>
@@ -479,7 +488,7 @@ PAGE_BODY = """\
       </div>
       <div class="u76-gc-grid" style="margin-top:1px">
         <div class="u76-gc">
-          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/r/e/retro-176_9135_1a.jpg" alt="Retro Instruments 176" loading="lazy">
+          <div class="u76-gc-img-wrap"><img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/r/e/retro-176_9135_1a.jpg" alt="Retro Instruments 176" loading="lazy"></div>
           <div class="u76-gc-tag">Alternative</div>
           <h4>Retro Instruments 176</h4>
           <div class="u76-gc-price">$3,695</div>
@@ -487,7 +496,7 @@ PAGE_BODY = """\
           <a href="https://vintageking.com/retro-instruments-176" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
-          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/k/uk-sound-176_97528_1a.jpg" alt="UK Sound 176 Mono" loading="lazy">
+          <div class="u76-gc-img-wrap"><img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/k/uk-sound-176_97528_1a.jpg" alt="UK Sound 176 Mono" loading="lazy"></div>
           <div class="u76-gc-tag">Budget hardware</div>
           <h4>UK Sound 176 Mono</h4>
           <div class="u76-gc-price">$749</div>
@@ -495,7 +504,7 @@ PAGE_BODY = """\
           <a href="https://vintageking.com/uk-sound-176-mono-compressor" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
-          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/k/l/klark-teknik-fet-1176_82341_1.jpg" alt="Klark Teknik 1176-KT" loading="lazy">
+          <div class="u76-gc-img-wrap"><img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/k/l/klark-teknik-fet-1176_82341_1.jpg" alt="Klark Teknik 1176-KT" loading="lazy"></div>
           <div class="u76-gc-tag">Budget hardware</div>
           <h4>Klark Teknik 1176-KT</h4>
           <div class="u76-gc-price">$209</div>
@@ -532,6 +541,40 @@ PAGE_BODY = """\
         <details><summary>How fast is the 1176 attack?</summary><div class="u76-faq-a">The 1176 has an attack time as fast as 20 microseconds — among the fastest of any compressor. Note that the 1176's controls are reversed: turning the Attack knob fully clockwise gives the slowest attack, while fully counter-clockwise gives the fastest 20-microsecond attack. This catches you the first time.</div></details>
         <details><summary>Can I use a vintage 1176 daily?</summary><div class="u76-faq-a">Yes — with proper maintenance. Vintage 1176 units are workhorses built for daily studio use. Vintage King's Tech Shop can recap, recalibrate, and restore any revision to specification. Common service includes recapping electrolytics, replacing the FET if noisy, and recalibrating the meter and threshold.</div></details>
         <details><summary>1176 vs LA-2A — when to use each?</summary><div class="u76-faq-a">The 1176 is a FET compressor with fast attack and aggressive character — ideal for drums, bass, guitars, and vocals that need urgency and punch. The LA-2A is an optical compressor with a slower, smoother response — better for vocals that need transparent leveling, bass that needs to sit evenly, and any source where you want compression to be invisible. Many engineers use both in series: LA-2A for leveling, then 1176 for color and control.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTINUE EXPLORING ── -->
+  <section class="u76-explore">
+    <div class="u76-wrap">
+      <div class="u76-eyebrow">Continue Exploring</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1A1A18;margin:0 0 32px">More from Vintage King</h2>
+      <div class="u76-explore-grid">
+        <a href="neumann-u67.html" class="u76-explore-card">
+          <div class="u76-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Microphone_Neumann_U-67_%281953%29.jpg/500px-Microphone_Neumann_U-67_%281953%29.jpg" alt="Neumann U67" loading="lazy"></div>
+          <div class="u76-explore-body">
+            <div class="u76-explore-tag">Hall of Fame</div>
+            <div class="u76-explore-title">The Neumann U67</div>
+            <p class="u76-explore-desc">Neumann's legendary tube condenser — the K67 capsule that shaped modern recording.</p>
+          </div>
+        </a>
+        <a href="warranty.html" class="u76-explore-card">
+          <div class="u76-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg/960px-Outboard_racks_1-2%2C_PatchWerk_Recording_Studios%2C_2007.jpg" alt="Studio gear" loading="lazy"></div>
+          <div class="u76-explore-body">
+            <div class="u76-explore-tag">Buyer Protection</div>
+            <div class="u76-explore-title">VK Warranty</div>
+            <p class="u76-explore-desc">+1 free year on every purchase. No registration. Optional ADH coverage.</p>
+          </div>
+        </a>
+        <a href="section-179.html" class="u76-explore-card">
+          <div class="u76-explore-img"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Rack_Outboard_Location_Recording.jpg" alt="Outboard gear rack" loading="lazy"></div>
+          <div class="u76-explore-body">
+            <div class="u76-explore-tag">Tax Savings</div>
+            <div class="u76-explore-title">Section 179 Deduction</div>
+            <p class="u76-explore-desc">Write off the full cost of qualifying equipment the year you buy it.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
