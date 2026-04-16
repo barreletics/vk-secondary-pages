@@ -84,7 +84,7 @@ PAGE_BODY = """\
 
   <style>
     .s179-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
-    .s179-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;margin-bottom:14px }
+    .s179-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
     .s179-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:520px;overflow:hidden }
     .s179-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
     .s179-hero-stats { background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:0 }
@@ -100,7 +100,7 @@ PAGE_BODY = """\
     .s179-body { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px }
     .s179-steps { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
     .s179-step { background:#fff;padding:36px 28px }
-    .s179-step-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#C0392B;line-height:1;margin-bottom:16px }
+    .s179-step-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#D4860A;line-height:1;margin-bottom:16px }
     .s179-step h3 { font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:#1A1A18;margin:0 0 8px }
     .s179-step p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.65;margin:0 }
     .s179-who-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
@@ -117,6 +117,18 @@ PAGE_BODY = """\
     .s179-faq summary::after { content:'+';float:right;font-size:18px;font-weight:400;color:rgba(26,26,24,0.3) }
     .s179-faq details[open] summary::after { content:'\\2212' }
     .s179-faq .s179-faq-a { font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(26,26,24,0.65);line-height:1.7;padding:16px 24px 24px;background:#fff }
+    /* dark savings example section */
+    .s179-dark { background:#1A1A18;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center }
+    .s179-dark h3 { font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FDFCFB;margin:0 0 16px }
+    .s179-dark p { font-size:15px;color:rgba(253,252,251,0.7);line-height:1.75;margin-bottom:14px }
+    .s179-dark p:last-child { margin-bottom:0 }
+    .s179-dark-example { background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:3px;padding:32px }
+    .s179-dark-row { display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px }
+    .s179-dark-row:last-child { border-bottom:none }
+    .s179-dark-label { color:rgba(253,252,251,0.5) }
+    .s179-dark-value { color:#FDFCFB;font-weight:600 }
+    .s179-dark-total { color:#D4860A;font-size:18px;font-weight:700 }
+
     .s179-stick { position:fixed;bottom:0;left:0;right:0;z-index:500;background:#1A1A18;color:#FDFCFB;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;font-family:'DM Sans',sans-serif;transform:translateY(100%);transition:transform 0.3s }
     .s179-stick.visible { transform:translateY(0) }
     .s179-stick-title { font-size:15px;font-weight:600 }
@@ -225,6 +237,24 @@ PAGE_BODY = """\
       </div>
     </div>
   </section>
+
+  <!-- ── SAVINGS EXAMPLE — DARK SECTION ── -->
+  <div class="s179-dark">
+    <div>
+      <h3>See How Much You Could Save</h3>
+      <p>Here's a simplified example of how Section 179 works for a studio purchasing $50,000 in equipment. The actual tax benefit depends on your tax bracket, business structure, and state laws.</p>
+      <p>Equipment purchased, financed, or leased before December 31 qualifies. The gear must be put into service in the same tax year — simply ordering before the deadline is not sufficient.</p>
+      <p style="font-size:13px;color:rgba(253,252,251,0.4)">This is a simplified illustration. Consult a qualified tax professional for your specific situation. Vintage King is not a tax advisory firm.</p>
+    </div>
+    <div class="s179-dark-example">
+      <div class="s179-dark-row"><span class="s179-dark-label">Equipment purchased</span><span class="s179-dark-value">$50,000</span></div>
+      <div class="s179-dark-row"><span class="s179-dark-label">Section 179 deduction</span><span class="s179-dark-value">$50,000</span></div>
+      <div class="s179-dark-row"><span class="s179-dark-label">Assumed tax bracket</span><span class="s179-dark-value">35%</span></div>
+      <div class="s179-dark-row"><span class="s179-dark-label">Estimated tax savings</span><span class="s179-dark-total">$17,500</span></div>
+      <div class="s179-dark-row"><span class="s179-dark-label">Net equipment cost</span><span class="s179-dark-value">$32,500</span></div>
+      <div style="margin-top:16px;font-size:11px;color:rgba(253,252,251,0.3);text-align:center;letter-spacing:0.04em">2025 DEDUCTION LIMIT: $1,220,000 · PHASE-OUT BEGINS AT $3,050,000</div>
+    </div>
+  </div>
 
   <!-- ── FAQ ── -->
   <section class="s179-section s179-section-white">

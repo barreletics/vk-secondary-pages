@@ -80,7 +80,7 @@ PAGE_BODY = """\
 
   <style>
     .wr-wrap { max-width:1160px;margin:0 auto;padding:0 40px }
-    .wr-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C0392B;margin-bottom:14px }
+    .wr-eyebrow { font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A;margin-bottom:14px }
     .wr-hero { background:#EDE8E2;display:grid;grid-template-columns:1fr 1fr;min-height:520px;overflow:hidden }
     .wr-hero-text { padding:80px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center }
     .wr-hero-stats { background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:1px;padding:0 }
@@ -96,7 +96,7 @@ PAGE_BODY = """\
     .wr-body { font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.7);line-height:1.75;max-width:760px;margin:0 0 24px }
     .wr-tier-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
     .wr-tier { background:#fff;padding:36px 28px;display:flex;flex-direction:column }
-    .wr-tier-tag { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B;margin-bottom:12px }
+    .wr-tier-tag { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px }
     .wr-tier h3 { font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1A1A18;margin:0 0 8px }
     .wr-tier-period { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;margin-bottom:16px }
     .wr-tier p { font-size:13px;color:rgba(26,26,24,0.6);line-height:1.65;margin:0 0 8px }
@@ -111,7 +111,7 @@ PAGE_BODY = """\
     .wr-used-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden }
     .wr-used { background:#fff;padding:28px 24px }
     .wr-used h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin:0 0 4px }
-    .wr-used-period { font-size:22px;font-family:'DM Sans',sans-serif;font-weight:700;color:#C0392B;margin:8px 0 }
+    .wr-used-period { font-size:22px;font-family:'DM Sans',sans-serif;font-weight:700;color:#D4860A;margin:8px 0 }
     .wr-used p { font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin:0 }
     .wr-faq details { margin-bottom:2px }
     .wr-faq summary { font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#1A1A18;padding:18px 24px;background:#fff;cursor:pointer;list-style:none;border-bottom:1px solid rgba(26,26,24,0.06) }
@@ -119,6 +119,22 @@ PAGE_BODY = """\
     .wr-faq summary::after { content:'+';float:right;font-size:18px;font-weight:400;color:rgba(26,26,24,0.3) }
     .wr-faq details[open] summary::after { content:'\\2212' }
     .wr-faq .wr-faq-a { font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(26,26,24,0.65);line-height:1.7;padding:16px 24px 24px;background:#fff }
+    /* dark promise section */
+    .wr-dark { background:#1A1A18;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center }
+    .wr-dark h3 { font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FDFCFB;margin:0 0 16px }
+    .wr-dark p { font-size:15px;color:rgba(253,252,251,0.7);line-height:1.75;margin-bottom:14px }
+    .wr-dark p:last-child { margin-bottom:0 }
+    .wr-dark-stats { display:grid;grid-template-columns:1fr 1fr;gap:20px }
+    .wr-dark-stat-num { font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:#D4860A;line-height:1.1 }
+    .wr-dark-stat-label { font-size:12px;color:rgba(253,252,251,0.4);margin-top:6px }
+
+    /* console tiers */
+    .wr-console-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden;margin-top:32px }
+    .wr-console { background:#fff;padding:24px }
+    .wr-console h4 { font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#1A1A18;margin:0 0 4px }
+    .wr-console-tag { font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D4860A;margin-bottom:8px;display:block }
+    .wr-console p { font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6;margin:0 }
+
     .wr-stick { position:fixed;bottom:0;left:0;right:0;z-index:500;background:#1A1A18;color:#FDFCFB;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;font-family:'DM Sans',sans-serif;transform:translateY(100%);transition:transform 0.3s }
     .wr-stick.visible { transform:translateY(0) }
     .wr-stick-title { font-size:15px;font-weight:600 }
@@ -162,6 +178,22 @@ PAGE_BODY = """\
       <p class="wr-body">This isn't a gimmick — it's a commitment Mike and Andrew Nehra made when they started Vintage King. They'd bought broken, incomplete junk for their own studio and swore they'd never let that happen to a customer.</p>
     </div>
   </section>
+
+  <!-- ── THE VK PROMISE — DARK SECTION ── -->
+  <div class="wr-dark">
+    <div>
+      <h3>The Vintage King Promise</h3>
+      <p>In the early days of Vintage King, owners Mike and Andrew Nehra would buy vintage gear for their recording studio and often receive broken and incomplete junk in need of repair.</p>
+      <p>When Vintage King became a retailer, they made a pledge to never let that happen to any of their customers. Not once. That's why Vintage King offers an industry-leading level of technical service and warranty support — the likes of which has never been surpassed.</p>
+      <p>Every used and vintage item is serviced by our in-house tech team before it ships. Every new item gets an extra year of warranty coverage at no cost. This isn't a marketing claim — it's the founding principle of the company.</p>
+    </div>
+    <div class="wr-dark-stats">
+      <div><div class="wr-dark-stat-num">30+</div><div class="wr-dark-stat-label">Years in business</div></div>
+      <div><div class="wr-dark-stat-num">+1 Year</div><div class="wr-dark-stat-label">Free on every new item</div></div>
+      <div><div class="wr-dark-stat-num">In-House</div><div class="wr-dark-stat-label">Tech Shop service</div></div>
+      <div><div class="wr-dark-stat-num">$0</div><div class="wr-dark-stat-label">No registration needed</div></div>
+    </div>
+  </div>
 
   <!-- ── THREE TIERS ── -->
   <section class="wr-section wr-section-off">
@@ -253,7 +285,34 @@ PAGE_BODY = """\
         </div>
       </div>
 
-      <p class="wr-body" style="margin-top:32px">ADH plans from Extend are also available on VK-serviced used items. Consoles have separate warranty tiers depending on servicing level — from as-is brokerage to premium restoration with 1-year warranty on all removable modules.</p>
+      <p class="wr-body" style="margin-top:32px">ADH plans from Extend are also available on VK-serviced used items.</p>
+
+      <div class="wr-eyebrow" style="margin-top:48px">Console Warranty Tiers</div>
+      <h2 class="wr-h2" style="font-size:28px">Recording Consoles</h2>
+      <p class="wr-sub">Due to the size and complexity of recording consoles, warranty coverage varies by servicing level.</p>
+
+      <div class="wr-console-grid">
+        <div class="wr-console">
+          <span class="wr-console-tag">Brokered</span>
+          <h4>As-Is with Tech Report</h4>
+          <p>VK represents the sale on behalf of the owner. Detailed third-party tech report when possible. No warranty included. VK handles decommissioning, freight, and payment.</p>
+        </div>
+        <div class="wr-console">
+          <span class="wr-console-tag">Tested with fault report</span>
+          <h4>Fair Market Value</h4>
+          <p>Owned by VK, priced to reflect needed work. Cleaned, tested, guaranteed to power up on delivery. Tech report details all flaws. No warranty included.</p>
+        </div>
+        <div class="wr-console">
+          <span class="wr-console-tag">Serviced</span>
+          <h4>30-Day Module Warranty</h4>
+          <p>Fully functioning, thorough cleaning and testing by VK techs. Faults repaired to factory spec. 30-day warranty on removable modules and power supplies.</p>
+        </div>
+        <div class="wr-console">
+          <span class="wr-console-tag">Premium restoration</span>
+          <h4>1-Year Module Warranty</h4>
+          <p>Serviced to order upon deposit. Craftsmanship that exceeds expectations. One-year warranty on all removable modules and power supplies.</p>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -2669,9 +2669,21 @@
 
     /* spec table */
     .u76-spec-table { width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;font-size:13px;margin-bottom:32px }
-    .u76-spec-table th { text-align:left;padding:12px 16px;background:rgba(26,26,24,0.04);color:rgba(26,26,24,0.5);font-weight:600;letter-spacing:0.04em;font-size:11px;text-transform:uppercase;border-bottom:1px solid rgba(26,26,24,0.08) }
+    .u76-spec-table th { text-align:left;padding:12px 16px;background:#1A1A18;color:#FDFCFB;font-weight:600;letter-spacing:0.04em;font-size:11px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.1) }
     .u76-spec-table td { padding:12px 16px;border-bottom:1px solid rgba(26,26,24,0.06);color:#1A1A18 }
     .u76-spec-table tr:last-child td { border-bottom:none }
+
+    /* dark explainer section */
+    .u76-dark { background:#1A1A18;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center }
+    .u76-dark h3 { font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FDFCFB;margin:0 0 16px }
+    .u76-dark p { font-size:15px;color:rgba(253,252,251,0.7);line-height:1.75;margin-bottom:14px }
+    .u76-dark p:last-child { margin-bottom:0 }
+    .u76-dark-visual { background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:3px;padding:32px;text-align:center }
+    .u76-dark-label { font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,252,251,0.35);margin-top:16px }
+    .u76-dark-btn { display:inline-flex;align-items:center;gap:6px;background:rgba(212,134,10,0.15);border:1px solid rgba(212,134,10,0.3);color:#D4860A;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:8px 14px;border-radius:2px;margin:6px 3px }
+
+    /* buyer guide image */
+    .u76-gc-img { width:100%;height:140px;object-fit:contain;background:#F7F5F2;border-radius:2px;margin-bottom:12px }
 
     /* pull quote */
     .u76-quote { border-left:3px solid #D4860A;padding:24px 0 24px 32px;margin:40px 0 }
@@ -2729,8 +2741,8 @@
       <a href="https://vintageking.com/urei-universal-audio-1176ln-compressor-limiter" target="_blank" style="display:inline-block;background:#C0392B;color:#fff;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em;align-self:flex-start">Shop 1176 Models</a>
     </div>
     <div class="u76-hero-img">
-      <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80" alt="Universal Audio 1176 compressor-limiter — studio rack" loading="lazy">
-      <span class="u76-hero-caption">Placeholder — replace with VK product photo</span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/UREI_1176LN_%28Silver%29_x6.jpg/600px-UREI_1176LN_%28Silver%29_x6.jpg" alt="Rack of six UREI 1176LN Silverface compressor-limiters" loading="lazy">
+      <span class="u76-hero-caption">Photo: Ville Hyvonen / Wikimedia CC BY-SA 2.0</span>
     </div>
   </section>
 
@@ -2758,6 +2770,27 @@
       </div>
     </div>
   </section>
+
+  <!-- ── ALL BUTTONS IN — DARK SECTION ── -->
+  <div class="u76-dark">
+    <div>
+      <h3>"All Buttons In" — The Accident That Became a Standard</h3>
+      <p>Pressing all four ratio buttons simultaneously was never intended by the designers. But engineers discovered that it engages a unique compression behavior — the ratio hovers between 12:1 and 20:1, distortion increases dramatically, and the unit produces a distinctive pumping, breathing effect unlike any other compressor.</p>
+      <p>This "nuke" or "British Mode" setting became one of the most iconic sounds in recording. Engineers use it on drums for explosive room tone, on vocals for urgent, stressed character, and on room mics for that larger-than-life ambience heard on countless records from Led Zeppelin to Radiohead.</p>
+      <p>The 1176's controls are famously reversed: fully clockwise = slowest attack, fully counter-clockwise = fastest (20 microseconds). This catches every first-time user off guard.</p>
+    </div>
+    <div class="u76-dark-visual">
+      <div style="display:flex;justify-content:center;gap:8px;margin-bottom:20px">
+        <span class="u76-dark-btn">4:1</span>
+        <span class="u76-dark-btn">8:1</span>
+        <span class="u76-dark-btn">12:1</span>
+        <span class="u76-dark-btn">20:1</span>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#D4860A;margin:16px 0 8px">All Four In</div>
+      <div style="font-size:13px;color:rgba(253,252,251,0.5);line-height:1.5">Ratio: ~12:1 to 20:1 · Heavy distortion<br>Attack: program-dependent · Character: aggressive pump</div>
+      <div class="u76-dark-label">The most famous "mistake" in compressor history</div>
+    </div>
+  </div>
 
   <!-- ── SPEC TABLE ── -->
   <section class="u76-section u76-section-off">
@@ -2944,29 +2977,33 @@
 
       <div class="u76-gc-grid">
         <div class="u76-gc">
+          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_1176ln_1_1.jpg" alt="Universal Audio 1176LN" loading="lazy">
           <div class="u76-gc-tag">Modern reissue</div>
           <h4>Universal Audio 1176LN</h4>
           <div class="u76-gc-price">$2,999</div>
-          <p>The official reissue. Based on Rev C/D/E, built at UA's facility. Class A output, hand-matched FET, original Bill Putnam circuit. The benchmark.</p>
-          <a href="https://vintageking.com/universal-audio-1176-ln" target="_blank">Shop at Vintage King &rarr;</a>
+          <p>The official reissue. Based on Rev C/D/E, hand-built in Scotts Valley. Class A output, hand-matched FET, original Putnam-designed output transformer. The benchmark.</p>
+          <a href="https://vintageking.com/features/universal-audio-1176-ln" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
+          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_6176_1_1.jpg" alt="Universal Audio 6176" loading="lazy">
           <div class="u76-gc-tag">Channel strip</div>
           <h4>Universal Audio 6176</h4>
           <div class="u76-gc-price">$2,999</div>
-          <p>610 tube preamp paired with the 1176LN compressor in a single 2U chassis. Record-ready signal chain.</p>
+          <p>610 tube preamp paired with the 1176LN compressor in a single 2U chassis. Record-ready signal chain from mic to mix.</p>
           <a href="https://vintageking.com/universal-audio-6176" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
+          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/p/u/purple-audio-mc77_259_1.jpg" alt="Purple Audio MC77" loading="lazy">
           <div class="u76-gc-tag">Alternative</div>
           <h4>Purple Audio MC77</h4>
           <div class="u76-gc-price">$1,850</div>
-          <p>Expanded feature set: stepped I/O, sidechain HPF, and hard/soft recovery. One of the most respected 1176-style units on the market.</p>
+          <p>Expanded feature set: stepped I/O, sidechain HPF, hard/soft recovery. One of the most respected 1176-style units on the market.</p>
           <a href="https://vintageking.com/purple-audio-mc77" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
       </div>
       <div class="u76-gc-grid" style="margin-top:1px">
         <div class="u76-gc">
+          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/r/e/retro-176_9135_1a.jpg" alt="Retro Instruments 176" loading="lazy">
           <div class="u76-gc-tag">Alternative</div>
           <h4>Retro Instruments 176</h4>
           <div class="u76-gc-price">$3,695</div>
@@ -2974,6 +3011,7 @@
           <a href="https://vintageking.com/retro-instruments-176" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
+          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/u/k/uk-sound-176_97528_1a.jpg" alt="UK Sound 176 Mono" loading="lazy">
           <div class="u76-gc-tag">Budget hardware</div>
           <h4>UK Sound 176 Mono</h4>
           <div class="u76-gc-price">$749</div>
@@ -2981,11 +3019,12 @@
           <a href="https://vintageking.com/uk-sound-176-mono-compressor" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
         <div class="u76-gc">
-          <div class="u76-gc-tag">Plug-in</div>
-          <h4>Waves CLA-76</h4>
-          <div class="u76-gc-price">$29.99</div>
-          <p>Chris Lord-Alge's go-to 1176 emulation. Two versions: "Bluey" (Rev A) and "Blacky" (Rev E). Industry standard ITB compression.</p>
-          <a href="https://vintageking.com/waves-cla-76-native" target="_blank">Shop at Vintage King &rarr;</a>
+          <img class="u76-gc-img" src="https://vintageking.com/media/catalog/product/k/l/klark-teknik-fet-1176_82341_1.jpg" alt="Klark Teknik 1176-KT" loading="lazy">
+          <div class="u76-gc-tag">Budget hardware</div>
+          <h4>Klark Teknik 1176-KT</h4>
+          <div class="u76-gc-price">$209</div>
+          <p>Classic FET-style compressor at an entry-level price. All four ratio buttons, all-buttons-in mode. Remarkable value for the 1176 sound.</p>
+          <a href="https://vintageking.com/klark-teknik-1176-kt-classic-fet-style-compressor" target="_blank">Shop at Vintage King &rarr;</a>
         </div>
       </div>
     </div>
