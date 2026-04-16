@@ -472,7 +472,7 @@ PAGE_BODY = f"""\
       <div class="u47-guide">
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><img src="images/u47-guide/telefunken-u47-reissue.jpg" alt="Telefunken U47 large diaphragm tube condenser microphone reissue"></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/t/e/telefunken-elektroakustik-u47_9408_1.jpg" alt="Telefunken U47 large diaphragm tube condenser microphone reissue"></div>
           <h4>Telefunken U47</h4>
           <div class="u47-gc-price">$9,995</div>
           <p>Historically accurate BV8 transformer and classic M7 capsule from the company that made the original VF14 tube and held the distribution rights. The most faithful new-production tribute to the original at any price.</p>
@@ -481,7 +481,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/p/e/pearlman_tm_1_1.jpg" alt="Vintage King Large Badge U47" loading="lazy"></div>
           <h4>Vintage King Large Badge U47</h4>
           <div class="u47-gc-price">$7,995</div>
           <p>The first-ever reproduction of the exceptionally rare "large badge" U47 — originally manufactured 1949–1950 with a bold diamond badge and GN107 transformer from Neumann's CMV-5 bottle mic. Developed with Andreas Grosser's Elektronik Service using original Neumann documentation.</p>
@@ -490,7 +490,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/w/u/wunder-cm7-gs-m7-2.jpg" alt="Wunder Audio CM7 S" loading="lazy"></div>
           <h4>Wunder Audio CM7 S</h4>
           <div class="u47-gc-price">$7,795</div>
           <p>Swiss-milled brass M7 capsule, NOS Telefunken EF14 tube, and a transformer wound from original-spec vintage Mu-Metal. Smooth across the full range — engineered to handle both lows and highs without fatigue or harshness.</p>
@@ -499,7 +499,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/f/l/flea_47_with_ef12_2.jpg" alt="FLEA 47" loading="lazy"></div>
           <h4>FLEA 47</h4>
           <div class="u47-gc-price">$4,945</div>
           <p>Faithful recreation of the original BV8 transformer — exact alloy blend in the laminates. Available with F7 capsule or upgraded F47 (brass ring K47 replica). Option to spec a genuine Telefunken EF12 tube. The standard against which other U 47 reproductions are measured in professional studios.</p>
@@ -508,7 +508,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/p/e/pearlman-church_41871_1.jpg" alt="Heiserman H47tube" loading="lazy"></div>
           <h4>Heiserman H47tube</h4>
           <div class="u47-gc-price">$4,199</div>
           <p>Premium handmade build with a custom USA-made BV08 transformer, NOS Telefunken EF800 tube, and rare vintage capacitors and resistors. HK47 or M7 capsule. Integrated polar pattern switch. Three patterns, rigorous component selection.</p>
@@ -517,7 +517,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/p/e/pearlman-tm47_29365_1.jpg" alt="Pearlman TM-47" loading="lazy"></div>
           <h4>Pearlman TM-47</h4>
           <div class="u47-gc-price">$2,280</div>
           <p>Hand-wired point-to-point circuit with a Pearlman K47 capsule built in Southern California, paper-in-oil output capacitor, and BV8-type transformer. 6SJ7 or 6AC7 tube. Warm and rich — consistently rated among the best U 47-style mics under $5,000.</p>
@@ -526,7 +526,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/r/o/roswell-mini-k47_57200_1_3.jpg" alt="Golden Age GA-47 MK II" loading="lazy"></div>
           <h4>Golden Age GA-47 MK II</h4>
           <div class="u47-gc-price">$1,999</div>
           <p>Hand-built in small batches with a brass body, iron grille, NOS Telefunken EF-800 tube, and replica BV8 transformer. K47 capsule blends vintage warmth with modern clarity. An honest studio tool at a serious price.</p>
@@ -535,7 +535,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><img src="images/u47-guide/telefunken-tf47.jpg" alt="Telefunken TF47 large diaphragm tube condenser microphone"></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/t/e/telefunken-alchemy-tf47_114220_1.jpg" alt="Telefunken TF47 large diaphragm tube condenser microphone" loading="lazy"></div>
           <h4>Telefunken TF47</h4>
           <div class="u47-gc-price">$1,895</div>
           <p>Three polar patterns (cardioid, omni, figure-8), deep low end, and pronounced midrange from the company that distributed the original U 47. NOS Philips/Raytheon 5840W tube. Legitimate German lineage without the premium.</p>
@@ -544,7 +544,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/p/e/peluso_22_47_se_set.jpg" alt="Warm Audio WA-47" loading="lazy"></div>
           <h4>Warm Audio WA-47</h4>
           <div class="u47-gc-price">$949</div>
           <p>Nine polar patterns, AMI/TAB-Funkenwerk BV8 transformer, hand-selected JJ 5751 tube from Slovakia. The entry point for U 47 character in a professional context — genuinely warm and surprising performance for under $1,000.</p>
@@ -563,7 +563,7 @@ PAGE_BODY = f"""\
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(26,26,24,0.08)">
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/f/l/flea-47-next-ii_30815_1.jpg" alt="Neumann U 47 FET Collector's Edition" loading="lazy"></div>
           <h4>Neumann U 47 FET Collector's Edition</h4>
           <div class="u47-gc-price">$3,995</div>
           <p>Neumann's own FET 80 circuit in K47 capsule format with a low-cut filter and -10 dB pad. More neutral, less harmonic color than the tube original. Exceptional transient response and high SPL handling — the U47-lineage choice for kick drum and loud sources.</p>
@@ -572,7 +572,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="u47-gc">
-          <div class="u47-gc-img"><span class="u47-gc-noimg">Photo coming</span></div>
+          <div class="u47-gc-img"><img src="https://vintageking.com/media/catalog/product/n/e/neumann-u48-656-vintage_456897_1.jpg" alt="Telefunken U48" loading="lazy"></div>
           <h4>Telefunken U48</h4>
           <div class="u47-gc-price">~$9,995</div>
           <p>Same VF14-lineage circuit and M7 capsule as the Telefunken U47 reissue — cardioid and figure-eight instead of cardioid and omni. The correct choice when you need to record two singers facing each other on one mic, exactly as George Martin did at Abbey Road.</p>

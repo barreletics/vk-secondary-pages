@@ -168,6 +168,9 @@ PAGE_BODY = f"""\
     /* Guide cards */
     .la2-guide {{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:rgba(26,26,24,0.06) }}
     .la2-gc {{ background:#fff;padding:28px 24px;position:relative }}
+    .la2-gc-img-wrap {{ width:100%;height:180px;overflow:hidden;border-radius:2px;margin-bottom:12px;background:#F7F5F2 }}
+    .la2-gc-img {{ width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease }}
+    .la2-gc:hover .la2-gc-img {{ transform:scale(1.06) }}
     .la2-gc h4 {{ font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1A1A18;margin:0 0 6px }}
     .la2-gc-price {{ font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#D4860A;margin-bottom:12px }}
     .la2-gc p {{ font-size:13px;color:#3A3A38;line-height:1.6;margin:0 0 14px }}
@@ -518,6 +521,7 @@ PAGE_BODY = f"""\
       <div class="la2-guide">
 
         <div class="la2-gc" style="background:#fff">
+          <div class="la2-gc-img-wrap"><img class="la2-gc-img" src="https://vintageking.com/media/catalog/product/w/a/waves_cla_2a.jpg" alt="Waves CLA-2A" loading="lazy"></div>
           <div class="la2-gc-tag" style="color:#D4860A">In the Box</div>
           <h4>Waves CLA-2A</h4>
           <div class="la2-gc-price">$34.99</div>
@@ -526,6 +530,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="la2-gc" style="background:#fff">
+          <div class="la2-gc-img-wrap"><img class="la2-gc-img" src="https://vintageking.com/media/catalog/product/a/c/acme_opticom_xla_500_front.jpg" alt="Acme Opticom XLA-500" loading="lazy"></div>
           <h4>Acme Opticom XLA-500</h4>
           <div class="la2-gc-price">$905</div>
           <p>500 Series optical compressor with a tube in the signal path. Compact format for home and project studios that want hardware optical compression without the full-size commitment. A genuine step up from plug-ins in terms of analog character.</p>
@@ -533,6 +538,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="la2-gc" style="background:#fff">
+          <div class="la2-gc-img-wrap"><img class="la2-gc-img" src="https://vintageking.com/media/catalog/product/i/g/igs-audio-one-la-1.jpg" alt="IGS Audio One LA" loading="lazy"></div>
           <h4>IGS Audio One LA</h4>
           <div class="la2-gc-price">$1,812</div>
           <p>A faithful LA-2A-inspired optical design at a price point accessible to serious home studios. The classic Rev A "Grayface" version is also available as the "576 Blue Stripe." Well-regarded for its T4-inspired cell and transformer quality at this price.</p>
@@ -540,6 +546,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="la2-gc" style="background:#fff">
+          <div class="la2-gc-img-wrap"><img class="la2-gc-img" src="https://vintageking.com/media/catalog/product/a/c/acme-opticom-xla-3-mkiii_158640_1.jpg" alt="Acme Opticom XLA-3 MKIII" loading="lazy"></div>
           <h4>Acme Opticom XLA-3 MKIII</h4>
           <div class="la2-gc-price">$2,599</div>
           <p>Optical limiter combining three separate compression curves into one unit. Combines LA-2A-inspired warmth with more versatile control options. Well-suited for tracking and mixing rooms that want optical compression character without restricting themselves to one compression topology.</p>
@@ -547,6 +554,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="la2-gc" style="background:#fff">
+          <div class="la2-gc-img-wrap"><img class="la2-gc-img" src="https://vintageking.com/media/catalog/product/t/u/tubetech_cl1b_3.jpg" alt="Tube-Tech CL 1B" loading="lazy"></div>
           <div class="la2-gc-tag" style="color:#1A1A18">Pro Studio</div>
           <h4>Tube-Tech CL 1B</h4>
           <div class="la2-gc-price">$4,725</div>
@@ -555,6 +563,7 @@ PAGE_BODY = f"""\
         </div>
 
         <div class="la2-gc" style="background:#fff">
+          <div class="la2-gc-img-wrap"><img class="la2-gc-img" src="https://vintageking.com/media/catalog/product/u/n/universalaudio_la2a_1_1.jpg" alt="Universal Audio LA-2A" loading="lazy"></div>
           <div class="la2-gc-tag" style="color:#D4860A">Reference</div>
           <h4>Universal Audio LA-2A</h4>
           <div class="la2-gc-price">$4,999</div>
