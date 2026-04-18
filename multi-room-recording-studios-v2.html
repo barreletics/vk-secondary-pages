@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Room Recording and Mixing Studios — Design and Build | Vintage King</title>
+<meta name="description" content="Design and outfit multi-room recording, mixing, mastering, and dub stages with Vintage King. Acoustics, monitoring, signal flow, and integration handled end to end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--vk-red:#C0392B;--vk-red-dk:#922B21;--off-white:#F7F5F2;--warm-white:#FDFCFB;--near-black:#1A1A18;--charcoal:#2C2C2A;--mid-grey:#6B6B68;--light-grey:#D8D6D2;--pale-grey:#EDEDEA;--amber:#D4860A;--amber-bg:#F5E6C8;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',sans-serif;--page-accent:#D4860A;--nav-h:80px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:clip}
+body{font-family:var(--font-body);background:var(--warm-white);color:var(--near-black);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.page{display:none}.page.active{display:block}
+.topbar{position:sticky;top:0;z-index:200;background:var(--near-black);height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;font-size:11px;color:rgba(255,255,255,0.92);font-weight:500}
+.topbar a{color:rgba(255,255,255,0.92);text-decoration:none;transition:color 0.15s;font-weight:500}
+.topbar-left{display:flex;gap:24px;align-items:center}
+.topbar-divider{width:1px;height:12px;background:rgba(255,255,255,0.15)}
+.utility-bar{background:var(--warm-white);border-bottom:1px solid rgba(26,26,24,0.08);height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.utility-bar-links{display:flex;align-items:center;gap:0}
+.utility-bar-links a{font-size:12px;color:rgba(26,26,24,0.68);text-decoration:none;letter-spacing:0.03em;padding:0 12px;border-right:1px solid rgba(26,26,24,0.12);line-height:1;transition:color 0.15s}
+.utility-bar-links a:first-child{padding-left:0}
+.utility-bar-links a:last-child{border-right:none}
+.utility-bar-phone{font-size:12.5px;color:var(--vk-red);font-weight:600;letter-spacing:0.03em;text-decoration:none;display:flex;align-items:center;gap:5px}
+.site-nav{position:sticky;top:32px;z-index:199;background:var(--warm-white);border-bottom:1px solid var(--light-grey);height:var(--nav-h)}
+.nav-inner{max-width:1440px;margin:0 auto;padding:0 40px;height:100%;display:flex;align-items:center;gap:0}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;margin-right:32px}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text .name{font-family:"Roboto",sans-serif;font-size:17px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--near-black)}
+.logo-text .tagline{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid-grey);margin-top:3px}
+.nav-items{display:flex;align-items:stretch;height:100%;list-style:none;flex:1}
+.nav-item{height:100%;position:relative}
+.nav-item>a{display:flex;align-items:center;gap:4px;height:100%;padding:0 14px;font-size:14px;font-weight:500;letter-spacing:0.025em;color:var(--charcoal);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px}
+.nav-item>a:hover{color:var(--near-black);border-bottom-color:var(--vk-red)}
+.nav-item.vintage>a{color:var(--amber)}
+.nav-item.deals>a{color:var(--vk-red);font-weight:600;margin-left:16px}
+.nav-actions{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:8px;background:var(--off-white);border:1px solid var(--light-grey);border-radius:4px;padding:7px 12px}
+.nav-search-wrap input{border:none;background:none;font-family:var(--font-body);font-size:12.5px;color:var(--charcoal);outline:none;width:180px}
+.nav-icon{background:none;border:none;cursor:pointer;color:var(--charcoal);padding:6px;display:flex;align-items:center;position:relative}
+.cart-count{position:absolute;top:0;right:0;background:var(--vk-red);color:#fff;font-size:9px;font-weight:600;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.nav-expert-btn{display:flex;align-items:center;gap:7px;background:var(--vk-red);color:#fff;border:none;cursor:pointer;padding:9px 16px;border-radius:3px;font-family:var(--font-body);font-size:13px;font-weight:500;letter-spacing:0.05em}
+.pulse-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
+
+/* PAGE */
+.mr-wrap{max-width:1160px;margin:0 auto;padding:0 40px}
+.mr-eyebrow{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--page-accent);margin-bottom:14px}
+.mr-hero{background:#EDE8E2;display:grid;grid-template-columns:1.1fr 1fr;min-height:520px;overflow:hidden;align-items:stretch}
+.mr-hero-text{padding:88px 56px 88px 80px;display:flex;flex-direction:column;justify-content:center}
+.mr-hero h1{font-family:var(--font-display);font-size:52px;font-weight:700;line-height:1.05;color:var(--near-black);margin:0 0 22px}
+.mr-hero p.lead{font-family:var(--font-body);font-size:17px;color:rgba(26,26,24,0.7);line-height:1.65;margin:0 0 32px;max-width:540px}
+.mr-cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.mr-btn{display:inline-flex;align-items:center;gap:7px;background:var(--page-accent);color:#fff;padding:14px 28px;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:0.02em}
+.mr-btn-ghost{display:inline-flex;align-items:center;gap:7px;color:var(--near-black);background:transparent;border:1.5px solid rgba(26,26,24,0.2);padding:13px 24px;font-size:14px;font-weight:600;text-decoration:none;border-radius:2px}
+.mr-hero-img{position:relative;background:#1A1A18;overflow:hidden;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.35);font-size:13px;letter-spacing:0.1em;text-transform:uppercase}
+.mr-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+.mr-strip{background:var(--warm-white);border-bottom:1px solid rgba(26,26,24,0.06);border-top:1px solid rgba(26,26,24,0.06)}
+.mr-strip-inner{max-width:1160px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.mr-strip-item{font-size:13px;color:rgba(26,26,24,0.65);display:flex;align-items:center;gap:8px}
+.mr-strip-item strong{color:var(--near-black);font-weight:600}
+
+.mr-section{padding:80px 0}
+.mr-section-off{background:var(--off-white)}
+.mr-section-white{background:#fff}
+.mr-section-cta{background:#EDE8E2}
+.mr-h2{font-family:var(--font-display);font-size:38px;font-weight:700;color:var(--near-black);margin:0 0 10px;line-height:1.15}
+.mr-sub{font-family:var(--font-body);font-size:15px;color:rgba(26,26,24,0.55);max-width:680px;line-height:1.7;margin:0 0 44px}
+
+.mr-rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden}
+.mr-room{background:#fff;padding:32px 24px;border-top:3px solid var(--page-accent);transition:transform .25s,box-shadow .25s}
+.mr-room:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(26,26,24,0.08)}
+.mr-room-num{font-size:11px;font-weight:700;letter-spacing:0.18em;color:rgba(26,26,24,0.35);text-transform:uppercase;margin-bottom:14px}
+.mr-room h3{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--near-black);margin:0 0 10px}
+.mr-room p{font-size:13.5px;color:rgba(26,26,24,0.62);line-height:1.65;margin:0 0 14px}
+.mr-room ul{list-style:none;padding:0;margin:0}
+.mr-room li{font-size:12.5px;color:rgba(26,26,24,0.55);padding:5px 0;border-top:1px dashed rgba(26,26,24,0.08)}
+.mr-room li:first-child{border-top:none}
+
+.mr-process{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(26,26,24,0.08);border-radius:3px;overflow:hidden}
+.mr-step{background:#fff;padding:32px 22px;border-top:3px solid var(--page-accent)}
+.mr-step-num{font-family:var(--font-body);font-size:30px;font-weight:700;color:var(--page-accent);line-height:1;margin-bottom:12px}
+.mr-step h4{font-family:var(--font-body);font-size:14px;font-weight:700;color:var(--near-black);margin:0 0 8px;text-transform:uppercase;letter-spacing:0.04em}
+.mr-step p{font-size:12.5px;color:rgba(26,26,24,0.6);line-height:1.6;margin:0}
+
+.mr-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mr-project{background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.mr-project-img{height:240px;background:var(--off-white);border-bottom:1px solid rgba(26,26,24,0.06);display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.25);font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+.mr-project-body{padding:24px 26px 28px}
+.mr-project-loc{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--page-accent);margin-bottom:8px}
+.mr-project h3{font-family:var(--font-display);font-size:22px;font-weight:600;margin:0 0 8px;line-height:1.25}
+.mr-project p{font-size:13.5px;color:rgba(26,26,24,0.6);line-height:1.6;margin:0 0 14px}
+.mr-project-meta{display:flex;gap:14px;font-size:11.5px;color:rgba(26,26,24,0.5);border-top:1px solid rgba(26,26,24,0.06);padding-top:12px;margin-top:auto}
+.mr-project-meta span strong{color:var(--near-black);font-weight:600;display:block;font-size:12.5px;letter-spacing:0.02em;margin-bottom:2px}
+
+.mr-dark{background:var(--near-black);padding:80px 0}
+.mr-dark-inner{max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center}
+.mr-dark .mr-eyebrow{color:var(--page-accent)}
+.mr-dark h2{font-family:var(--font-display);font-size:38px;font-weight:700;color:#fff;margin:0 0 16px;line-height:1.15}
+.mr-dark p{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.75;margin:0 0 14px}
+.mr-quote{padding:36px;background:rgba(255,255,255,0.04);border-left:3px solid var(--page-accent);border-radius:2px}
+.mr-quote-text{font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff;line-height:1.45;margin:0 0 16px;font-style:italic}
+.mr-quote-att{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase}
+
+.mr-form{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start}
+.mr-form-side h2{font-family:var(--font-display);font-size:36px;font-weight:700;margin:0 0 14px;line-height:1.15}
+.mr-form-side p{font-size:15px;color:rgba(26,26,24,0.65);line-height:1.7;margin:0 0 22px;max-width:480px}
+.mr-form-side ul{list-style:none;padding:0;margin:0}
+.mr-form-side li{font-size:14px;color:rgba(26,26,24,0.7);padding:10px 0;border-top:1px solid rgba(26,26,24,0.08);display:flex;align-items:flex-start;gap:10px}
+.mr-form-side li::before{content:"—";color:var(--page-accent);font-weight:700;flex-shrink:0}
+.mr-form-card{background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:4px;padding:32px}
+.mr-form-card label{display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,26,24,0.55);margin-bottom:6px;margin-top:14px}
+.mr-form-card label:first-child{margin-top:0}
+.mr-form-card input,.mr-form-card select,.mr-form-card textarea{width:100%;padding:12px 14px;font-family:var(--font-body);font-size:14px;color:var(--near-black);background:#fff;border:1px solid rgba(26,26,24,0.15);border-radius:2px;outline:none}
+.mr-form-card input:focus,.mr-form-card select:focus,.mr-form-card textarea:focus{border-color:var(--vk-red)}
+.mr-form-card textarea{min-height:90px;resize:vertical}
+.mr-form-card button{margin-top:22px;width:100%;background:var(--page-accent);color:#fff;font-size:14px;font-weight:600;letter-spacing:0.04em;padding:14px;border:none;border-radius:2px;cursor:pointer}
+
+.mr-faq details{margin-bottom:2px}
+.mr-faq summary{font-size:15px;font-weight:600;color:var(--near-black);padding:18px 24px;background:#fff;cursor:pointer;list-style:none;border-bottom:1px solid rgba(26,26,24,0.06)}
+.mr-faq summary::-webkit-details-marker{display:none}
+.mr-faq summary::after{content:"+";float:right;font-size:18px;color:rgba(26,26,24,0.3)}
+.mr-faq details[open] summary::after{content:"\2212"}
+.mr-faq-a{font-size:14px;color:rgba(26,26,24,0.65);line-height:1.7;padding:16px 24px 24px;background:#fff}
+
+.mr-stick{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--near-black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;transform:translateY(100%);transition:transform 0.3s}
+.mr-stick.visible{transform:translateY(0)}
+.mr-stick-title{font-size:15px;font-weight:600}
+.mr-stick-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px}
+.mr-stick-cta{background:var(--vk-red);color:#fff;padding:10px 22px;font-size:13px;font-weight:600;text-decoration:none;border-radius:2px}
+
+/* FOOTER */
+.site-footer{background:#F0EDE8;padding:56px 0 32px;margin-bottom:80px}
+.footer-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand-name{font-family:"Roboto",sans-serif;font-size:18px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--near-black);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.footer-brand-desc{font-size:13px;color:var(--mid-grey);line-height:1.7;max-width:260px}
+.footer-col-title{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid-grey);font-weight:500;margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:var(--charcoal);text-decoration:none}
+.footer-bottom{border-top:1px solid var(--light-grey);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--mid-grey)}
+.footer-bottom a{color:var(--mid-grey);text-decoration:none}
+
+@media(max-width:980px){
+  .mr-hero{grid-template-columns:1fr}
+  .mr-rooms{grid-template-columns:repeat(2,1fr)}
+  .mr-process{grid-template-columns:repeat(2,1fr)}
+  .mr-projects{grid-template-columns:1fr}
+  .mr-form{grid-template-columns:1fr}
+  .mr-dark-inner{grid-template-columns:1fr}
+}
+</style>
+<style>
+.pg-hero-img-v2{background:#FFFFFF;border:1px solid rgba(26,26,24,0.08);border-radius:3px;min-height:380px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:20px;font-family:var(--font-body);font-weight:500}
+.pg-photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}
+.pg-photo-slot{margin:0}
+.pg-photo{background:var(--off-white);border:1px solid rgba(26,26,24,0.08);border-radius:3px;aspect-ratio:1/1;max-width:580px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-family:var(--font-body);font-weight:500;text-align:center;padding:20px}
+.pg-photo-slot figcaption{margin-top:14px;font-family:var(--font-body);font-size:13px;color:rgba(26,26,24,0.62);line-height:1.5}
+.pg-explore{background:var(--off-white);padding:64px 0;border-top:1px solid rgba(26,26,24,0.07)}
+.pg-explore-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+.pg-explore-h2{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--near-black);margin:0 0 28px}
+.pg-explore-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.pg-explore-card{background:#fff;border:1px solid rgba(26,26,24,0.08);padding:28px;text-decoration:none;display:block;transition:transform 0.18s,box-shadow 0.18s;border-radius:3px}
+.pg-explore-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,26,24,0.08)}
+.pg-explore-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:10px;font-family:var(--font-body)}
+.pg-explore-title{font-family:var(--font-display);font-size:19px;font-weight:700;color:var(--near-black);margin-bottom:8px;line-height:1.3}
+.pg-explore-body{font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6}
+.pg-explore-cta{margin-top:16px;font-size:12px;font-weight:700;color:var(--page-accent);letter-spacing:0.06em}
+@media(max-width:980px){.pg-photo-grid,.pg-explore-grid{grid-template-columns:1fr}}
+</style>
+<style id="vk-standalone-patch">.page{display:block!important}</style>
+</head>
+<body>
+<nav class="vk-secondary-chrome" aria-label="Secondary pages nav" style="position:sticky;top:0;z-index:400;background:#1A1A18;color:#FDFCFB;padding:10px 20px;font-size:12px;font-family:var(--font-body);display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <a href="navigator.html" style="color:#FDFCFB;font-weight:600;text-decoration:none">Demo Dashboard</a>
+  <span style="opacity:0.35">|</span>
+  <a href="classic-studios-gone-modern.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Classic Studios</a>
+  <span style="opacity:0.35">|</span>
+  <a href="recording-at-home.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Recording at Home</a>
+  <span style="opacity:0.35">|</span>
+  <span style="opacity:0.75">Multi-Room Studios</span>
+</nav>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="#">Free shipping on orders over $99</a>
+    <div class="topbar-divider"></div>
+    <a href="#">0% financing up to 48 months — Learn more</a>
+  </div>
+</div>
+<div class="utility-bar">
+  <div class="utility-bar-links">
+    <a href="studio-professionals.html">Studio Professionals</a>
+    <a href="trade-program.html">Trade Program</a>
+    <a href="#">Studio Installations</a>
+    <a href="#" style="color:var(--vk-red);font-weight:500">Sell or Trade</a>
+    <a href="vk-credit-card.html">Financing</a>
+    <a href="section-179.html">Section 179</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:0">
+    <a href="tel:8886531184" class="utility-bar-phone">888.653.1184</a>
+    <span style="color:rgba(26,26,24,0.2);padding:0 10px;font-size:10px">·</span>
+    <a href="#" style="font-size:12.5px;font-weight:600;color:rgba(26,26,24,0.55);text-decoration:none;letter-spacing:0.03em">Sign In</a>
+  </div>
+</div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><div class="logo-text"><span class="name">Vintage King</span><span class="tagline">New · Used · Vintage · Pro Audio</span></div></a>
+    <ul class="nav-items">
+      <li class="nav-item"><a href="#">Microphones</a></li>
+      <li class="nav-item"><a href="#">Outboard</a></li>
+      <li class="nav-item"><a href="#">Consoles</a></li>
+      <li class="nav-item vintage"><a href="#">Vintage and Used ✦</a></li>
+      <li class="nav-item"><a href="#">Studio Design</a></li>
+      <li class="nav-item"><a href="#">Monitoring</a></li>
+      <li class="nav-item"><a href="#">Learn</a></li>
+      <li class="nav-item deals"><a href="#">Deals</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B68" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search 50,000+ products…">
+      </div>
+      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><div class="cart-count">2</div></button>
+      <button class="nav-expert-btn"><div class="pulse-dot"></div> Ask</button>
+    </div>
+  </div>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Multi-Room Recording and Mixing Studio Design",
+      "provider": {"@type": "Organization", "name": "Vintage King Audio", "url": "https://vintageking.com"},
+      "description": "Turnkey design, integration, and outfitting for multi-room recording, mixing, mastering, and dub stages. Acoustics, monitoring, signal flow, and gear specification handled in-house.",
+      "areaServed": "Worldwide",
+      "serviceType": "Studio Design and Integration"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How long does a multi-room studio build take?", "acceptedAnswer": {"@type": "Answer", "text": "Most multi-room builds run 6–14 months from spec to first session. Acoustic shell construction sets the long pole; gear specification and signal flow run in parallel."}},
+        {"@type": "Question", "name": "Do you handle acoustics or just gear?", "acceptedAnswer": {"@type": "Answer", "text": "Both. We design with vetted acoustician partners, then specify monitoring, treatment, signal flow, and gear so the room and the gear match."}},
+        {"@type": "Question", "name": "Can you work with our existing architect?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We routinely integrate with architects and GCs. We deliver gear lists, rack drawings, and signal-flow documentation your team can build to."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<div id="multi-room" class="page active">
+
+<!-- HERO -->
+<section class="mr-hero">
+  <div class="mr-hero-text">
+    <div class="mr-eyebrow">Studios by VK · Multi-Room Builds</div>
+    <h1>Multi-room recording and mixing studios, designed and outfitted end to end.</h1>
+    <p class="lead" class="speakable">Tracking room, control room, mix suite, vocal booth, mastering, dub stage. We design the signal flow, specify the gear, and integrate with your acoustician and GC so the rooms work the day they open.</p>
+    <div class="mr-cta-row">
+      <a href="#start" class="mr-btn">Start Your Build →</a>
+      <a href="#projects" class="mr-btn-ghost">See Recent Projects</a>
+    </div>
+  </div>
+  <div class="pg-hero-img-v2">Hero photo<br>720 × 540 recommended</div>
+</section>
+
+<!-- STRIP -->
+<div class="mr-strip">
+  <div class="mr-strip-inner">
+    <div class="mr-strip-item"><strong>30+ years</strong> · designing pro recording rooms</div>
+    <div class="mr-strip-item"><strong>500+ studios</strong> · outfitted across the U.S.</div>
+    <div class="mr-strip-item"><strong>One team</strong> · spec → install → support</div>
+    <div class="mr-strip-item"><strong>VK Warranty</strong> · on every spec'd component</div>
+  </div>
+</div>
+
+<!-- ROOM TYPES -->
+<section class="mr-section mr-section-off">
+  <div class="mr-wrap">
+    <div class="mr-eyebrow">Room Types</div>
+    <h2 class="mr-h2">Every room in the building.</h2>
+    <p class="mr-sub">From the live floor to the dub stage. We spec each room to its job, and integrate them so signal flows cleanly between every space.</p>
+    <div class="mr-rooms">
+      <div class="mr-room">
+        <div class="mr-room-num">01 / Tracking</div>
+        <h3>Live Room</h3>
+        <p>Drum-ready acoustics, isolation booths, and mic locker built around the genres you cut.</p>
+        <ul>
+          <li>Tunable acoustics</li>
+          <li>Iso booths with sightlines</li>
+          <li>Headphone mixing system</li>
+          <li>Tie lines to every space</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">02 / Control</div>
+        <h3>Control Room</h3>
+        <p>Console or hybrid, near-fields and mains, fully patched outboard. Optimized for both tracking and mixing.</p>
+        <ul>
+          <li>Console or controller-based</li>
+          <li>Mains + near-fields</li>
+          <li>Patchbay and outboard rack</li>
+          <li>Talkback and cue system</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">03 / Mix Suite</div>
+        <h3>Mix Room</h3>
+        <p>Tuned for translation. Hybrid or in-the-box, with monitoring and outboard chosen for the work.</p>
+        <ul>
+          <li>Acoustic treatment</li>
+          <li>Monitor calibration</li>
+          <li>Hybrid summing options</li>
+          <li>Atmos-ready scaling</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">04 / Vocal Booth</div>
+        <h3>Vocal / ISO</h3>
+        <p>Dead enough for clean takes, alive enough not to sound like a closet. Mic'd and patched.</p>
+        <ul>
+          <li>Variable acoustics</li>
+          <li>Sightline to control</li>
+          <li>Headphone amp ready</li>
+          <li>Multiple mic options</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">05 / Mastering</div>
+        <h3>Mastering Suite</h3>
+        <p>Reference monitoring, mastering chain, and acoustic accuracy for the final stage.</p>
+        <ul>
+          <li>Mastering monitors</li>
+          <li>Analog or digital chain</li>
+          <li>Calibrated acoustics</li>
+          <li>Format delivery setup</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">06 / Atmos / Dub</div>
+        <h3>Atmos and Dub</h3>
+        <p>Immersive monitoring, room calibration, and routing for music or post production.</p>
+        <ul>
+          <li>7.1.4 to 9.1.6 layouts</li>
+          <li>Renderer and bed routing</li>
+          <li>Acoustic compliance</li>
+          <li>Format-flexible monitoring</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">07 / Edit / Post</div>
+        <h3>Edit / Post Bays</h3>
+        <p>Workstation-first rooms for edit, sound design, and prep. Networked into the main facility.</p>
+        <ul>
+          <li>DAW workstation builds</li>
+          <li>Networked storage</li>
+          <li>Reference monitors</li>
+          <li>Tie-in to mix rooms</li>
+        </ul>
+      </div>
+      <div class="mr-room">
+        <div class="mr-room-num">08 / Machine Rooms</div>
+        <h3>Machine / Tech</h3>
+        <p>Quiet, climate-controlled racks. Cable management, redundancy, and remote access.</p>
+        <ul>
+          <li>Acoustic isolation</li>
+          <li>Cable management</li>
+          <li>Climate and power</li>
+          <li>Remote monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="mr-section mr-section-white">
+  <div class="mr-wrap">
+    <div class="mr-eyebrow">How It Works</div>
+    <h2 class="mr-h2">Five stages. One team.</h2>
+    <p class="mr-sub">From the first phone call through opening night. Vintage King runs the spec, integration, and support so you do not have to coordinate three vendors.</p>
+    <div class="mr-process">
+      <div class="mr-step">
+        <div class="mr-step-num">01</div>
+        <h4>Discovery</h4>
+        <p>Workflow audit, room program, gear philosophy, and budget framing.</p>
+      </div>
+      <div class="mr-step">
+        <div class="mr-step-num">02</div>
+        <h4>Design</h4>
+        <p>Acoustic partner, signal-flow drawings, gear list, rack elevations.</p>
+      </div>
+      <div class="mr-step">
+        <div class="mr-step-num">03</div>
+        <h4>Build</h4>
+        <p>Procurement, pre-rack, integration coordination with GC and acoustician.</p>
+      </div>
+      <div class="mr-step">
+        <div class="mr-step-num">04</div>
+        <h4>Install</h4>
+        <p>On-site install, calibration, signal-flow validation, and walkthrough.</p>
+      </div>
+      <div class="mr-step">
+        <div class="mr-step-num">05</div>
+        <h4>Support</h4>
+        <p>Tech Shop service, VK Warranty, and on-call support after launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK QUOTE -->
+
+<section class="pg-section pg-section-white">
+  <div class="pg-wrap">
+    <div class="pg-eyebrow">In context</div>
+    <div class="pg-photo-grid">
+      <figure class="pg-photo-slot">
+        <div class="pg-photo">580 × 580<br>photo placeholder</div>
+        <figcaption>Live room — multi-room install</figcaption>
+      </figure>
+      <figure class="pg-photo-slot">
+        <div class="pg-photo">580 × 580<br>photo placeholder</div>
+        <figcaption>Control room — console and monitoring</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="mr-dark">
+  <div class="mr-dark-inner">
+    <div>
+      <div class="mr-eyebrow">Why VK</div>
+      <h2>One vendor. Every room. Every signal path.</h2>
+      <p>Most studio builds split gear, acoustics, and integration across three vendors. That is where the budget bleeds and the schedule slips. Vintage King runs all of it under one number, with one signal-flow document, and one warranty.</p>
+      <p>You get an account team, a designer, an installer, and a Tech Shop on call after the doors open.</p>
+    </div>
+    <div class="mr-quote">
+      <p class="mr-quote-text">"VK delivered our six-room facility on schedule and on budget. The signal-flow document alone saved us months."</p>
+      <div class="mr-quote-att">— Studio Owner · Multi-room Build · 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="mr-section mr-section-off" id="projects">
+  <div class="mr-wrap">
+    <div class="mr-eyebrow">Recent Projects</div>
+    <h2 class="mr-h2">Multi-room facilities outfitted by VK.</h2>
+    <p class="mr-sub">A snapshot of recent multi-room builds. From boutique two-room mix houses to full-service commercial facilities.</p>
+    <div class="mr-projects">
+      <div class="mr-project">
+        <div class="mr-project-img">Studio A · Tracking + Mix</div>
+        <div class="mr-project-body">
+          <div class="mr-project-loc">Nashville · 2024</div>
+          <h3>Six-Room Commercial Facility</h3>
+          <p>Tracking, two mix suites, vocal booth, mastering, and a dub stage. Full Vintage King outfit including console and Atmos monitoring.</p>
+          <div class="mr-project-meta">
+            <span><strong>6 rooms</strong>Build scope</span>
+            <span><strong>14 mo</strong>Spec to open</span>
+          </div>
+        </div>
+      </div>
+      <div class="mr-project">
+        <div class="mr-project-img">Mix Suite · Hybrid</div>
+        <div class="mr-project-body">
+          <div class="mr-project-loc">Los Angeles · 2024</div>
+          <h3>Two-Room Mix House</h3>
+          <p>Hybrid mix suite with stem-printing, edit bay, and shared machine room. Calibrated for translation and immersive scaling.</p>
+          <div class="mr-project-meta">
+            <span><strong>2 rooms</strong>Build scope</span>
+            <span><strong>7 mo</strong>Spec to open</span>
+          </div>
+        </div>
+      </div>
+      <div class="mr-project">
+        <div class="mr-project-img">Mastering Suite</div>
+        <div class="mr-project-body">
+          <div class="mr-project-loc">Brooklyn · 2023</div>
+          <h3>Mastering and Edit</h3>
+          <p>Reference-grade mastering room plus a networked edit bay. Analog mastering chain integrated with high-resolution conversion and routing.</p>
+          <div class="mr-project-meta">
+            <span><strong>2 rooms</strong>Build scope</span>
+            <span><strong>5 mo</strong>Spec to open</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM CTA -->
+<section class="mr-section mr-section-cta" id="start">
+  <div class="mr-wrap">
+    <div class="mr-form">
+      <div class="mr-form-side">
+        <div class="mr-eyebrow">Start Your Build</div>
+        <h2>Tell us about the rooms.</h2>
+        <p>A studio designer will respond within one business day with next steps and a discovery call slot. No spec sheet required to start.</p>
+        <ul>
+          <li>Discovery call within 1 business day</li>
+          <li>Design partner introduction within 1 week</li>
+          <li>Preliminary gear list within 2–3 weeks</li>
+          <li>Acoustician coordination if needed</li>
+        </ul>
+      </div>
+      <form class="mr-form-card" onsubmit="event.preventDefault();this.querySelector('button').textContent='Sent — we will be in touch';">
+        <label>Your name</label>
+        <input type="text" placeholder="Full name" required>
+        <label>Email</label>
+        <input type="email" placeholder="you@studio.com" required>
+        <label>Project type</label>
+        <select required>
+          <option value="">Select…</option>
+          <option>Single new room</option>
+          <option>Multi-room new build</option>
+          <option>Renovation / expansion</option>
+          <option>Atmos / Immersive add</option>
+        </select>
+        <label>Number of rooms</label>
+        <input type="text" placeholder="e.g. 4 rooms">
+        <label>Budget range</label>
+        <select>
+          <option value="">Select…</option>
+          <option>Under $250k</option>
+          <option>$250k – $500k</option>
+          <option>$500k – $1M</option>
+          <option>$1M+</option>
+        </select>
+        <label>Project notes</label>
+        <textarea placeholder="Workflow, target genres, timeline, location…"></textarea>
+        <button type="submit">Request Discovery Call →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="mr-section mr-section-off">
+  <div class="mr-wrap">
+    <div class="mr-eyebrow">FAQ</div>
+    <h2 class="mr-h2">Common questions.</h2>
+    <p class="mr-sub">If you do not see your question here, request a discovery call above.</p>
+    <div class="mr-faq" style="border:1px solid rgba(26,26,24,0.08);border-radius:3px;overflow:hidden">
+      <details><summary>How long does a multi-room studio build take?</summary><div class="mr-faq-a">Most multi-room builds run 6–14 months from spec to first session. Acoustic shell construction sets the long pole; gear specification, pre-racking, and signal-flow design run in parallel so the room is ready to operate the day construction completes.</div></details>
+      <details><summary>Do you handle acoustics or just gear?</summary><div class="mr-faq-a">Both. We design with vetted acoustician partners and then specify monitoring, treatment, signal flow, and gear so the room and the gear match. Acoustician coordination is included in the design phase.</div></details>
+      <details><summary>Can you work with our existing architect or GC?</summary><div class="mr-faq-a">Yes. We routinely integrate with outside architects and general contractors. We deliver gear lists, rack drawings, signal-flow documentation, and conduit specs your team can build to.</div></details>
+      <details><summary>What does the budget typically cover?</summary><div class="mr-faq-a">Gear, integration, install labor, calibration, and post-launch support. Construction, acoustic shell, and HVAC are typically separate line items handled by the GC and acoustician.</div></details>
+      <details><summary>Do you offer financing for the build?</summary><div class="mr-faq-a">Yes. <a href="vk-credit-card.html" style="color:var(--page-accent)">VK Credit Card financing</a> and <a href="section-179.html" style="color:var(--page-accent)">Section 179</a> tax deductions are both options for qualifying purchases. A consultant will walk you through the right structure during discovery.</div></details>
+      <details><summary>What support do you offer after install?</summary><div class="mr-faq-a">Every spec'd component carries the VK Warranty. The Tech Shop is on call for service, and your account team stays in place for ongoing gear additions and upgrades.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY -->
+<div class="mr-stick" id="mr-stick">
+  <div>
+    <div class="mr-stick-title">Multi-Room Studio Design</div>
+    <div class="mr-stick-sub">Spec → install → support — one team, one warranty</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a href="#start" class="mr-stick-cta">Start Your Build →</a>
+  </div>
+</div>
+<div style="height:68px"></div>
+
+<!-- FOOTER -->
+
+<div class="pg-explore">
+  <div class="pg-explore-inner">
+    <div class="pg-explore-eyebrow" style="margin-bottom:10px">Explore Vintage King</div>
+    <h2 class="pg-explore-h2">More from VK</h2>
+    <div class="pg-explore-grid"><a href="audio-consultants.html" class="pg-explore-card">
+  <div class="pg-explore-eyebrow">Expert Consulting</div>
+  <div class="pg-explore-title">Talk to an Audio Consultant</div>
+  <div class="pg-explore-body">Our team has tracked sessions on legendary gear. Call, chat, or email — we know it from both sides of the glass.</div>
+  <div class="pg-explore-cta">Call 888.653.1184 →</div>
+</a><a href="25-years-of-pro-audio.html" class="pg-explore-card">
+  <div class="pg-explore-eyebrow">Heritage</div>
+  <div class="pg-explore-title">25 Years of Pro Audio</div>
+  <div class="pg-explore-body">How a Detroit-area shop became the world's largest curated pro-audio dealer.</div>
+  <div class="pg-explore-cta">Read the story →</div>
+</a><a href="vk-credit-card.html" class="pg-explore-card">
+  <div class="pg-explore-eyebrow">Financing</div>
+  <div class="pg-explore-title">VK Credit Card</div>
+  <div class="pg-explore-body">0% financing up to 48 months on qualifying purchases through the VK Credit Card.</div>
+  <div class="pg-explore-cta">Apply →</div>
+</a></div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">
+          <svg width="16" height="24" viewBox="0 0 22 34" fill="none"><rect x="7" y="1" width="8" height="20" rx="4" stroke="#C0392B" stroke-width="1.5" fill="none"/><line x1="11" y1="21" x2="11" y2="28" stroke="#C0392B" stroke-width="1.5"/><line x1="5" y1="28" x2="17" y2="28" stroke="#C0392B" stroke-width="1.5"/><circle cx="11" cy="10" r="2.5" fill="#C0392B" opacity="0.7"/></svg>
+          VINTAGE KING
+        </div>
+        <p class="footer-brand-desc">The pro audio outfitter for all of your sonic journeys. Serving engineers and artists since 1993.</p>
+      </div>
+      <div class="footer-col"><div class="footer-col-title">Studios by VK</div><ul><li><a href="multi-room-recording-studios.html">Multi-Room Studios</a></li><li><a href="classic-studios-gone-modern.html">Classic Studios Gone Modern</a></li><li><a href="recording-at-home.html">Recording at Home</a></li><li><a href="live-sound-how.html">Live Sound / HOW</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Programs</div><ul><li><a href="studio-professionals.html">Studio Professionals</a></li><li><a href="trade-program.html">Trade Program</a></li><li><a href="vk-credit-card.html">VK Credit Card</a></li><li><a href="section-179.html">Section 179</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Help</div><ul><li><a href="#">FAQ</a></li><li><a href="warranty.html">VK Warranty</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div><span>© 2026 Vintage King Audio, Inc. All rights reserved.</span></div>
+      <div><a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  window.addEventListener('scroll',function(){
+    var s=document.getElementById('mr-stick');
+    if(window.scrollY>720)s.classList.add('visible');else s.classList.remove('visible');
+  });
+</script>
+</body>
+</html>

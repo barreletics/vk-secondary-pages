@@ -1534,8 +1534,245 @@ def build_all():
     return out
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# V2 VARIANTS — sibling pages with white hero photo slot, side-by-side
+# 580x580 image placeholders, and bottom "Explore Vintage King" cross-link
+# strip. Originals (v1) are not modified. Reachable only from navigator.html.
+# ─────────────────────────────────────────────────────────────────────────────
+
+import re
+
+V2_EXTRA_CSS = """
+.pg-hero-img-v2{background:#FFFFFF;border:1px solid rgba(26,26,24,0.08);border-radius:3px;min-height:380px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:20px;font-family:var(--font-body);font-weight:500}
+.pg-photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}
+.pg-photo-slot{margin:0}
+.pg-photo{background:var(--off-white);border:1px solid rgba(26,26,24,0.08);border-radius:3px;aspect-ratio:1/1;max-width:580px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-family:var(--font-body);font-weight:500;text-align:center;padding:20px}
+.pg-photo-slot figcaption{margin-top:14px;font-family:var(--font-body);font-size:13px;color:rgba(26,26,24,0.62);line-height:1.5}
+.pg-explore{background:var(--off-white);padding:64px 0;border-top:1px solid rgba(26,26,24,0.07)}
+.pg-explore-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+.pg-explore-h2{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--near-black);margin:0 0 28px}
+.pg-explore-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.pg-explore-card{background:#fff;border:1px solid rgba(26,26,24,0.08);padding:28px;text-decoration:none;display:block;transition:transform 0.18s,box-shadow 0.18s;border-radius:3px}
+.pg-explore-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,26,24,0.08)}
+.pg-explore-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--page-accent);margin-bottom:10px;font-family:var(--font-body)}
+.pg-explore-title{font-family:var(--font-display);font-size:19px;font-weight:700;color:var(--near-black);margin-bottom:8px;line-height:1.3}
+.pg-explore-body{font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6}
+.pg-explore-cta{margin-top:16px;font-size:12px;font-weight:700;color:var(--page-accent);letter-spacing:0.06em}
+@media(max-width:980px){.pg-photo-grid,.pg-explore-grid{grid-template-columns:1fr}}
+"""
+
+
+def dual_image_block(caption_left: str, caption_right: str) -> str:
+    return f'''
+<section class="pg-section pg-section-white">
+  <div class="pg-wrap">
+    <div class="pg-eyebrow">In context</div>
+    <div class="pg-photo-grid">
+      <figure class="pg-photo-slot">
+        <div class="pg-photo">580 × 580<br>photo placeholder</div>
+        <figcaption>{caption_left}</figcaption>
+      </figure>
+      <figure class="pg-photo-slot">
+        <div class="pg-photo">580 × 580<br>photo placeholder</div>
+        <figcaption>{caption_right}</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+'''
+
+
+def explore_strip(cards: list) -> str:
+    """cards = [(eyebrow, title, body, cta_label, href), ...]"""
+    cards_html = "".join(
+        f'''<a href="{href}" class="pg-explore-card">
+  <div class="pg-explore-eyebrow">{eyebrow}</div>
+  <div class="pg-explore-title">{title}</div>
+  <div class="pg-explore-body">{body}</div>
+  <div class="pg-explore-cta">{cta} →</div>
+</a>'''
+        for eyebrow, title, body, cta, href in cards
+    )
+    return f'''
+<div class="pg-explore">
+  <div class="pg-explore-inner">
+    <div class="pg-explore-eyebrow" style="margin-bottom:10px">Explore Vintage King</div>
+    <h2 class="pg-explore-h2">More from VK</h2>
+    <div class="pg-explore-grid">{cards_html}</div>
+  </div>
+</div>
+'''
+
+
+# Per-page captions for the side-by-side photo block. None = skip (policy pages).
+V2_CAPTIONS = {
+    # HOF gear
+    "neve-1081.html": ("Studio context · AIR Studios 8048 desk strip", "Hardware detail · Marinair transformer close-up"),
+    "telefunken-ela-m-251.html": ("Studio context · Capitol vocal booth setup", "Hardware detail · CK12 capsule and 6072a tube"),
+    "neumann-u47-fet.html": ("Studio context · drum room kick capture", "Hardware detail · headbasket and capsule cutaway"),
+    "coles-4038.html": ("Studio context · Abbey Road overhead pair", "Hardware detail · ribbon motor and yoke"),
+    "tab-telefunken-v72-v76.html": ("Studio context · vintage German broadcast rack", "Hardware detail · V72 / V76 module front and tubes"),
+    "universal-audio-175b.html": ("Studio context · Capitol mastering rack", "Hardware detail · 6BC8 tube and meter face"),
+    # Studios by VK
+    "multi-room-recording-studios.html": ("Live room — multi-room install", "Control room — console and monitoring"),
+    # 25 Years
+    "25-years-of-pro-audio.html": ("Mike Nehra in the early VK shop, c.1993", "Modern VK Tech Shop service bench"),
+    # Avid
+    "avid-pro-tools-trade-in.html": ("Existing Pro Tools HDX system on the bench", "New MTRX install in commercial mix room"),
+    "avid-s4-control-surface-configurations.html": ("S4 16-fader in commercial mix room", "Top-down channel detail"),
+    "avid-s6-control-surface-configurations.html": ("S6 M40 32-fader in flagship room", "Top-down channel knob detail"),
+    # UA
+    "universal-audio-promotions.html": ("Apollo X8 rack install", "UAD plug-in workflow on screen"),
+    "universal-audio-apollo-x.html": ("Apollo X16 in commercial studio rack", "Apollo Twin X on a project-studio desk"),
+    # Campaigns
+    "black-friday-microphone-deals.html": ("Featured tube mic on stand", "Mic pair lifestyle in tracking room"),
+    "new-at-namm-microphones.html": ("New release on display at NAMM booth", "New mic in working studio"),
+    "back-to-school.html": ("Student starter bundle on desk", "Dorm-room recording lifestyle shot"),
+    # Policy → no big image
+    "shipping-policy.html": None,
+    "returns.html": None,
+    "privacy-policy.html": None,
+}
+
+
+# Per-page explore strip cards (3 each).
+_CARD_CONSULT = ("Expert Consulting", "Talk to an Audio Consultant",
+                 "Our team has tracked sessions on legendary gear. Call, chat, or email — we know it from both sides of the glass.",
+                 "Call 888.653.1184", "audio-consultants.html")
+_CARD_HOF = ("Hall of Fame", "Legendary Gear and Rooms",
+             "The consoles, microphones, and outboard that defined recording history — sourced and documented by VK.",
+             "Explore", "hall-of-fame.html")
+_CARD_TRADE = ("Trade Program", "Sell or Trade Your Gear",
+               "Trade your existing gear toward your next purchase. Quotes within 24 hours.",
+               "Get a quote", "trade-program.html")
+_CARD_FINANCING = ("Financing", "VK Credit Card",
+                   "0% financing up to 48 months on qualifying purchases through the VK Credit Card.",
+                   "Apply", "vk-credit-card.html")
+_CARD_WARRANTY = ("VK Warranty", "Coverage on Every Unit",
+                  "Every new piece of gear ships with the VK Warranty. Optional extended coverage available.",
+                  "Learn more", "warranty.html")
+_CARD_25 = ("Heritage", "25 Years of Pro Audio",
+            "How a Detroit-area shop became the world's largest curated pro-audio dealer.",
+            "Read the story", "25-years-of-pro-audio.html")
+_CARD_INSTALLS = ("Studio Installations", "Multi-Room Studio Builds",
+                  "From single-room project studios to multi-room commercial facilities — design, install, commission.",
+                  "See projects", "multi-room-recording-studios.html")
+_CARD_CONSULTANTS_SHORT = ("Audio Consultants", "Free Pre-Sales Help",
+                           "Compare gear, build chains, and get install advice from working engineers — free.",
+                           "Email a consultant", "audio-consultants.html")
+
+V2_EXPLORE = {
+    # HOF gear → cross-link to siblings + consultants
+    "neve-1081.html": [_CARD_HOF, _CARD_CONSULT, ("Hall of Fame", "Neve 1073 Buyer's Guide", "The 1073's three-band sibling — the most-cloned mic pre / EQ in pro audio history.", "Read", "neve-1073-guide-v2.html")],
+    "telefunken-ela-m-251.html": [_CARD_HOF, _CARD_CONSULT, ("Hall of Fame", "Neumann U47", "The German tube condenser that defined vocal recording from 1947 onward.", "Read", "neumann-u47.html")],
+    "neumann-u47-fet.html": [_CARD_HOF, _CARD_CONSULT, ("Hall of Fame", "Neumann U67", "The all-purpose tube workhorse — vocals, drums, broadcast.", "Read", "neumann-u67.html")],
+    "coles-4038.html": [_CARD_HOF, _CARD_CONSULT, ("Hall of Fame", "Neumann U47", "The German tube condenser that defined vocal recording from 1947 onward.", "Read", "neumann-u47.html")],
+    "tab-telefunken-v72-v76.html": [_CARD_HOF, _CARD_CONSULT, ("Hall of Fame", "Neve 1073", "The British alternative — Marinair-coupled mic pre and three-band EQ.", "Read", "neve-1073.html")],
+    "universal-audio-175b.html": [_CARD_HOF, _CARD_CONSULT, ("Hall of Fame", "UREI 1176", "Putnam's later FET design — the most-imitated compressor ever made.", "Read", "urei-1176.html")],
+    # Studios by VK
+    "multi-room-recording-studios.html": [_CARD_CONSULT, _CARD_25, _CARD_FINANCING],
+    # 25 Years
+    "25-years-of-pro-audio.html": [_CARD_HOF, _CARD_INSTALLS, ("PLAYBACK Magazine", "Stories from the field", "VK's print magazine — engineer interviews, studio tours, gear histories.", "Read PLAYBACK", "playback.html")],
+    # Avid
+    "avid-pro-tools-trade-in.html": [_CARD_CONSULT, _CARD_INSTALLS, _CARD_FINANCING],
+    "avid-s4-control-surface-configurations.html": [_CARD_CONSULT, _CARD_INSTALLS, ("Avid", "S6 Configuration Guide", "Compare S6 M40 16-, 32-, and 48-fader+ surfaces for flagship music and post rooms.", "Compare", "avid-s6-control-surface-configurations.html")],
+    "avid-s6-control-surface-configurations.html": [_CARD_CONSULT, _CARD_INSTALLS, ("Avid", "S4 Configuration Guide", "Compare S4 8-, 16-, and 24-fader options — the more compact EUCON surface.", "Compare", "avid-s4-control-surface-configurations.html")],
+    # UA
+    "universal-audio-promotions.html": [_CARD_CONSULT, ("Universal Audio", "Apollo X Lineup", "Compare Apollo Twin X, X4, X6, X8, X8p, and X16 audio interfaces.", "Compare", "universal-audio-apollo-x.html"), _CARD_FINANCING],
+    "universal-audio-apollo-x.html": [_CARD_CONSULT, ("Universal Audio", "Active UA Promotions", "Current Apollo bundles, UAD plug-in deals, and trade-up programs.", "See deals", "universal-audio-promotions.html"), _CARD_FINANCING],
+    # Campaigns
+    "black-friday-microphone-deals.html": [_CARD_CONSULT, _CARD_TRADE, _CARD_FINANCING],
+    "new-at-namm-microphones.html": [_CARD_CONSULT, _CARD_TRADE, _CARD_FINANCING],
+    "back-to-school.html": [_CARD_CONSULT, _CARD_TRADE, _CARD_FINANCING],
+    # Policy
+    "shipping-policy.html": [_CARD_WARRANTY, ("Returns", "30-Day Returns", "Most gear returns within 30 days, no restocking fee. See full policy.", "See policy", "returns.html"), _CARD_CONSULTANTS_SHORT],
+    "returns.html": [_CARD_WARRANTY, ("Shipping", "Free Shipping over $99", "Free shipping in the lower 48. See rates and timing.", "See policy", "shipping-policy.html"), _CARD_CONSULTANTS_SHORT],
+    "privacy-policy.html": [_CARD_WARRANTY, _CARD_CONSULTANTS_SHORT, ("Returns", "30-Day Returns", "Most gear returns within 30 days, no restocking fee.", "See policy", "returns.html")],
+}
+
+
+_HERO_PATTERNS = [
+    r'<div class="pg-hero-img">[^<]*</div>',
+    r'<div class="mr-hero-img">[^<]*</div>',
+    r'<div class="y25-hero-img">[^<]*</div>',
+]
+_DUAL_INSERT_MARKERS = [
+    '<section class="pg-dark">',
+    '<section class="pg-section pg-section-cta">',
+    '<section class="mr-dark">',
+    '<section class="mr-section mr-section-cta"',
+    '<section class="y25-dark">',
+    '<section class="y25-cta">',
+]
+
+
+def to_v2(html: str, dual_captions, explore_cards: list) -> str:
+    """Transform a v1 page into its v2 sibling."""
+    # 1. Inject V2_EXTRA_CSS into the head, just before the standalone-patch <style>.
+    html = html.replace(
+        '<style id="vk-standalone-patch">',
+        f'<style>{V2_EXTRA_CSS}</style>\n<style id="vk-standalone-patch">',
+        1
+    )
+
+    # 2. Replace the first dark hero placeholder we find with the v2 white slot.
+    for pat in _HERO_PATTERNS:
+        new_html, n = re.subn(
+            pat,
+            '<div class="pg-hero-img-v2">Hero photo<br>720 × 540 recommended</div>',
+            html, count=1
+        )
+        if n:
+            html = new_html
+            break
+
+    # 3. Insert the side-by-side image block before the dark band or CTA band
+    #    (whichever appears first). Skipped for policy pages (dual_captions=None).
+    if dual_captions:
+        block = dual_image_block(*dual_captions)
+        positions = [(html.find(m), m) for m in _DUAL_INSERT_MARKERS if html.find(m) != -1]
+        if positions:
+            pos, _ = min(positions)
+            html = html[:pos] + block + html[pos:]
+
+    # 4. Insert the explore strip just before the footer.
+    html = html.replace(
+        '<footer class="site-footer">',
+        explore_strip(explore_cards) + '<footer class="site-footer">',
+        1
+    )
+
+    return html
+
+
+# Manually-built v1 pages from the prior session (not in HOF_PAGES / build_all):
+EXTRA_V2_TARGETS = ["multi-room-recording-studios.html", "25-years-of-pro-audio.html"]
+
+
+def build_v2_all(v1_files: list) -> list:
+    """Read each v1 file, transform, write -v2.html sibling."""
+    targets = list(v1_files) + [f for f in EXTRA_V2_TARGETS if f not in v1_files]
+    out = []
+    for f in targets:
+        if f not in V2_CAPTIONS:
+            continue
+        v1_path = ROOT / f
+        if not v1_path.exists():
+            continue
+        v2_path = ROOT / f.replace(".html", "-v2.html")
+        v1_html = v1_path.read_text()
+        v2_html = to_v2(v1_html, V2_CAPTIONS[f], V2_EXPLORE[f])
+        v2_path.write_text(v2_html)
+        out.append(v2_path.name)
+    return out
+
+
 if __name__ == "__main__":
     files = build_all()
-    print(f"Built {len(files)} pages:")
+    v2_files = build_v2_all(files)
+    print(f"Built {len(files)} v1 pages:")
     for f in files:
+        print(f"  · {f}")
+    print(f"\nBuilt {len(v2_files)} v2 pages:")
+    for f in v2_files:
         print(f"  · {f}")
