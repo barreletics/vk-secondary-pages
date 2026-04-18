@@ -132,14 +132,12 @@ section.tg-section.alt{background:var(--off-white)}
 <section class="tg-hero">
   <div class="wrap">
     <div class="tg-eyebrow">Agency hand-off</div>
-    <h1 class="tg-h1">One body. Three heros (A · B · C). Two strips. Two body photo modules.</h1>
-    <p class="tg-lead">The complete pattern library for Vintage King secondary pages. Pick one hero by page intent, drop in zero or more body photo modules, and the trust + explore strips render automatically. CB2-tight, manageable for the agency, and built to convert.</p>
+    <h1 class="tg-h1">3 heros. 2 body modules. Pick one of each.</h1>
+    <p class="tg-lead">Visual spec sheet for the agency. Pick a hero by page type, add a body module if you want a wow shot, ship the page. Trust + explore strips render automatically.</p>
     <div class="tg-hero-meta">
       <span><strong>43 pages</strong> live</span>
       <span><strong>3 heros</strong> (A · B · C)</span>
       <span><strong>2 body modules</strong> (Big · Dual)</span>
-      <span><strong>2 strips</strong> (trust · explore)</span>
-      <span><strong>5 content presets</strong> per strip</span>
     </div>
   </div>
 </section>
@@ -160,55 +158,10 @@ section.tg-section.alt{background:var(--off-white)}
     <div class="tg-toc-label">Jump to</div>
     <a href="#heros">Heros (A · B · C)</a>
     <a href="#body-modules">Body modules</a>
-    <a href="#strips">Strips</a>
-    <a href="#decisions">Decision rules</a>
+    <a href="#decisions">Pick fast</a>
     <a href="#examples">Live examples</a>
   </div>
 </div>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy" class="tg-section">
-  <div class="wrap">
-    <div class="tg-section-eyebrow">Why we do it this way</div>
-    <h2 class="tg-section-h2">Manageable for the agency. Premium for the customer.</h2>
-    <p class="tg-section-lead">A consistent body rhythm with a varied hero is what makes CB2, Apple, and Sweetwater feel premium. We picked the same approach for VK: one shared body template across every secondary page, three hero variants chosen by page type, and two universal strips (trust above the hero, explore above the footer). Less drift. Higher conversion. Easier to maintain.</p>
-    <div class="tg-grid">
-      <div class="tg-card">
-        <div class="tg-card-eyebrow">Manage</div>
-        <div class="tg-card-title">One body, every page</div>
-        <div class="tg-card-meta">When something needs to change site-wide, you change it in the build script and re-run. No per-page custom CSS to track down.</div>
-      </div>
-      <div class="tg-card">
-        <div class="tg-card-eyebrow">Convert</div>
-        <div class="tg-card-title">Three heros, by intent</div>
-        <div class="tg-card-meta">Hero A (Split Bleed) for HOF gear. Hero B (Split Contained) for programs and service. Hero C (Editorial) for brand-led storytelling. Body modules add wow shots on any hero.</div>
-      </div>
-      <div class="tg-card">
-        <div class="tg-card-eyebrow">Reinforce</div>
-        <div class="tg-card-title">Two strips, always</div>
-        <div class="tg-card-meta">Trust strip below the hero builds confidence. Explore strip above the footer recovers exits and surfaces related pages.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BODY -->
-<section id="body" class="tg-section alt">
-  <div class="wrap">
-    <div class="tg-section-eyebrow">One body</div>
-    <h2 class="tg-section-h2">The shared rhythm — every page.</h2>
-    <p class="tg-section-lead">Section order is locked. Color shifts at every section boundary keep the eye moving and the page feeling fast.</p>
-    <ol class="tg-card-list" style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:0;list-style:none;border-radius:3px">
-      <li style="padding:18px 24px"><strong>1. Hero</strong> — <code>#EDE8E2</code> warm light. Dark text, red eyebrow, red CTA button. Hero variant determined by page type.</li>
-      <li style="padding:18px 24px"><strong>2. Trust strip</strong> — <code>#FFFFFF</code>. 4 inline credentials, thin top + bottom border, no padding inside the items. Content preset by page family.</li>
-      <li style="padding:18px 24px"><strong>3. Grid / cards</strong> — <code>var(--off-white)</code> #F7F5F2 background. White cards with 1px rgba border. 3-up on desktop, 1-up on mobile.</li>
-      <li style="padding:18px 24px"><strong>4. Content / body</strong> — <code>#FFFFFF</code> background. Dark text. Long-form copy, deep links, JSON-LD blocks live here.</li>
-      <li style="padding:18px 24px"><strong>5. CTA / form</strong> — <code>#EDE8E2</code> warm light, white inputs, red button. Only one CTA section per page.</li>
-      <li style="padding:18px 24px"><strong>6. Explore strip</strong> — <code>var(--off-white)</code> #F7F5F2. 3 cross-link cards. Content preset by page family.</li>
-      <li style="padding:18px 24px"><strong>7. Footer</strong> — Standard VK footer template (cloned via JS from <code>&lt;template id="footer-template"&gt;</code>).</li>
-    </ol>
-  </div>
-</section>
 
 <!-- HEROS -->
 <section id="heros" class="tg-section">
@@ -320,102 +273,10 @@ section.tg-section.alt{background:var(--off-white)}
   </div>
 </section>
 
-<!-- STRIPS -->
-<section id="strips" class="tg-section alt">
-  <div class="wrap">
-    <div class="tg-section-eyebrow">Two strips</div>
-    <h2 class="tg-section-h2">Trust above. Explore below.</h2>
-    <p class="tg-section-lead">Both strips are universal — every secondary page gets one of each. Content varies by page family but the structure does not.</p>
-
-    <div class="tg-grid two">
-      <div class="tg-card">
-        <div class="tg-card-eyebrow">Strip 1 — Trust</div>
-        <div class="tg-card-title">Below the hero</div>
-        <div class="tg-card-meta">4 inline credentials. White background, thin top + bottom border. <code>justify-content:space-between</code>.</div>
-        <div class="demo-strip">
-          <div><strong>Inducted</strong> · VK Hall of Fame</div>
-          <div><strong>Authorized dealer</strong> · for all current versions</div>
-          <div><strong>Tech Shop</strong> · service and restoration</div>
-          <div><strong>VK Warranty</strong> · on every unit</div>
-        </div>
-      </div>
-      <div class="tg-card">
-        <div class="tg-card-eyebrow">Strip 2 — Explore</div>
-        <div class="tg-card-title">Above the footer</div>
-        <div class="tg-card-meta">3 cross-link cards. <code>--off-white</code> background, white cards with 1px border, red eyebrow + red CTA arrow.</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px">
-          <div style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:10px;border-radius:3px;font-size:11px"><strong style="color:var(--vk-red);font-size:9px;text-transform:uppercase;letter-spacing:0.10em">HOF</strong><div style="font-family:var(--font-display);font-size:13px;color:var(--near-black);margin-top:4px;line-height:1.2">Legendary gear</div></div>
-          <div style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:10px;border-radius:3px;font-size:11px"><strong style="color:var(--vk-red);font-size:9px;text-transform:uppercase;letter-spacing:0.10em">Consult</strong><div style="font-family:var(--font-display);font-size:13px;color:var(--near-black);margin-top:4px;line-height:1.2">Talk to expert</div></div>
-          <div style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:10px;border-radius:3px;font-size:11px"><strong style="color:var(--vk-red);font-size:9px;text-transform:uppercase;letter-spacing:0.10em">Trade</strong><div style="font-family:var(--font-display);font-size:13px;color:var(--near-black);margin-top:4px;line-height:1.2">Sell or upgrade</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRESETS -->
-<section id="presets" class="tg-section">
-  <div class="wrap">
-    <div class="tg-section-eyebrow">Content presets</div>
-    <h2 class="tg-section-h2">5 strip presets, by page family.</h2>
-    <p class="tg-section-lead">Pick the preset that matches the page family. Don't write new strip copy unless the agency approves a new family.</p>
-    <table class="tg-table">
-      <thead>
-        <tr><th>Family</th><th>Trust strip (4 items)</th><th>Explore strip (3 cards)</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>HOF gear</strong><br><span style="color:var(--mid-grey);font-size:12px">U47, 1073, LA-2A, etc.</span></td>
-          <td>Inducted · VK Hall of Fame<br>Authorized dealer · for all current versions<br>Tech Shop · service and restoration<br>VK Warranty · on every unit</td>
-          <td>Hall of Fame · Browse all<br>Audio Consultants · Talk to an Expert<br>Tech Shop · Service and Restoration</td>
-        </tr>
-        <tr>
-          <td><strong>Program</strong><br><span style="color:var(--mid-grey);font-size:12px">Trade, Credit Card, Careers</span></td>
-          <td>30+ Years · outfitting pro studios<br>Authorized dealer · for hundreds of brands<br>Account Manager · dedicated, real human<br>VK Warranty · on every order</td>
-          <td>Audio Consultants · Talk to an Expert<br>Trade Program · Sell, trade, or upgrade<br>Hall of Fame · Browse all</td>
-        </tr>
-        <tr>
-          <td><strong>Editorial</strong><br><span style="color:var(--mid-grey);font-size:12px">About, PLAYBACK, 25 Years</span></td>
-          <td>30+ Years · outfitting pro studios<br>Authorized dealer · for hundreds of brands<br>Tech Shop · service and restoration<br>VK Warranty · on every order</td>
-          <td>Hall of Fame · Browse all<br>Audio Consultants · Talk to an Expert<br>About VK · Pro Audio Outfitter Since 1993</td>
-        </tr>
-        <tr>
-          <td><strong>Campaign</strong><br><span style="color:var(--mid-grey);font-size:12px">Black Friday, NAMM, Avid</span></td>
-          <td>Authorized dealer · for all featured brands<br>Free shipping · on orders over $99<br>30-day returns · no restock fee<br>VK Warranty · on every order</td>
-          <td>Hall of Fame · Browse all<br>Audio Consultants · Talk to an Expert<br>Trade Program · Sell, trade, or upgrade</td>
-        </tr>
-        <tr>
-          <td><strong>Policy</strong><br><span style="color:var(--mid-grey);font-size:12px">Shipping, Returns, Privacy</span></td>
-          <td><em>Same as Editorial</em></td>
-          <td><em>Same as Editorial</em></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- TOKENS -->
-<section id="tokens" class="tg-section alt">
-  <div class="wrap">
-    <div class="tg-section-eyebrow">Color tokens</div>
-    <h2 class="tg-section-h2">Locked. Don't introduce new colors.</h2>
-    <p class="tg-section-lead">All secondary pages use the same token set. Amber is reserved for vintage/used gear only — never on new gear or program pages.</p>
-    <div style="background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:3px;padding:24px 28px">
-      <div class="tg-token-row"><div class="tg-token-name">--vk-red</div><div class="tg-swatch" style="background:#C0392B"></div><div class="tg-token-use"><strong>#C0392B</strong> · Primary CTA, eyebrows, accents on secondary pages.</div></div>
-      <div class="tg-token-row"><div class="tg-token-name">--near-black</div><div class="tg-swatch" style="background:#1A1A18"></div><div class="tg-token-use"><strong>#1A1A18</strong> · Body text, headings, dark sections.</div></div>
-      <div class="tg-token-row"><div class="tg-token-name">--off-white</div><div class="tg-swatch" style="background:#F7F5F2"></div><div class="tg-token-use"><strong>#F7F5F2</strong> · Section backgrounds, grid bg, explore strip bg.</div></div>
-      <div class="tg-token-row"><div class="tg-token-name">--warm-white</div><div class="tg-swatch" style="background:#FDFCFB"></div><div class="tg-token-use"><strong>#FDFCFB</strong> · Page bg, spec strip bg.</div></div>
-      <div class="tg-token-row"><div class="tg-token-name">Hero bg</div><div class="tg-swatch" style="background:#EDE8E2"></div><div class="tg-token-use"><strong>#EDE8E2</strong> · Hero + CTA section bg. All secondary pages.</div></div>
-      <div class="tg-token-row"><div class="tg-token-name">--amber</div><div class="tg-swatch" style="background:#D4860A"></div><div class="tg-token-use"><strong>#D4860A</strong> · Vintage / Used content ONLY. Never on new gear or program pages.</div></div>
-      <div class="tg-token-row"><div class="tg-token-name">--mid-grey</div><div class="tg-swatch" style="background:#6B6B68"></div><div class="tg-token-use"><strong>#6B6B68</strong> · Secondary text, captions, meta.</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- DECISIONS -->
 <section id="decisions" class="tg-section">
   <div class="wrap">
-    <div class="tg-section-eyebrow">Decision rules</div>
+    <div class="tg-section-eyebrow">Pick fast</div>
     <h2 class="tg-section-h2">Pick a hero in 5 seconds.</h2>
     <table class="tg-table">
       <thead>
