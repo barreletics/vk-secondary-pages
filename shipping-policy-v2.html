@@ -166,8 +166,56 @@ body{font-family:var(--font-body);background:var(--warm-white);color:var(--near-
   .pg-hero-img-v2{min-height:360px;background:#FFFFFF}
 }
 </style>
+
+<style id="policy-layout-patch">
+/* Demo wrapper */
+.demo-bar{background:#1A1A18;padding:10px 24px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.demo-bar a.back{display:inline-block;background:#C0392B;color:#fff;padding:7px 14px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif}
+.demo-bar a.back:hover{opacity:0.88}
+.demo-bar .label{color:rgba(255,255,255,0.4);font-size:11px;font-family:'DM Sans',sans-serif;letter-spacing:0.06em}
+.demo-bar .label strong{color:#fff;font-weight:600}
+/* Policy header */
+.policy-header{background:#fff;border-bottom:1px solid rgba(26,26,24,0.08);padding:48px 0 36px}
+.policy-header-inner{max-width:1160px;margin:0 auto;padding:0 40px}
+.policy-eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(26,26,24,0.45);margin-bottom:14px}
+.policy-h1{font-family:var(--font-display);font-size:42px;font-weight:700;color:var(--near-black);line-height:1.05;margin:0 0 10px;letter-spacing:-0.01em}
+.policy-updated{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);margin-bottom:14px}
+.policy-summary{font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.75);max-width:680px;line-height:1.55;margin:0}
+/* Two-col policy body */
+.policy-body{background:var(--off-white);padding:48px 0 80px}
+.policy-body-inner{max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.policy-toc{position:sticky;top:24px;background:#fff;border:1px solid rgba(26,26,24,0.08);padding:18px 18px 16px;border-radius:3px;font-family:'DM Sans',sans-serif}
+.policy-toc-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(26,26,24,0.06)}
+.policy-toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.policy-toc li{counter-increment:toc;margin:0;padding:6px 0;font-size:13px;line-height:1.4;color:rgba(26,26,24,0.7);border-bottom:1px solid rgba(26,26,24,0.04)}
+.policy-toc li:last-child{border-bottom:none}
+.policy-toc li::before{content:counter(toc) ". ";color:rgba(26,26,24,0.32);font-weight:500;margin-right:4px}
+.policy-toc a{color:rgba(26,26,24,0.7);text-decoration:none;transition:color 0.15s}
+.policy-toc a:hover{color:#C0392B}
+.policy-content-wrap{background:#fff;border:1px solid rgba(26,26,24,0.08);padding:48px 56px;border-radius:3px;font-family:'DM Sans',sans-serif}
+.policy-content-wrap h2{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--near-black);margin:36px 0 12px;line-height:1.2;scroll-margin-top:24px}
+.policy-content-wrap h2:first-child{margin-top:0}
+.policy-content-wrap h2::before{content:counter(sec) ". ";counter-increment:sec;color:rgba(26,26,24,0.3);font-weight:500;margin-right:4px;font-size:20px;font-family:'DM Sans',sans-serif}
+.policy-content-wrap{counter-reset:sec}
+.policy-content-wrap p{font-size:15px;line-height:1.7;color:rgba(26,26,24,0.78);margin:0 0 14px}
+.policy-content-wrap ul{margin:8px 0 18px 22px;font-size:15px;line-height:1.7;color:rgba(26,26,24,0.78)}
+.policy-content-wrap li{margin-bottom:6px}
+.policy-content-wrap a{color:#C0392B;text-decoration:underline;text-decoration-color:rgba(192,57,43,0.3)}
+.policy-content-wrap a:hover{text-decoration-color:#C0392B}
+@media(max-width:880px){
+  .policy-body-inner{grid-template-columns:1fr;gap:24px}
+  .policy-toc{position:static}
+  .policy-content-wrap{padding:32px 24px}
+  .policy-h1{font-size:32px}
+}
+</style>
 </head>
 <body>
+<div class="demo-bar">
+  <a class="back" href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html">← Demo Dashboard</a>
+  <span class="label"><strong>VK Shipping Policy</strong> &nbsp;·&nbsp; Sub-navigation page</span>
+</div>
+
 <nav class="vk-secondary-chrome" aria-label="Secondary pages nav" style="position:sticky;top:0;z-index:400;background:#1A1A18;color:#FDFCFB;padding:10px 20px;font-size:12px;font-family:var(--font-body);display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12)">
   <a href="navigator.html" style="color:#FDFCFB;font-weight:600;text-decoration:none">Demo Dashboard</a>
   <span style="opacity:0.35">|</span><a href="#" style="color:rgba(255,255,255,0.55);text-decoration:none">FAQ</a><span style="opacity:0.35">|</span><a href="warranty.html" style="color:rgba(255,255,255,0.55);text-decoration:none">VK Warranty</a><span style="opacity:0.35">|</span><a href="returns.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Returns</a>
@@ -195,35 +243,44 @@ body{font-family:var(--font-body);background:var(--warm-white);color:var(--near-
 </script>
 <div class="page active">
 
-<section class="pg-hero" style="padding:72px 0">
-  <div class="pg-hero-inner" style="grid-template-columns:1fr">
-    <div>
-      <div class="pg-eyebrow">Help · Policy</div>
-      <h1 style="font-size:42px">Shipping Policy</h1>
-      <p class="lead speakable" style="max-width:680px">Free shipping on orders over $99 within the contiguous United States. Expedited and international shipping available. All orders ship from Detroit, Michigan, with same-day handling on orders placed by 2pm ET.</p>
+<section class="policy-header">
+  <div class="policy-header-inner">
+    <div class="policy-eyebrow">Help · Policy</div>
+    <h1 class="policy-h1">Shipping Policy</h1>
+    <div class="policy-updated">Last updated: April 18, 2026</div>
+    <p class="policy-summary speakable">Free over $99. Insured. Tracked door-to-door.</p>
+  </div>
+</section>
+<section class="policy-body">
+  <div class="policy-body-inner">
+    <aside class="policy-toc">
+      <div class="policy-toc-label">On this page</div>
+      <ol>
+      <li><a href="#standard-shipping">Standard Shipping</a></li>
+      <li><a href="#expedited-shipping">Expedited Shipping</a></li>
+      <li><a href="#international-shipping">International Shipping</a></li>
+      <li><a href="#large-and-oversized-items">Large and Oversized Items</a></li>
+      <li><a href="#order-tracking">Order Tracking</a></li>
+      <li><a href="#damaged-or-lost-shipments">Damaged or Lost Shipments</a></li>
+      </ol>
+    </aside>
+    <div class="policy-content-wrap">
+<h2 id="standard-shipping">Standard Shipping</h2>
+<p>Free standard shipping on all orders over $99 shipped within the contiguous United States. Standard shipping is via FedEx Ground or USPS Priority and typically arrives within 2 — 5 business days from ship date.</p><p>Orders under $99 ship at calculated rates based on weight, dimensions, and destination.</p>
+<h2 id="expedited-shipping">Expedited Shipping</h2>
+<p>Expedited shipping options (FedEx 2-Day, FedEx Overnight) are available at checkout for an additional charge. Expedited orders placed before 2pm ET ship the same business day.</p><ul><li>FedEx 2-Day Air</li><li>FedEx Standard Overnight</li><li>FedEx Priority Overnight</li></ul>
+<h2 id="international-shipping">International Shipping</h2>
+<p>Vintage King ships to most countries worldwide. International shipping is calculated at checkout based on destination and package dimensions. Customers are responsible for any duties, taxes, or import fees assessed by the destination country.</p>
+<h2 id="large-and-oversized-items">Large and Oversized Items</h2>
+<p>Consoles, large surfaces, racks, and other oversized items ship via freight carrier. Freight shipments require a delivery appointment and a signature. White-glove install delivery is available for an additional charge.</p>
+<h2 id="order-tracking">Order Tracking</h2>
+<p>Tracking information is sent via email when your order ships. You can also view order status by signing in to your account.</p>
+<h2 id="damaged-or-lost-shipments">Damaged or Lost Shipments</h2>
+<p>If your shipment arrives damaged or does not arrive within the expected timeframe, contact us within 7 days and we will work directly with the carrier to resolve the issue. Document any visible damage on the carrier's delivery confirmation.</p>
+
     </div>
   </div>
 </section>
-  <!-- TRUST STRIP (rolled out) -->
-  <section style="background:#FFFFFF;border-top:1px solid rgba(26,26,24,0.08);border-bottom:1px solid rgba(26,26,24,0.08);padding:18px 0;font-family:'DM Sans',sans-serif">
-    <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap"><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">30+ Years</strong> · outfitting pro studios</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">Authorized dealer</strong> · for hundreds of brands</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">Tech Shop</strong> · service and restoration</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">VK Warranty</strong> · on every order</div></div>
-  </section>
-
-
-<div class="policy-content"><h2>Standard Shipping</h2>
-<p>Free standard shipping on all orders over $99 shipped within the contiguous United States. Standard shipping is via FedEx Ground or USPS Priority and typically arrives within 2 — 5 business days from ship date.</p><p>Orders under $99 ship at calculated rates based on weight, dimensions, and destination.</p>
-<h2>Expedited Shipping</h2>
-<p>Expedited shipping options (FedEx 2-Day, FedEx Overnight) are available at checkout for an additional charge. Expedited orders placed before 2pm ET ship the same business day.</p><ul><li>FedEx 2-Day Air</li><li>FedEx Standard Overnight</li><li>FedEx Priority Overnight</li></ul>
-<h2>International Shipping</h2>
-<p>Vintage King ships to most countries worldwide. International shipping is calculated at checkout based on destination and package dimensions. Customers are responsible for any duties, taxes, or import fees assessed by the destination country.</p>
-<h2>Large and Oversized Items</h2>
-<p>Consoles, large surfaces, racks, and other oversized items ship via freight carrier. Freight shipments require a delivery appointment and a signature. White-glove install delivery is available for an additional charge.</p>
-<h2>Order Tracking</h2>
-<p>Tracking information is sent via email when your order ships. You can also view order status by signing in to your account.</p>
-<h2>Damaged or Lost Shipments</h2>
-<p>If your shipment arrives damaged or does not arrive within the expected timeframe, contact us within 7 days and we will work directly with the carrier to resolve the issue. Document any visible damage on the carrier's delivery confirmation.</p>
-</div>
-
 <section class="pg-section pg-section-cta">
   <div class="pg-wrap" style="text-align:center">
     <div class="pg-eyebrow">Need More Help?</div>

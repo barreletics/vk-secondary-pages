@@ -166,8 +166,56 @@ body{font-family:var(--font-body);background:var(--warm-white);color:var(--near-
   .pg-hero-img-v2{min-height:360px;background:#FFFFFF}
 }
 </style>
+
+<style id="policy-layout-patch">
+/* Demo wrapper */
+.demo-bar{background:#1A1A18;padding:10px 24px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.demo-bar a.back{display:inline-block;background:#C0392B;color:#fff;padding:7px 14px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif}
+.demo-bar a.back:hover{opacity:0.88}
+.demo-bar .label{color:rgba(255,255,255,0.4);font-size:11px;font-family:'DM Sans',sans-serif;letter-spacing:0.06em}
+.demo-bar .label strong{color:#fff;font-weight:600}
+/* Policy header */
+.policy-header{background:#fff;border-bottom:1px solid rgba(26,26,24,0.08);padding:48px 0 36px}
+.policy-header-inner{max-width:1160px;margin:0 auto;padding:0 40px}
+.policy-eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(26,26,24,0.45);margin-bottom:14px}
+.policy-h1{font-family:var(--font-display);font-size:42px;font-weight:700;color:var(--near-black);line-height:1.05;margin:0 0 10px;letter-spacing:-0.01em}
+.policy-updated{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(26,26,24,0.55);margin-bottom:14px}
+.policy-summary{font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(26,26,24,0.75);max-width:680px;line-height:1.55;margin:0}
+/* Two-col policy body */
+.policy-body{background:var(--off-white);padding:48px 0 80px}
+.policy-body-inner{max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.policy-toc{position:sticky;top:24px;background:#fff;border:1px solid rgba(26,26,24,0.08);padding:18px 18px 16px;border-radius:3px;font-family:'DM Sans',sans-serif}
+.policy-toc-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(26,26,24,0.06)}
+.policy-toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.policy-toc li{counter-increment:toc;margin:0;padding:6px 0;font-size:13px;line-height:1.4;color:rgba(26,26,24,0.7);border-bottom:1px solid rgba(26,26,24,0.04)}
+.policy-toc li:last-child{border-bottom:none}
+.policy-toc li::before{content:counter(toc) ". ";color:rgba(26,26,24,0.32);font-weight:500;margin-right:4px}
+.policy-toc a{color:rgba(26,26,24,0.7);text-decoration:none;transition:color 0.15s}
+.policy-toc a:hover{color:#C0392B}
+.policy-content-wrap{background:#fff;border:1px solid rgba(26,26,24,0.08);padding:48px 56px;border-radius:3px;font-family:'DM Sans',sans-serif}
+.policy-content-wrap h2{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--near-black);margin:36px 0 12px;line-height:1.2;scroll-margin-top:24px}
+.policy-content-wrap h2:first-child{margin-top:0}
+.policy-content-wrap h2::before{content:counter(sec) ". ";counter-increment:sec;color:rgba(26,26,24,0.3);font-weight:500;margin-right:4px;font-size:20px;font-family:'DM Sans',sans-serif}
+.policy-content-wrap{counter-reset:sec}
+.policy-content-wrap p{font-size:15px;line-height:1.7;color:rgba(26,26,24,0.78);margin:0 0 14px}
+.policy-content-wrap ul{margin:8px 0 18px 22px;font-size:15px;line-height:1.7;color:rgba(26,26,24,0.78)}
+.policy-content-wrap li{margin-bottom:6px}
+.policy-content-wrap a{color:#C0392B;text-decoration:underline;text-decoration-color:rgba(192,57,43,0.3)}
+.policy-content-wrap a:hover{text-decoration-color:#C0392B}
+@media(max-width:880px){
+  .policy-body-inner{grid-template-columns:1fr;gap:24px}
+  .policy-toc{position:static}
+  .policy-content-wrap{padding:32px 24px}
+  .policy-h1{font-size:32px}
+}
+</style>
 </head>
 <body>
+<div class="demo-bar">
+  <a class="back" href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html">← Demo Dashboard</a>
+  <span class="label"><strong>VK Returns Policy</strong> &nbsp;·&nbsp; Sub-navigation page</span>
+</div>
+
 <nav class="vk-secondary-chrome" aria-label="Secondary pages nav" style="position:sticky;top:0;z-index:400;background:#1A1A18;color:#FDFCFB;padding:10px 20px;font-size:12px;font-family:var(--font-body);display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.12)">
   <a href="navigator.html" style="color:#FDFCFB;font-weight:600;text-decoration:none">Demo Dashboard</a>
   <span style="opacity:0.35">|</span><a href="#" style="color:rgba(255,255,255,0.55);text-decoration:none">FAQ</a><span style="opacity:0.35">|</span><a href="warranty.html" style="color:rgba(255,255,255,0.55);text-decoration:none">VK Warranty</a><span style="opacity:0.35">|</span><a href="returns.html" style="color:rgba(255,255,255,0.55);text-decoration:none">Returns</a>
@@ -195,35 +243,44 @@ body{font-family:var(--font-body);background:var(--warm-white);color:var(--near-
 </script>
 <div class="page active">
 
-<section class="pg-hero" style="padding:72px 0">
-  <div class="pg-hero-inner" style="grid-template-columns:1fr">
-    <div>
-      <div class="pg-eyebrow">Help · Policy</div>
-      <h1 style="font-size:42px">Returns Policy</h1>
-      <p class="lead speakable" style="max-width:680px">30-day returns on most new gear. Return shipping is free for defective items and shipping errors. Test the gear; if it does not work for your room, send it back. Engineer-friendly, no-hassle process.</p>
+<section class="policy-header">
+  <div class="policy-header-inner">
+    <div class="policy-eyebrow">Help · Policy</div>
+    <h1 class="policy-h1">Returns Policy</h1>
+    <div class="policy-updated">Last updated: April 18, 2026</div>
+    <p class="policy-summary speakable">30-day returns on most gear, no restocking fee.</p>
+  </div>
+</section>
+<section class="policy-body">
+  <div class="policy-body-inner">
+    <aside class="policy-toc">
+      <div class="policy-toc-label">On this page</div>
+      <ol>
+      <li><a href="#30-day-return-window">30-Day Return Window</a></li>
+      <li><a href="#eligible-items">Eligible Items</a></li>
+      <li><a href="#items-not-eligible-for-return">Items Not Eligible for Return</a></li>
+      <li><a href="#return-process">Return Process</a></li>
+      <li><a href="#restocking-fees">Restocking Fees</a></li>
+      <li><a href="#warranty-repairs">Warranty Repairs</a></li>
+      </ol>
+    </aside>
+    <div class="policy-content-wrap">
+<h2 id="30-day-return-window">30-Day Return Window</h2>
+<p>Most new gear can be returned within 30 days of delivery for a full refund or exchange. The 30-day clock starts on delivery date as confirmed by the carrier.</p>
+<h2 id="eligible-items">Eligible Items</h2>
+<p>The following can be returned within the 30-day window:</p><ul><li>New gear in original packaging</li><li>Open-box and demo items (with original accessories)</li><li>Defective items (any condition)</li></ul>
+<h2 id="items-not-eligible-for-return">Items Not Eligible for Return</h2>
+<p>The following cannot be returned:</p><ul><li>Custom-built or special-order items (consoles, custom racks)</li><li>Vintage and used gear (sold as-is unless otherwise stated)</li><li>Software, plug-ins, and digital licenses (after activation)</li><li>Microphones if used past return inspection (hygiene)</li></ul>
+<h2 id="return-process">Return Process</h2>
+<p>Start a return by contacting our team via the Returns inquiry form or by phone. We issue an RMA number and a prepaid return label for defective items and shipping errors. Customer-initiated returns of working gear are responsible for return shipping.</p><ul><li>Pack the item securely in original packaging when possible</li><li>Include the RMA number on the outside of the package</li><li>Ship to the address provided with the RMA</li><li>Refunds process within 5 business days of receipt</li></ul>
+<h2 id="restocking-fees">Restocking Fees</h2>
+<p>Most returns are processed without restocking fees. A restocking fee may apply if the item is returned in incomplete or damaged condition.</p>
+<h2 id="warranty-repairs">Warranty Repairs</h2>
+<p>Items under VK Warranty are repaired or replaced free of charge. Contact the Tech Shop for warranty repair process.</p>
+
     </div>
   </div>
 </section>
-  <!-- TRUST STRIP (rolled out) -->
-  <section style="background:#FFFFFF;border-top:1px solid rgba(26,26,24,0.08);border-bottom:1px solid rgba(26,26,24,0.08);padding:18px 0;font-family:'DM Sans',sans-serif">
-    <div style="max-width:1160px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap"><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">30+ Years</strong> · outfitting pro studios</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">Authorized dealer</strong> · for hundreds of brands</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">Tech Shop</strong> · service and restoration</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">VK Warranty</strong> · on every order</div></div>
-  </section>
-
-
-<div class="policy-content"><h2>30-Day Return Window</h2>
-<p>Most new gear can be returned within 30 days of delivery for a full refund or exchange. The 30-day clock starts on delivery date as confirmed by the carrier.</p>
-<h2>Eligible Items</h2>
-<p>The following can be returned within the 30-day window:</p><ul><li>New gear in original packaging</li><li>Open-box and demo items (with original accessories)</li><li>Defective items (any condition)</li></ul>
-<h2>Items Not Eligible for Return</h2>
-<p>The following cannot be returned:</p><ul><li>Custom-built or special-order items (consoles, custom racks)</li><li>Vintage and used gear (sold as-is unless otherwise stated)</li><li>Software, plug-ins, and digital licenses (after activation)</li><li>Microphones if used past return inspection (hygiene)</li></ul>
-<h2>Return Process</h2>
-<p>Start a return by contacting our team via the Returns inquiry form or by phone. We issue an RMA number and a prepaid return label for defective items and shipping errors. Customer-initiated returns of working gear are responsible for return shipping.</p><ul><li>Pack the item securely in original packaging when possible</li><li>Include the RMA number on the outside of the package</li><li>Ship to the address provided with the RMA</li><li>Refunds process within 5 business days of receipt</li></ul>
-<h2>Restocking Fees</h2>
-<p>Most returns are processed without restocking fees. A restocking fee may apply if the item is returned in incomplete or damaged condition.</p>
-<h2>Warranty Repairs</h2>
-<p>Items under VK Warranty are repaired or replaced free of charge. Contact the Tech Shop for warranty repair process.</p>
-</div>
-
 <section class="pg-section pg-section-cta">
   <div class="pg-wrap" style="text-align:center">
     <div class="pg-eyebrow">Need More Help?</div>
