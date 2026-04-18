@@ -1,394 +1,366 @@
 <!DOCTYPE html>
-<!-- vk-secondary-pages: templates guide. Dashboard-style spec for the agency. -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VK Templates Guide — Heros, Body Modules, Rules</title>
-<meta name="description" content="Dashboard-style spec sheet for Vintage King secondary pages: 3 hero variants, 2 body photo modules, decision rules, and live examples.">
+<title>Templates Guide — Secondary Pages | Vintage King</title>
+<meta name="description" content="Agency hand-off guide: one body template, three hero variants, two strip patterns, and content presets for Vintage King secondary pages.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --vk-red:#C0392B;--amber:#D4860A;--near-black:#1A1A18;--charcoal:#2C2C2A;
-  --mid-grey:#6B6B68;--light-grey:#D8D6D2;--pale-grey:#EDEDE9;
-  --off-white:#F7F5F2;--warm-white:#FDFCFB;
+  --vk-red:#C0392B;--vk-red-dark:#922B21;--off-white:#F7F5F2;--warm-white:#FDFCFB;
+  --near-black:#1A1A18;--charcoal:#2C2C2A;--mid-grey:#6B6B68;--light-grey:#D8D6D2;
+  --pale-grey:#EDEDEA;--amber:#D4860A;--amber-bg:#F5E6C8;
+  --font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:var(--near-black);color:var(--warm-white);font-size:15px;line-height:1.55}
-a{text-decoration:none;color:inherit}
+html{overflow-x:clip}
+body{font-family:var(--font-body);background:var(--warm-white);color:var(--near-black);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px}
 
-/* HEADER */
-.nav-header{background:#111110;border-bottom:1px solid rgba(255,255,255,0.08);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-header-left{display:flex;align-items:baseline;gap:16px}
-.nav-header-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:#fff}
-.nav-header-sub{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.1em;text-transform:uppercase}
-.nav-header-links{display:flex;gap:10px}
-.hdr-link{font-size:12px;font-weight:600;padding:8px 16px;border-radius:3px;cursor:pointer;letter-spacing:0.05em;text-transform:uppercase;transition:all 0.15s;border:1.5px solid transparent}
-.hdr-link-primary{background:var(--vk-red);color:#fff}
-.hdr-link-primary:hover{opacity:0.88}
-.hdr-link-ghost{border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.6)}
-.hdr-link-ghost:hover{border-color:rgba(255,255,255,0.5);color:#fff}
+/* Header */
+.tg-topbar{background:var(--near-black);color:#fff;padding:14px 0;font-size:12px;letter-spacing:0.06em}
+.tg-topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.tg-topbar a{color:rgba(255,255,255,0.72);text-decoration:underline;text-decoration-color:rgba(255,255,255,0.18)}
+.tg-topbar a:hover{color:#fff;text-decoration-color:#fff}
+.tg-back{display:inline-block;background:var(--vk-red);color:#fff;padding:7px 14px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;margin-right:14px;transition:opacity 0.15s}
+.tg-back:hover{color:#fff;text-decoration:none;opacity:0.88}
 
-/* ROADMAP STRIP */
-.roadmap-strip{background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.07);padding:14px 32px;font-size:14px;line-height:1.55;color:rgba(255,255,255,0.62)}
-.roadmap-strip strong{color:rgba(255,255,255,0.88);font-weight:600}
-.roadmap-strip code{font-family:'DM Sans',ui-monospace,monospace;font-size:10px;color:rgba(255,255,255,0.45)}
+/* Hero */
+.tg-hero{background:#EDE8E2;padding:80px 0 60px}
+.tg-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vk-red);margin-bottom:14px}
+.tg-h1{font-family:var(--font-display);font-size:54px;font-weight:600;line-height:1.05;color:var(--near-black);margin:0 0 18px;max-width:820px}
+.tg-lead{font-size:18px;color:var(--charcoal);max-width:720px;line-height:1.55;margin:0 0 24px}
+.tg-hero-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:12px;color:var(--mid-grey);margin-top:18px}
+.tg-hero-meta strong{color:var(--near-black);font-weight:600}
 
-/* LAYOUT */
-.nav-body{display:grid;grid-template-columns:1fr 320px;gap:0;min-height:calc(100vh - 65px);align-items:start}
-.nav-main{padding:32px 36px 60px;border-right:1px solid rgba(255,255,255,0.07)}
-.nav-sidebar{padding:32px 28px 60px;position:sticky;top:65px;max-height:calc(100vh - 65px);overflow-y:auto}
+/* TOC */
+.tg-toc{background:var(--warm-white);border-top:1px solid var(--pale-grey);border-bottom:1px solid var(--pale-grey);padding:18px 0}
+.tg-toc .wrap{display:flex;gap:32px;flex-wrap:wrap;align-items:center}
+.tg-toc-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid-grey)}
+.tg-toc a{font-size:13px;color:var(--near-black);font-weight:500;border-bottom:1px solid transparent;transition:border-color .15s}
+.tg-toc a:hover{border-color:var(--vk-red)}
 
-/* SECTION HEADINGS */
-.group-title{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:8px;margin:32px 0 12px}
-.group-title:first-of-type{margin-top:0}
+/* Sections */
+section.tg-section{padding:72px 0;border-top:1px solid var(--pale-grey)}
+section.tg-section.alt{background:var(--off-white)}
+.tg-section-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vk-red);margin-bottom:12px}
+.tg-section-h2{font-family:var(--font-display);font-size:36px;font-weight:600;color:var(--near-black);margin:0 0 16px;line-height:1.1}
+.tg-section-lead{font-size:16px;color:var(--mid-grey);max-width:720px;margin:0 0 36px;line-height:1.65}
 
-/* ROW */
-.tg-row{display:grid;grid-template-columns:20px 1fr 360px;align-items:start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-.tg-row:last-child{border-bottom:none}
-.tg-status{margin-top:2px}
-.tg-name{font-size:15px;color:rgba(255,255,255,0.92);font-weight:500}
-.tg-meta{font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.5}
-.tg-tag{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:3px 7px;border-radius:2px;display:inline-block;margin-top:6px;margin-right:4px}
-.tag-hof{background:rgba(192,57,43,0.18);color:#e88}
-.tag-program{background:rgba(212,134,10,0.18);color:#e9a940}
-.tag-editorial{background:rgba(120,180,255,0.14);color:#9fc1f1}
-.tag-campaign{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.55)}
-.tag-policy{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.42)}
+/* Cards */
+.tg-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.tg-grid.two{grid-template-columns:1fr 1fr}
+.tg-card{background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:3px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.tg-card.dark{background:var(--near-black);color:#fff;border-color:transparent}
+.tg-card.dark .tg-card-title{color:#fff}
+.tg-card.dark .tg-card-meta{color:rgba(255,255,255,0.55)}
+.tg-card-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--vk-red)}
+.tg-card-title{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--near-black);margin:0;line-height:1.2}
+.tg-card-meta{font-size:13px;color:var(--mid-grey);line-height:1.6}
+.tg-card-meta code{font-family:'DM Sans',ui-monospace,monospace;font-size:12px;background:var(--off-white);color:var(--near-black);padding:1px 6px;border-radius:2px}
+.tg-card-list{list-style:none;padding:0;margin:0;font-size:13px;color:var(--charcoal);line-height:1.7}
+.tg-card-list li{padding:6px 0;border-bottom:1px solid var(--pale-grey)}
+.tg-card-list li:last-child{border-bottom:none}
+.tg-card-list strong{color:var(--near-black);font-weight:600}
 
-/* MINI PREVIEW */
-.mini{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:14px;height:130px;display:flex}
-.mini-label{position:absolute;font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;text-transform:uppercase}
+/* Visual demos */
+.tg-demo{background:var(--off-white);border:1px solid var(--pale-grey);border-radius:3px;padding:36px;margin-top:24px}
+.tg-demo-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid-grey);margin-bottom:14px}
 
-/* hero a — split bleed */
-.mini.hero-a{padding:0;background:linear-gradient(to right,#EDE8E2 50%,#FFFFFF 50%);border:1px solid rgba(255,255,255,0.07)}
-.mini.hero-a .l{flex:1;padding:14px;display:flex;flex-direction:column;justify-content:center}
-.mini.hero-a .r{flex:1;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:9px;letter-spacing:0.1em;text-transform:uppercase}
-.mini.hero-a .eyebrow{font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B}
-.mini.hero-a .h1{font-family:'Playfair Display',serif;font-size:14px;color:#1A1A18;margin:3px 0 4px;line-height:1.05}
-.mini.hero-a .p{font-size:10px;color:rgba(26,26,24,0.55);line-height:1.4}
+/* Hero variant demos */
+.demo-hero-v1{background:#EDE8E2;padding:32px;border-radius:3px;margin-bottom:14px}
+.demo-hero-v1-text{max-width:560px}
+.demo-hero-v1 h3{font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--near-black);margin:6px 0 8px;line-height:1.1}
+.demo-hero-v1 p{font-size:13px;color:var(--charcoal);line-height:1.55;margin:0}
+.demo-hero-v1-photo{margin-top:18px;background:#fff;border:1px solid rgba(26,26,24,0.08);min-height:180px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;border-radius:3px}
 
-/* hero b — split contained */
-.mini.hero-b{padding:14px;background:#EDE8E2;border:1px solid rgba(255,255,255,0.07);display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:stretch}
-.mini.hero-b .l{display:flex;flex-direction:column;justify-content:center}
-.mini.hero-b .r{background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:3px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;text-align:center;padding:6px}
-.mini.hero-b .eyebrow{font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B}
-.mini.hero-b .h1{font-family:'Playfair Display',serif;font-size:14px;color:#1A1A18;margin:3px 0 4px;line-height:1.05}
-.mini.hero-b .p{font-size:10px;color:rgba(26,26,24,0.55);line-height:1.4}
+.demo-hero-v2{background:#EDE8E2;padding:32px;border-radius:3px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-bottom:14px}
+.demo-hero-v2 h3{font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--near-black);margin:6px 0 8px;line-height:1.1}
+.demo-hero-v2 p{font-size:12px;color:var(--charcoal);line-height:1.55;margin:0}
+.demo-hero-v2-photo{background:#fff;border:1px solid rgba(26,26,24,0.08);min-height:160px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;border-radius:3px}
 
-/* hero c — editorial text */
-.mini.hero-c{padding:14px;background:#EDE8E2;border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;justify-content:center}
-.mini.hero-c .eyebrow{font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B}
-.mini.hero-c .h1{font-family:'Playfair Display',serif;font-size:16px;color:#1A1A18;margin:4px 0 5px;line-height:1.05;max-width:200px}
-.mini.hero-c .p{font-size:10px;color:rgba(26,26,24,0.6);line-height:1.45;max-width:240px}
+.demo-strip{background:#fff;border:1px solid rgba(26,26,24,0.08);padding:14px 20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mid-grey);border-radius:3px;margin-top:12px}
+.demo-strip strong{color:var(--near-black);font-weight:600}
 
-/* body big */
-.mini.body-big{padding:0;background:#FDFCFB;border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column}
-.mini.body-big .ph{flex:1;background:#F7F5F2;border-bottom:1px solid rgba(26,26,24,0.06);display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.28);font-size:9px;letter-spacing:0.12em;text-transform:uppercase}
-.mini.body-big .cap{padding:5px 10px;font-size:9px;color:rgba(26,26,24,0.5);text-align:center}
+.demo-spec{background:var(--warm-white);border:1px solid rgba(26,26,24,0.08);padding:14px 20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;border-radius:3px;margin-top:12px}
+.demo-spec-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mid-grey)}
+.demo-spec-item span{font-size:16px;font-weight:700;color:var(--near-black)}
+.demo-spec-divider{width:1px;height:18px;background:rgba(26,26,24,0.10)}
 
-/* body dual */
-.mini.body-dual{padding:0;background:#FDFCFB;border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column}
-.mini.body-dual .row{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}
-.mini.body-dual .ph{background:#F7F5F2;border:1px solid rgba(26,26,24,0.06);display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.28);font-size:9px;letter-spacing:0.12em;text-transform:uppercase}
-.mini.body-dual .caps{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 6px 5px;font-size:9px;color:rgba(26,26,24,0.5);text-align:center}
+/* Decision rules table */
+.tg-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:24px}
+.tg-table thead{background:var(--off-white)}
+.tg-table th,.tg-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--pale-grey);vertical-align:top}
+.tg-table th{font-size:11px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--mid-grey)}
+.tg-table td strong{color:var(--near-black);font-weight:600}
+.tg-table code{font-family:'DM Sans',ui-monospace,monospace;font-size:12px;background:var(--off-white);color:var(--near-black);padding:1px 6px;border-radius:2px}
 
-/* COL HEADER */
-.col-header{display:grid;grid-template-columns:20px 1fr 360px;gap:16px;padding:0 0 8px;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:4px}
-.col-h{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.32)}
+/* Tokens */
+.tg-token-row{display:grid;grid-template-columns:140px 80px 1fr;gap:16px;align-items:center;padding:10px 0;border-bottom:1px solid var(--pale-grey);font-size:13px}
+.tg-token-row:last-child{border-bottom:none}
+.tg-swatch{width:60px;height:24px;border-radius:2px;border:1px solid rgba(26,26,24,0.10)}
+.tg-token-name{font-family:'DM Sans',ui-monospace,monospace;font-size:12px;color:var(--charcoal)}
+.tg-token-use{color:var(--mid-grey);font-size:13px;line-height:1.5}
 
-/* RULES TABLE */
-.rules{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:0;list-style:none;margin-top:8px}
-.rules li{padding:11px 16px;font-size:13px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5}
-.rules li:last-child{border-bottom:none}
-.rules li strong{color:#fff;font-weight:600}
-.rules li code{font-family:'DM Sans',ui-monospace,monospace;font-size:11px;background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:2px;color:rgba(255,255,255,0.78)}
+/* Footer */
+.tg-footer{background:var(--near-black);color:#fff;padding:32px 0;font-size:12px;color:rgba(255,255,255,0.55)}
+.tg-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.tg-footer a{color:rgba(255,255,255,0.72);text-decoration:underline;text-decoration-color:rgba(255,255,255,0.18)}
+.tg-footer a:hover{color:#fff}
 
-/* PICK TABLE */
-.pick{display:grid;grid-template-columns:140px 1fr 80px 130px;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:start}
-.pick:last-of-type{border-bottom:none}
-.pick-type{font-size:13px;color:rgba(255,255,255,0.92);font-weight:500}
-.pick-goal{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5}
-.pick-hero{font-size:11px;font-weight:700;color:#e9a940;letter-spacing:0.04em}
-.pick-mods{font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.02em}
-.pick-mods code{font-family:'DM Sans',ui-monospace,monospace;background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:2px;font-size:10px}
-.pick-h{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.32);padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:4px}
-
-/* SIDEBAR */
-.sb-section{margin-bottom:28px}
-.sb-title{font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:8px;margin-bottom:12px}
-.sb-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
-.sb-item:last-child{border-bottom:none}
-.sb-num{font-size:10px;color:rgba(255,255,255,0.2);width:16px;flex-shrink:0;margin-top:1px}
-.sb-text{font-size:13px;color:rgba(255,255,255,0.68);line-height:1.45}
-.sb-text strong{color:#fff;font-weight:600}
-.sb-status{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-top:4px;display:inline-block}
-.s-done{background:rgba(76,175,80,0.15);color:#7ed47e}
-
-/* DOTS */
-.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.dot-done{background:#4CAF50}
-.dot-amber{background:var(--amber);box-shadow:0 0 6px rgba(212,134,10,0.6)}
-
-/* FOOTER */
-.nav-footer{text-align:center;padding:20px;font-size:11px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07)}
-
-/* MOBILE */
-@media(max-width:980px){
-  .nav-body{grid-template-columns:1fr}
-  .nav-sidebar{position:static;border-top:1px solid rgba(255,255,255,0.07);max-height:none}
-  .nav-main{border-right:none}
-  .tg-row{grid-template-columns:20px 1fr;gap:10px}
-  .tg-row .mini{display:none}
-  .col-header{grid-template-columns:20px 1fr}
-  .col-header .col-h:last-child{display:none}
-  .pick{grid-template-columns:1fr 1fr;gap:8px}
-  .pick-h{display:none}
+@media(max-width:880px){
+  .tg-grid,.tg-grid.two{grid-template-columns:1fr}
+  .demo-hero-v2{grid-template-columns:1fr}
+  .tg-h1{font-size:38px}
+  .tg-section-h2{font-size:28px}
+  .tg-token-row{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<header class="nav-header">
-  <div class="nav-header-left">
-    <div class="nav-header-title">VK Templates Guide</div>
-    <div class="nav-header-sub">April 2026 · Agency hand-off</div>
+<!-- TOPBAR -->
+<div class="tg-topbar">
+  <div class="wrap">
+    <div><a class="tg-back" href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html">← Demo Dashboard</a><strong style="color:#fff;font-weight:600">VK Secondary Pages</strong> &nbsp;·&nbsp; Templates Guide</div>
+    <div><a href="navigator.html">Secondary Page Navigation</a> &nbsp;·&nbsp; <a href="CONTENT-AUDIT.md">CONTENT-AUDIT.md</a></div>
   </div>
-  <div class="nav-header-links">
-    <a class="hdr-link hdr-link-ghost" href="navigator.html">← Demo dashboard</a>
-    <a class="hdr-link hdr-link-primary" href="https://barreletics.github.io/vintage-king-redesign/" target="_blank" rel="noopener">Live main demo →</a>
-  </div>
-</header>
-
-<div class="roadmap-strip">
-  <strong>How to read this.</strong> Pick one <strong>hero</strong> by page type (A, B, or C). Optionally add one or both <strong>body modules</strong> (Big, Dual). Trust + explore strips render automatically. <strong>43 pages live</strong> using these patterns. The dashboard lives at <a href="navigator.html" style="color:rgba(255,200,180,0.95);text-decoration:underline">navigator.html</a>.
 </div>
 
-<div class="nav-body">
-
-  <div class="nav-main">
-
-    <div class="col-header">
-      <div class="col-h"></div>
-      <div class="col-h">Pattern</div>
-      <div class="col-h">Visual</div>
+<!-- HERO -->
+<section class="tg-hero">
+  <div class="wrap">
+    <div class="tg-eyebrow">Agency hand-off</div>
+    <h1 class="tg-h1">3 heros. 2 body modules. Pick one of each.</h1>
+    <p class="tg-lead">Visual spec sheet for the agency. Pick a hero by page type, add a body module if you want a wow shot, ship the page. Trust + explore strips render automatically.</p>
+    <div class="tg-hero-meta">
+      <span><strong>43 pages</strong> live</span>
+      <span><strong>3 heros</strong> (A · B · C)</span>
+      <span><strong>2 body modules</strong> (Big · Dual)</span>
     </div>
+  </div>
+</section>
 
-    <!-- A: HEROS -->
-    <div class="group-title">A — Heros (pick one per page)</div>
+<!-- TRUST STRIP (real example) -->
+<section style="background:#FFFFFF;border-top:1px solid rgba(26,26,24,0.08);border-bottom:1px solid rgba(26,26,24,0.08);padding:18px 0">
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">30+ Years</strong> · outfitting pro studios</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">Authorized dealer</strong> · for hundreds of brands</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">Tech Shop</strong> · service and restoration</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,24,0.65)"><strong style="color:#1A1A18;font-weight:600">VK Warranty</strong> · on every order</div>
+  </div>
+</section>
 
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name">Hero A — Split Bleed</div>
-        <div class="tg-meta">50/50 layout. Photo bleeds to the viewport edge on the right. Most premium look — the photo IS the headline.</div>
-        <span class="tg-tag tag-hof">HOF gear</span>
+<!-- TOC -->
+<div class="tg-toc">
+  <div class="wrap">
+    <div class="tg-toc-label">Jump to</div>
+    <a href="#heros">Heros (A · B · C)</a>
+    <a href="#body-modules">Body modules</a>
+    <a href="#decisions">Pick fast</a>
+    <a href="#examples">Live examples</a>
+  </div>
+</div>
+
+<!-- HEROS -->
+<section id="heros" class="tg-section">
+  <div class="wrap">
+    <div class="tg-section-eyebrow">Three heros</div>
+    <h2 class="tg-section-h2">Pick by page intent — not by taste.</h2>
+    <p class="tg-section-lead">Three options, named A / B / C. Pick one per page. Body photo modules are separate (see next section) and can be added or skipped on any hero.</p>
+
+    <div class="tg-grid">
+      <!-- HERO A — Split Bleed -->
+      <div class="tg-card" style="padding:0">
+        <div class="tg-demo" style="margin:0;padding:18px;border-radius:3px 3px 0 0">
+          <div class="tg-demo-label">Hero A — Split Bleed (50/50, photo full-bleed right)</div>
+          <div style="background:linear-gradient(to right, #EDE8E2 50%, #FFFFFF 50%);border-radius:3px;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:200px;border:1px solid rgba(26,26,24,0.06)">
+            <div style="padding:24px">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--vk-red)">Hall of Fame</div>
+              <h3 style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--near-black);margin:6px 0 8px;line-height:1.1">Gear name</h3>
+              <p style="font-size:12px;color:var(--charcoal);line-height:1.55;margin:0">Short blurb with the speakable phrase. CTA below.</p>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600">Photo · edge-to-edge</div>
+          </div>
+        </div>
+        <div style="padding:20px 24px">
+          <div class="tg-card-eyebrow">Best for</div>
+          <div class="tg-card-meta" style="margin-top:6px">Hall of Fame gear and any page where the gear photo IS the headline (U47, 1073, LA-2A, Fairchild). Photo bleeds to the viewport edge to feel premium.</div>
+        </div>
       </div>
-      <div class="mini hero-a">
-        <div class="l"><div class="eyebrow">Hall of Fame</div><div class="h1">Gear name</div><div class="p">Short blurb · CTA below</div></div>
-        <div class="r">Photo · edge to edge</div>
+
+      <!-- HERO B — Split Contained -->
+      <div class="tg-card" style="padding:0">
+        <div class="tg-demo" style="margin:0;padding:18px;border-radius:3px 3px 0 0">
+          <div class="tg-demo-label">Hero B — Split Contained (50/50, photo in white card)</div>
+          <div class="demo-hero-v2">
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--vk-red)">Eyebrow</div>
+              <h3>Page Title Here</h3>
+              <p>Lead paragraph with the speakable phrase and the primary CTA below.</p>
+            </div>
+            <div class="demo-hero-v2-photo">Photo · contained card</div>
+          </div>
+        </div>
+        <div style="padding:20px 24px">
+          <div class="tg-card-eyebrow">Best for</div>
+          <div class="tg-card-meta" style="margin-top:6px">Service, program, campaign, and policy pages. Default for any page with one product/service hook (Trade Program, VK Credit Card, Audio Consultants, Black Friday Mics).</div>
+        </div>
+      </div>
+
+      <!-- HERO C — Editorial Text -->
+      <div class="tg-card" style="padding:0">
+        <div class="tg-demo" style="margin:0;padding:18px;border-radius:3px 3px 0 0">
+          <div class="tg-demo-label">Hero C — Editorial (text only, no hero photo)</div>
+          <div class="demo-hero-v1" style="min-height:200px;display:flex;flex-direction:column;justify-content:center">
+            <div class="demo-hero-v1-text">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--vk-red)">Editorial</div>
+              <h3>Editorial Headline Here</h3>
+              <p>Lead paragraph carries the page. Photos live in the body via the body modules below — never in the hero.</p>
+            </div>
+          </div>
+        </div>
+        <div style="padding:20px 24px">
+          <div class="tg-card-eyebrow">Best for</div>
+          <div class="tg-card-meta" style="margin-top:6px">Brand-led storytelling: About VK, 25 Years, PLAYBACK, Make Your Mark, Hall of Fame index. Pair with Body Photo — Big or Dual when you want a wow shot in the body.</div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name">Hero B — Split Contained</div>
-        <div class="tg-meta">50/50 layout. Photo sits inside a white card, doesn't bleed. Cleaner for service and program pages with one clear pitch.</div>
-        <span class="tg-tag tag-program">Program · Service</span>
-        <span class="tg-tag tag-campaign">Campaign</span>
-        <span class="tg-tag tag-policy">Policy</span>
+<!-- BODY MODULES -->
+<section id="body-modules" class="tg-section alt">
+  <div class="wrap">
+    <div class="tg-section-eyebrow">Body photo modules</div>
+    <h2 class="tg-section-h2">Optional. Mix freely on any hero.</h2>
+    <p class="tg-section-lead">Use zero, one, or both. Stack them in either order. Same modules work on Hero A, B, or C — Shopify-ready toggles for the agency build.</p>
+
+    <div class="tg-grid two">
+      <!-- BODY BIG -->
+      <div class="tg-card" style="padding:0">
+        <div class="tg-demo" style="margin:0;padding:18px;border-radius:3px 3px 0 0">
+          <div class="tg-demo-label">Body Photo — Big · 1160 × 520 contained</div>
+          <div class="demo-hero-v1-photo" style="min-height:200px;margin:0">Single big photo · contained, with caption below</div>
+          <div style="margin-top:10px;text-align:center;font-size:11px;color:var(--mid-grey);letter-spacing:0.04em">Caption sits below the photo, dark text, DM Sans 13px</div>
+        </div>
+        <div style="padding:20px 24px">
+          <div class="tg-card-eyebrow">Best for</div>
+          <div class="tg-card-meta" style="margin-top:6px">HOF gear (full unit shot), program pages (one anchor image), editorial covers (PLAYBACK issue, Make Your Mark episode). One wow moment that earns desire.</div>
+        </div>
       </div>
-      <div class="mini hero-b">
-        <div class="l"><div class="eyebrow">Eyebrow</div><div class="h1">Page title</div><div class="p">Lead paragraph · CTA below</div></div>
-        <div class="r">Photo · contained</div>
+
+      <!-- BODY DUAL -->
+      <div class="tg-card" style="padding:0">
+        <div class="tg-demo" style="margin:0;padding:18px;border-radius:3px 3px 0 0">
+          <div class="tg-demo-label">Body Photo — Dual · two 580 × 580 side by side</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0">
+            <div class="demo-hero-v1-photo" style="min-height:160px;margin:0">580 × 580</div>
+            <div class="demo-hero-v1-photo" style="min-height:160px;margin:0">580 × 580</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;font-size:11px;color:var(--mid-grey);letter-spacing:0.04em;text-align:center">
+            <div>Caption A</div>
+            <div>Caption B</div>
+          </div>
+        </div>
+        <div style="padding:20px 24px">
+          <div class="tg-card-eyebrow">Best for</div>
+          <div class="tg-card-meta" style="margin-top:6px">Studio context + hardware detail, before / after, comparison shots, two-up storytelling. Caption sits below each photo so it doesn't fight the image.</div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name">Hero C — Editorial Text</div>
-        <div class="tg-meta">Text-only hero. No photo in the hero. Use a body module for the wow shot. Brand storytelling pages.</div>
-        <span class="tg-tag tag-editorial">Editorial</span>
-      </div>
-      <div class="mini hero-c"><div class="eyebrow">Editorial</div><div class="h1">Editorial headline here</div><div class="p">Lead paragraph carries the page · photo lives in the body</div></div>
-    </div>
+<!-- DECISIONS -->
+<section id="decisions" class="tg-section">
+  <div class="wrap">
+    <div class="tg-section-eyebrow">Pick fast</div>
+    <h2 class="tg-section-h2">Pick a hero in 5 seconds.</h2>
+    <table class="tg-table">
+      <thead>
+        <tr><th style="width:160px">Page type</th><th>Goal</th><th>Hero</th><th>Body modules</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>HOF gear</strong></td><td>Browse → desire → buy</td><td><code>Hero A</code></td><td><code>Big</code> + spec strip + <code>Dual</code></td><td>Full-bleed photo earns attention. Big body shot + dual shots build desire across the scroll.</td></tr>
+        <tr><td><strong>Program / Service</strong></td><td>Decide → contact</td><td><code>Hero B</code></td><td><code>Dual</code> (optional)</td><td>One clear pitch on the left, one strong photo on the right, one CTA below.</td></tr>
+        <tr><td><strong>Editorial</strong></td><td>Read → share</td><td><code>Hero C</code></td><td><code>Big</code> or <code>Dual</code></td><td>Story leads. The wow shot lives in the body via a module, not in the hero.</td></tr>
+        <tr><td><strong>Campaign</strong></td><td>Click → shop</td><td><code>Hero B</code></td><td>none (or <code>Big</code>)</td><td>Promo balance — copy + image + CTA above the fold; optional body shot for hero product.</td></tr>
+        <tr><td><strong>Policy</strong></td><td>Read → comply</td><td><code>Hero B</code></td><td>none</td><td>Lightweight hero, body does the heavy lifting. No dark heroes on policy pages.</td></tr>
+      </tbody>
+    </table>
 
-    <!-- B: BODY MODULES -->
-    <div class="group-title">B — Body modules (optional, mix freely)</div>
-
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name">Body Photo — Big</div>
-        <div class="tg-meta">One contained 1160 × 520 photo with caption below. Best mid-scroll, after the Story section. The wow shot.</div>
-      </div>
-      <div class="mini body-big"><div class="ph">1160 × 520</div><div class="cap">Caption below the photo</div></div>
-    </div>
-
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name">Body Photo — Dual</div>
-        <div class="tg-meta">Two 580 × 580 photos side-by-side, captions below each. Studio context + hardware detail, before / after, comparison shots.</div>
-      </div>
-      <div class="mini body-dual"><div class="row"><div class="ph">580×580</div><div class="ph">580×580</div></div><div class="caps"><div>Caption A</div><div>Caption B</div></div></div>
-    </div>
-
-    <!-- C: PICK FAST -->
-    <div class="group-title">C — Pick a hero in 5 seconds</div>
-
-    <div class="pick">
-      <div class="pick-h">Page type</div>
-      <div class="pick-h">Goal</div>
-      <div class="pick-h">Hero</div>
-      <div class="pick-h">Body modules</div>
-    </div>
-    <div class="pick">
-      <div class="pick-type">HOF gear</div>
-      <div class="pick-goal">Browse → desire → buy</div>
-      <div class="pick-hero">Hero A</div>
-      <div class="pick-mods"><code>Big</code> + <code>Dual</code></div>
-    </div>
-    <div class="pick">
-      <div class="pick-type">Program / Service</div>
-      <div class="pick-goal">Decide → contact</div>
-      <div class="pick-hero">Hero B</div>
-      <div class="pick-mods"><code>Dual</code> (optional)</div>
-    </div>
-    <div class="pick">
-      <div class="pick-type">Editorial</div>
-      <div class="pick-goal">Read → share</div>
-      <div class="pick-hero">Hero C</div>
-      <div class="pick-mods"><code>Big</code> or <code>Dual</code></div>
-    </div>
-    <div class="pick">
-      <div class="pick-type">Campaign</div>
-      <div class="pick-goal">Click → shop</div>
-      <div class="pick-hero">Hero B</div>
-      <div class="pick-mods">none or <code>Big</code></div>
-    </div>
-    <div class="pick">
-      <div class="pick-type">Policy</div>
-      <div class="pick-goal">Read → comply</div>
-      <div class="pick-hero">Hero B</div>
-      <div class="pick-mods">none</div>
-    </div>
-
-    <!-- D: NEVER DO -->
-    <div class="group-title">D — Never do</div>
-
-    <ul class="rules">
+    <div class="tg-section-eyebrow" style="margin-top:48px">Things you should never do</div>
+    <ul class="tg-card-list" style="background:#fff;border:1px solid rgba(26,26,24,0.08);padding:24px 28px;border-radius:3px;margin-top:16px">
       <li><strong>No dark heroes</strong> on secondary pages. All heros open with <code>#EDE8E2</code>.</li>
       <li><strong>No more than one</strong> dark accent block per page (<code>#2C2C2A</code>) — and never first.</li>
-      <li><strong>No amber</strong> on new gear or program pages. Amber = vintage / used only.</li>
+      <li><strong>No amber</strong> on new gear or program pages. Amber = vintage/used only.</li>
       <li><strong>No Playfair on prices.</strong> DM Sans 500 weight, <code>--near-black</code> only.</li>
       <li><strong>No pinkish reds.</strong> Banned: <code>#fde8e6</code>, <code>rgba(192,57,43,0.04–0.08)</code> as standalone backgrounds.</li>
       <li><strong>No font sizes below 12px</strong> anywhere — CSS, inline, or SVG labels.</li>
       <li><strong>No physical locations.</strong> VK has no showrooms — never reference a city as a VK location.</li>
+      <li><strong>No new strips.</strong> Use one of the 5 presets above; new strip copy needs agency approval.</li>
     </ul>
-
-    <!-- E: LIVE EXAMPLES -->
-    <div class="group-title">E — Live examples (canonical pages)</div>
-
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name"><a href="neumann-u47-fet-v2.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92)">Neumann U47 FET <span style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:400">↗</span></a></div>
-        <div class="tg-meta">Hero A pilot · Body Big + spec strip · Body Dual · the full HOF rhythm.</div>
-        <span class="tg-tag tag-hof">Hero A · HOF</span>
-      </div>
-      <div></div>
-    </div>
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name"><a href="trade-program.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92)">Trade Program <span style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:400">↗</span></a></div>
-        <div class="tg-meta">Hero B contained · program preset trust strip · 3-step process.</div>
-        <span class="tg-tag tag-program">Hero B · Program</span>
-      </div>
-      <div></div>
-    </div>
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name"><a href="about.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92)">About Vintage King <span style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:400">↗</span></a></div>
-        <div class="tg-meta">Hero C editorial · bespoke 4-stat credential bar · photo in body.</div>
-        <span class="tg-tag tag-editorial">Hero C · Editorial</span>
-      </div>
-      <div></div>
-    </div>
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name"><a href="black-friday-microphone-deals-v2.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92)">Black Friday Microphone Deals <span style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:400">↗</span></a></div>
-        <div class="tg-meta">Campaign preset trust strip · "Free shipping over $99 · 30-day returns".</div>
-        <span class="tg-tag tag-campaign">Hero B · Campaign</span>
-      </div>
-      <div></div>
-    </div>
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name"><a href="warranty.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92)">VK Warranty <span style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:400">↗</span></a></div>
-        <div class="tg-meta">Lightweight contained hero · body does the heavy lifting · editorial preset strip.</div>
-        <span class="tg-tag tag-policy">Hero B · Policy</span>
-      </div>
-      <div></div>
-    </div>
-    <div class="tg-row">
-      <div class="tg-status"><div class="dot dot-done"></div></div>
-      <div>
-        <div class="tg-name"><a href="hall-of-fame.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92)">Hall of Fame index <span style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:400">↗</span></a></div>
-        <div class="tg-meta">Top GEO target · links to all 13 HOF gear pages with verbatim VK copy.</div>
-        <span class="tg-tag tag-editorial">Hub · Editorial</span>
-      </div>
-      <div></div>
-    </div>
-
   </div>
+</section>
 
-  <!-- SIDEBAR -->
-  <aside class="nav-sidebar">
-
-    <div class="sb-section">
-      <div class="sb-title">At a glance</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.55"><strong style="color:#27ae60">43 pages live · 3 heros · 2 body modules</strong> — Pick a hero by page type. Add a body module if you want a wow shot. Trust + explore strips render automatically.</div>
+<!-- EXAMPLES -->
+<section id="examples" class="tg-section alt">
+  <div class="wrap">
+    <div class="tg-section-eyebrow">Live examples</div>
+    <h2 class="tg-section-h2">See it in production.</h2>
+    <p class="tg-section-lead">Each link below opens the canonical example for that pattern. Use them as the reference implementation for any new page.</p>
+    <div class="tg-grid">
+      <a href="neumann-u47-fet-v2.html" class="tg-card" target="_blank" rel="noopener">
+        <div class="tg-card-eyebrow">Hero A · HOF gear · Pilot</div>
+        <div class="tg-card-title">Neumann U47 FET (v2)</div>
+        <div class="tg-card-meta">Pilot for Hero A (Split Bleed) + Body Photo Big + spec strip + Body Photo Dual. The full HOF rhythm.</div>
+        <div style="font-size:11px;font-weight:600;color:var(--vk-red);letter-spacing:0.06em;margin-top:8px">Open →</div>
+      </a>
+      <a href="trade-program.html" class="tg-card" target="_blank" rel="noopener">
+        <div class="tg-card-eyebrow">Hero B · Program</div>
+        <div class="tg-card-title">Trade Program</div>
+        <div class="tg-card-meta">50/50 split contained hero + program preset trust strip + 3-step process.</div>
+        <div style="font-size:11px;font-weight:600;color:var(--vk-red);letter-spacing:0.06em;margin-top:8px">Open →</div>
+      </a>
+      <a href="about.html" class="tg-card" target="_blank" rel="noopener">
+        <div class="tg-card-eyebrow">Hero C · Editorial</div>
+        <div class="tg-card-title">About Vintage King</div>
+        <div class="tg-card-meta">Text-only editorial hero + bespoke 4-stat credential bar + photo in body.</div>
+        <div style="font-size:11px;font-weight:600;color:var(--vk-red);letter-spacing:0.06em;margin-top:8px">Open →</div>
+      </a>
+      <a href="black-friday-microphone-deals-v2.html" class="tg-card" target="_blank" rel="noopener">
+        <div class="tg-card-eyebrow">Hero B · Campaign</div>
+        <div class="tg-card-title">Black Friday Microphone Deals</div>
+        <div class="tg-card-meta">Campaign preset trust strip ("Free shipping over $99 · 30-day returns").</div>
+        <div style="font-size:11px;font-weight:600;color:var(--vk-red);letter-spacing:0.06em;margin-top:8px">Open →</div>
+      </a>
+      <a href="warranty.html" class="tg-card" target="_blank" rel="noopener">
+        <div class="tg-card-eyebrow">Hero B · Policy</div>
+        <div class="tg-card-title">VK Warranty</div>
+        <div class="tg-card-meta">Lightweight contained hero, body does the heavy lifting. Editorial preset strip.</div>
+        <div style="font-size:11px;font-weight:600;color:var(--vk-red);letter-spacing:0.06em;margin-top:8px">Open →</div>
+      </a>
+      <a href="hall-of-fame.html" class="tg-card" target="_blank" rel="noopener">
+        <div class="tg-card-eyebrow">Hub · Editorial</div>
+        <div class="tg-card-title">Hall of Fame Index</div>
+        <div class="tg-card-meta">Top GEO target, links to all 13 HOF gear pages with verbatim VK copy.</div>
+        <div style="font-size:11px;font-weight:600;color:var(--vk-red);letter-spacing:0.06em;margin-top:8px">Open →</div>
+      </a>
     </div>
+  </div>
+</section>
 
-    <div class="sb-section">
-      <div class="sb-title">Heros (3)</div>
-      <div class="sb-item"><div class="sb-num">A</div><div><div class="sb-text"><strong>Split Bleed</strong> — photo edge-to-edge right. HOF gear.</div></div></div>
-      <div class="sb-item"><div class="sb-num">B</div><div><div class="sb-text"><strong>Split Contained</strong> — photo in white card. Program · service · campaign · policy.</div></div></div>
-      <div class="sb-item"><div class="sb-num">C</div><div><div class="sb-text"><strong>Editorial Text</strong> — no hero photo. Brand storytelling.</div></div></div>
-    </div>
-
-    <div class="sb-section">
-      <div class="sb-title">Body modules (2)</div>
-      <div class="sb-item"><div class="sb-num">·</div><div><div class="sb-text"><strong>Big</strong> — 1160 × 520, mid-scroll wow shot.</div></div></div>
-      <div class="sb-item"><div class="sb-num">·</div><div><div class="sb-text"><strong>Dual</strong> — two 580 × 580 side-by-side.</div></div></div>
-    </div>
-
-    <div class="sb-section">
-      <div class="sb-title">Color rules</div>
-      <div class="sb-item"><div class="sb-num">·</div><div><div class="sb-text"><strong style="color:#e88">Red #C0392B</strong> — primary CTA, eyebrows, accents.</div></div></div>
-      <div class="sb-item"><div class="sb-num">·</div><div><div class="sb-text"><strong style="color:#e9a940">Amber #D4860A</strong> — vintage / used only. Never on new gear.</div></div></div>
-      <div class="sb-item"><div class="sb-num">·</div><div><div class="sb-text"><strong>Hero bg #EDE8E2</strong> — every hero opens with this.</div></div></div>
-      <div class="sb-item"><div class="sb-num">·</div><div><div class="sb-text"><strong>Body text #1A1A18</strong> — DM Sans, never below 12px.</div></div></div>
-    </div>
-
-    <div class="sb-section">
-      <div class="sb-title">Links</div>
-      <div class="sb-item"><div class="sb-num">→</div><div><div class="sb-text"><a href="navigator.html" style="color:rgba(255,200,180,0.95)">Demo dashboard ↗</a></div></div></div>
-      <div class="sb-item"><div class="sb-num">→</div><div><div class="sb-text"><a href="https://barreletics.github.io/vintage-king-redesign/" target="_blank" rel="noopener" style="color:rgba(255,200,180,0.95)">Live main demo ↗</a></div></div></div>
-      <div class="sb-item"><div class="sb-num">→</div><div><div class="sb-text"><a href="https://github.com/barreletics/vk-secondary-pages" target="_blank" rel="noopener" style="color:rgba(255,200,180,0.95)">GitHub repo ↗</a></div></div></div>
-    </div>
-
-  </aside>
-</div>
-
-<div class="nav-footer">VK Templates Guide · v3-strip-and-hero-locked · April 2026</div>
+<!-- FOOTER -->
+<footer class="tg-footer">
+  <div class="wrap">
+    <div>VK Secondary Pages · Templates Guide · v3-strip-and-hero-locked</div>
+    <div><a href="navigator.html">Navigator</a> &nbsp;·&nbsp; <a href="CONTENT-AUDIT.md">Content Audit</a> &nbsp;·&nbsp; <a href="https://github.com/barreletics/vk-secondary-pages" target="_blank" rel="noopener">Repo</a></div>
+  </div>
+</footer>
 
 </body>
 </html>
