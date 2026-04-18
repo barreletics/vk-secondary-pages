@@ -1542,6 +1542,20 @@ def build_all():
 
 import re
 
+HERO_A_PATCH = """
+/* Hero A — Split Bleed. Text left on #EDE8E2, photo right edge-to-edge to viewport. */
+.pg-hero{padding:0;border-bottom:1px solid rgba(26,26,24,0.06);background:linear-gradient(to right,#EDE8E2 50%,#FFFFFF 50%)}
+.pg-hero-inner{max-width:none;padding:0;grid-template-columns:1fr 1fr;gap:0;min-height:600px;align-items:stretch}
+.pg-hero-inner > div:first-child{padding:96px 64px 96px max(40px, calc((100vw - 1160px) / 2 + 40px));display:flex;flex-direction:column;justify-content:center}
+.pg-hero-img-v2{min-height:600px;border:none;border-radius:0;background:#FFFFFF;height:100%}
+@media(max-width:980px){
+  .pg-hero{background:#EDE8E2}
+  .pg-hero-inner{grid-template-columns:1fr;min-height:auto}
+  .pg-hero-inner > div:first-child{padding:60px 24px 40px}
+  .pg-hero-img-v2{min-height:360px;background:#FFFFFF}
+}
+"""
+
 V2_EXTRA_CSS = """
 .pg-hero-img-v2{background:#FFFFFF;border:1px solid rgba(26,26,24,0.08);border-radius:3px;min-height:520px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:20px;font-family:var(--font-body);font-weight:500}
 .pg-photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}
@@ -1714,6 +1728,12 @@ def to_v2(html: str, dual_captions, explore_cards: list) -> str:
         f'<style>{V2_EXTRA_CSS}</style>\n<style id="vk-standalone-patch">',
         1
     )
+    if 'hero-a-patch' not in html:
+        html = html.replace(
+            '</head>',
+            f'<style id="hero-a-patch">{HERO_A_PATCH}</style>\n</head>',
+            1
+        )
 
     # 2. Replace the first dark hero placeholder we find with the v2 white slot.
     for pat in _HERO_PATTERNS:
