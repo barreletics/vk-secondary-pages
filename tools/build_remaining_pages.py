@@ -1543,7 +1543,7 @@ def build_all():
 import re
 
 V2_EXTRA_CSS = """
-.pg-hero-img-v2{background:#FFFFFF;border:1px solid rgba(26,26,24,0.08);border-radius:3px;min-height:380px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:20px;font-family:var(--font-body);font-weight:500}
+.pg-hero-img-v2{background:#FFFFFF;border:1px solid rgba(26,26,24,0.08);border-radius:3px;min-height:520px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:20px;font-family:var(--font-body);font-weight:500}
 .pg-photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}
 .pg-photo-slot{margin:0}
 .pg-photo{background:var(--off-white);border:1px solid rgba(26,26,24,0.08);border-radius:3px;aspect-ratio:1/1;max-width:580px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-family:var(--font-body);font-weight:500;text-align:center;padding:20px}
