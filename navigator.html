@@ -20,14 +20,14 @@
   --warm-white: #FDFCFB;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', sans-serif; background: var(--near-black); color: var(--warm-white); font-size: 15px; line-height: 1.55; }
+body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--near-black); font-size: 15px; line-height: 1.55; }
 a { text-decoration: none; color: inherit; }
 
 /* ── HEADER ── */
 .nav-header {
-  background: #111110;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 18px 32px;
+  background: #EDE8E2;
+  border-bottom: 1px solid rgba(26,26,24,0.08);
+  padding: 22px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,30 +35,32 @@ a { text-decoration: none; color: inherit; }
   top: 0;
   z-index: 100;
 }
-.nav-header-left { display: flex; align-items: baseline; gap: 16px; }
-.nav-header-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500; color: #fff; }
-.nav-header-sub { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; text-transform: uppercase; }
-.nav-header-links { display: flex; gap: 10px; }
+.nav-header-left { display: flex; flex-direction: column; gap: 4px; }
+.nav-header-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--vk-red); }
+.nav-header-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--near-black); line-height: 1.1; letter-spacing: -0.01em; }
+.nav-header-sub { font-size: 12px; color: rgba(26,26,24,0.5); letter-spacing: 0.06em; }
+.nav-header-links { display: flex; gap: 10px; align-items: center; }
 .hdr-link {
-  font-size: 12px; font-weight: 600; padding: 8px 16px;
-  border-radius: 3px; cursor: pointer; letter-spacing: 0.05em;
+  font-size: 11px; font-weight: 600; padding: 9px 16px;
+  border-radius: 3px; cursor: pointer; letter-spacing: 0.08em;
   text-transform: uppercase; transition: all 0.15s; border: 1.5px solid transparent;
 }
 .hdr-link-primary { background: var(--vk-red); color: #fff; }
 .hdr-link-primary:hover { opacity: 0.88; }
-.hdr-link-ghost { border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.6); }
-.hdr-link-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+.hdr-link-ghost { border-color: rgba(26,26,24,0.18); color: rgba(26,26,24,0.65); }
+.hdr-link-ghost:hover { border-color: rgba(26,26,24,0.45); color: var(--near-black); }
 
 .roadmap-strip {
-  background: rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding: 14px 32px;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255,255,255,0.62);
+  background: var(--warm-white);
+  border-bottom: 1px solid rgba(26,26,24,0.08);
+  padding: 16px 40px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(26,26,24,0.65);
 }
-.roadmap-strip strong { color: rgba(255,255,255,0.88); font-weight: 600; }
-.roadmap-strip code { font-family: 'DM Sans', ui-monospace, monospace; font-size: 10px; color: rgba(255,255,255,0.45); }
+.roadmap-strip strong { color: var(--near-black); font-weight: 600; }
+.roadmap-strip code { font-family: 'DM Sans', ui-monospace, monospace; font-size: 11px; color: rgba(26,26,24,0.5); background: rgba(26,26,24,0.04); padding: 1px 5px; border-radius: 2px; }
+.roadmap-strip a { color: var(--vk-red); text-decoration: underline; }
 
 /* ── LAYOUT ── */
 .nav-body {
@@ -68,15 +70,15 @@ a { text-decoration: none; color: inherit; }
   min-height: calc(100vh - 65px);
   align-items: start;
 }
-.nav-main { padding: 32px 36px 60px; border-right: 1px solid rgba(255,255,255,0.07); }
-.nav-sidebar { padding: 32px 28px 60px; position: sticky; top: 65px; max-height: calc(100vh - 65px); overflow-y: auto; }
+.nav-main { padding: 36px 40px 60px; border-right: 1px solid rgba(26,26,24,0.08); background: #fff; }
+.nav-sidebar { padding: 36px 28px 60px; position: sticky; top: 96px; max-height: calc(100vh - 96px); overflow-y: auto; background: var(--off-white); }
 
 /* ── SECTION HEADINGS ── */
 .group-title {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(255,255,255,0.3);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding-bottom: 8px; margin: 32px 0 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--vk-red);
+  border-bottom: 1px solid rgba(26,26,24,0.1);
+  padding-bottom: 10px; margin: 36px 0 14px;
 }
 .group-title:first-of-type { margin-top: 0; }
 
@@ -86,74 +88,74 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: 20px 1fr 100px 72px 130px;
   align-items: start;
   gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(26,26,24,0.07);
 }
 .page-row:last-child { border-bottom: none; }
 .page-status { margin-top: 2px; }
-.page-name { font-size: 15px; color: rgba(255,255,255,0.88); font-weight: 500; }
-.page-url { font-size: 11px; color: rgba(255,255,255,0.32); font-family: 'DM Sans', monospace; margin-top: 2px; }
-.page-note { font-size: 12px; color: rgba(255,255,255,0.42); margin-top: 3px; line-height: 1.45; }
-.page-hero { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 7px; border-radius: 2px; white-space: nowrap; margin-top: 2px; display: inline-block; }
-.hero-dark { background: rgba(192,57,43,0.15); color: #e88; }
-.hero-light { background: rgba(212,134,10,0.15); color: #e9a940; }
-.hero-gear { background: rgba(192,57,43,0.2); color: #f9c; }
-.page-priority { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 2px; }
-.page-repo { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; line-height: 1.35; }
+.page-name { font-size: 15px; color: var(--near-black); font-weight: 500; }
+.page-url { font-size: 11px; color: rgba(26,26,24,0.45); font-family: 'DM Sans', monospace; margin-top: 2px; }
+.page-note { font-size: 12px; color: rgba(26,26,24,0.55); margin-top: 4px; line-height: 1.5; }
+.page-hero { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; white-space: nowrap; margin-top: 2px; display: inline-block; }
+.hero-dark { background: rgba(192,57,43,0.12); color: #C0392B; }
+.hero-light { background: rgba(212,134,10,0.18); color: #8a5a08; }
+.hero-gear { background: rgba(192,57,43,0.18); color: #C0392B; }
+.page-priority { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+.page-repo { font-size: 12px; color: rgba(26,26,24,0.6); margin-top: 2px; line-height: 1.4; }
 .p-high { color: var(--vk-red); }
-.p-med { color: rgba(255,255,255,0.4); }
-.p-low { color: rgba(255,255,255,0.22); }
+.p-med { color: rgba(26,26,24,0.5); }
+.p-low { color: rgba(26,26,24,0.32); }
 /* Status dots */
 .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.dot-done { background: #4CAF50; }
-.dot-next { background: var(--amber); box-shadow: 0 0 6px rgba(212,134,10,0.6); }
-.dot-planned { background: rgba(255,255,255,0.18); }
+.dot-done { background: #2E7D32; }
+.dot-next { background: var(--amber); box-shadow: 0 0 6px rgba(212,134,10,0.5); }
+.dot-planned { background: rgba(26,26,24,0.18); }
 
 /* Col header */
 .col-header {
   display: grid;
   grid-template-columns: 20px 1fr 100px 72px 130px;
   gap: 12px;
-  padding: 0 0 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 0 0 10px;
+  border-bottom: 1px solid rgba(26,26,24,0.15);
   margin-bottom: 4px;
 }
-.col-h { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+.col-h { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,26,24,0.45); }
 
 /* ── SIDEBAR ── */
-.sb-section { margin-bottom: 28px; }
+.sb-section { margin-bottom: 28px; background: #fff; border: 1px solid rgba(26,26,24,0.08); border-radius: 3px; padding: 18px 20px; }
 .sb-title {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding-bottom: 8px; margin-bottom: 12px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--vk-red); border-bottom: 1px solid rgba(26,26,24,0.08);
+  padding-bottom: 10px; margin-bottom: 12px;
 }
-.sb-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.sb-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid rgba(26,26,24,0.05); }
 .sb-item:last-child { border-bottom: none; }
-.sb-num { font-size: 10px; color: rgba(255,255,255,0.2); width: 16px; flex-shrink: 0; margin-top: 1px; }
-.sb-text { font-size: 13px; color: rgba(255,255,255,0.68); line-height: 1.45; }
-.sb-text strong { color: #fff; font-weight: 600; }
-.sb-status { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-top: 4px; display: inline-block; }
-.s-done { background: rgba(76,175,80,0.15); color: #7ed47e; }
-.s-next { background: rgba(212,134,10,0.2); color: #e9a940; }
-.s-queued { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3); }
+.sb-num { font-size: 10px; color: rgba(26,26,24,0.32); width: 16px; flex-shrink: 0; margin-top: 1px; font-weight: 600; }
+.sb-text { font-size: 13px; color: rgba(26,26,24,0.7); line-height: 1.5; }
+.sb-text strong { color: var(--near-black); font-weight: 600; }
+.sb-status { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-top: 4px; display: inline-block; }
+.s-done { background: rgba(46,125,50,0.12); color: #2E7D32; }
+.s-next { background: rgba(212,134,10,0.18); color: #8a5a08; }
+.s-queued { background: rgba(26,26,24,0.06); color: rgba(26,26,24,0.5); }
 
 /* Progress bar */
-.progress-wrap { margin-bottom: 28px; }
-.progress-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-.progress-bar { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.progress-wrap { margin-bottom: 28px; background: #fff; border: 1px solid rgba(26,26,24,0.08); border-radius: 3px; padding: 16px 20px; }
+.progress-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; font-size: 12px; color: rgba(26,26,24,0.7); font-weight: 500; }
+.progress-bar { height: 6px; background: rgba(26,26,24,0.08); border-radius: 3px; overflow: hidden; }
 .progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--vk-red), #e05c4f); }
 
 /* Templates */
-.tpl-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 14px 16px; margin-bottom: 10px; }
-.tpl-card-title { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
-.tpl-card-meta { font-size: 10px; color: rgba(255,255,255,0.35); line-height: 1.6; }
+.tpl-card { background: var(--off-white); border: 1px solid rgba(26,26,24,0.08); border-radius: 3px; padding: 14px 16px; margin-bottom: 10px; }
+.tpl-card-title { font-size: 13px; font-weight: 600; color: var(--near-black); margin-bottom: 4px; }
+.tpl-card-meta { font-size: 11px; color: rgba(26,26,24,0.55); line-height: 1.6; }
 
 /* Legend */
-.legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 24px; }
-.legend-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: rgba(255,255,255,0.4); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 14px 0; border-top: 1px solid rgba(26,26,24,0.1); margin-top: 24px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(26,26,24,0.55); }
 
 /* Footer */
-.nav-footer { text-align: center; padding: 20px; font-size: 11px; color: rgba(255,255,255,0.2); border-top: 1px solid rgba(255,255,255,0.07); }
+.nav-footer { text-align: center; padding: 24px; font-size: 12px; color: rgba(26,26,24,0.45); border-top: 1px solid rgba(26,26,24,0.08); background: var(--off-white); }
 
 /* ── LAUNCH POPUP ── */
 .launch-backdrop {
@@ -209,8 +211,9 @@ a { text-decoration: none; color: inherit; }
 <!-- HEADER -->
 <header class="nav-header">
   <div class="nav-header-left">
-    <div class="nav-header-title">VK Secondary Pages — Navigator</div>
-    <div class="nav-header-sub">April 2026 · Internal</div>
+    <div class="nav-header-eyebrow">Navigator · Inventory · Status</div>
+    <div class="nav-header-title">VK Secondary Pages</div>
+    <div class="nav-header-sub">April 2026 · Internal · 43 pages tracked</div>
   </div>
   <div class="nav-header-links">
     <a class="hdr-link hdr-link-ghost" href="templates-guide.html" target="_blank" rel="noopener">Page templates</a>
@@ -219,7 +222,7 @@ a { text-decoration: none; color: inherit; }
 </header>
 
 <div class="roadmap-strip">
-  <strong>This page lists secondary and long-tail builds for this repo.</strong> The ten core shop tabs (home, category, product, etc.) live in the <a href="https://barreletics.github.io/vintage-king-redesign/" target="_blank" rel="noopener" style="color:rgba(255,200,180,0.95);text-decoration:underline">live demo</a> — not duplicated here. <strong>In this repo</strong> = do we have a standalone HTML file yet (yes/no). <strong>One link per row</strong> opens the current build (href may be <code style="font-size:10px;color:rgba(255,255,255,0.45)">…-v2.html</code> until filenames are consolidated).
+  <strong>This page lists secondary and long-tail builds for this repo.</strong> The ten core shop tabs (home, category, product, etc.) live in the <a href="https://barreletics.github.io/vintage-king-redesign/" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:underline">live demo</a> — not duplicated here. <strong>In this repo</strong> = do we have a standalone HTML file yet (yes/no). <strong>One link per row</strong> opens the current build (href may be <code style="font-size:10px;color:rgba(26,26,24,0.5)">…-v2.html</code> until filenames are consolidated).
 </div>
 
 <!-- BODY -->
@@ -255,63 +258,63 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">About VK</div><div class="page-url"><a href="about.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">about.html ↗</a></div><div class="page-note">Built · hero, story, experts, locations, confidence strip · placeholders for real photography</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="about.html" target="_blank" rel="noopener" style="color:#27ae60">about.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="about.html" target="_blank" rel="noopener" style="color:#2E7D32">about.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Hall of Fame</div><div class="page-url"><a href="hall-of-fame.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">hall-of-fame.html ↗</a></div><div class="page-note">Built · 3 categories, 13 inductees, ledger layout, engineer quotes, shop cards, nominate form</div></div>
       <div><span class="page-hero hero-gear">Dark + gear</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="hall-of-fame.html" target="_blank" rel="noopener" style="color:#27ae60">hall-of-fame.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="hall-of-fame.html" target="_blank" rel="noopener" style="color:#2E7D32">hall-of-fame.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Make Your Mark</div><div class="page-url"><a href="make-your-mark.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">make-your-mark.html ↗</a></div><div class="page-note">Light amber hero · 2-card panoramic · 33-episode grid · submission form · confidence strip</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="make-your-mark.html" target="_blank" rel="noopener" style="color:#27ae60">make-your-mark.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="make-your-mark.html" target="_blank" rel="noopener" style="color:#2E7D32">make-your-mark.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">PLAYBACK Magazine</div><div class="page-url"><a href="playback.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">playback.html ↗</a></div><div class="page-note">Light amber hero · staggered cover mockup · JS flipbook viewer · 3-card feature strip · 7 issue grid · subscribe form · quote rail</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="playback.html" target="_blank" rel="noopener" style="color:#27ae60">playback.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="playback.html" target="_blank" rel="noopener" style="color:#2E7D32">playback.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Careers</div><div class="page-url"><a href="careers.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">careers.html ↗</a></div><div class="page-note">Light amber hero · stats block · 4-card culture strip · Audio Consultant role + apply sidebar · open resume CTA · JobPosting JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="careers.html" target="_blank" rel="noopener" style="color:#27ae60">careers.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="careers.html" target="_blank" rel="noopener" style="color:#2E7D32">careers.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Style Guide</div><div class="page-url"><a href="style-guide.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">style-guide.html ↗</a></div><div class="page-note">Design system reference · color rules · typography scale · badge system · hero patterns · page type classification · download/print PDF</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Ref</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="style-guide.html" target="_blank" rel="noopener" style="color:#27ae60">style-guide.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="style-guide.html" target="_blank" rel="noopener" style="color:#2E7D32">style-guide.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Studio Professionals</div><div class="page-url"><a href="studio-professionals.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">studio-professionals.html ↗</a></div><div class="page-note">T1 dark · segment strip · 6-card benefits grid · eligibility + quotes · apply form · Service JSON-LD</div></div>
       <div><span class="page-hero hero-dark">Dark / red</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="studio-professionals.html" target="_blank" rel="noopener" style="color:#27ae60">studio-professionals.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="studio-professionals.html" target="_blank" rel="noopener" style="color:#2E7D32">studio-professionals.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Trade Program</div><div class="page-url"><a href="trade-program.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">trade-program.html ↗</a></div><div class="page-note">Light hero · stats 2x2 · 3-step process · pro-tip stack bar · 4-col what we buy · trade form · HowTo JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / red</span></div>
       <div class="page-priority p-med">High</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="trade-program.html" target="_blank" rel="noopener" style="color:#27ae60">trade-program.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="trade-program.html" target="_blank" rel="noopener" style="color:#2E7D32">trade-program.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Meet Our Audio Consultants</div><div class="page-url"><a href="audio-consultants.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">audio-consultants.html ↗</a></div><div class="page-note">Light hero · 4-consultant profiles · how it works · quote rail · contact form · FAQ JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="audio-consultants.html" target="_blank" rel="noopener" style="color:#27ae60">audio-consultants.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="audio-consultants.html" target="_blank" rel="noopener" style="color:#2E7D32">audio-consultants.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-planned"></div></div>
@@ -325,7 +328,7 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">25 Years of Pro Audio</div><div class="page-url"><a href="25-years-of-pro-audio-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">25-years-of-pro-audio.html ↗</a></div><div class="page-note">Light hero · 4-stat anniversary bar · 4-era timeline · 6 milestones grid · 2 founder quotes · CTA — anniversary editorial</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="25-years-of-pro-audio-v2.html" target="_blank" rel="noopener" style="color:#27ae60">25-years-of-pro-audio.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="25-years-of-pro-audio-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">25-years-of-pro-audio.html ↗</a></div>
     </div>
 
     <!-- C: GEAR HERITAGE -->
@@ -336,105 +339,105 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">HOF — Neve 1073</div><div class="page-url"><a href="neve-1073.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neve-1073.html ↗</a></div><div class="page-note">Light hero · editorial history · versions grid · studio timeline · specs table · shop CTA · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neve-1073.html" target="_blank" rel="noopener" style="color:#27ae60">neve-1073.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neve-1073.html" target="_blank" rel="noopener" style="color:#2E7D32">neve-1073.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Neve 1073 Buyer's Guide</div><div class="page-url"><a href="neve-1073-guide.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neve-1073-guide.html ↗</a></div><div class="page-note">Full guide · real AMS Neve photos · Marinair + LO1166 story · official specs · 8078 console history · AIR Studios · Electric Lady · FAQ JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neve-1073-guide.html" target="_blank" rel="noopener" style="color:#27ae60">neve-1073-guide.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neve-1073-guide.html" target="_blank" rel="noopener" style="color:#2E7D32">neve-1073-guide.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Neve 1073 Guide v2 (Editorial)</div><div class="page-url"><a href="neve-1073-guide-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neve-1073-guide-v2.html ↗</a></div><div class="page-note">Full-width editorial · no sidebar · stat bar · 3 studio cards (Electric Lady, AIR Montserrat, Criteria) in asymmetric 2+1 grid · sticky shop bar · Explore More section · amber + red accent mix</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neve-1073-guide-v2.html" target="_blank" rel="noopener" style="color:#27ae60">neve-1073-guide-v2.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neve-1073-guide-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">neve-1073-guide-v2.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Fairchild 660/670</div><div class="page-url"><a href="fairchild-660-670.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">fairchild-660-670.html ↗</a></div><div class="page-note">Full editorial · light hero · 6-stat bar · 3 studio cards (Abbey Road, Van Gelder, Olmsted) · Abbey Road rack photo · time-constants table · records list · Pete Townshend + Armando Avila quotes · Which Fairchild? decision guide (5 scenarios) · 6-card alternatives grid · FAQ · sticky shop bar · 2 real Wikipedia photos</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="fairchild-660-670.html" target="_blank" rel="noopener" style="color:#27ae60">fairchild-660-670.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="fairchild-660-670.html" target="_blank" rel="noopener" style="color:#2E7D32">fairchild-660-670.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Teletronix LA-2A</div><div class="page-url"><a href="la-2a.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">la-2a.html ↗</a></div><div class="page-note">Full editorial · light hero · 6-stat bar · T4 cell SVG explainer (dark section) · 7-version timeline · 3 studio cards (Sound City, PatchWerk, Conway) · rack photo · records list · Jim Scott + Putnam Jr. quotes · Which LA-2A? 6-option guide · FAQ · sticky bar · 2 real PatchWerk Wikipedia photos</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="la-2a.html" target="_blank" rel="noopener" style="color:#27ae60">la-2a.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="la-2a.html" target="_blank" rel="noopener" style="color:#2E7D32">la-2a.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Neumann U47/U48</div><div class="page-url"><a href="neumann-u47.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neumann-u47.html ↗</a></div><div class="page-note">Full editorial · split hero · 6-stat bar · dark anatomy section (VF14/M7/transformer/grille) with tube photo · 5-entry variants timeline · 3 studio cards (Capitol/Sinatra, Abbey Road/Beatles, Van Gelder/Blue Note) · records list · Mike Nehra + Ryan McGuire VK quotes · 6-option buyer guide ($439–$9,995) · 6-question FAQ · sticky bar · 2 real Wikipedia photos</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neumann-u47.html" target="_blank" rel="noopener" style="color:#27ae60">neumann-u47.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neumann-u47.html" target="_blank" rel="noopener" style="color:#2E7D32">neumann-u47.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — UREI 1176</div><div class="page-url"><a href="urei-1176.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">urei-1176.html ↗</a></div><div class="page-note">Full editorial · split hero · 4-stat bar · 8 revisions timeline (A-H) · Michael Brauer quote · spec table · revision summary cards · buyer guide · FAQ · sticky bar</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="urei-1176.html" target="_blank" rel="noopener" style="color:#27ae60">urei-1176.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="urei-1176.html" target="_blank" rel="noopener" style="color:#2E7D32">urei-1176.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Neve 1081</div><div class="page-url"><a href="neve-1081-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neve-1081.html ↗</a></div><div class="page-note">Light hero · stat bar · history block · 3 versions · 3 records · spec table · sticky shop bar · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neve-1081-v2.html" target="_blank" rel="noopener" style="color:#27ae60">neve-1081.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neve-1081-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">neve-1081.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Telefunken ELA-M 251</div><div class="page-url"><a href="telefunken-ela-m-251-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">telefunken-ela-m-251.html ↗</a></div><div class="page-note">Light hero · stat bar · history block · variants timeline · 3 records · spec table · sticky shop bar · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="telefunken-ela-m-251-v2.html" target="_blank" rel="noopener" style="color:#27ae60">telefunken-ela-m-251.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="telefunken-ela-m-251-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">telefunken-ela-m-251.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Neumann U67</div><div class="page-url"><a href="neumann-u67.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neumann-u67.html ↗</a></div><div class="page-note">Full editorial · split hero · 4-stat bar · 9 engineering advances · variants timeline (M269, M367, SM69) · records list · Ryan McGuire quote · buyer guide · FAQ · sticky bar</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neumann-u67.html" target="_blank" rel="noopener" style="color:#27ae60">neumann-u67.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neumann-u67.html" target="_blank" rel="noopener" style="color:#2E7D32">neumann-u67.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Neumann U47 FET</div><div class="page-url"><a href="neumann-u47-fet-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neumann-u47-fet.html ↗</a></div><div class="page-note">Light hero · stat bar · solid-state successor story · variants · records · spec table · sticky shop bar · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neumann-u47-fet-v2.html" target="_blank" rel="noopener" style="color:#27ae60">neumann-u47-fet.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neumann-u47-fet-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">neumann-u47-fet.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Coles 4038</div><div class="page-url"><a href="coles-4038-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">coles-4038.html ↗</a></div><div class="page-note">Light hero · stat bar · BBC ribbon history · 3 versions · 3 records · spec table · sticky shop bar · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="coles-4038-v2.html" target="_blank" rel="noopener" style="color:#27ae60">coles-4038.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="coles-4038-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">coles-4038.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — TAB/Telefunken V72/V76</div><div class="page-url"><a href="tab-telefunken-v72-v76-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">tab-telefunken-v72-v76.html ↗</a></div><div class="page-note">Light hero · stat bar · German broadcast history · variants · records · spec table · sticky shop bar · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="tab-telefunken-v72-v76-v2.html" target="_blank" rel="noopener" style="color:#27ae60">tab-telefunken-v72-v76.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="tab-telefunken-v72-v76-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">tab-telefunken-v72-v76.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">HOF — Universal Audio 175B</div><div class="page-url"><a href="universal-audio-175b-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">universal-audio-175b.html ↗</a></div><div class="page-note">Light hero · stat bar · Putnam origin story · variants · records · spec table · sticky shop bar · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="universal-audio-175b-v2.html" target="_blank" rel="noopener" style="color:#27ae60">universal-audio-175b.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="universal-audio-175b-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">universal-audio-175b.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Neumann Mic Comparison</div><div class="page-url"><a href="neumann-mic-comparison.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">neumann-mic-comparison.html ↗</a></div><div class="page-note">Light hero · stat bar · comparison table (U47/U67/U87/M149/TLM170/TLM103) · 6 mic sections · decision guide · dark quote · FAQ · Article + Product JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="neumann-mic-comparison.html" target="_blank" rel="noopener" style="color:#27ae60">neumann-mic-comparison.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="neumann-mic-comparison.html" target="_blank" rel="noopener" style="color:#2E7D32">neumann-mic-comparison.html ↗</a></div>
     </div>
 
     <!-- D: STUDIOS BY VK -->
@@ -445,21 +448,21 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Classic Studios Gone Modern</div><div class="page-url"><a href="classic-studios-gone-modern.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">classic-studios-gone-modern.html ↗</a></div><div class="page-note">Light hero · stat bar · 6 studio project cards · gear categories · buyer guides · how-to guides · contact CTA · Article + Service JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="classic-studios-gone-modern.html" target="_blank" rel="noopener" style="color:#27ae60">classic-studios-gone-modern.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="classic-studios-gone-modern.html" target="_blank" rel="noopener" style="color:#2E7D32">classic-studios-gone-modern.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Recording and Mixing at Home</div><div class="page-url"><a href="recording-at-home.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">recording-at-home.html ↗</a></div><div class="page-note">Light hero · 3 budget tiers · 6 studio stories · gear categories · buyer guides · how-to guides · contact CTA · Article + HowTo JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="recording-at-home.html" target="_blank" rel="noopener" style="color:#27ae60">recording-at-home.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="recording-at-home.html" target="_blank" rel="noopener" style="color:#2E7D32">recording-at-home.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Multi-Room Recording Studios</div><div class="page-url"><a href="multi-room-recording-studios-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">multi-room-recording-studios.html ↗</a></div><div class="page-note">Light hero · 4-stat install bar · 5 capability cards · 3-step process · 3 project showcases · contact form · FAQ · sticky bar · Service + FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="multi-room-recording-studios-v2.html" target="_blank" rel="noopener" style="color:#27ae60">multi-room-recording-studios.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="multi-room-recording-studios-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">multi-room-recording-studios.html ↗</a></div>
     </div>
 
     <!-- E: COMMERCE SUPPORT -->
@@ -470,35 +473,35 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Section 179</div><div class="page-url"><a href="section-179.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">section-179.html ↗</a></div><div class="page-note">Light hero · $1.22M/100%/Dec 31 stats · 3-step how-it-works · 6-item who qualifies · 8-item equipment grid · FAQ · sticky bar · HowTo + FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="section-179.html" target="_blank" rel="noopener" style="color:#27ae60">section-179.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="section-179.html" target="_blank" rel="noopener" style="color:#2E7D32">section-179.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">VK Credit Card</div><div class="page-url"><a href="vk-credit-card.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">vk-credit-card.html ↗</a></div><div class="page-note">Light hero · 3-step apply flow · 5 financing tiers (6–48mo) · Synchrony prequalify · dark promo section · benefits grid · FAQ · sticky bar · Service + FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="vk-credit-card.html" target="_blank" rel="noopener" style="color:#27ae60">vk-credit-card.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="vk-credit-card.html" target="_blank" rel="noopener" style="color:#2E7D32">vk-credit-card.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Avid Pro Tools Trade-In</div><div class="page-url"><a href="avid-pro-tools-trade-in-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">avid-pro-tools-trade-in.html ↗</a></div><div class="page-note">Light hero · 4-stat eligibility bar · 3-step process · what qualifies grid · trade-in form · sticky bar · HowTo + Service JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="avid-pro-tools-trade-in-v2.html" target="_blank" rel="noopener" style="color:#27ae60">avid-pro-tools-trade-in.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="avid-pro-tools-trade-in-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">avid-pro-tools-trade-in.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Avid S4 Control Surface Guide</div><div class="page-url"><a href="avid-s4-control-surface-configurations-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">avid-s4-control-surface-configurations.html ↗</a></div><div class="page-note">Light hero · stat bar · 4 configurations · feature cards · spec table · contact form · Article + Product JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="avid-s4-control-surface-configurations-v2.html" target="_blank" rel="noopener" style="color:#27ae60">avid-s4-control-surface-configurations.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="avid-s4-control-surface-configurations-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">avid-s4-control-surface-configurations.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Avid S6 Control Surface Guide</div><div class="page-url"><a href="avid-s6-control-surface-configurations-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">avid-s6-control-surface-configurations.html ↗</a></div><div class="page-note">Light hero · stat bar · 4 configurations · feature cards · spec table · contact form · Article + Product JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="avid-s6-control-surface-configurations-v2.html" target="_blank" rel="noopener" style="color:#27ae60">avid-s6-control-surface-configurations.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="avid-s6-control-surface-configurations-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">avid-s6-control-surface-configurations.html ↗</a></div>
     </div>
 
     <!-- F: SPECIALTY PROGRAMS -->
@@ -509,21 +512,21 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Live Sound / House of Worship</div><div class="page-url"><a href="live-sound-how.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">live-sound-how.html ↗</a></div><div class="page-note">Light hero · services grid · 3-step process · gear categories · product cards · testimonial · case studies · FAQ · Service + FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="live-sound-how.html" target="_blank" rel="noopener" style="color:#27ae60">live-sound-how.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="live-sound-how.html" target="_blank" rel="noopener" style="color:#2E7D32">live-sound-how.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Universal Audio Promotions</div><div class="page-url"><a href="universal-audio-promotions-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">universal-audio-promotions.html ↗</a></div><div class="page-note">Light hero · current promo strip · featured deals grid · plugin bundles · interface offers · CTA · Offer JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="universal-audio-promotions-v2.html" target="_blank" rel="noopener" style="color:#27ae60">universal-audio-promotions.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="universal-audio-promotions-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">universal-audio-promotions.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">UA Apollo X</div><div class="page-url"><a href="universal-audio-apollo-x-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">universal-audio-apollo-x.html ↗</a></div><div class="page-note">Light hero · 4-stat bar · 5 model lineup · feature grid · spec table · CTA · Product + Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="universal-audio-apollo-x-v2.html" target="_blank" rel="noopener" style="color:#27ae60">universal-audio-apollo-x.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="universal-audio-apollo-x-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">universal-audio-apollo-x.html ↗</a></div>
     </div>
 
     <!-- G: SEASONAL / CAMPAIGN -->
@@ -534,21 +537,21 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Black Friday — Microphones</div><div class="page-url"><a href="black-friday-microphone-deals-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">black-friday-microphone-deals.html ↗</a></div><div class="page-note">Campaign template · light hero · countdown stat strip · 6 deal cards · category grid · CTA · Offer JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="black-friday-microphone-deals-v2.html" target="_blank" rel="noopener" style="color:#27ae60">black-friday-microphone-deals.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="black-friday-microphone-deals-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">black-friday-microphone-deals.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">New at NAMM — Microphones</div><div class="page-url"><a href="new-at-namm-microphones-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">new-at-namm-microphones.html ↗</a></div><div class="page-note">Campaign template · light hero · NAMM stat bar · 6 release cards · category grid · CTA · Article JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="new-at-namm-microphones-v2.html" target="_blank" rel="noopener" style="color:#27ae60">new-at-namm-microphones.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="new-at-namm-microphones-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">new-at-namm-microphones.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Back to School</div><div class="page-url"><a href="back-to-school-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">back-to-school.html ↗</a></div><div class="page-note">Campaign template · light hero · student stat bar · 6 starter bundles · category grid · CTA · Offer JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="back-to-school-v2.html" target="_blank" rel="noopener" style="color:#27ae60">back-to-school.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="back-to-school-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">back-to-school.html ↗</a></div>
     </div>
 
     <!-- H: HELP / POLICY -->
@@ -559,35 +562,35 @@ a { text-decoration: none; color: inherit; }
       <div><div class="page-name">Shipping Policy</div><div class="page-url"><a href="shipping-policy-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">shipping-policy.html ↗</a></div><div class="page-note">Light hero · clear policy sections (rates, timing, intl, oversized, returns) · contact strip · FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="shipping-policy-v2.html" target="_blank" rel="noopener" style="color:#27ae60">shipping-policy.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="shipping-policy-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">shipping-policy.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Returns</div><div class="page-url"><a href="returns-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">returns.html ↗</a></div><div class="page-note">Light hero · 30-day window · what's eligible · how to start · refunds timing · contact strip · FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="returns-v2.html" target="_blank" rel="noopener" style="color:#27ae60">returns.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="returns-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">returns.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">VK Warranty</div><div class="page-url"><a href="warranty.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">warranty.html ↗</a></div><div class="page-note">Light hero · +1 year stats · 3-tier coverage grid · ADH by Extend (6-item grid) · used warranty tiers · FAQ · sticky bar · Service + FAQPage JSON-LD</div></div>
       <div><span class="page-hero hero-light">Light / red</span></div>
       <div class="page-priority p-med">Medium</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="warranty.html" target="_blank" rel="noopener" style="color:#27ae60">warranty.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="warranty.html" target="_blank" rel="noopener" style="color:#2E7D32">warranty.html ↗</a></div>
     </div>
     <div class="page-row">
       <div class="page-status"><div class="dot dot-done"></div></div>
       <div><div class="page-name">Privacy Policy</div><div class="page-url"><a href="privacy-policy-v2.html" target="_blank" rel="noopener" style="color:var(--vk-red);text-decoration:none;font-weight:500">privacy-policy.html ↗</a></div><div class="page-note">Light hero · data collection, use, sharing, rights, contact sections · plain-language · contact strip</div></div>
       <div><span class="page-hero hero-light">Light / amber</span></div>
       <div class="page-priority p-low">Low</div>
-      <div class="page-repo" style="color:#27ae60;font-weight:500">Yes — <a href="privacy-policy-v2.html" target="_blank" rel="noopener" style="color:#27ae60">privacy-policy.html ↗</a></div>
+      <div class="page-repo" style="color:#2E7D32;font-weight:500">Yes — <a href="privacy-policy-v2.html" target="_blank" rel="noopener" style="color:#2E7D32">privacy-policy.html ↗</a></div>
     </div>
 
     <!-- Legend -->
     <div class="legend">
       <div class="legend-item"><div class="dot dot-next"></div> Next up</div>
       <div class="legend-item"><div class="dot dot-planned"></div> Not started</div>
-      <div class="legend-item" style="margin-left:8px;font-size:11px;color:rgba(255,255,255,0.35)">“In this repo” = standalone HTML file in this project (not the live main demo).</div>
+      <div class="legend-item" style="margin-left:8px;font-size:11px;color:rgba(26,26,24,0.45)">“In this repo” = standalone HTML file in this project (not the live main demo).</div>
     </div>
 
   </div><!-- /nav-main -->
@@ -599,13 +602,13 @@ a { text-decoration: none; color: inherit; }
     <div class="sb-section progress-wrap">
       <div class="sb-title">Overall progress</div>
       <div class="progress-label">
-        <span style="font-size:12px;color:rgba(255,255,255,0.5)">Standalone files in this repo</span>
-        <span style="font-size:13px;font-weight:600;color:#fff">43 / ~43</span>
+        <span style="font-size:12px;color:rgba(26,26,24,0.55)">Standalone files in this repo</span>
+        <span style="font-size:14px;font-weight:600;color:var(--near-black)">43 / ~43</span>
       </div>
       <div class="progress-bar" style="margin-bottom:14px"><div class="progress-fill" style="width:100%"></div></div>
       <div class="progress-label">
-        <span style="font-size:11px;color:rgba(255,255,255,0.5)">Campaign template</span>
-        <span style="font-size:12px;font-weight:600;color:#fff">1 / 1</span>
+        <span style="font-size:11px;color:rgba(26,26,24,0.55)">Campaign template</span>
+        <span style="font-size:13px;font-weight:600;color:var(--near-black)">1 / 1</span>
       </div>
       <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
     </div>
@@ -613,15 +616,15 @@ a { text-decoration: none; color: inherit; }
     <!-- v3 rollout summary -->
     <div class="sb-section">
       <div class="sb-title">v3 rollout — locked</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.62);line-height:1.55;margin-bottom:14px"><strong style="color:#7ed47e">Site-wide consistency pass complete.</strong> Tagged <code style="font-family:'DM Sans',monospace;font-size:10px;color:#e9a940;background:rgba(212,134,10,0.10);padding:1px 5px;border-radius:2px">v2-pre-rollout</code> (rollback) and <code style="font-family:'DM Sans',monospace;font-size:10px;color:#e9a940;background:rgba(212,134,10,0.10);padding:1px 5px;border-radius:2px">v3-strip-and-hero-locked</code>.</div>
-      <ul style="list-style:none;padding:0;margin:0 0 8px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7">
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;Header right-side cutoff fixed on 63 pages</li>
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;Trust strip below hero on 30 manual pages</li>
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;Explore Vintage King strip above footer on 41 pages</li>
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;V2 hero photo slot bumped 380px → 520px</li>
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;V3 stack on 8 HOF v2 pages (split hero + big photo + spec strip)</li>
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;<a href="CONTENT-AUDIT.md" style="color:rgba(255,200,180,0.95)">CONTENT-AUDIT.md ↗</a> mapping every page → live VK URL</li>
-        <li><strong style="color:#7ed47e">✓</strong> &nbsp;<a href="templates-guide.html" target="_blank" rel="noopener" style="color:rgba(255,200,180,0.95)">templates-guide.html ↗</a> for agency hand-off</li>
+      <div style="font-size:13px;color:rgba(26,26,24,0.65);line-height:1.55;margin-bottom:14px"><strong style="color:#2E7D32">Site-wide consistency pass complete.</strong> Tagged <code style="font-family:'DM Sans',monospace;font-size:10px;color:#8a5a08;background:rgba(212,134,10,0.10);padding:1px 5px;border-radius:2px">v2-pre-rollout</code> (rollback) and <code style="font-family:'DM Sans',monospace;font-size:10px;color:#8a5a08;background:rgba(212,134,10,0.10);padding:1px 5px;border-radius:2px">v3-strip-and-hero-locked</code>.</div>
+      <ul style="list-style:none;padding:0;margin:0 0 8px;font-size:12px;color:rgba(26,26,24,0.6);line-height:1.7">
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;Header right-side cutoff fixed on 63 pages</li>
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;Trust strip below hero on 30 manual pages</li>
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;Explore Vintage King strip above footer on 41 pages</li>
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;V2 hero photo slot bumped 380px → 520px</li>
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;V3 stack on 8 HOF v2 pages (split hero + big photo + spec strip)</li>
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;<a href="CONTENT-AUDIT.md" style="color:var(--vk-red)">CONTENT-AUDIT.md ↗</a> mapping every page → live VK URL</li>
+        <li><strong style="color:#2E7D32">✓</strong> &nbsp;<a href="templates-guide.html" target="_blank" rel="noopener" style="color:var(--vk-red)">templates-guide.html ↗</a> for agency hand-off</li>
       </ul>
     </div>
 
@@ -634,129 +637,129 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="tpl-card">
         <div class="tpl-card-title">V2 — 50/50 split</div>
-        <div class="tpl-card-meta">Text left, photo slot right (520px). All <code style="font-family:inherit;font-size:10px;color:#e9a940">*-v2.html</code> pages, plus auto-built v1 service / campaign / policy pages.</div>
+        <div class="tpl-card-meta">Text left, photo slot right (520px). All <code style="font-family:inherit;font-size:10px;color:#8a5a08">*-v2.html</code> pages, plus auto-built v1 service / campaign / policy pages.</div>
       </div>
       <div class="tpl-card">
         <div class="tpl-card-title">V3 — stacked (V2 + big photo + spec strip)</div>
         <div class="tpl-card-meta">Reserved for HOF gear v2: 50/50 hero, then trust strip, then 1160×520 photo, then spec strip. 8 pages.</div>
       </div>
-      <div style="font-size:11px;color:rgba(255,255,255,0.32);line-height:1.55;margin-top:10px">Body template is one for all pages. Vary the hero, not the body — keeps the rhythm CB2-tight and easy to manage.</div>
+      <div style="font-size:11px;color:rgba(26,26,24,0.4);line-height:1.55;margin-top:10px">Body template is one for all pages. Vary the hero, not the body — keeps the rhythm CB2-tight and easy to manage.</div>
     </div>
 
     <!-- Build focus -->
     <div class="sb-section">
       <div class="sb-title">Build focus (this repo)</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:12px"><strong style="color:#27ae60">43 pages · 3 hero templates · v3 rollout locked</strong> — All planned secondary pages live with consistent trust + Explore strips, fixed header, and 3 hero variants. Start with <a href="templates-guide.html" target="_blank" rel="noopener" style="color:rgba(255,200,180,0.95)">templates-guide.html ↗</a> — the agency hand-off lives at the top of the page list.</div>
+      <div style="font-size:13px;color:rgba(26,26,24,0.6);line-height:1.55;margin-bottom:12px"><strong style="color:#2E7D32">43 pages · 3 hero templates · v3 rollout locked</strong> — All planned secondary pages live with consistent trust + Explore strips, fixed header, and 3 hero variants. Start with <a href="templates-guide.html" target="_blank" rel="noopener" style="color:var(--vk-red)">templates-guide.html ↗</a> — the agency hand-off lives at the top of the page list.</div>
       <div class="sb-item">
         <div class="sb-num">1</div>
         <div>
           <div class="sb-text"><strong>About VK</strong></div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">2</div>
         <div>
           <div class="sb-text"><strong>Hall of Fame</strong> — T1 dark</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">3</div>
         <div>
           <div class="sb-text"><strong>Make Your Mark</strong> — T2 amber</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">4</div>
         <div>
           <div class="sb-text"><strong>PLAYBACK Magazine</strong> — T2</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">5</div>
         <div>
           <div class="sb-text"><strong>Careers</strong> — T2</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">6</div>
         <div>
           <div class="sb-text"><strong>Studio Professionals</strong></div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">7</div>
         <div>
           <div class="sb-text"><strong>Trade Program</strong></div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">8</div>
         <div>
           <div class="sb-text"><strong>Audio Consultants</strong></div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">9</div>
         <div>
           <div class="sb-text"><strong>HOF — Neve 1073</strong></div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">10</div>
         <div>
           <div class="sb-text"><strong>Section 179</strong> — T2</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">11</div>
         <div>
           <div class="sb-text"><strong>VK Warranty</strong> — T2</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">12</div>
         <div>
           <div class="sb-text"><strong>VK Credit Card</strong> — amber</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">13</div>
         <div>
           <div class="sb-text"><strong>Live Sound / HOW</strong> — amber</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">14</div>
         <div>
           <div class="sb-text"><strong>Classic Studios</strong> — amber</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">15</div>
         <div>
           <div class="sb-text"><strong>Recording at Home</strong> — amber</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
       <div class="sb-item">
         <div class="sb-num">16</div>
         <div>
           <div class="sb-text"><strong>Neumann Mic Comparison</strong> — amber</div>
-          <span class="sb-status" style="background:#27ae60;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
+          <span class="sb-status" style="background:#2E7D32;color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px">Done</span>
         </div>
       </div>
     </div>
@@ -765,15 +768,15 @@ a { text-decoration: none; color: inherit; }
     <div class="sb-section">
       <div class="sb-title">Page templates (3)</div>
       <div class="tpl-card">
-        <div class="tpl-card-title" style="color:#e88;">T1 — Commerce</div>
+        <div class="tpl-card-title" style="color:var(--vk-red);">T1 — Commerce</div>
         <div class="tpl-card-meta">Dark near-black · Red accent · Large gear visual option<br>Horizon: Image banner + Multicolumn (custom)</div>
       </div>
       <div class="tpl-card">
-        <div class="tpl-card-title" style="color:#e9a940;">T2 — Editorial / brand</div>
+        <div class="tpl-card-title" style="color:#8a5a08;">T2 — Editorial / brand</div>
         <div class="tpl-card-meta">Off-white bg · Amber accent · Story-first layout<br>Horizon: Rich text + Image with text (custom)</div>
       </div>
       <div class="tpl-card">
-        <div class="tpl-card-title" style="color:rgba(255,255,255,0.6);">T3 — Deep / article</div>
+        <div class="tpl-card-title" style="color:rgba(26,26,24,0.65);">T3 — Deep / article</div>
         <div class="tpl-card-meta">White bg · Red or amber · Single topic, gear focus<br>Horizon: Rich text (light styling, custom sections)</div>
       </div>
     </div>
@@ -782,34 +785,34 @@ a { text-decoration: none; color: inherit; }
     <div class="sb-section">
       <div class="sb-title">Reference docs</div>
       <div class="sb-item">
-        <div class="sb-text"><a href="style-guide.html" target="_blank" style="color:#D4860A;font-weight:600;">VK Style Guide ↗</a><br><span style="font-size:11px;color:rgba(255,255,255,0.3)">Color rules · typography · badges · hero patterns · page classification</span></div>
+        <div class="sb-text"><a href="style-guide.html" target="_blank" style="color:#D4860A;font-weight:600;">VK Style Guide ↗</a><br><span style="font-size:11px;color:rgba(26,26,24,0.4)">Color rules · typography · badges · hero patterns · page classification</span></div>
       </div>
       <div class="sb-item">
-        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VK-SecondaryPages-Library.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Section component library →</a><br><span style="font-size:11px;color:rgba(255,255,255,0.3)">All reusable CSS blocks + Horizon parallels</span></div>
+        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VK-SecondaryPages-Library.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Section component library →</a><br><span style="font-size:11px;color:rgba(26,26,24,0.4)">All reusable CSS blocks + Horizon parallels</span></div>
       </div>
       <div class="sb-item">
-        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/MOBILE-PARITY.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Mobile parity checklist →</a><br><span style="font-size:11px;color:rgba(255,255,255,0.3)">Desktop to mobile alignment progress</span></div>
+        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/MOBILE-PARITY.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Mobile parity checklist →</a><br><span style="font-size:11px;color:rgba(26,26,24,0.4)">Desktop to mobile alignment progress</span></div>
       </div>
       <div class="sb-item">
-        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/CLAUDE.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Design system rules →</a><br><span style="font-size:11px;color:rgba(255,255,255,0.3)">Fonts, colors, copy rules — never break these</span></div>
+        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/CLAUDE.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Design system rules →</a><br><span style="font-size:11px;color:rgba(26,26,24,0.4)">Fonts, colors, copy rules — never break these</span></div>
       </div>
       <div class="sb-item">
-        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VK-Horizon-Handoff-SingleDoc-Mar2026.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Horizon theme handoff →</a><br><span style="font-size:11px;color:rgba(255,255,255,0.3)">What's custom vs what Horizon covers</span></div>
+        <div class="sb-text"><a href="file:///Users/andrewnehra/Alternate-projects/vintage-king-redesign/VK-Horizon-Handoff-SingleDoc-Mar2026.md" target="_blank" style="color:var(--vk-red);font-weight:600;">Horizon theme handoff →</a><br><span style="font-size:11px;color:rgba(26,26,24,0.4)">What's custom vs what Horizon covers</span></div>
       </div>
     </div>
 
     <!-- Photo handoff note -->
     <div class="sb-section">
       <div class="sb-title" style="color:var(--amber);">Photography handoff</div>
-      <div style="background:rgba(212,134,10,0.08);border:1px solid rgba(212,134,10,0.2);border-radius:3px;padding:12px 14px;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;">
-        All hero and card images are <strong style="color:rgba(255,255,255,0.7);">Unsplash placeholders</strong>. Replace with VK photography before production handoff.<br><br>
-        <strong style="color:rgba(255,255,255,0.6);">Pages needing photos:</strong><br>
+      <div style="background:rgba(212,134,10,0.08);border:1px solid rgba(212,134,10,0.2);border-radius:3px;padding:12px 14px;font-size:11px;color:rgba(26,26,24,0.55);line-height:1.6;">
+        All hero and card images are <strong style="color:rgba(26,26,24,0.7);">Unsplash placeholders</strong>. Replace with VK photography before production handoff.<br><br>
+        <strong style="color:rgba(26,26,24,0.65);">Pages needing photos:</strong><br>
         · Hall of Fame — gear product shots per inductee<br>
         · Make Your Mark — artist/studio portraits<br>
         · PLAYBACK — magazine cover art per issue<br>
         · Careers — team and workspace shots<br>
         · About VK — team portraits, HQ interior<br><br>
-        <span style="color:rgba(255,255,255,0.3);">Photo brief: high-contrast, natural light preferred. Dark heroes use 10–15% opacity overlay. Light heroes use 5–8% opacity.</span>
+        <span style="color:rgba(26,26,24,0.4);">Photo brief: high-contrast, natural light preferred. Dark heroes use 10–15% opacity overlay. Light heroes use 5–8% opacity.</span>
       </div>
     </div>
 
