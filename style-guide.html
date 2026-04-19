@@ -3564,6 +3564,230 @@
   </div>
 </section>
 
+<!-- ── 16 FOOTER ── -->
+<section id="footer-spec" class="sg-section" style="background:var(--off-white,#F7F5F2)">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">16 — Footer</div>
+    <h2 class="sg-h2">Footer Spec</h2>
+    <p class="sg-sub">Standard 4-column footer on every page. Dark near-black background. Crawler &amp; GEO surface — every link should be a real, indexable URL.</p>
+
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Structure</div>
+        <div class="sg-rule-note">
+          <code>background:var(--near-black) · color:#fff · padding:64px 40px 32px</code><br>
+          4-column grid: Shop · Services · Company · Connect<br>
+          Bottom bar: copyright + legal links + social, separated by 1px white-alpha rule
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Type</div>
+        <div class="sg-rule-note">
+          Column header: DM Sans 11px / weight 700 / 0.18em / uppercase / amber <code>#D4860A</code><br>
+          Link: DM Sans 14px / weight 400 / color rgba(255,255,255,0.65) / hover → #fff<br>
+          Bottom bar: 12px / rgba(255,255,255,0.4)
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Required modules</div>
+      <ul style="margin:0;padding-left:20px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
+        <li><strong>Shop</strong> — top categories (Microphones, Outboard, Consoles, Monitors, Used &amp; Vintage, Open Box)</li>
+        <li><strong>Services</strong> — Trade Program, Studio Installations, Audio Consultants, Tech Shop, Financing</li>
+        <li><strong>Company</strong> — About, Hall of Fame, PLAYBACK Magazine, Make Your Mark (Careers), Press</li>
+        <li><strong>Connect</strong> — Talk to Expert (chat/video/callback), newsletter signup, Instagram/YouTube/Facebook</li>
+        <li><strong>Bottom bar</strong> — © year, Privacy, Returns, Shipping, Warranty, Accessibility statement</li>
+        <li><strong>Newsletter</strong> — single-line email capture, amber CTA, 1-line trust copy below</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── 17 MEGA MENU SPEC ── -->
+<section id="megamenu" class="sg-section" style="background:#fff">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">17 — Mega Menu</div>
+    <h2 class="sg-h2">Mega Menu Spec</h2>
+    <p class="sg-sub">Live demo at top of this page. Six parent categories max — navigation is a conversion tool, not a sitemap.</p>
+
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Trigger &amp; behavior</div>
+        <div class="sg-rule-note">
+          Hover-open with 200ms delay-close (prevents flicker)<br>
+          Position: <code>top:[nav.bottom]px</code> recalculated on scroll/resize<br>
+          Backdrop: subtle drop-shadow, white background<br>
+          Closes on: outside click, Escape key, link selection
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Layout</div>
+        <div class="sg-rule-note">
+          Multi-column grid (3–5 cols depending on parent)<br>
+          Column header: 12px DM Sans 700 uppercase, near-black<br>
+          Link list: 13px DM Sans 400, color rgba(26,26,24,0.7)<br>
+          "View all" link: amber, with arrow → translate on hover<br>
+          Featured image/promo card optional (right side)
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Locked navigation rules</div>
+      <ul style="margin:0;padding-left:20px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
+        <li><strong>Six parent categories max.</strong> Nav is a conversion tool, not a sitemap.</li>
+        <li><strong>Open Box excluded</strong> from mega menu (Sweetwater/B&amp;H benchmark).</li>
+        <li><strong>"Pro Audio Outfitter"</strong> tagline locked — never remove.</li>
+        <li>Crawl/GEO surface: All Categories CMS page + OPO pre-footer covers what nav doesn't.</li>
+        <li>Ask button hover dropdown: Live Chat / Callback / Video Chat — three tiers.</li>
+        <li>"Talk to an Expert" button stays red — shared chrome, not page accent.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── 18 MOBILE BREAKPOINTS ── -->
+<section id="mobile" class="sg-section" style="background:var(--off-white,#F7F5F2)">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">18 — Mobile</div>
+    <h2 class="sg-h2">Mobile Breakpoints &amp; Behavior</h2>
+    <p class="sg-sub"><strong>Status:</strong> Desktop-first build. Mobile pass happens after all desktop pages are complete and approved. This section locks the rules so mobile pass is consistent when it runs.</p>
+
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Breakpoints</div>
+        <div class="sg-rule-note">
+          Desktop: <code>≥980px</code> — full layout, all multi-col grids<br>
+          Tablet: <code>700–979px</code> — 3-col grids → 2-col, hero stays 50/50<br>
+          Mobile: <code>&lt;700px</code> — everything stacks 1-col, hero text above image<br>
+          Sticky bar: <code>padding:12px 20px</code> on mobile
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Hero behavior</div>
+        <div class="sg-rule-note">
+          Hero 1 — Big Photo: image full-width above text, 280–360px tall<br>
+          Hero 2 — Light 50/50: text panel above image panel, both full-width<br>
+          Hero 3 — HOF Pattern: text first, image second, both full-width<br>
+          Hero 4 — Text Only: stays as-is, padding reduced to 48px top/bottom
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Universal mobile rules</div>
+      <ul style="margin:0;padding-left:20px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
+        <li>Section padding reduces: 64px → 40px top/bottom on mobile.</li>
+        <li>Container padding: 40px → 20px horizontal on mobile.</li>
+        <li>H1: 50px → 32px on mobile. H2: 36px → 26px. H3 stays.</li>
+        <li>Body type stays 15–17px (never shrink for mobile — readability priority).</li>
+        <li>Buttons: full-width on mobile when stacked (1 per row).</li>
+        <li>Tap targets: minimum 44×44px (iOS HIG / Android Material).</li>
+        <li>Sticky bar collapses to icon-row + 1 CTA on &lt;480px.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── 19 ACCESSIBILITY ── -->
+<section id="a11y" class="sg-section" style="background:#fff">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">19 — Accessibility</div>
+    <h2 class="sg-h2">A11y Standards</h2>
+    <p class="sg-sub">WCAG 2.2 AA target across the entire system. Everything below is a hard requirement, not a goal.</p>
+
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Color contrast</div>
+        <div class="sg-rule-note">
+          Body text on white: <code>rgba(26,26,24,0.7)+</code> = 8.9:1 ✓<br>
+          Amber #D4860A on white: 4.6:1 ✓ (AA large text only — keep eyebrows ≥10px bold)<br>
+          White on near-black: 18.5:1 ✓<br>
+          <strong>Never:</strong> light grey on off-white, amber as body text on white
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Focus states</div>
+        <div class="sg-rule-note">
+          All interactive elements: visible focus ring<br>
+          Default: <code>outline:2px solid var(--vk-red); outline-offset:2px</code><br>
+          Form fields: 2px red border (already locked)<br>
+          Never: <code>outline:none</code> without replacement
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Semantic landmarks</div>
+        <div class="sg-rule-note">
+          Page: <code>&lt;header&gt; &lt;nav&gt; &lt;main&gt; &lt;footer&gt;</code><br>
+          One <code>&lt;h1&gt;</code> per page (hero headline)<br>
+          Hero <code>&lt;p&gt;</code>: <code>class="speakable"</code> (Google SGE)<br>
+          Skip-to-content link: first focusable element
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Required attributes</div>
+        <div class="sg-rule-note">
+          Images: <code>alt=""</code> (descriptive, or empty for decorative)<br>
+          Links: never empty, never just "click here"<br>
+          Form inputs: associated <code>&lt;label for=""&gt;</code><br>
+          Icon buttons: <code>aria-label="..."</code><br>
+          Mega menu: <code>role="menu"</code> + arrow-key nav<br>
+          Reduced motion: respected (see Section 14)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 20 NO-GO LIST ── -->
+<section id="no-go" class="sg-section" style="background:var(--off-white,#F7F5F2)">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">20 — No-Go List</div>
+    <h2 class="sg-h2">Banned Patterns</h2>
+    <p class="sg-sub">Hard rules. If you see one of these in a build, fix it before push. No exceptions, no "but it looks better with..."</p>
+
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:32px;border-left:4px solid #C0392B">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B;margin-bottom:14px">Color &amp; visual</div>
+          <ul style="margin:0;padding-left:20px;font-size:13px;color:rgba(255,255,255,0.85);line-height:1.85">
+            <li><code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:2px">#fde8e6</code> — pinkish on uncalibrated screens</li>
+            <li><code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:2px">rgba(192,57,43,0.04–0.08)</code> as standalone bg — pinkish</li>
+            <li>Gradients of any kind on body content</li>
+            <li>Drop shadows on cards, buttons, images</li>
+            <li>Border-radius &gt; 3px (4px on grid wrappers exempt)</li>
+            <li>Pill buttons (border-radius:999px)</li>
+            <li>Dark heroes on secondary pages</li>
+            <li>Amber CTAs on core ecommerce screens</li>
+            <li>Red CTAs on secondary pages (except form submits + Talk to Expert)</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B;margin-bottom:14px">Typography &amp; content</div>
+          <ul style="margin:0;padding-left:20px;font-size:13px;color:rgba(255,255,255,0.85);line-height:1.85">
+            <li>Playfair Display on prices or any number</li>
+            <li>Font sizes &lt; 12px on body type</li>
+            <li>Eyebrows &lt; 10px or in any color other than amber</li>
+            <li>Title Case on H1/H2 (sentence case only)</li>
+            <li>Exclamation points in body copy</li>
+            <li>HTML entities in visible UI (<code>&amp;amp;</code>, <code>&amp;quot;</code>)</li>
+            <li>Reference to Detroit/LA/Nashville as VK locations</li>
+            <li>"Showroom" / "visit us" / "in-store" language</li>
+            <li>Made-up engineer or studio quotes</li>
+            <li>Stock photos of "people in studios"</li>
+            <li>Auto-playing video, parallax, scroll-triggered reveals on body content</li>
+            <li>Pages without a JSON-LD block</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-style-guide"></div>
 
   <style>.vk-stick{position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B}.vk-stick-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB}.vk-stick-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}.vk-stick-cta{background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em}.vk-stick-ghost{color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0}@media(max-width:700px){.vk-stick{padding:12px 20px}}</style>
