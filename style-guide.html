@@ -2727,8 +2727,8 @@
         <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1A1A18;line-height:1.3">Card or Sub-heading</div>
       </div>
       <div class="sg-type-row" style="padding:20px 28px">
-        <div class="sg-type-meta">Eyebrow<br>DM Sans<br>11–12px / weight 700<br>uppercase / 0.18–0.22em tracking</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#D4860A">Section Eyebrow Label</div>
+        <div class="sg-type-meta">Eyebrow<br>DM Sans<br>10–11px / weight 700<br>uppercase / 0.14–0.22em tracking<br>color: amber #D4860A</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#D4860A">Section Eyebrow Label</div>
       </div>
       <div class="sg-type-row" style="padding:20px 28px">
         <div class="sg-type-meta">Body<br>DM Sans<br>15–17px / weight 400<br>line-height 1.65–1.75</div>
@@ -2747,6 +2747,71 @@
     <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-left:3px solid #1A1A18;padding:14px 20px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.6">
       <strong>Pricing rule:</strong> DM Sans only on all numbers and prices. Never Playfair Display on pricing. Font-weight 500, color near-black.
     </div>
+
+    <!-- Eyebrow scale & usage -->
+    <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1A1A18;margin:48px 0 6px;line-height:1.2">Eyebrow scale &amp; usage</h3>
+    <p style="font-size:14px;color:rgba(26,26,24,0.55);margin:0 0 18px;line-height:1.6">All eyebrows are <strong>DM Sans, weight 700, uppercase, amber #D4860A</strong>. Size and tracking vary by context. Never below 10px. Never grey — eyebrows are always amber on secondary pages.</p>
+
+    <div style="background:#fff;border:1px solid rgba(26,26,24,0.1);border-radius:3px;overflow:hidden">
+
+      <!-- Hero / section eyebrow -->
+      <div style="display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;align-items:center;padding:18px 28px;border-bottom:1px solid rgba(26,26,24,0.06)">
+        <div style="font-size:11px;color:rgba(26,26,24,0.45);line-height:1.5">
+          <strong style="color:#1A1A18;font-weight:600">Hero / section eyebrow</strong><br>
+          11px / 0.22em tracking<br>
+          <code style="font-size:10px;background:rgba(26,26,24,0.04);padding:1px 5px;border-radius:2px">.pg-eyebrow</code>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#D4860A">Vintage King Hall of Fame</div>
+        <div style="font-size:12px;color:rgba(26,26,24,0.5);line-height:1.5">Top of every page section. Sits above H1/H2. Widest tracking — most editorial.</div>
+      </div>
+
+      <!-- Spec strip / stat label -->
+      <div style="display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;align-items:center;padding:18px 28px;border-bottom:1px solid rgba(26,26,24,0.06)">
+        <div style="font-size:11px;color:rgba(26,26,24,0.45);line-height:1.5">
+          <strong style="color:#1A1A18;font-weight:600">Spec / stat label</strong><br>
+          11px / 0.16em tracking<br>
+          <code style="font-size:10px;background:rgba(26,26,24,0.04);padding:1px 5px;border-radius:2px">.pg-stat-label</code>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A">Year &nbsp;·&nbsp; Topology &nbsp;·&nbsp; Gain Stage</div>
+        <div style="font-size:12px;color:rgba(26,26,24,0.5);line-height:1.5">HOF spec strips, stat blocks, year/topology markers. Sits above the value (e.g., "1959", "Tube").</div>
+      </div>
+
+      <!-- Card eyebrow -->
+      <div style="display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;align-items:center;padding:18px 28px;border-bottom:1px solid rgba(26,26,24,0.06)">
+        <div style="font-size:11px;color:rgba(26,26,24,0.45);line-height:1.5">
+          <strong style="color:#1A1A18;font-weight:600">Card / explore eyebrow</strong><br>
+          10px / 0.14em tracking<br>
+          <code style="font-size:10px;background:rgba(26,26,24,0.04);padding:1px 5px;border-radius:2px">.pg-explore-eyebrow</code>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A">Related &nbsp;·&nbsp; Buyer's Guide</div>
+        <div style="font-size:12px;color:rgba(26,26,24,0.5);line-height:1.5">Inside cards, explore tiles, mini-modules. Tighter — needs to fit a card frame.</div>
+      </div>
+
+      <!-- Sticky bar / micro -->
+      <div style="display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;align-items:center;padding:18px 28px;border-bottom:none">
+        <div style="font-size:11px;color:rgba(26,26,24,0.45);line-height:1.5">
+          <strong style="color:#1A1A18;font-weight:600">Sticky bar / micro</strong><br>
+          10px / 0.12em tracking<br>
+          <code style="font-size:10px;background:rgba(26,26,24,0.04);padding:1px 5px;border-radius:2px">inline · sticky CTAs</code>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A">In Stock &nbsp;·&nbsp; Ships Today</div>
+        <div style="font-size:12px;color:rgba(26,26,24,0.5);line-height:1.5">Sticky CTA bars and very tight pill contexts. Tightest tracking — width-constrained.</div>
+      </div>
+
+    </div>
+
+    <!-- Eyebrow rules callout -->
+    <div style="margin-top:18px;background:#F5E6C8;border-left:3px solid #D4860A;padding:14px 20px;font-size:13px;color:rgba(26,26,24,0.75);line-height:1.65">
+      <strong>Eyebrow rules:</strong>
+      <ul style="margin:6px 0 0 0;padding-left:20px">
+        <li>Always amber <code style="background:rgba(26,26,24,0.05);padding:1px 5px;border-radius:2px;font-size:12px">#D4860A</code> on secondary pages. Never grey, never red.</li>
+        <li>Always DM Sans, weight 700, uppercase. Never Playfair, never lowercase.</li>
+        <li>Never below 10px. Never above 12px on secondary pages (12px reserved for legacy/core ecommerce).</li>
+        <li>One eyebrow per section header. Don't stack two amber eyebrows in a row.</li>
+        <li>If the eyebrow sits above an H1/H2, leave 12–16px below it before the heading.</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -2812,39 +2877,63 @@
 <section id="heroes" class="sg-section" style="background:var(--off-white,#F7F5F2)">
   <div class="sg-wrap">
     <div class="sg-eyebrow">04 — Hero Patterns</div>
-    <h2 class="sg-h2">Hero Types</h2>
-    <p class="sg-sub">Two hero patterns. Choice is determined by whether you have a product photo.</p>
+    <h2 class="sg-h2">Hero Types — 4 Locked Variants</h2>
+    <p class="sg-sub">Every secondary page uses one of these four hero patterns. Choice is determined by content type and whether you have a hero-quality photo. All heroes are <strong>light</strong> — never dark backgrounds on secondary pages.</p>
 
     <div class="sg-grid-2">
+
       <div class="sg-rule">
-        <div class="sg-rule-label">Type A — Photo Hero (HOF / Gear Guide)</div>
-        <div class="sg-rule-value">50/50 full-bleed grid</div>
+        <div class="sg-rule-label">Hero 1 — Big Photo (full-bleed)</div>
+        <div class="sg-rule-value">Full-bleed image, copy overlaid or below</div>
         <div class="sg-rule-note">
-          Left panel: <code>background:#EDE8E2</code> · text, eyebrow, CTAs<br>
-          Right panel: <code>background:#fff</code> · product photo<br>
+          Single full-width image, ~520–640px tall.<br>
+          Headline + eyebrow sits below the image (or overlaid on a darkened bottom-left zone).<br>
+          Used on: <strong>Studio Installations, About, Make Your Mark</strong> — when there's a hero-quality photo of a console/studio/engineer.<br>
+          <em style="color:rgba(26,26,24,0.5)">Not for: gear detail items where product needs a clean white seamless.</em>
+        </div>
+      </div>
+
+      <div class="sg-rule">
+        <div class="sg-rule-label">Hero 2 — Light 50/50 (Trade pattern)</div>
+        <div class="sg-rule-value">Full-bleed 50/50 split, both panels reach edges</div>
+        <div class="sg-rule-note">
+          Left 50%: <code>background:#EDE8E2</code> · eyebrow, H1, body, CTAs<br>
+          Right 50%: <code>background:#fff</code> · stats grid, photo, or feature list<br>
+          <code>grid-template-columns:1fr 1fr;min-height:560px</code><br>
+          Used on: <strong>Trade Program, Studio Professionals, Audio Consultants, Financing</strong> — program/conversion pages.
+        </div>
+      </div>
+
+      <div class="sg-rule">
+        <div class="sg-rule-label">Hero 3 — HOF Pattern</div>
+        <div class="sg-rule-value">Light text left + framed image right with horizontal margins</div>
+        <div class="sg-rule-note">
+          Left panel: <code>background:#EDE8E2</code> · eyebrow, H1, intro, year/topology spec strip, CTAs<br>
+          Right panel: <code>background:#fff</code> · product photo with <strong>horizontal padding</strong> — image graphic ends flush with the bottom of the hero.<br>
           Image: <code>object-fit:contain</code> · height:460–520px<br>
-          Section: <code>grid-template-columns:1fr 1fr;min-height:560px</code><br>
-          Used on: Fairchild, LA-2A, U47, Neve guides
+          Used on: <strong>Fairchild, LA-2A, U47, Neumann U67, Neve 1073, UA 175B</strong> — HOF gear detail pages.
         </div>
       </div>
+
       <div class="sg-rule">
-        <div class="sg-rule-label">Type B — Stats Hero (Program / No photo)</div>
-        <div class="sg-rule-value">50/50 full-bleed grid</div>
+        <div class="sg-rule-label">Hero 4 — Text Only</div>
+        <div class="sg-rule-value">Single light panel, type-led, no image</div>
         <div class="sg-rule-note">
-          Left panel: <code>background:#EDE8E2</code> · text, eyebrow, CTAs<br>
-          Right panel: <code>background:#fff</code> · 2×2 stats grid<br>
-          Stats grid: <code>grid-template-columns:1fr 1fr;gap:1px;background:rgba(26,26,24,0.08)</code><br>
-          Stat number: Playfair Display 32px · label: 11px uppercase<br>
-          Used on: Trade Program, Studio Professionals
+          Full-width <code>background:#EDE8E2</code> panel.<br>
+          Eyebrow + large H1 + intro + dual CTA. Centered or left-aligned.<br>
+          Used on: <strong>Policy pages, FAQ index, Hall of Fame index, Careers index</strong> — when no hero image exists or the page is purely informational.<br>
+          <em style="color:rgba(26,26,24,0.5)">Pair with a strong second section (grid, stat strip, or content card) immediately after.</em>
         </div>
       </div>
+
     </div>
 
     <div style="margin-top:12px" class="sg-rule">
       <div class="sg-rule-label">Never</div>
       <div class="sg-rule-note">
-        Dark hero backgrounds on secondary pages — always light <code>#EDE8E2</code> left panel.<br>
+        Dark hero backgrounds on secondary pages — always light <code>#EDE8E2</code>.<br>
         <code>object-fit:cover</code> on product shots with white backgrounds — use <code>contain</code>.<br>
+        More than one hero pattern stacked at the top of a page.<br>
         Captions referencing specific studios/clients unless VK-verified.
       </div>
     </div>
@@ -2856,7 +2945,7 @@
   <div class="sg-wrap">
     <div class="sg-eyebrow">05 — Page Classification</div>
     <h2 class="sg-h2">Page Types</h2>
-    <p class="sg-sub">Every page belongs to one of two types. This determines accent color, badge color, and hero treatment.</p>
+    <p class="sg-sub"><strong>Locked rule:</strong> ALL secondary pages use <strong>amber #D4860A</strong> as their accent — eyebrows, page CTAs, accent lines, step indicators. Red #C0392B is reserved for <strong>core ecommerce screens only</strong> (homepage, category, product, cart, checkout) and shared nav chrome (mega menu, "Talk to an Expert" button, cart badge). Form focus borders stay red on all pages per design system rule.</p>
 
     <div class="sg-grid-2">
       <div class="sg-page-type">
@@ -2866,8 +2955,9 @@
         <ul>
           <li>Fairchild 660/670</li>
           <li>Teletronix LA-2A</li>
-          <li>Neumann U 47 / U 48</li>
+          <li>Neumann U 47 / U 48 / U 67</li>
           <li>Neve 1073 (all versions)</li>
+          <li>UA 175B / Apollo X</li>
           <li>PLAYBACK Magazine</li>
           <li>Hall of Fame index</li>
           <li>About, Careers</li>
@@ -2875,29 +2965,33 @@
         <div style="margin-top:16px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A">Accent: Amber #D4860A</div>
       </div>
       <div class="sg-page-type">
-        <div class="sg-page-type-tag" style="background:rgba(192,57,43,0.08);color:#C0392B">Transactional / Program</div>
+        <div class="sg-page-type-tag" style="background:#FEF3E2;color:#D4860A">Program / Conversion</div>
         <h4>Program &amp; Conversion Pages</h4>
-        <p>Action-first pages. Goal is form submission, quote request, or direct purchase. Every element drives toward one CTA.</p>
+        <p>Action-first pages. Goal is form submission, quote request, or direct purchase. Every element drives toward one CTA. Same amber accent — only the form focus border stays red.</p>
         <ul>
           <li>Trade Program</li>
           <li>Audio Consultants</li>
           <li>Studio Professionals</li>
+          <li>Studio Installations</li>
           <li>Financing / Section 179</li>
           <li>Make Your Mark (careers form)</li>
         </ul>
-        <div style="margin-top:16px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C0392B">Accent: Red #C0392B</div>
+        <div style="margin-top:16px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#D4860A">Accent: Amber #D4860A</div>
       </div>
     </div>
 
     <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px">
-      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Universal — applies to both types</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Universal — applies to all secondary pages</div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
-        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">CTAs &amp; Shop Buttons</strong>Always Red #C0392B. No exceptions.</div>
-        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Sticky Bar</strong>Dark (#1A1A18) bar, Red CTA, ghost link. Every page.</div>
-        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Form Focus</strong>Always var(--vk-red) border regardless of page type.</div>
-        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Min Font Size</strong>12px everywhere. Nothing below 12px.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Page CTAs</strong>Amber #D4860A on secondary pages. Red is for core ecommerce only.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Nav Chrome</strong>Mega menu, "Talk to an Expert", cart badge stay Red — shared chrome, not page accent.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Sticky Bar</strong>Dark (#1A1A18) bar with Red CTA — treated as persistent nav chrome, not page accent. Every page has one.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Form Focus</strong>Always var(--vk-red) border on every page — locked design system rule.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Min Font Size</strong>12px everywhere. Eyebrows allowed down to 10px (DM Sans 700 uppercase amber).</div>
         <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Pricing</strong>DM Sans only, weight 500, near-black. Never Playfair on numbers.</div>
-        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">JSON-LD</strong>Every page needs at least one structured data block.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">JSON-LD</strong>Every page needs at least one structured data block (Service, HowTo, FAQPage, Article, JobPosting, or Product).</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">Hero</strong>One of the 4 locked types (Big Photo · Light 50/50 · HOF Pattern · Text Only). Always light, never dark.</div>
+        <div><strong style="display:block;color:#1A1A18;margin-bottom:4px">No Locations</strong>VK has no showrooms. Never reference Detroit/LA/Nashville as physical locations.</div>
       </div>
     </div>
   </div>
