@@ -3281,6 +3281,289 @@
   </div>
 </section>
 
+<!-- ── 12 IMAGE DIRECTION ── -->
+<section id="images" class="sg-section" style="background:var(--off-white,#F7F5F2)">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">12 — Image Direction</div>
+    <h2 class="sg-h2">Photo &amp; Placeholder System</h2>
+    <p class="sg-sub">Build the page with placeholders at production dimensions. Swap to real photo when VK photographer delivers. Never delay a page waiting on photography.</p>
+
+    <!-- Placeholder pattern -->
+    <div style="background:#fff;border:1px solid rgba(26,26,24,0.1);border-radius:3px;padding:32px;margin-bottom:24px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:16px">Placeholder block — locked spec</div>
+      <div style="background:var(--off-white);border:1px solid rgba(26,26,24,0.08);min-height:240px;display:flex;align-items:center;justify-content:center;color:rgba(26,26,24,0.32);font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:20px;font-weight:500">[ Photo placeholder — Console detail ]</div>
+      <div style="margin-top:14px;font-size:13px;color:rgba(26,26,24,0.55);line-height:1.6">
+        <code>background:var(--off-white) · border:1px solid rgba(26,26,24,0.08) · min-height: matches final image dim</code><br>
+        Caption: DM Sans 12px / weight 500 / 0.14em / uppercase / color rgba(26,26,24,0.32) / text-align center
+      </div>
+    </div>
+
+    <!-- Image min-heights -->
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Hero placeholders (min-height)</div>
+        <div class="sg-rule-note">
+          Hero 1 — Big Photo: <code>520–640px</code><br>
+          Hero 2 — Light 50/50 right panel: <code>min-height:560px</code><br>
+          Hero 3 — HOF Pattern right image: <code>460–520px</code><br>
+          Hero 4 — Text Only: no image
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Body placeholders (min-height)</div>
+        <div class="sg-rule-note">
+          Service feature card: <code>280px</code><br>
+          Engineer/portrait: <code>260px</code> · aspect-ratio 3/4<br>
+          Gear heritage body: <code>520px</code><br>
+          Version cards: <code>320px</code> · Timeline cards: <code>360px</code><br>
+          Shop CTA card: <code>300px</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo subjects -->
+    <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Photo subjects — what to shoot</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
+        <div>
+          <strong style="display:block;color:#1A1A18;margin-bottom:6px">YES — hero-quality</strong>
+          • Console close-ups (faders, EQ knobs)<br>
+          • Studio environments (desk, racks, monitors)<br>
+          • Engineer hands working on gear<br>
+          • Patch bays, tape machines, racks of outboard<br>
+          • Vintage gear in real studio context
+        </div>
+        <div>
+          <strong style="display:block;color:#1A1A18;margin-bottom:6px">NO — never use</strong>
+          • Stock photos of "people in studios"<br>
+          • Smiling stock-model headshots<br>
+          • Composite renders / 3D mockups<br>
+          • Photos of clients/studios without VK verification<br>
+          • Individual gear items in full-bleed hero (use HOF pattern instead)
+        </div>
+      </div>
+    </div>
+
+    <!-- Treatment rules -->
+    <div style="margin-top:18px;background:#F5E6C8;border-left:3px solid #D4860A;padding:14px 20px;font-size:13px;color:rgba(26,26,24,0.75);line-height:1.65">
+      <strong>Treatment rules:</strong>
+      <ul style="margin:6px 0 0 0;padding-left:20px">
+        <li><code>object-fit:cover</code> for full-bleed/environmental shots. <code>object-fit:contain</code> for product shots on white seamless.</li>
+        <li>No filters, no heavy grading, no duotones. Natural color, slightly warm white balance.</li>
+        <li>No drop shadows on images. No rounded corners &gt; 3px on photos.</li>
+        <li>Captions sit below image, not overlaid (exception: Hero 1 darkened bottom-left zone).</li>
+        <li>Never reference specific clients/studios in captions unless VK-verified — use generic "professional studio" / "tracking room" instead.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── 13 VOICE & TONE ── -->
+<section id="voice" class="sg-section" style="background:#fff">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">13 — Voice &amp; Tone</div>
+    <h2 class="sg-h2">Editorial Voice</h2>
+    <p class="sg-sub">CB2 reference: one message per zone, white space as a feature. Sentence-case headings. Direct, expert, never salesy.</p>
+
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Voice anchors</div>
+        <div class="sg-rule-note">
+          <strong>Pro Audio Outfitter</strong> — locked tagline, never remove from nav<br>
+          <strong>VK Warranty</strong> — never "Full Warranty" or "Lifetime"<br>
+          <strong>Talk to an Expert</strong> — never "Contact us" / "Get in touch"<br>
+          <strong>The Short List</strong> — homepage tabbed product section<br>
+          <strong>Rare Gear</strong> — homepage Vintage section H2
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">Reference brands</div>
+        <div class="sg-rule-note">
+          <strong>CB2</strong> — primary visual + tone reference<br>
+          <strong>Apple</strong> — typography hierarchy, restraint<br>
+          <strong>Sweetwater + B&amp;H</strong> — competitor benchmarks (what NOT to do: never as cluttered)<br>
+          <strong>Aesop</strong> — editorial discipline on body copy
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,26,24,0.4);margin-bottom:12px">Writing rules</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
+        <div>
+          <strong style="display:block;color:#1A1A18;margin-bottom:6px">Always</strong>
+          • Sentence case on H1/H2 (not Title Case)<br>
+          • Active voice ("Trade your gear" not "Gear can be traded")<br>
+          • Specific numbers ("30+ years", "15 engineers")<br>
+          • Em dashes — never double hyphens<br>
+          • Curly quotes "smart" never straight "dumb"
+        </div>
+        <div>
+          <strong style="display:block;color:#1A1A18;margin-bottom:6px">Never</strong>
+          • Exclamation points in body copy (rare on CTAs only)<br>
+          • "Click here" / "Learn more!" hype language<br>
+          • Reference cities as VK locations (no Detroit/LA/Nashville)<br>
+          • "Showroom" / "visit us" / "in-store"<br>
+          • HTML entities in visible UI (&amp;amp; → &amp;)<br>
+          • Made-up engineer/studio quotes
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;background:#F5E6C8;border-left:3px solid #D4860A;padding:14px 20px;font-size:13px;color:rgba(26,26,24,0.75);line-height:1.65">
+      <strong>No physical locations:</strong> VK has no showrooms, retail, or city offices. Never imply otherwise. <code>los-angeles.html</code>-style location pages are cancelled. Use "Talk to an Expert" + video chat / callback / live chat instead.
+    </div>
+  </div>
+</section>
+
+<!-- ── 14 MOTION ── -->
+<section id="motion" class="sg-section" style="background:var(--off-white,#F7F5F2)">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">14 — Motion</div>
+    <h2 class="sg-h2">Motion &amp; Transitions</h2>
+    <p class="sg-sub">Restraint. Editorial pages don't bounce, fade, or parallax. Motion is a quiet confirmation, not a feature.</p>
+
+    <div class="sg-grid-2">
+      <div class="sg-rule">
+        <div class="sg-rule-label">Standard transition</div>
+        <div class="sg-rule-value">0.15–0.3s ease-out</div>
+        <div class="sg-rule-note">
+          Hover states: <code>transition:all 0.15s ease-out</code><br>
+          Reveals (sticky bar drop-in): <code>transition:transform 0.3s ease-out</code><br>
+          Mega menu open: <code>transition:opacity 0.2s ease-out</code><br>
+          Never longer than 0.4s. Never <code>ease-in-out</code> (feels sluggish).
+        </div>
+      </div>
+      <div class="sg-rule">
+        <div class="sg-rule-label">What moves</div>
+        <div class="sg-rule-note">
+          <strong>OK:</strong> color/opacity on hover, sticky bar slide-in, mega menu fade, ghost CTA arrow translate (4px), button opacity 0.88 on hover<br>
+          <strong>Never:</strong> body copy, headlines, hero photos, prices, pricing tables, scroll-triggered reveals, parallax
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;background:rgba(26,26,24,0.04);border-radius:3px;padding:24px 28px;font-size:13px;color:rgba(26,26,24,0.65);line-height:1.7">
+      <strong style="color:#1A1A18">Reduced motion:</strong> Always honor <code>@media (prefers-reduced-motion:reduce)</code>. Disable transforms, fades over 0.1s, and any auto-playing animation. Keep critical state changes (focus, error) instant.
+    </div>
+  </div>
+</section>
+
+<!-- ── 15 JSON-LD LIBRARY ── -->
+<section id="jsonld" class="sg-section" style="background:#fff">
+  <div class="sg-wrap">
+    <div class="sg-eyebrow">15 — JSON-LD Library</div>
+    <h2 class="sg-h2">Structured Data</h2>
+    <p class="sg-sub">Every page needs at least one JSON-LD block — for Google SGE, AI agents (ChatGPT/Perplexity/Claude), and search ranking. Paste-ready snippets below. Replace bracketed values per page.</p>
+
+    <!-- Service -->
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:24px 28px;margin-bottom:16px;overflow-x:auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">Service — for Trade Program, Studio Installations, Audio Consultants</div>
+<pre style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0;white-space:pre-wrap">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "[Service Name]",
+  "provider": {"@type": "Organization", "name": "Vintage King Audio", "url": "https://vintageking.com"},
+  "areaServed": "United States",
+  "description": "[140–160 char description]",
+  "serviceType": "[Trade-In | Studio Installation | Consultation]"
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <!-- FAQPage -->
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:24px 28px;margin-bottom:16px;overflow-x:auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">FAQPage — for FAQ, Returns, Shipping, Warranty, any Q&amp;A page</div>
+<pre style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0;white-space:pre-wrap">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "[Question]?", "acceptedAnswer": {"@type": "Answer", "text": "[Answer]"}},
+    {"@type": "Question", "name": "[Question]?", "acceptedAnswer": {"@type": "Answer", "text": "[Answer]"}}
+  ]
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <!-- HowTo -->
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:24px 28px;margin-bottom:16px;overflow-x:auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">HowTo — for Sell/Trade flow, Section 179 process, Setup guides</div>
+<pre style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0;white-space:pre-wrap">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "[How to Trade Your Gear]",
+  "step": [
+    {"@type": "HowToStep", "name": "Submit", "text": "[Step 1 description]"},
+    {"@type": "HowToStep", "name": "Quote", "text": "[Step 2 description]"},
+    {"@type": "HowToStep", "name": "Ship", "text": "[Step 3 description]"}
+  ]
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <!-- Article -->
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:24px 28px;margin-bottom:16px;overflow-x:auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">Article — for HOF gear pages, PLAYBACK Magazine, editorial content</div>
+<pre style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0;white-space:pre-wrap">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[Article Title]",
+  "author": {"@type": "Organization", "name": "Vintage King Audio"},
+  "publisher": {"@type": "Organization", "name": "Vintage King Audio", "url": "https://vintageking.com"},
+  "datePublished": "2026-04-18",
+  "description": "[140–160 char description]"
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <!-- JobPosting -->
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:24px 28px;margin-bottom:16px;overflow-x:auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">JobPosting — for Make Your Mark / Careers</div>
+<pre style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0;white-space:pre-wrap">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "[Position Title]",
+  "hiringOrganization": {"@type": "Organization", "name": "Vintage King Audio"},
+  "employmentType": "FULL_TIME",
+  "datePosted": "2026-04-18",
+  "description": "[140–160 char description]"
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <!-- Product -->
+    <div style="background:#1A1A18;color:#fff;border-radius:3px;padding:24px 28px;overflow-x:auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:12px">Product — for HOF gear detail pages with shop link</div>
+<pre style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0;white-space:pre-wrap">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "[Gear Name]",
+  "brand": {"@type": "Brand", "name": "[Brand]"},
+  "description": "[140–160 char description]",
+  "category": "Pro Audio Equipment"
+}
+&lt;/script&gt;</pre>
+    </div>
+
+    <div style="margin-top:24px;background:#F5E6C8;border-left:3px solid #D4860A;padding:14px 20px;font-size:13px;color:rgba(26,26,24,0.75);line-height:1.65">
+      <strong>Meta requirements (every page):</strong>
+      <ul style="margin:6px 0 0 0;padding-left:20px">
+        <li>Title: <code>[Page Name] — [Benefit Hook] | Vintage King</code></li>
+        <li>Meta description: 140–160 chars, action-oriented</li>
+        <li>Canonical URL set</li>
+        <li>OG image, OG title, OG description</li>
+        <li>Hero <code>&lt;p&gt;</code> gets <code>class="speakable"</code> for Google SGE</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <div id="footer-style-guide"></div>
 
   <style>.vk-stick{position:fixed;bottom:0;left:0;right:0;background:#1A1A18;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-top:2px solid #C0392B}.vk-stick-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FDFCFB}.vk-stick-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}.vk-stick-cta{background:#C0392B;color:#fff;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.04em}.vk-stick-ghost{color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;text-decoration:none;padding:12px 0}@media(max-width:700px){.vk-stick{padding:12px 20px}}</style>
