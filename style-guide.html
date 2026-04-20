@@ -1729,7 +1729,15 @@
 <!-- Demo wrapper: red back button to demo dashboard -->
 <div style="background:#1A1A18;padding:10px 24px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.08)">
   <a href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html" style="display:inline-block;background:#C0392B;color:#fff;padding:7px 14px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif">← Demo Dashboard</a>
-  <span style="color:rgba(255,255,255,0.4);font-size:11px;font-family:'DM Sans',sans-serif;letter-spacing:0.06em"><strong style="color:#fff;font-weight:600">VK Style Guide</strong> &nbsp;·&nbsp; Sub-navigation page</span>
+  <span style="color:rgba(255,255,255,0.4);font-size:11px;font-family:'DM Sans',sans-serif;letter-spacing:0.06em"><strong style="color:#fff;font-weight:600">VK Style Guide</strong> &nbsp;·&nbsp; Design system reference</span>
+</div>
+
+<!-- CROSS-LINK FAMILY BAR -->
+<div style="background:#fff;border-bottom:1px solid rgba(26,26,24,0.08);padding:8px 24px;display:flex;gap:24px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;align-items:center;font-family:'DM Sans',sans-serif">
+  <span style="color:rgba(26,26,24,0.35);margin-right:8px">VK Build Family</span>
+  <a href="style-guide.html" style="color:#1A1A18;padding:4px 0;text-decoration:none;border-bottom:1px solid #D4860A">Design System</a>
+  <a href="navigator.html" style="color:rgba(26,26,24,0.55);padding:4px 0;text-decoration:none">Page Index</a>
+  <a href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html" style="color:rgba(26,26,24,0.55);padding:4px 0;text-decoration:none">Prototype Versions</a>
 </div>
 <template id="nav-template">
 <!-- ── TOPBAR ── -->
@@ -3020,6 +3028,31 @@
               <div style="font-size:11px;color:rgba(26,26,24,0.55);margin-top:6px;text-align:center">Feature list</div>
             </div>
 
+            <div>
+              <svg viewBox="0 0 120 80" width="100%" style="display:block;background:#fff;border:1px solid rgba(26,26,24,0.08);border-radius:2px" aria-label="Variant: product grid">
+                <rect x="0" y="0" width="60" height="80" fill="#EDE8E2"/>
+                <rect x="60" y="0" width="60" height="80" fill="#fff"/>
+                <rect x="65" y="10" width="16" height="22" fill="#F0EBE3" stroke="rgba(26,26,24,0.1)"/>
+                <rect x="83" y="10" width="16" height="22" fill="#F0EBE3" stroke="rgba(26,26,24,0.1)"/>
+                <rect x="101" y="10" width="14" height="22" fill="#F0EBE3" stroke="rgba(26,26,24,0.1)"/>
+                <rect x="65" y="36" width="50" height="3" fill="rgba(26,26,24,0.4)"/>
+                <rect x="65" y="42" width="40" height="3" fill="#1A1A18"/>
+                <rect x="65" y="50" width="16" height="22" fill="#F0EBE3" stroke="rgba(26,26,24,0.1)"/>
+                <rect x="83" y="50" width="16" height="22" fill="#F0EBE3" stroke="rgba(26,26,24,0.1)"/>
+                <rect x="101" y="50" width="14" height="22" fill="#F0EBE3" stroke="rgba(26,26,24,0.1)"/>
+              </svg>
+              <div style="font-size:11px;color:rgba(26,26,24,0.55);margin-top:6px;text-align:center">Product grid</div>
+            </div>
+
+          </div>
+          <!-- PLP usage rule for Product Grid variant -->
+          <div style="margin-top:16px;padding:14px 16px;background:rgba(212,134,10,0.08);border-left:3px solid #D4860A;border-radius:0 2px 2px 0">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D4860A;margin-bottom:6px">Product Grid variant — usage rule</div>
+            <div style="font-size:13px;color:rgba(26,26,24,0.75);line-height:1.6">
+              <strong>Default for category pages (PLPs): no hero.</strong> Show filter and product grid immediately — transactional intent wins. Use the Product Grid hero only for: (a) curated drops or "Picks of the Week," (b) PPC and email campaign landing pages, (c) brand or staff-pick pushes. Always opt-in, never the default category page.
+              <br><br>
+              <strong>See live:</strong> <code style="background:rgba(26,26,24,0.05);padding:2px 6px;border-radius:2px"><a href="microphones-v2.html" style="color:#1A1A18;text-decoration:none">microphones-v2.html</a></code> (no hero — default) · <code style="background:rgba(26,26,24,0.05);padding:2px 6px;border-radius:2px"><a href="microphones-editorial-v1.html" style="color:#1A1A18;text-decoration:none">microphones-editorial-v1.html</a></code> (Product Grid hero)
+            </div>
           </div>
         </div>
       </div>
@@ -3175,6 +3208,70 @@
             <rect x="240" y="308" width="100" height="100" fill="#fff" stroke="rgba(26,26,24,0.08)"/>
             <rect x="0" y="430" width="360" height="50" fill="#1A1A18"/>
           </svg>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PLP page silhouettes — standard (no hero) vs editorial (Product Grid hero) -->
+    <div style="margin-top:32px">
+      <div class="sg-rule-label" style="font-size:13px;color:rgba(26,26,24,0.65);margin-bottom:18px">PLP page silhouettes — standard category vs editorial / curated drop</div>
+      <div class="sg-grid-2" style="gap:16px">
+
+        <div style="background:#fff;border:1px solid rgba(26,26,24,0.1);border-radius:3px;padding:16px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:10px">Standard PLP · no hero · transactional</div>
+          <svg viewBox="0 0 360 480" width="100%" style="display:block;background:#FDFCFB;border:1px solid rgba(26,26,24,0.06)" aria-label="Standard PLP page silhouette no hero">
+            <rect x="0" y="0" width="360" height="22" fill="#1A1A18"/>
+            <rect x="0" y="22" width="360" height="38" fill="#FFFFFF" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="0" y="60" width="360" height="20" fill="#FDFCFB" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="20" y="92" width="200" height="14" fill="#1A1A18"/>
+            <rect x="20" y="112" width="180" height="5" fill="rgba(26,26,24,0.45)"/>
+            <rect x="0" y="132" width="360" height="32" fill="#FDFCFB" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="20" y="180" width="68" height="240" fill="#fff" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="28" y="190" width="50" height="6" fill="#1A1A18"/>
+            <rect x="28" y="206" width="44" height="4" fill="rgba(26,26,24,0.35)"/>
+            <rect x="28" y="216" width="40" height="4" fill="rgba(26,26,24,0.35)"/>
+            <rect x="28" y="226" width="44" height="4" fill="rgba(26,26,24,0.35)"/>
+            <rect x="100" y="180" width="240" height="240" fill="rgba(26,26,24,0.08)"/>
+            <rect x="100" y="180" width="78" height="78" fill="#fff"/>
+            <rect x="180" y="180" width="78" height="78" fill="#fff"/>
+            <rect x="260" y="180" width="80" height="78" fill="#fff"/>
+            <rect x="100" y="260" width="78" height="78" fill="#fff"/>
+            <rect x="180" y="260" width="78" height="78" fill="#fff"/>
+            <rect x="260" y="260" width="80" height="78" fill="#fff"/>
+            <rect x="100" y="340" width="78" height="80" fill="#fff"/>
+            <rect x="180" y="340" width="78" height="80" fill="#fff"/>
+            <rect x="260" y="340" width="80" height="80" fill="#fff"/>
+            <rect x="0" y="430" width="360" height="50" fill="#1A1A18"/>
+          </svg>
+          <div style="font-size:12px;color:rgba(26,26,24,0.55);margin-top:10px;line-height:1.55">Filter sidebar + product grid immediately. No hero. <strong>Default for category landings.</strong> Live: <a href="microphones-v2.html" style="color:#1A1A18;font-weight:600">microphones-v2.html</a></div>
+        </div>
+
+        <div style="background:#fff;border:1px solid rgba(26,26,24,0.1);border-radius:3px;padding:16px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:10px">Editorial PLP · Hero 2 Product Grid · curated drop</div>
+          <svg viewBox="0 0 360 480" width="100%" style="display:block;background:#FDFCFB;border:1px solid rgba(26,26,24,0.06)" aria-label="Editorial PLP silhouette using Hero 2 Product Grid">
+            <rect x="0" y="0" width="360" height="22" fill="#1A1A18"/>
+            <rect x="0" y="22" width="360" height="38" fill="#FFFFFF" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="0" y="60" width="180" height="220" fill="#EDE8E2"/>
+            <rect x="180" y="60" width="180" height="220" fill="#FFFFFF" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="20" y="86" width="50" height="5" fill="#D4860A"/>
+            <rect x="20" y="100" width="140" height="9" fill="#1A1A18"/>
+            <rect x="20" y="114" width="120" height="9" fill="#1A1A18"/>
+            <rect x="20" y="138" width="140" height="5" fill="rgba(26,26,24,0.35)"/>
+            <rect x="20" y="148" width="120" height="5" fill="rgba(26,26,24,0.35)"/>
+            <rect x="20" y="180" width="60" height="20" fill="#D4860A" rx="2"/>
+            <rect x="200" y="86" width="42" height="50" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="248" y="86" width="42" height="50" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="296" y="86" width="44" height="50" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="200" y="146" width="42" height="50" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="248" y="146" width="42" height="50" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="296" y="146" width="44" height="50" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="0" y="280" width="360" height="40" fill="#FDFCFB" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="0" y="320" width="360" height="60" fill="#fff" stroke="rgba(26,26,24,0.06)"/>
+            <rect x="0" y="380" width="360" height="50" fill="#1A1A18"/>
+            <rect x="0" y="430" width="360" height="50" fill="#1A1A18"/>
+          </svg>
+          <div style="font-size:12px;color:rgba(26,26,24,0.55);margin-top:10px;line-height:1.55">50/50 hero with 6 curated picks on the right. <strong>Use only for drops, campaigns, or staff picks.</strong> Live: <a href="microphones-editorial-v1.html" style="color:#1A1A18;font-weight:600">microphones-editorial-v1.html</a></div>
         </div>
 
       </div>
