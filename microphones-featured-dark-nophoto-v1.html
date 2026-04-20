@@ -85,23 +85,25 @@
   .trust-text { font-size:13px; font-weight:500; }
   .trust-sub { font-size:12px; color:var(--mid-grey); }
 
-  /* PLP MAIN */
-  .plp { max-width:1280px; margin:0 auto; padding:36px 32px 64px; display:grid; grid-template-columns:240px 1fr; gap:40px; }
-  .filter-h { font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; margin:0 0 16px; padding-bottom:10px; border-bottom:1px solid var(--hairline); }
-  .filter-group { padding:14px 0; border-bottom:1px solid var(--hairline); }
-  .filter-group summary { font-size:13px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; }
-  .filter-group summary::after { content:"+"; font-size:14px; color:var(--mid-grey); }
-  .filter-group[open] summary::after { content:"−"; }
-  .filter-list { list-style:none; padding:12px 0 4px; display:flex; flex-direction:column; gap:8px; }
-  .filter-list li { font-size:13px; color:var(--mid-grey); display:flex; justify-content:space-between; cursor:pointer; }
-  .filter-list li:hover { color:var(--near-black); }
-  .filter-count { color:rgba(26,26,24,0.4); font-size:12px; }
+  /* PLP MAIN — pill row + inline meta + grid (drawer-style filter, flat) */
+  .plp { max-width:1280px; margin:0 auto; padding:28px 32px 64px; }
 
-  .grid-toolbar { display:flex; justify-content:space-between; align-items:center; padding:0 0 18px; border-bottom:1px solid var(--hairline); margin-bottom:24px; }
-  .toolbar-count { font-size:13px; color:var(--mid-grey); }
-  .toolbar-count strong { color:var(--near-black); font-weight:600; }
-  .toolbar-sort { font-size:13px; display:flex; gap:8px; align-items:center; }
-  .toolbar-sort select { font-family:inherit; font-size:13px; padding:6px 24px 6px 10px; border:1px solid var(--hairline); border-radius:2px; background:#fff; cursor:pointer; }
+  .pill-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:0 0 16px; }
+  .pill { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; background:#fff; border:1px solid rgba(26,26,24,0.18); border-radius:30px; font-family:inherit; font-size:13px; font-weight:500; color:var(--near-black); cursor:pointer; line-height:1; transition:border-color 0.15s, background 0.15s; }
+  .pill:hover { border-color:var(--near-black); }
+  .pill .caret { font-size:10px; color:var(--mid-grey); margin-left:2px; }
+  .pill-more { background:#fff; border-color:var(--vk-red); color:var(--vk-red); font-weight:600; margin-left:auto; }
+  .pill-more:hover { background:var(--vk-red); color:#fff; }
+  .pill-more .caret { color:inherit; }
+
+  .meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:24px; padding:14px 0 22px; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); margin-bottom:24px; font-size:13px; color:var(--near-black); }
+  .meta-count { color:var(--mid-grey); }
+  .meta-count strong { color:var(--near-black); font-weight:600; }
+  .meta-inline { display:inline-flex; align-items:center; gap:6px; color:var(--mid-grey); }
+  .meta-inline strong { color:var(--near-black); font-weight:600; cursor:pointer; }
+  .meta-inline strong:hover { color:var(--vk-red); }
+  .meta-sep { color:rgba(26,26,24,0.2); }
+  .meta-right { margin-left:auto; display:inline-flex; gap:24px; align-items:center; }
 
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hairline); border:1px solid var(--hairline); }
   .card { background:#fff; padding:20px; display:flex; flex-direction:column; gap:10px; }
@@ -131,7 +133,6 @@
   @media (max-width:980px){
     .dark-strip-inner { grid-template-columns:1fr; gap:24px; }
     .dark-meta { text-align:left; }
-    .plp { grid-template-columns:1fr; }
     .grid { grid-template-columns:repeat(2,1fr); }
     .trust-inner { grid-template-columns:repeat(2,1fr); }
     .foot-inner { grid-template-columns:1fr 1fr; gap:32px; }
@@ -220,69 +221,28 @@
   </div>
 </div>
 
+<!-- PLP — PILL FILTERS + INLINE META + GRID (drawer-style, flat representation) -->
 <div class="plp" id="grid">
-  <aside>
-    <div class="filter-h">Filter</div>
-    <details class="filter-group" open>
-      <summary>Type</summary>
-      <ul class="filter-list">
-        <li>Condenser <span class="filter-count">1,124</span></li>
-        <li>Dynamic <span class="filter-count">412</span></li>
-        <li>Ribbon <span class="filter-count">186</span></li>
-        <li>Tube <span class="filter-count">298</span></li>
-      </ul>
-    </details>
-    <details class="filter-group" open>
-      <summary>Brand</summary>
-      <ul class="filter-list">
-        <li>Neumann <span class="filter-count">218</span></li>
-        <li>AKG <span class="filter-count">164</span></li>
-        <li>Telefunken <span class="filter-count">42</span></li>
-        <li>Royer <span class="filter-count">28</span></li>
-        <li>Shure <span class="filter-count">312</span></li>
-        <li>See all 84 brands →</li>
-      </ul>
-    </details>
-    <details class="filter-group">
-      <summary>Application</summary>
-      <ul class="filter-list">
-        <li>Vocals <span class="filter-count">874</span></li>
-        <li>Drums <span class="filter-count">421</span></li>
-      </ul>
-    </details>
-    <details class="filter-group">
-      <summary>Condition</summary>
-      <ul class="filter-list">
-        <li>New <span class="filter-count">2,124</span></li>
-        <li>Used <span class="filter-count">412</span></li>
-        <li>Vintage <span class="filter-count">229</span></li>
-      </ul>
-    </details>
-    <details class="filter-group">
-      <summary>Price</summary>
-      <ul class="filter-list">
-        <li>Under $500 <span class="filter-count">874</span></li>
-        <li>$500–$1,500 <span class="filter-count">982</span></li>
-        <li>$1,500–$5,000 <span class="filter-count">624</span></li>
-        <li>Over $5,000 <span class="filter-count">367</span></li>
-      </ul>
-    </details>
-  </aside>
+
+  <div class="pill-row" role="group" aria-label="Filter microphones">
+    <button class="pill">Brand <span class="caret">▾</span></button>
+    <button class="pill">Type <span class="caret">▾</span></button>
+    <button class="pill">Polar Pattern <span class="caret">▾</span></button>
+    <button class="pill">Application <span class="caret">▾</span></button>
+    <button class="pill">Price <span class="caret">▾</span></button>
+    <button class="pill">Condition <span class="caret">▾</span></button>
+    <button class="pill pill-more" aria-label="Open all filters">More filters <span class="caret">→</span></button>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta-count"><strong>2,847</strong> microphones</div>
+    <div class="meta-right">
+      <div class="meta-inline">Sort: <strong>Featured ▾</strong></div>
+      <div class="meta-inline">View: <strong>Grid</strong> <span class="meta-sep">·</span> <a href="#" style="color:var(--mid-grey);text-decoration:none">List</a></div>
+    </div>
+  </div>
 
   <main>
-    <div class="grid-toolbar">
-      <div class="toolbar-count">Showing <strong>1–24</strong> of <strong>2,847</strong> microphones</div>
-      <div class="toolbar-sort">
-        <label for="sort">Sort by</label>
-        <select id="sort">
-          <option>Featured</option>
-          <option>Price: low to high</option>
-          <option>Price: high to low</option>
-          <option>Newest</option>
-          <option>Best sellers</option>
-        </select>
-      </div>
-    </div>
 
     <div class="grid">
       <a href="#" class="card"><div class="card-img">[ Neumann U87 Ai ]</div><div class="card-brand">Neumann</div><div class="card-name">U87 Ai Studio Set</div><div class="card-price">$3,895.00</div></a>
