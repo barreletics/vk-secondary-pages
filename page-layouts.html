@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VK Page Layouts — Every Hero, Every Pattern, When to Use | Vintage King</title>
+<meta name="description" content="Every Vintage King page layout pattern in one place. Hero variants, body modules, when to use each. Built for AJ + agency hand-off.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vk-red: #C0392B;
+    --off-white: #F7F5F2;
+    --warm-white: #FDFCFB;
+    --near-black: #1A1A18;
+    --mid-grey: #6B6B68;
+    --pale-grey: #EDEDEA;
+    --amber: #D4860A;
+    --amber-bg: #F5E6C8;
+    --hero-bg: #EDE8E2;
+    --hairline: rgba(26,26,24,0.08);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { overflow-x:clip; }
+  body { font-family:var(--font-body); background:var(--off-white); color:var(--near-black); font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  img, svg { display:block; }
+
+  /* TOP BANNER */
+  .top-banner { background:var(--near-black); padding:10px 24px; display:flex; align-items:center; gap:12px; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .top-banner-back { background:var(--vk-red); color:#fff; padding:7px 14px; border-radius:3px; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; }
+  .top-banner-label { color:rgba(255,255,255,0.4); font-size:11px; letter-spacing:0.06em; }
+  .top-banner-label strong { color:#fff; font-weight:600; }
+
+  /* FAMILY BAR */
+  .family-bar { background:#fff; border-bottom:1px solid var(--hairline); padding:8px 32px; display:flex; gap:24px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; align-items:center; flex-wrap:wrap; }
+  .family-bar a { color:var(--mid-grey); padding:4px 0; }
+  .family-bar a.current { color:var(--near-black); border-bottom:1px solid var(--amber); }
+  .family-bar .label { color:rgba(26,26,24,0.35); margin-right:8px; }
+
+  /* PAGE HEADER */
+  .page-head { background:var(--hero-bg); padding:64px 32px 56px; text-align:center; }
+  .page-head-inner { max-width:880px; margin:0 auto; }
+  .page-eye { font-size:12px; font-weight:700; letter-spacing:0.20em; text-transform:uppercase; color:var(--amber); margin-bottom:18px; }
+  .page-head h1 { font-family:var(--font-display); font-size:48px; font-weight:600; line-height:1.1; letter-spacing:-0.01em; margin:0 0 16px; }
+  .page-head p { font-size:16px; color:var(--mid-grey); line-height:1.7; max-width:640px; margin:0 auto; }
+
+  /* SECTION */
+  section { padding:56px 32px; }
+  section.dark-section { background:var(--near-black); color:#fff; }
+  .sec-inner { max-width:1280px; margin:0 auto; }
+  .sec-h-row { display:flex; justify-content:space-between; align-items:end; margin-bottom:28px; flex-wrap:wrap; gap:16px; }
+  .sec-eye { font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
+  .sec-h { font-family:var(--font-display); font-size:30px; font-weight:600; line-height:1.2; letter-spacing:-0.005em; }
+  .sec-sub { font-size:14px; color:var(--mid-grey); max-width:520px; }
+  .dark-section .sec-sub { color:rgba(255,255,255,0.65); }
+  .dark-section .sec-h { color:#fff; }
+
+  /* LAYOUT CARDS */
+  .layout-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .layout-card { background:#fff; border:1px solid var(--hairline); border-radius:4px; overflow:hidden; display:flex; flex-direction:column; transition:transform 0.15s, border-color 0.15s; }
+  .layout-card:hover { border-color:rgba(26,26,24,0.25); transform:translateY(-2px); }
+  .layout-wire { background:var(--off-white); padding:24px; border-bottom:1px solid var(--hairline); display:flex; align-items:center; justify-content:center; min-height:240px; }
+  .layout-wire svg { width:100%; max-width:380px; height:auto; }
+  .layout-meta { padding:22px 24px 24px; }
+  .layout-tag-row { display:flex; gap:6px; margin-bottom:10px; flex-wrap:wrap; }
+  .layout-tag { font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
+  .tag-light { background:rgba(212,134,10,0.12); color:var(--amber); }
+  .tag-dark { background:rgba(26,26,24,0.07); color:var(--near-black); }
+  .tag-default { background:rgba(46,125,50,0.12); color:#2E7D32; }
+  .layout-name { font-family:var(--font-display); font-size:20px; font-weight:600; margin-bottom:6px; line-height:1.25; }
+  .layout-when { font-size:13px; color:var(--mid-grey); line-height:1.6; margin-bottom:14px; }
+  .layout-when strong { color:var(--near-black); font-weight:600; }
+  .layout-cta-row { display:flex; gap:14px; align-items:center; padding-top:12px; border-top:1px solid var(--hairline); }
+  .layout-link { font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--near-black); }
+  .layout-link:hover { color:var(--amber); }
+  .layout-meta-info { font-size:11px; color:var(--mid-grey); margin-left:auto; letter-spacing:0.04em; }
+
+  /* RULES BLOCK */
+  .rules-block { background:rgba(212,134,10,0.06); border-left:3px solid var(--amber); padding:22px 24px; border-radius:0 3px 3px 0; margin:32px 0 0; }
+  .rules-h { font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--amber); margin-bottom:10px; }
+  .rules-block p { font-size:14px; color:var(--near-black); line-height:1.7; }
+  .rules-block strong { font-weight:600; }
+
+  /* DECISION TABLE */
+  .decide { background:#fff; border:1px solid var(--hairline); border-radius:4px; padding:32px; }
+  .decide table { width:100%; border-collapse:collapse; font-size:13px; }
+  .decide th { text-align:left; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid-grey); padding:10px 14px; border-bottom:2px solid var(--hairline); }
+  .decide td { padding:14px; border-bottom:1px solid var(--hairline); vertical-align:top; }
+  .decide tr:last-child td { border-bottom:none; }
+  .decide td strong { font-weight:600; }
+  .decide .pill { display:inline-block; padding:3px 10px; border-radius:30px; font-size:11px; font-weight:600; letter-spacing:0.06em; }
+  .pill-light { background:rgba(212,134,10,0.12); color:var(--amber); }
+  .pill-dark { background:rgba(26,26,24,0.85); color:#fff; }
+
+  /* FOOTER */
+  footer { background:var(--near-black); color:#fff; padding:48px 32px 32px; }
+  .foot-inner { max-width:1280px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+  .foot-brand { font-family:var(--font-display); font-size:20px; font-weight:600; }
+  .foot-meta { font-size:12px; color:rgba(255,255,255,0.55); }
+  .foot-links { display:flex; gap:16px; font-size:12px; }
+  .foot-links a { color:rgba(255,255,255,0.7); }
+  .foot-links a:hover { color:#fff; }
+
+  @media (max-width:900px){
+    .layout-grid { grid-template-columns:1fr; }
+    .page-head h1 { font-size:36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <a href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html" class="top-banner-back">← Demo Dashboard</a>
+  <span class="top-banner-label"><strong>VK Page Layouts</strong> &nbsp;·&nbsp; Every layout pattern. When to use. Live demo links.</span>
+</div>
+
+<!-- FAMILY BAR -->
+<div class="family-bar">
+  <span class="label">VK Build Family</span>
+  <a href="style-guide.html">Style Guide</a>
+  <a href="navigator.html">All Pages</a>
+  <a href="page-layouts.html" class="current">Page Layouts</a>
+  <a href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html">Prototype Versions</a>
+</div>
+
+<!-- HEAD -->
+<header class="page-head">
+  <div class="page-head-inner">
+    <div class="page-eye">VK Page Layouts</div>
+    <h1>Every layout pattern, in one place.</h1>
+    <p>Every hero, every body module, every category page variant. Each card shows the wireframe, when to use it, and a live demo link. Built for AJ and the incoming agency.</p>
+  </div>
+</header>
+
+<!-- ─── HEROES ─── -->
+<section style="background:#fff">
+  <div class="sec-inner">
+    <div class="sec-h-row">
+      <div>
+        <div class="sec-eye">Section 01 · Heroes</div>
+        <div class="sec-h">Hero patterns — light family.</div>
+      </div>
+      <div class="sec-sub">Light heroes are the default for all secondary pages. Background is <code style="background:rgba(26,26,24,0.05);padding:2px 6px;font-size:12px">#EDE8E2</code>.</div>
+    </div>
+
+    <div class="layout-grid">
+
+      <!-- HERO 1 — BIG PHOTO -->
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#EDE8E2"/>
+            <rect x="0" y="0" width="380" height="220" fill="#D4D0C7" opacity="0.6"/>
+            <rect x="20" y="170" width="60" height="6" fill="#D4860A"/>
+            <rect x="20" y="184" width="220" height="10" fill="#1A1A18"/>
+            <rect x="20" y="200" width="160" height="10" fill="#1A1A18"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row">
+            <span class="layout-tag tag-light">Light</span>
+            <span class="layout-tag tag-default">Hero 1</span>
+          </div>
+          <div class="layout-name">Big Photo Hero</div>
+          <div class="layout-when"><strong>Use for:</strong> brand storytelling pages — About, Hall of Fame, Heritage. Full-bleed photo, copy overlaid bottom-left.</div>
+          <div class="layout-cta-row">
+            <a href="about-v2.html" class="layout-link" target="_blank" rel="noopener">View live →</a>
+            <span class="layout-meta-info">about-v2.html</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO 2 — SIX-GRID -->
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="190" height="220" fill="#EDE8E2"/>
+            <rect x="190" y="0" width="190" height="220" fill="#FFFFFF" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="20" y="40" width="50" height="5" fill="#D4860A"/>
+            <rect x="20" y="58" width="150" height="9" fill="#1A1A18"/>
+            <rect x="20" y="72" width="120" height="9" fill="#1A1A18"/>
+            <rect x="20" y="100" width="140" height="5" fill="rgba(26,26,24,0.4)"/>
+            <rect x="20" y="125" width="60" height="18" fill="#D4860A" rx="2"/>
+            <rect x="205" y="20" width="50" height="58" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="261" y="20" width="50" height="58" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="317" y="20" width="48" height="58" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="205" y="84" width="50" height="58" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="261" y="84" width="50" height="58" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="317" y="84" width="48" height="58" fill="#F0EBE3" stroke="rgba(26,26,24,0.08)"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row">
+            <span class="layout-tag tag-light">Light</span>
+            <span class="layout-tag tag-default">Hero 2 · Six-Grid</span>
+          </div>
+          <div class="layout-name">Six-Grid Picks Hero</div>
+          <div class="layout-when"><strong>Use for:</strong> editorial / curated drops, Picks of the Week, staff picks. 50/50 split: copy left, six product cards right.</div>
+          <div class="layout-cta-row">
+            <a href="microphones-editorial-v1.html" class="layout-link" target="_blank" rel="noopener">View live →</a>
+            <span class="layout-meta-info">microphones-editorial-v1.html</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO 2 — STATS -->
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#EDE8E2"/>
+            <rect x="20" y="40" width="50" height="5" fill="#D4860A"/>
+            <rect x="20" y="58" width="180" height="9" fill="#1A1A18"/>
+            <rect x="20" y="72" width="160" height="9" fill="#1A1A18"/>
+            <rect x="20" y="100" width="160" height="5" fill="rgba(26,26,24,0.4)"/>
+            <rect x="20" y="135" width="60" height="20" fill="#D4860A" rx="2"/>
+            <rect x="220" y="40" width="140" height="2" fill="rgba(26,26,24,0.15)"/>
+            <text x="222" y="68" font-size="22" font-weight="600" fill="#1A1A18">15+</text>
+            <text x="222" y="84" font-size="9" fill="#6B6B68">In-house engineers</text>
+            <rect x="220" y="92" width="140" height="1" fill="rgba(26,26,24,0.1)"/>
+            <text x="222" y="118" font-size="22" font-weight="600" fill="#1A1A18">30 yrs</text>
+            <text x="222" y="134" font-size="9" fill="#6B6B68">In pro audio</text>
+            <rect x="220" y="142" width="140" height="1" fill="rgba(26,26,24,0.1)"/>
+            <text x="222" y="168" font-size="22" font-weight="600" fill="#1A1A18">2,847</text>
+            <text x="222" y="184" font-size="9" fill="#6B6B68">Microphones in stock</text>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row">
+            <span class="layout-tag tag-light">Light</span>
+            <span class="layout-tag tag-default">Hero 2 · Stats</span>
+          </div>
+          <div class="layout-name">Stats-Grid Hero</div>
+          <div class="layout-when"><strong>Use for:</strong> credibility / authority pages — Careers, Studios by VK, Trade Program. 50/50: copy left, stat ladder right.</div>
+          <div class="layout-cta-row">
+            <a href="careers.html" class="layout-link" target="_blank" rel="noopener">View live →</a>
+            <span class="layout-meta-info">careers.html</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO 4 — TEXT ONLY -->
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#EDE8E2"/>
+            <rect x="120" y="60" width="50" height="5" fill="#D4860A"/>
+            <rect x="60" y="80" width="260" height="14" fill="#1A1A18"/>
+            <rect x="90" y="100" width="200" height="14" fill="#1A1A18"/>
+            <rect x="80" y="140" width="220" height="5" fill="rgba(26,26,24,0.4)"/>
+            <rect x="100" y="152" width="180" height="5" fill="rgba(26,26,24,0.4)"/>
+            <rect x="140" y="180" width="50" height="20" fill="#D4860A" rx="2"/>
+            <rect x="194" y="180" width="50" height="20" fill="none" stroke="#1A1A18" rx="2"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row">
+            <span class="layout-tag tag-light">Light</span>
+            <span class="layout-tag tag-default">Hero 4 · Text Only</span>
+          </div>
+          <div class="layout-name">Text-Only Hero</div>
+          <div class="layout-when"><strong>Use for:</strong> policy, FAQ, Help, Privacy, Returns. Centered, no photo. Maximum content focus.</div>
+          <div class="layout-cta-row">
+            <a href="vk-warranty.html" class="layout-link" target="_blank" rel="noopener">View live →</a>
+            <span class="layout-meta-info">vk-warranty.html</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── HEROES — DARK ─── -->
+<section class="dark-section">
+  <div class="sec-inner">
+    <div class="sec-h-row">
+      <div>
+        <div class="sec-eye">Section 02 · Heroes — dark family</div>
+        <div class="sec-h">Hero patterns — dark family.</div>
+      </div>
+      <div class="sec-sub">Dark heroes signal commerce intent and brand spotlights. Use only for category pages or campaign launches. Never for service or storytelling pages.</div>
+    </div>
+
+    <div class="layout-grid">
+
+      <!-- HERO 5 — DARK + FEATURED PHOTO + CO-OP -->
+      <div class="layout-card" style="background:#262624;border-color:rgba(255,255,255,0.08)">
+        <div class="layout-wire" style="background:#1A1A18;border-bottom-color:rgba(255,255,255,0.08)">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="190" height="220" fill="#1A1A18"/>
+            <rect x="190" y="0" width="190" height="220" fill="#262624"/>
+            <rect x="20" y="20" width="100" height="14" fill="none" stroke="#D4860A" rx="7"/>
+            <circle cx="28" cy="27" r="2" fill="#D4860A"/>
+            <text x="35" y="30" font-size="6" fill="#D4860A">CO-OP · BRAND</text>
+            <rect x="20" y="46" width="50" height="5" fill="#D4860A"/>
+            <rect x="20" y="62" width="140" height="9" fill="#FFFFFF"/>
+            <rect x="20" y="76" width="120" height="9" fill="#FFFFFF"/>
+            <rect x="20" y="100" width="140" height="5" fill="rgba(255,255,255,0.5)"/>
+            <rect x="20" y="125" width="60" height="20" fill="#D4860A" rx="2"/>
+            <rect x="205" y="20" width="160" height="120" fill="#3a3a37" stroke="rgba(255,255,255,0.08)"/>
+            <rect x="205" y="155" width="120" height="6" fill="#D4860A"/>
+            <rect x="205" y="168" width="100" height="9" fill="#FFFFFF"/>
+            <rect x="205" y="184" width="80" height="6" fill="rgba(255,255,255,0.6)"/>
+            <rect x="335" y="170" width="30" height="14" fill="none" stroke="rgba(255,255,255,0.5)" rx="2"/>
+          </svg>
+        </div>
+        <div class="layout-meta" style="color:#fff">
+          <div class="layout-tag-row">
+            <span class="layout-tag tag-dark" style="background:rgba(255,255,255,0.1);color:#fff">Dark</span>
+            <span class="layout-tag" style="background:rgba(212,134,10,0.18);color:#D4860A">Hero 5 · Featured + Co-op</span>
+          </div>
+          <div class="layout-name" style="color:#fff">Featured Photo + Co-op Hero</div>
+          <div class="layout-when" style="color:rgba(255,255,255,0.65)"><strong style="color:#fff">Use for:</strong> brand spotlight category pages — Neumann week, UA Apollo push, partnered drops. 50/50 dark: copy + co-op pill left, big photo + featured-item meta right.</div>
+          <div class="layout-cta-row" style="border-top-color:rgba(255,255,255,0.1)">
+            <a href="microphones-featured-dark-v1.html" class="layout-link" target="_blank" rel="noopener" style="color:#fff">View live →</a>
+            <span class="layout-meta-info" style="color:rgba(255,255,255,0.5)">microphones-featured-dark-v1.html</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO 6 — DARK STRIP NO PHOTO -->
+      <div class="layout-card" style="background:#262624;border-color:rgba(255,255,255,0.08)">
+        <div class="layout-wire" style="background:#1A1A18;border-bottom-color:rgba(255,255,255,0.08)">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#1A1A18"/>
+            <rect x="20" y="40" width="50" height="5" fill="#D4860A"/>
+            <rect x="20" y="58" width="220" height="11" fill="#FFFFFF"/>
+            <rect x="20" y="74" width="180" height="11" fill="#FFFFFF"/>
+            <rect x="20" y="106" width="200" height="5" fill="rgba(255,255,255,0.5)"/>
+            <rect x="20" y="118" width="160" height="5" fill="rgba(255,255,255,0.5)"/>
+            <rect x="20" y="146" width="60" height="20" fill="#D4860A" rx="2"/>
+            <rect x="84" y="146" width="80" height="20" fill="none" stroke="rgba(255,255,255,0.5)" rx="2"/>
+            <rect x="280" y="58" width="80" height="6" fill="#FFFFFF"/>
+            <rect x="280" y="74" width="60" height="5" fill="rgba(255,255,255,0.5)"/>
+          </svg>
+        </div>
+        <div class="layout-meta" style="color:#fff">
+          <div class="layout-tag-row">
+            <span class="layout-tag tag-dark" style="background:rgba(255,255,255,0.1);color:#fff">Dark</span>
+            <span class="layout-tag" style="background:rgba(212,134,10,0.18);color:#D4860A">Hero 6 · Dark Strip</span>
+          </div>
+          <div class="layout-name" style="color:#fff">Dark Strip Hero (no photo)</div>
+          <div class="layout-when" style="color:rgba(255,255,255,0.65)"><strong style="color:#fff">Use for:</strong> commerce category pages — when you want category authority without a featured product or partner. Dark band, headline, CTA, product count.</div>
+          <div class="layout-cta-row" style="border-top-color:rgba(255,255,255,0.1)">
+            <a href="microphones-featured-dark-nophoto-v1.html" class="layout-link" target="_blank" rel="noopener" style="color:#fff">View live →</a>
+            <span class="layout-meta-info" style="color:rgba(255,255,255,0.5)">microphones-featured-dark-nophoto-v1.html</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CATEGORY PAGE VARIANTS ─── -->
+<section style="background:#fff">
+  <div class="sec-inner">
+    <div class="sec-h-row">
+      <div>
+        <div class="sec-eye">Section 03 · Category PLP variants</div>
+        <div class="sec-h">Category page family — pick by intent.</div>
+      </div>
+      <div class="sec-sub">Four numbered variants. Same category, different hero. Pick by goal: conversion, curation, brand spotlight, or simple authority.</div>
+    </div>
+
+    <div class="decide">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:60px">#</th>
+            <th>Variant</th>
+            <th>Hero</th>
+            <th>Background</th>
+            <th>When to use</th>
+            <th>Live</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td><strong>No hero</strong> — filter and grid immediately</td>
+            <td>None</td>
+            <td><span class="pill pill-light">Light</span></td>
+            <td>The default. Maximum conversion. Use when speed-to-product matters most.</td>
+            <td><a href="microphones-v2.html" class="layout-link" target="_blank" rel="noopener">View →</a></td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td><strong>Six-grid editorial</strong> — Picks of the Week</td>
+            <td>50/50 light</td>
+            <td><span class="pill pill-light">Light</span></td>
+            <td>Curated drops, weekly picks, editor selections. 6 cards on the right.</td>
+            <td><a href="microphones-editorial-v1.html" class="layout-link" target="_blank" rel="noopener">View →</a></td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td><strong>Featured + co-op</strong> — brand spotlight</td>
+            <td>50/50 dark, big photo</td>
+            <td><span class="pill pill-dark">Dark</span></td>
+            <td>Partnered launches (Neumann × UA), single-product hero pushes, sponsored category weeks.</td>
+            <td><a href="microphones-featured-dark-v1.html" class="layout-link" target="_blank" rel="noopener">View →</a></td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td><strong>Dark strip</strong> — authority, no photo</td>
+            <td>Dark band, no image</td>
+            <td><span class="pill pill-dark">Dark</span></td>
+            <td>Category authority without a feature item. Cleanest dark option. Headline + CTA only.</td>
+            <td><a href="microphones-featured-dark-nophoto-v1.html" class="layout-link" target="_blank" rel="noopener">View →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rules-block">
+      <div class="rules-h">Rule — when to go dark on a category page</div>
+      <p><strong>Default = light.</strong> Use dark only for: (a) commerce category pages where the brand needs authority, (b) co-op / partnered campaign weeks, or (c) campaign drops where a single hero photo carries the page. Never use dark on About, Careers, Help, FAQ, or any service / storytelling page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BODY MODULES ─── -->
+<section style="background:var(--off-white)">
+  <div class="sec-inner">
+    <div class="sec-h-row">
+      <div>
+        <div class="sec-eye">Section 04 · Body modules</div>
+        <div class="sec-h">Reusable building blocks below the hero.</div>
+      </div>
+      <div class="sec-sub">Drop these into any page. Each has fixed structure, fixed colors, and proven conversion behavior.</div>
+    </div>
+
+    <div class="layout-grid">
+
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#FDFCFB"/>
+            <rect x="20" y="60" width="80" height="100" fill="#F7F5F2" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="110" y="60" width="80" height="100" fill="#F7F5F2" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="200" y="60" width="80" height="100" fill="#F7F5F2" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="290" y="60" width="70" height="100" fill="#F7F5F2" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="20" y="170" width="80" height="6" fill="#1A1A18"/>
+            <rect x="110" y="170" width="80" height="6" fill="#1A1A18"/>
+            <rect x="200" y="170" width="80" height="6" fill="#1A1A18"/>
+            <rect x="290" y="170" width="70" height="6" fill="#1A1A18"/>
+            <rect x="20" y="180" width="60" height="4" fill="rgba(26,26,24,0.4)"/>
+            <rect x="110" y="180" width="60" height="4" fill="rgba(26,26,24,0.4)"/>
+            <rect x="200" y="180" width="60" height="4" fill="rgba(26,26,24,0.4)"/>
+            <rect x="290" y="180" width="50" height="4" fill="rgba(26,26,24,0.4)"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row"><span class="layout-tag tag-default">Body 01</span></div>
+          <div class="layout-name">4-Up Card Strip</div>
+          <div class="layout-when"><strong>Use for:</strong> trust badges, related categories, program tiles, social proof. Four equal cards in a row.</div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#1A1A18"/>
+            <rect x="20" y="40" width="50" height="5" fill="#D4860A"/>
+            <rect x="20" y="58" width="140" height="11" fill="#FFFFFF"/>
+            <rect x="20" y="74" width="120" height="11" fill="#FFFFFF"/>
+            <rect x="20" y="100" width="140" height="5" fill="rgba(255,255,255,0.5)"/>
+            <rect x="200" y="40" width="78" height="65" fill="#262624"/>
+            <text x="208" y="60" font-size="14" font-weight="600" fill="#D4860A">01</text>
+            <rect x="208" y="68" width="60" height="5" fill="#FFFFFF"/>
+            <rect x="208" y="78" width="50" height="4" fill="rgba(255,255,255,0.5)"/>
+            <rect x="282" y="40" width="78" height="65" fill="#262624"/>
+            <text x="290" y="60" font-size="14" font-weight="600" fill="#D4860A">02</text>
+            <rect x="290" y="68" width="60" height="5" fill="#FFFFFF"/>
+            <rect x="290" y="78" width="50" height="4" fill="rgba(255,255,255,0.5)"/>
+            <rect x="200" y="113" width="78" height="65" fill="#262624"/>
+            <text x="208" y="133" font-size="14" font-weight="600" fill="#D4860A">03</text>
+            <rect x="208" y="141" width="60" height="5" fill="#FFFFFF"/>
+            <rect x="208" y="151" width="50" height="4" fill="rgba(255,255,255,0.5)"/>
+            <rect x="282" y="113" width="78" height="65" fill="#262624"/>
+            <text x="290" y="133" font-size="14" font-weight="600" fill="#D4860A">04</text>
+            <rect x="290" y="141" width="60" height="5" fill="#FFFFFF"/>
+            <rect x="290" y="151" width="50" height="4" fill="rgba(255,255,255,0.5)"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row"><span class="layout-tag tag-dark">Dark</span><span class="layout-tag tag-default">Body 02</span></div>
+          <div class="layout-name">Dark Buying Guide / Process Strip</div>
+          <div class="layout-when"><strong>Use for:</strong> 4-step buying guides, how-we-curate process, GEO and AI agent content surfaces. Headline left, 2×2 cards right.</div>
+          <div class="layout-cta-row">
+            <a href="microphones-v2.html#buying-guide" class="layout-link" target="_blank" rel="noopener">View live →</a>
+            <span class="layout-meta-info">on microphones-v2.html</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#F7F5F2"/>
+            <rect x="20" y="30" width="115" height="160" fill="#FFFFFF" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="30" y="40" width="95" height="80" fill="#EDEDEA"/>
+            <rect x="30" y="130" width="50" height="5" fill="#D4860A"/>
+            <rect x="30" y="142" width="80" height="7" fill="#1A1A18"/>
+            <rect x="30" y="154" width="70" height="4" fill="rgba(26,26,24,0.5)"/>
+            <rect x="145" y="30" width="115" height="160" fill="#FFFFFF" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="155" y="40" width="95" height="80" fill="#EDEDEA"/>
+            <rect x="155" y="130" width="50" height="5" fill="#D4860A"/>
+            <rect x="155" y="142" width="80" height="7" fill="#1A1A18"/>
+            <rect x="155" y="154" width="70" height="4" fill="rgba(26,26,24,0.5)"/>
+            <rect x="270" y="30" width="90" height="160" fill="#FFFFFF" stroke="rgba(26,26,24,0.08)"/>
+            <rect x="280" y="40" width="70" height="80" fill="#EDEDEA"/>
+            <rect x="280" y="130" width="50" height="5" fill="#D4860A"/>
+            <rect x="280" y="142" width="60" height="7" fill="#1A1A18"/>
+            <rect x="280" y="154" width="50" height="4" fill="rgba(26,26,24,0.5)"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row"><span class="layout-tag tag-default">Body 03</span></div>
+          <div class="layout-name">3-Up Editorial Card Row</div>
+          <div class="layout-when"><strong>Use for:</strong> curator notes, related programs, episode grid, project cards. Three vertical cards with image, eyebrow, headline, body.</div>
+          <div class="layout-cta-row">
+            <a href="microphones-editorial-v1.html#notes" class="layout-link" target="_blank" rel="noopener">View live →</a>
+            <span class="layout-meta-info">on microphones-editorial-v1.html</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-wire">
+          <svg viewBox="0 0 380 220">
+            <rect x="0" y="0" width="380" height="220" fill="#FDFCFB"/>
+            <rect x="20" y="60" width="170" height="100" fill="#F7F5F2"/>
+            <rect x="40" y="80" width="40" height="40" fill="#EDEDEA" rx="20"/>
+            <rect x="90" y="92" width="80" height="6" fill="#1A1A18"/>
+            <rect x="90" y="104" width="60" height="5" fill="rgba(26,26,24,0.5)"/>
+            <rect x="40" y="135" width="80" height="6" fill="#D4860A"/>
+            <rect x="200" y="60" width="170" height="100" fill="#F7F5F2"/>
+            <rect x="220" y="80" width="40" height="40" fill="#EDEDEA" rx="20"/>
+            <rect x="270" y="92" width="80" height="6" fill="#1A1A18"/>
+            <rect x="270" y="104" width="60" height="5" fill="rgba(26,26,24,0.5)"/>
+            <rect x="220" y="135" width="80" height="6" fill="#D4860A"/>
+          </svg>
+        </div>
+        <div class="layout-meta">
+          <div class="layout-tag-row"><span class="layout-tag tag-default">Body 04</span></div>
+          <div class="layout-name">Trust Strip — 4 Icon + Text</div>
+          <div class="layout-when"><strong>Use for:</strong> just below the hero on commerce pages. Free shipping · Warranty · Financing · Hand-tested. Drives conversion confidence.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW TO USE ─── -->
+<section style="background:var(--hero-bg)">
+  <div class="sec-inner" style="max-width:880px;text-align:center">
+    <div class="sec-eye" style="margin-bottom:14px">How to use this page</div>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:600;line-height:1.2;margin:0 0 14px">Three sister pages. Three jobs.</h2>
+    <p style="font-size:15px;color:var(--mid-grey);margin:0 0 32px">Page Layouts (this page) shows what every layout looks like. Style Guide explains the rules behind it. All Pages lists every page we've built.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="style-guide.html" style="display:inline-block;padding:13px 26px;background:#fff;border:1px solid rgba(26,26,24,0.18);font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;border-radius:3px">Style Guide →</a>
+      <a href="navigator.html" style="display:inline-block;padding:13px 26px;background:#fff;border:1px solid rgba(26,26,24,0.18);font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;border-radius:3px">All Pages →</a>
+      <a href="https://barreletics.github.io/vintage-king-redesign/VK-Prototype-Index.html" style="display:inline-block;padding:13px 26px;background:var(--amber);color:#fff;border:1px solid var(--amber);font-size:12px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;border-radius:3px">Prototype Versions →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">VINTAGE KING</div>
+      <div class="foot-meta">VK Page Layouts · April 2026 · Internal · Built for AJ + agency hand-off</div>
+    </div>
+    <div class="foot-links">
+      <a href="style-guide.html">Style Guide</a>
+      <a href="navigator.html">All Pages</a>
+      <a href="page-layouts.html">Page Layouts</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

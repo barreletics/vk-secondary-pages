@@ -6,20 +6,14 @@
 <title>Microphones — Studio Mics, Vintage and New | Vintage King</title>
 <meta name="description" content="Shop studio microphones from Neumann, AKG, Telefunken and more. New, used, and vintage. Hand-tested. Backed by VK Warranty.">
 <meta property="og:title" content="Microphones — Studio Mics, Vintage and New | Vintage King">
-<meta property="og:description" content="Shop studio microphones from Neumann, AKG, Telefunken and more. New, used, and vintage.">
 <meta property="og:type" content="website">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Microphones",
-  "url": "https://barreletics.github.io/vk-secondary-pages/microphones-v2.html",
-  "description": "Studio microphones from Vintage King — new, used, vintage. Condenser, dynamic, ribbon, tube.",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Vintage King",
-    "url": "https://www.vintageking.com"
-  }
+  "url": "https://barreletics.github.io/vk-secondary-pages/microphones-featured-dark-nophoto-v1.html",
+  "description": "Studio microphones from Vintage King — new, used, vintage."
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +21,10 @@
 <style>
   :root {
     --vk-red: #C0392B;
-    --vk-red-dark: #922B21;
     --off-white: #F7F5F2;
     --warm-white: #FDFCFB;
     --near-black: #1A1A18;
-    --charcoal: #2C2C2A;
     --mid-grey: #6B6B68;
-    --light-grey: #D8D6D2;
     --pale-grey: #EDEDEA;
     --amber: #D4860A;
     --amber-bg: #F5E6C8;
@@ -43,62 +34,62 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { overflow-x:clip; }
-  body {
-    font-family: var(--font-body);
-    background: var(--warm-white);
-    color: var(--near-black);
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; }
-  img, svg { display: block; }
+  body { font-family:var(--font-body); background:var(--warm-white); color:var(--near-black); font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  img, svg { display:block; }
 
-  /* TOPBAR */
-  .topbar { background: var(--near-black); color:#fff; font-size:12px; padding:8px 0; }
+  .topbar { background:var(--near-black); color:#fff; font-size:12px; padding:8px 0; }
   .topbar-inner { max-width:1280px; margin:0 auto; padding:0 32px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
-  .topbar a { opacity:0.85; }
-  .topbar a:hover { opacity:1; }
   .topbar-pills { display:flex; gap:18px; flex-wrap:wrap; }
-  .topbar-pills span { display:flex; align-items:center; gap:6px; }
+  .topbar a { opacity:0.85; }
 
-  /* MAIN NAV */
   .main-nav { background:#fff; border-bottom:1px solid var(--pale-grey); position:sticky; top:0; z-index:90; }
   .main-nav-inner { max-width:1280px; margin:0 auto; padding:14px 32px; display:flex; align-items:center; gap:32px; }
-  .logo { font-family:var(--font-display); font-size:22px; font-weight:700; letter-spacing:0.04em; color:var(--near-black); }
+  .logo { font-family:var(--font-display); font-size:22px; font-weight:700; letter-spacing:0.04em; }
   .logo-tag { font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--mid-grey); margin-top:-2px; }
   .nav-links { display:flex; gap:24px; flex:1; }
-  .nav-links a { font-size:14px; font-weight:500; color:var(--near-black); padding:6px 0; }
+  .nav-links a { font-size:14px; font-weight:500; padding:6px 0; }
   .nav-links a:hover { color:var(--vk-red); }
   .nav-actions { display:flex; gap:14px; align-items:center; }
   .nav-cta-red { background:var(--vk-red); color:#fff; padding:10px 18px; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; border-radius:2px; }
 
-  /* BREADCRUMB */
-  .crumb { max-width:1280px; margin:0 auto; padding:14px 32px; font-size:12px; color:var(--mid-grey); letter-spacing:0.04em; }
-  .crumb a { color:var(--mid-grey); }
+  .family-bar { background:#fff; border-bottom:1px solid var(--hairline); }
+  .family-bar-inner { max-width:1280px; margin:0 auto; padding:8px 32px; display:flex; gap:24px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; flex-wrap:wrap; }
+  .family-bar a { color:var(--mid-grey); padding:4px 0; }
+  .family-bar a.current { color:var(--near-black); border-bottom:1px solid var(--amber); }
+  .family-bar .label { color:rgba(26,26,24,0.35); margin-right:8px; }
+
+  .crumb { max-width:1280px; margin:0 auto; padding:14px 32px 0; font-size:12px; color:var(--mid-grey); letter-spacing:0.04em; }
   .crumb a:hover { color:var(--vk-red); }
   .crumb .sep { margin:0 8px; opacity:0.45; }
 
-  /* CATEGORY HEADER (no hero) — direct + transactional */
-  .cat-head { max-width:1280px; margin:0 auto; padding:8px 32px 32px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end; }
-  .cat-head h1 { font-family:var(--font-display); font-size:48px; font-weight:700; line-height:1.05; letter-spacing:-0.01em; color:var(--near-black); margin:0 0 10px; }
-  .cat-head p { font-size:15px; color:var(--mid-grey); max-width:560px; line-height:1.6; }
-  .cat-meta { font-size:12px; color:var(--mid-grey); letter-spacing:0.06em; text-align:right; }
-  .cat-meta strong { font-weight:600; color:var(--near-black); }
+  /* DARK STRIP HERO — no photo */
+  .dark-strip { background:var(--near-black); color:#fff; }
+  .dark-strip-inner { max-width:1280px; margin:0 auto; padding:64px 32px; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:end; }
+  .dark-eye { font-size:12px; font-weight:700; letter-spacing:0.20em; text-transform:uppercase; color:var(--amber); margin-bottom:14px; }
+  .dark-strip h1 { font-family:var(--font-display); font-size:48px; font-weight:600; line-height:1.05; letter-spacing:-0.01em; margin:0 0 14px; max-width:720px; color:#fff; }
+  .dark-strip-lede { font-size:16px; color:rgba(255,255,255,0.78); line-height:1.6; max-width:620px; margin:0 0 22px; }
+  .dark-strip-cta { display:inline-flex; gap:12px; flex-wrap:wrap; }
+  .btn-amber { background:var(--amber); color:#fff; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:13px 26px; border-radius:3px; }
+  .btn-amber:hover { opacity:0.88; }
+  .btn-ghost-light { border:1px solid rgba(255,255,255,0.4); color:#fff; font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:12px 24px; border-radius:3px; }
+  .btn-ghost-light:hover { border-color:#fff; }
+  .dark-meta { font-size:12px; color:rgba(255,255,255,0.55); letter-spacing:0.04em; text-align:right; }
+  .dark-meta strong { color:#fff; font-weight:600; }
 
   /* TRUST STRIP */
-  .trust { background:var(--warm-white); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); }
+  .trust { background:var(--warm-white); border-bottom:1px solid var(--hairline); }
   .trust-inner { max-width:1280px; margin:0 auto; padding:18px 32px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   .trust-item { display:flex; gap:12px; align-items:center; }
   .trust-icon { width:28px; height:28px; background:var(--amber-bg); color:var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; flex-shrink:0; }
-  .trust-text { font-size:13px; font-weight:500; color:var(--near-black); }
+  .trust-text { font-size:13px; font-weight:500; }
   .trust-sub { font-size:12px; color:var(--mid-grey); }
 
-  /* PLP MAIN — filter sidebar + grid */
+  /* PLP MAIN */
   .plp { max-width:1280px; margin:0 auto; padding:36px 32px 64px; display:grid; grid-template-columns:240px 1fr; gap:40px; }
-  .filter-h { font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--near-black); margin:0 0 16px; padding-bottom:10px; border-bottom:1px solid var(--hairline); }
+  .filter-h { font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; margin:0 0 16px; padding-bottom:10px; border-bottom:1px solid var(--hairline); }
   .filter-group { padding:14px 0; border-bottom:1px solid var(--hairline); }
-  .filter-group summary { font-size:13px; font-weight:600; color:var(--near-black); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+  .filter-group summary { font-size:13px; font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; }
   .filter-group summary::after { content:"+"; font-size:14px; color:var(--mid-grey); }
   .filter-group[open] summary::after { content:"−"; }
   .filter-list { list-style:none; padding:12px 0 4px; display:flex; flex-direction:column; gap:8px; }
@@ -106,59 +97,28 @@
   .filter-list li:hover { color:var(--near-black); }
   .filter-count { color:rgba(26,26,24,0.4); font-size:12px; }
 
-  /* TOOLBAR */
   .grid-toolbar { display:flex; justify-content:space-between; align-items:center; padding:0 0 18px; border-bottom:1px solid var(--hairline); margin-bottom:24px; }
   .toolbar-count { font-size:13px; color:var(--mid-grey); }
   .toolbar-count strong { color:var(--near-black); font-weight:600; }
-  .toolbar-sort { font-size:13px; color:var(--near-black); display:flex; gap:8px; align-items:center; }
+  .toolbar-sort { font-size:13px; display:flex; gap:8px; align-items:center; }
   .toolbar-sort select { font-family:inherit; font-size:13px; padding:6px 24px 6px 10px; border:1px solid var(--hairline); border-radius:2px; background:#fff; cursor:pointer; }
 
-  /* PRODUCT GRID */
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hairline); border:1px solid var(--hairline); }
   .card { background:#fff; padding:20px; display:flex; flex-direction:column; gap:10px; }
-  .card-img { background:var(--off-white); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; color:rgba(26,26,24,0.25); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; text-align:center; padding:16px; }
+  .card-img { background:var(--off-white); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; color:rgba(26,26,24,0.25); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500; padding:16px; text-align:center; }
   .card-brand { font-size:11px; font-weight:600; letter-spacing:0.10em; text-transform:uppercase; color:var(--mid-grey); }
-  .card-name { font-family:var(--font-display); font-size:16px; font-weight:600; line-height:1.3; color:var(--near-black); }
-  .card-price { font-size:14px; font-weight:500; color:var(--near-black); margin-top:auto; }
+  .card-name { font-family:var(--font-display); font-size:16px; font-weight:600; line-height:1.3; }
+  .card-price { font-size:14px; font-weight:500; margin-top:auto; }
   .card-price .strike { color:var(--mid-grey); text-decoration:line-through; font-weight:400; margin-right:6px; }
   .badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; background:var(--amber-bg); color:var(--amber); width:fit-content; }
-  .badge-new { background:rgba(26,26,24,0.07); color:var(--near-black); }
   .badge-vintage { background:var(--amber-bg); color:var(--amber); }
 
-  /* LOAD MORE */
   .more { text-align:center; padding:32px 0 8px; }
-  .more a { display:inline-block; padding:14px 40px; border:1px solid var(--near-black); font-size:12px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:var(--near-black); }
+  .more a { display:inline-block; padding:14px 40px; border:1px solid var(--near-black); font-size:12px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; }
   .more a:hover { background:var(--near-black); color:#fff; }
   .more p { font-size:12px; color:var(--mid-grey); margin-top:10px; }
 
-  /* DARK BUYING GUIDE STRIP — editorial / GEO surface */
-  .guide { background:var(--near-black); color:#fff; padding:80px 0; margin-top:48px; }
-  .guide-inner { max-width:1280px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:1fr 1.4fr; gap:64px; align-items:start; }
-  .guide-eyebrow { font-size:12px; font-weight:700; letter-spacing:0.20em; text-transform:uppercase; color:var(--amber); margin-bottom:18px; }
-  .guide h2 { font-family:var(--font-display); font-size:38px; font-weight:600; line-height:1.15; letter-spacing:-0.005em; margin-bottom:18px; }
-  .guide-lede { font-size:16px; color:rgba(255,255,255,0.78); line-height:1.7; margin-bottom:28px; }
-  .guide-cta { display:inline-flex; align-items:center; gap:10px; font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#fff; padding-bottom:6px; border-bottom:1px solid var(--amber); }
-  .guide-cta:hover { color:var(--amber); }
-  .guide-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.1); }
-  .guide-card { background:var(--near-black); padding:24px; display:flex; flex-direction:column; gap:8px; }
-  .guide-card-num { font-family:var(--font-display); font-size:36px; font-weight:600; color:var(--amber); line-height:1; margin-bottom:4px; }
-  .guide-card-h { font-size:15px; font-weight:600; color:#fff; }
-  .guide-card-p { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.55; }
-  .guide-card-link { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber); margin-top:6px; }
-
-  /* RELATED LINKS */
-  .related { background:var(--off-white); padding:56px 0; }
-  .related-inner { max-width:1280px; margin:0 auto; padding:0 32px; }
-  .related-h { font-family:var(--font-display); font-size:24px; font-weight:600; margin-bottom:20px; }
-  .related-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--hairline); border:1px solid var(--hairline); }
-  .related-card { background:#fff; padding:20px; }
-  .related-card .eyebrow { font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
-  .related-card .h { font-family:var(--font-display); font-size:17px; font-weight:600; margin-bottom:6px; }
-  .related-card .p { font-size:13px; color:var(--mid-grey); line-height:1.55; margin-bottom:10px; }
-  .related-card .link { font-size:11px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; color:var(--near-black); }
-
-  /* FOOTER */
-  footer { background:var(--near-black); color:#fff; padding:64px 0 32px; margin-top:0; }
+  footer { background:var(--near-black); color:#fff; padding:64px 0 32px; }
   .foot-inner { max-width:1280px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; }
   .foot-h { font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber); margin-bottom:14px; }
   .foot-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
@@ -168,27 +128,18 @@
   .foot-tag { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6; max-width:340px; }
   .foot-bottom { max-width:1280px; margin:48px auto 0; padding:24px 32px 0; border-top:1px solid rgba(255,255,255,0.12); display:flex; justify-content:space-between; font-size:12px; color:rgba(255,255,255,0.55); }
 
-  /* CROSS-LINK HEADER (family) */
-  .family-bar { background:#fff; border-bottom:1px solid var(--hairline); }
-  .family-bar-inner { max-width:1280px; margin:0 auto; padding:8px 32px; display:flex; gap:24px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; }
-  .family-bar a { color:var(--mid-grey); padding:4px 0; }
-  .family-bar a.current { color:var(--near-black); border-bottom:1px solid var(--amber); }
-  .family-bar .label { color:rgba(26,26,24,0.35); margin-right:8px; }
-
-  @media (max-width:900px){
+  @media (max-width:980px){
+    .dark-strip-inner { grid-template-columns:1fr; gap:24px; }
+    .dark-meta { text-align:left; }
     .plp { grid-template-columns:1fr; }
-    .grid, .related-grid { grid-template-columns:repeat(2,1fr); }
+    .grid { grid-template-columns:repeat(2,1fr); }
     .trust-inner { grid-template-columns:repeat(2,1fr); }
-    .guide-inner { grid-template-columns:1fr; gap:36px; }
     .foot-inner { grid-template-columns:1fr 1fr; gap:32px; }
-    .cat-head { grid-template-columns:1fr; }
-    .cat-meta { text-align:left; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-pills">
@@ -204,7 +155,6 @@
   </div>
 </div>
 
-<!-- MAIN NAV -->
 <div class="main-nav">
   <div class="main-nav-inner">
     <div>
@@ -223,40 +173,44 @@
     <div class="nav-actions">
       <a href="#" style="font-size:13px;color:var(--mid-grey)">Search</a>
       <a href="#" class="nav-cta-red">Talk to an Expert</a>
-      <a href="#" style="font-size:13px;color:var(--near-black);font-weight:600">Cart (0)</a>
+      <a href="#" style="font-size:13px;font-weight:600">Cart (0)</a>
     </div>
   </div>
 </div>
 
-<!-- FAMILY CROSS-LINK BAR -->
 <div class="family-bar">
   <div class="family-bar-inner">
     <span class="label">Microphones — variants</span>
-    <a href="microphones-v2.html" class="current">1 · No hero</a>
+    <a href="microphones-v2.html">1 · No hero</a>
     <a href="microphones-editorial-v1.html">2 · Six-grid (light)</a>
     <a href="microphones-featured-dark-v1.html">3 · Featured + co-op (dark)</a>
-    <a href="microphones-featured-dark-nophoto-v1.html">4 · Dark strip</a>
+    <a href="microphones-featured-dark-nophoto-v1.html" class="current">4 · Dark strip</a>
   </div>
 </div>
 
-<!-- BREADCRUMB -->
 <div class="crumb">
   <a href="#">Home</a><span class="sep">/</span><a href="#">Recording</a><span class="sep">/</span><span style="color:var(--near-black)">Microphones</span>
 </div>
 
-<!-- CATEGORY HEADER — direct, no hero. Transactional intent honored. -->
-<div class="cat-head">
-  <div>
-    <h1>Microphones</h1>
-    <p>From workhorse dynamics to grail-tier vintage tubes — the most curated mic selection in pro audio. Hand-tested, backed by VK Warranty.</p>
+<!-- DARK STRIP HERO — no photo -->
+<section class="dark-strip" aria-labelledby="cat-h">
+  <div class="dark-strip-inner">
+    <div>
+      <div class="dark-eye">Microphones</div>
+      <h1 id="cat-h">From workhorse dynamics to grail-tier vintage tubes.</h1>
+      <p class="dark-strip-lede">The most curated mic selection in pro audio. New, used, and vintage. Hand-tested by VK engineers. Backed by VK Warranty.</p>
+      <div class="dark-strip-cta">
+        <a href="#grid" class="btn-amber">Shop all microphones</a>
+        <a href="#" class="btn-ghost-light">Talk to an expert</a>
+      </div>
+    </div>
+    <div class="dark-meta">
+      <div><strong>2,847</strong> products</div>
+      <div style="margin-top:4px">Updated daily</div>
+    </div>
   </div>
-  <div class="cat-meta">
-    <div><strong>2,847</strong> products</div>
-    <div style="margin-top:4px">Updated daily</div>
-  </div>
-</div>
+</section>
 
-<!-- TRUST STRIP -->
 <div class="trust">
   <div class="trust-inner">
     <div class="trust-item"><div class="trust-icon">✓</div><div><div class="trust-text">Free shipping over $99</div><div class="trust-sub">No surprise fees</div></div></div>
@@ -266,11 +220,9 @@
   </div>
 </div>
 
-<!-- PLP — FILTER + GRID -->
-<div class="plp">
+<div class="plp" id="grid">
   <aside>
     <div class="filter-h">Filter</div>
-
     <details class="filter-group" open>
       <summary>Type</summary>
       <ul class="filter-list">
@@ -278,10 +230,8 @@
         <li>Dynamic <span class="filter-count">412</span></li>
         <li>Ribbon <span class="filter-count">186</span></li>
         <li>Tube <span class="filter-count">298</span></li>
-        <li>USB <span class="filter-count">144</span></li>
       </ul>
     </details>
-
     <details class="filter-group" open>
       <summary>Brand</summary>
       <ul class="filter-list">
@@ -290,42 +240,24 @@
         <li>Telefunken <span class="filter-count">42</span></li>
         <li>Royer <span class="filter-count">28</span></li>
         <li>Shure <span class="filter-count">312</span></li>
-        <li>Sennheiser <span class="filter-count">196</span></li>
         <li>See all 84 brands →</li>
       </ul>
     </details>
-
     <details class="filter-group">
       <summary>Application</summary>
       <ul class="filter-list">
         <li>Vocals <span class="filter-count">874</span></li>
         <li>Drums <span class="filter-count">421</span></li>
-        <li>Guitar amp <span class="filter-count">315</span></li>
-        <li>Acoustic <span class="filter-count">282</span></li>
-        <li>Broadcast <span class="filter-count">196</span></li>
       </ul>
     </details>
-
-    <details class="filter-group">
-      <summary>Polar pattern</summary>
-      <ul class="filter-list">
-        <li>Cardioid <span class="filter-count">1,624</span></li>
-        <li>Omni <span class="filter-count">412</span></li>
-        <li>Figure-8 <span class="filter-count">186</span></li>
-        <li>Multi-pattern <span class="filter-count">298</span></li>
-      </ul>
-    </details>
-
     <details class="filter-group">
       <summary>Condition</summary>
       <ul class="filter-list">
         <li>New <span class="filter-count">2,124</span></li>
-        <li>Open Box <span class="filter-count">82</span></li>
         <li>Used <span class="filter-count">412</span></li>
         <li>Vintage <span class="filter-count">229</span></li>
       </ul>
     </details>
-
     <details class="filter-group">
       <summary>Price</summary>
       <ul class="filter-list">
@@ -353,7 +285,7 @@
     </div>
 
     <div class="grid">
-      <a href="#" class="card"><div class="card-img">[ Neumann U87 Ai ]</div><span class="badge badge-new">Best Seller</span><div class="card-brand">Neumann</div><div class="card-name">U87 Ai Studio Set</div><div class="card-price">$3,895.00</div></a>
+      <a href="#" class="card"><div class="card-img">[ Neumann U87 Ai ]</div><div class="card-brand">Neumann</div><div class="card-name">U87 Ai Studio Set</div><div class="card-price">$3,895.00</div></a>
       <a href="#" class="card"><div class="card-img">[ Shure SM7B ]</div><div class="card-brand">Shure</div><div class="card-name">SM7B Dynamic Microphone</div><div class="card-price">$429.00</div></a>
       <a href="#" class="card"><div class="card-img">[ Telefunken U47 ]</div><span class="badge badge-vintage">Vintage</span><div class="card-brand">Telefunken</div><div class="card-name">Diamond U47</div><div class="card-price">$15,995.00</div></a>
       <a href="#" class="card"><div class="card-img">[ AKG C414 XLII ]</div><div class="card-brand">AKG</div><div class="card-name">C414 XLII</div><div class="card-price">$1,249.00</div></a>
@@ -362,71 +294,15 @@
       <a href="#" class="card"><div class="card-img">[ Sennheiser MD 421 ]</div><div class="card-brand">Sennheiser</div><div class="card-name">MD 421-II Dynamic</div><div class="card-price">$429.00</div></a>
       <a href="#" class="card"><div class="card-img">[ Coles 4038 ]</div><span class="badge badge-vintage">Used · Vintage</span><div class="card-brand">Coles</div><div class="card-name">4038 Studio Ribbon Pair</div><div class="card-price"><span class="strike">$5,895</span> $4,795.00</div></a>
       <a href="#" class="card"><div class="card-img">[ Sony C-800G ]</div><div class="card-brand">Sony</div><div class="card-name">C-800G Tube Condenser</div><div class="card-price">$11,995.00</div></a>
-      <a href="#" class="card"><div class="card-img">[ Mojave MA-200 ]</div><div class="card-brand">Mojave</div><div class="card-name">MA-200 Tube Condenser</div><div class="card-price">$1,395.00</div></a>
-      <a href="#" class="card"><div class="card-img">[ Lewitt LCT 540 ]</div><span class="badge badge-new">New</span><div class="card-brand">Lewitt</div><div class="card-name">LCT 540 Subzero</div><div class="card-price">$899.00</div></a>
-      <a href="#" class="card"><div class="card-img">[ Aston Origin ]</div><div class="card-brand">Aston</div><div class="card-name">Origin Cardioid Condenser</div><div class="card-price">$299.00</div></a>
     </div>
 
     <div class="more">
       <a href="#">Load 24 more</a>
-      <p>Showing 24 of 2,847 — paginated URLs preserved for crawler indexing</p>
+      <p>Showing 9 of 2,847 — paginated URLs preserved for crawler indexing</p>
     </div>
   </main>
 </div>
 
-<!-- DARK BUYING GUIDE STRIP -->
-<section class="guide" aria-labelledby="buying-guide">
-  <div class="guide-inner">
-    <div>
-      <div class="guide-eyebrow">Buying Guide</div>
-      <h2 id="buying-guide">Choosing your first studio microphone.</h2>
-      <p class="guide-lede">A condenser for nuance. A dynamic for power. A ribbon for warmth. Most great mic collections start with one of each — here's how to pick.</p>
-      <a href="#" class="guide-cta">Read the full guide →</a>
-    </div>
-
-    <div class="guide-grid">
-      <div class="guide-card">
-        <div class="guide-card-num">01</div>
-        <div class="guide-card-h">Match the mic to the source</div>
-        <div class="guide-card-p">Vocals favor large-diaphragm condensers. Drums need dynamics. Acoustic instruments love ribbons.</div>
-        <div class="guide-card-link">Mic by source →</div>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-num">02</div>
-        <div class="guide-card-h">Understand polar patterns</div>
-        <div class="guide-card-p">Cardioid rejects rear sound. Omni captures the room. Figure-8 captures front and back equally.</div>
-        <div class="guide-card-link">Pattern guide →</div>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-num">03</div>
-        <div class="guide-card-h">New, used, or vintage</div>
-        <div class="guide-card-p">Vintage carries history and tone. Used saves 30–60%. New gives you the warranty and resale.</div>
-        <div class="guide-card-link">Compare conditions →</div>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-num">04</div>
-        <div class="guide-card-h">Talk to an engineer</div>
-        <div class="guide-card-p">Free consult with one of our 15+ in-house pro audio engineers. No upsell — just better tracks.</div>
-        <div class="guide-card-link">Book a call →</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RELATED CATEGORIES -->
-<section class="related">
-  <div class="related-inner">
-    <div class="related-h">Pair your mic with</div>
-    <div class="related-grid">
-      <a href="#" class="related-card"><div class="eyebrow">Outboard</div><div class="h">Mic Preamps</div><div class="p">API, Neve, Universal Audio. Add color, gain, and character before the converter.</div><div class="link">Shop preamps →</div></a>
-      <a href="#" class="related-card"><div class="eyebrow">Outboard</div><div class="h">Compressors</div><div class="p">1176, LA-2A, Distressor. Tame dynamics and build vocal presence at the source.</div><div class="link">Shop compressors →</div></a>
-      <a href="#" class="related-card"><div class="eyebrow">Accessories</div><div class="h">Stands and Mounts</div><div class="p">Boom stands, shock mounts, pop filters. The unsung infrastructure of every track.</div><div class="link">Shop accessories →</div></a>
-      <a href="#" class="related-card"><div class="eyebrow">Service</div><div class="h">VK Tech Shop</div><div class="p">Restoration, calibration, and repair on every vintage mic we sell. In-house bench.</div><div class="link">Tech Shop →</div></a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <div class="foot-inner">
     <div>
@@ -450,7 +326,6 @@
         <li><a href="#">Studio Installations</a></li>
         <li><a href="#">Studio Professionals</a></li>
         <li><a href="#">Audio Consultants</a></li>
-        <li><a href="#">VK Credit Card</a></li>
       </ul>
     </div>
     <div>
@@ -460,7 +335,6 @@
         <li><a href="#">FAQ</a></li>
         <li><a href="#">Returns and Shipping</a></li>
         <li><a href="#">VK Warranty</a></li>
-        <li><a href="#">About Vintage King</a></li>
       </ul>
     </div>
   </div>
