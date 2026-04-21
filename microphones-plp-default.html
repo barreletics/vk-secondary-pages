@@ -96,6 +96,12 @@
   .pill-more:hover { background:var(--vk-red); color:#fff; }
   .pill-more .caret { color:inherit; }
 
+  .quick-row { padding:10px 0 14px; font-size:13px; color:var(--mid-grey); display:flex; flex-wrap:wrap; align-items:center; gap:0; line-height:1.6; }
+  .quick-row .qr-label { font-weight:600; color:var(--near-black); margin-right:10px; letter-spacing:0.02em; }
+  .quick-row a { color:var(--mid-grey); padding:2px 0; transition:color 0.15s; }
+  .quick-row a:hover { color:var(--near-black); }
+  .quick-row .qr-sep { color:rgba(26,26,24,0.2); margin:0 10px; }
+
   .meta-row { display:flex; flex-wrap:wrap; align-items:center; gap:24px; padding:14px 0 22px; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); margin-bottom:24px; font-size:13px; color:var(--near-black); }
   .meta-count { color:var(--mid-grey); }
   .meta-count strong { color:var(--near-black); font-weight:600; }
@@ -181,9 +187,10 @@
 
 <div class="family-bar">
   <div class="family-bar-inner">
-    <span class="label">Category PLP — 3 variants</span>
+    <span class="label">Category PLP — 3 canonical + 1 under review</span>
     <a href="microphones-plp-default.html" class="current">1 · Default (dark strip)</a>
-    <a href="microphones-plp-spotlight.html">2 · Spotlight (featured + co-op)</a>
+    <a href="microphones-plp-spotlight.html">2 · Spotlight (large)</a>
+    <a href="microphones-plp-spotlight-compact.html" style="color:var(--amber)">2b · Spotlight (compact) · review</a>
     <a href="microphones-plp-editorial.html">3 · Editorial (light six-grid)</a>
   </div>
 </div>
@@ -231,6 +238,16 @@
     <button class="pill">Price <span class="caret">▾</span></button>
     <button class="pill">Condition <span class="caret">▾</span></button>
     <button class="pill pill-more" aria-label="Open all filters">More filters <span class="caret">→</span></button>
+  </div>
+
+  <div class="quick-row" aria-label="Quick filters">
+    <span class="qr-label">Quick:</span>
+    <a href="#">Studio</a><span class="qr-sep">·</span>
+    <a href="#">Live</a><span class="qr-sep">·</span>
+    <a href="#">Broadcast</a><span class="qr-sep">·</span>
+    <a href="#">Vintage</a><span class="qr-sep">·</span>
+    <a href="#">Under $500</a><span class="qr-sep">·</span>
+    <a href="#">0% financing</a>
   </div>
 
   <div class="meta-row">
