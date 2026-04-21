@@ -2640,13 +2640,14 @@
       <a href="#badges" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Badges</a>
       <a href="#heroes" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Hero Patterns</a>
       <a href="#pages" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Page Types</a>
+      <a href="#tools" style="font-size:13px;font-weight:600;color:#1A1A18;text-decoration:none;border-bottom:2px solid rgba(26,26,24,0.2);padding-bottom:2px">Companion Tools</a>
       <button onclick="window.print()" style="margin-left:8px;background:#1A1A18;color:#fff;border:none;padding:10px 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;cursor:pointer;border-radius:2px">Download / Print PDF</button>
     </div>
   </div>
 </section>
 
 <!-- ── COMPANION TOOLS ── -->
-<section style="background:#fff;padding:32px 0;border-bottom:1px solid rgba(26,26,24,0.06)">
+<section id="tools" style="background:#fff;padding:32px 0;border-bottom:1px solid rgba(26,26,24,0.06)">
   <div class="sg-wrap">
     <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.5);margin-bottom:16px;font-family:'DM Sans',sans-serif">Companion Tools</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
@@ -2883,8 +2884,10 @@
     </div>
 
     <!-- ── FAMILY 2 — PRODUCT CARD (TINTED FILL) ── -->
-    <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.55);margin:36px 0 12px;font-family:'DM Sans',sans-serif">Family 2 — Product Card (tinted fill)</div>
-    <p style="font-size:13px;color:rgba(26,26,24,0.6);margin:0 0 16px;line-height:1.55">Used on PLP product cards and any grid layout where badges must read against product imagery. Tinted background (never solid white-on-color), 10px/700/0.10em tracking, 3px 8px padding, 2px corner radius. Four canonical names — never invent new ones.</p>
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.55);margin:36px 0 12px;font-family:'DM Sans',sans-serif">Family 2 — Product Card</div>
+    <p style="font-size:13px;color:rgba(26,26,24,0.6);margin:0 0 16px;line-height:1.55">Used on PLP product cards and any grid layout where badges must read against product imagery. Four canonical names — never invent new ones. Two visual styles: <strong>Tinted</strong> (default, strongest visibility) and <strong>Outline</strong> (lighter weight — use when imagery is busy or you want a quieter signal). 10px/700/0.10em tracking, 2px corner radius.</p>
+
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,26,24,0.45);margin:0 0 10px;font-family:'DM Sans',sans-serif">Style A — Tinted (default)</div>
 
     <div style="background:var(--off-white,#F7F5F2);border-radius:3px;overflow:hidden">
 
@@ -2914,22 +2917,62 @@
       </div>
     </div>
 
+    <!-- Style B — Outline -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,26,24,0.45);margin:28px 0 10px;font-family:'DM Sans',sans-serif">Style B — Outline (quieter)</div>
+
+    <div style="background:var(--off-white,#F7F5F2);border-radius:3px;overflow:hidden">
+
+      <div class="sg-badge-row" style="padding:20px 28px">
+        <div class="sg-badge-label">badge-new<br><span style="color:rgba(26,26,24,0.55)">Outline · neutral</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:transparent;border:1px solid rgba(26,26,24,0.30);color:#1A1A18">New</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Same name, lighter visual weight. Pair with photo-heavy cards.</div>
+      </div>
+
+      <div class="sg-badge-row" style="padding:20px 28px">
+        <div class="sg-badge-label">badge-vintage<br><span style="color:#D4860A">Outline · amber</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:transparent;border:1px solid rgba(212,134,10,0.45);color:#D4860A">Vintage</div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:transparent;border:1px solid rgba(212,134,10,0.45);color:#D4860A;margin-left:8px">Used · Vintage</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Vintage / used. Outline keeps the amber recognizable without competing with product imagery.</div>
+      </div>
+
+      <div class="sg-badge-row" style="padding:20px 28px">
+        <div class="sg-badge-label">badge-bestseller<br><span style="color:#C0392B">Outline · red</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:transparent;border:1px solid rgba(192,57,43,0.40);color:#C0392B">Best Seller</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Top seller, quieter signal. Use when card already has an Open Box / Sale price treatment.</div>
+      </div>
+
+      <div class="sg-badge-row" style="padding:20px 28px;border-bottom:none">
+        <div class="sg-badge-label">badge-featured<br><span style="color:rgba(26,26,24,0.55)">Outline · neutral</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:2px 7px;border-radius:2px;background:transparent;border:1px solid rgba(26,26,24,0.30);color:#1A1A18">Featured</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Editor's pick, lighter. Good for premium / hero SKUs where you don't want a loud chip.</div>
+      </div>
+    </div>
+
     <!-- CSS spec block -->
     <div style="background:#1A1A18;color:#F7F5F2;padding:22px 28px;border-radius:3px;margin-top:18px;font-family:'SF Mono','Menlo',monospace;font-size:12px;line-height:1.7;overflow-x:auto">
-<pre style="margin:0;font-family:inherit;font-size:inherit;color:inherit;white-space:pre-wrap">.badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; width:fit-content; }
-.badge-new        { background:rgba(26,26,24,0.07); color:var(--near-black); }
-.badge-vintage    { background:var(--amber-bg);     color:var(--amber); }
+<pre style="margin:0;font-family:inherit;font-size:inherit;color:inherit;white-space:pre-wrap">/* Base + 4 names (tinted by default) */
+.badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; width:fit-content; }
+.badge-new        { background:rgba(26,26,24,0.07);  color:var(--near-black); }
+.badge-vintage    { background:var(--amber-bg);      color:var(--amber); }
 .badge-bestseller { background:rgba(192,57,43,0.08); color:var(--vk-red); }
-.badge-featured   { background:rgba(26,26,24,0.07); color:var(--near-black); }</pre>
+.badge-featured   { background:rgba(26,26,24,0.07);  color:var(--near-black); }
+
+/* Outline modifier — stack on any name: <span class="badge badge-vintage badge--outline"> */
+.badge--outline                   { background:transparent; border:1px solid currentColor; padding:2px 7px; }
+.badge--outline.badge-new         { color:var(--near-black); border-color:rgba(26,26,24,0.30); }
+.badge--outline.badge-vintage     { color:var(--amber);      border-color:rgba(212,134,10,0.45); }
+.badge--outline.badge-bestseller  { color:var(--vk-red);     border-color:rgba(192,57,43,0.40); }
+.badge--outline.badge-featured    { color:var(--near-black); border-color:rgba(26,26,24,0.30); }</pre>
     </div>
 
     <div class="sg-do-dont" style="margin-top:24px">
       <div class="sg-do">
         <div class="sg-do-label">Do</div>
         <div class="sg-do-item">Editorial pages: text-only, no fill</div>
-        <div class="sg-do-item">Product cards: tinted fill for grid visibility</div>
+        <div class="sg-do-item">Product cards: tinted (default) or outline (quieter)</div>
         <div class="sg-do-item">10px, 700 weight, 0.10em tracking, uppercase — both families</div>
         <div class="sg-do-item">Use the 4 canonical product-card names: new, vintage, bestseller, featured</div>
+        <div class="sg-do-item">Stack badge--outline on any name as a modifier</div>
         <div class="sg-do-item">Only use badges if factually accurate</div>
       </div>
       <div class="sg-dont">
