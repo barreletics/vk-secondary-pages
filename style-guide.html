@@ -2645,6 +2645,23 @@
   </div>
 </section>
 
+<!-- ── COMPANION TOOLS ── -->
+<section style="background:#fff;padding:32px 0;border-bottom:1px solid rgba(26,26,24,0.06)">
+  <div class="sg-wrap">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.5);margin-bottom:16px;font-family:'DM Sans',sans-serif">Companion Tools</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <a href="page-layouts.html" style="display:block;background:rgba(212,134,10,0.06);border:1px solid rgba(212,134,10,0.22);border-left:3px solid #D4860A;border-radius:0 3px 3px 0;padding:18px 22px;text-decoration:none">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:6px;font-family:'DM Sans',sans-serif">Need a visual catalog?</div>
+        <div style="font-size:14px;color:#1A1A18;line-height:1.5;font-family:'DM Sans',sans-serif"><strong>Page Layouts</strong> — every hero variant, body section, and page-type recipe with live demo links.</div>
+      </a>
+      <a href="navigator.html" style="display:block;background:rgba(212,134,10,0.06);border:1px solid rgba(212,134,10,0.22);border-left:3px solid #D4860A;border-radius:0 3px 3px 0;padding:18px 22px;text-decoration:none">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D4860A;margin-bottom:6px;font-family:'DM Sans',sans-serif">Looking for every page we've built?</div>
+        <div style="font-size:14px;color:#1A1A18;line-height:1.5;font-family:'DM Sans',sans-serif"><strong>All Pages</strong> — 60+ secondary pages, prototype variants, and PLP demos catalogued.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── COLORS ── -->
 <section id="colors" class="sg-section" style="background:#fff">
   <div class="sg-wrap">
@@ -2828,8 +2845,12 @@
 <section id="badges" class="sg-section" style="background:#fff">
   <div class="sg-wrap">
     <div class="sg-eyebrow">03 — Badge System</div>
-    <h2 class="sg-h2">Labels and Badges</h2>
-    <p class="sg-sub">Text-only. No filled pill backgrounds on editorial pages. Inline display, flowing with card content.</p>
+    <h2 class="sg-h2">Labels and Badges — Two Families</h2>
+    <p class="sg-sub">Two distinct badge families, used in different contexts. <strong>Editorial</strong> badges are text-only and flow inline with card copy on storytelling pages. <strong>Product Card</strong> badges use a tinted fill so they read against product imagery on PLP and grid layouts. Never mix the two systems on the same page.</p>
+
+    <!-- ── FAMILY 1 — EDITORIAL (TEXT-ONLY) ── -->
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.55);margin:8px 0 12px;font-family:'DM Sans',sans-serif">Family 1 — Editorial (text-only)</div>
+    <p style="font-size:13px;color:rgba(26,26,24,0.6);margin:0 0 16px;line-height:1.55">Used on HOF timelines, buyer guides, vintage price labels, and program/transactional pages. No fill. Inline display, flowing with card content.</p>
 
     <div style="background:var(--off-white,#F7F5F2);border-radius:3px;overflow:hidden">
 
@@ -2861,22 +2882,63 @@
       </div>
     </div>
 
+    <!-- ── FAMILY 2 — PRODUCT CARD (TINTED FILL) ── -->
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,26,24,0.55);margin:36px 0 12px;font-family:'DM Sans',sans-serif">Family 2 — Product Card (tinted fill)</div>
+    <p style="font-size:13px;color:rgba(26,26,24,0.6);margin:0 0 16px;line-height:1.55">Used on PLP product cards and any grid layout where badges must read against product imagery. Tinted background (never solid white-on-color), 10px/700/0.10em tracking, 3px 8px padding, 2px corner radius. Four canonical names — never invent new ones.</p>
+
+    <div style="background:var(--off-white,#F7F5F2);border-radius:3px;overflow:hidden">
+
+      <div class="sg-badge-row" style="padding:20px 28px">
+        <div class="sg-badge-label">badge-new<br><span style="color:rgba(26,26,24,0.55)">Neutral tint</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:rgba(26,26,24,0.07);color:#1A1A18">New</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Newly added to inventory in the last ~30 days.</div>
+      </div>
+
+      <div class="sg-badge-row" style="padding:20px 28px">
+        <div class="sg-badge-label">badge-vintage<br><span style="color:#D4860A">Amber tint</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:#F5E6C8;color:#D4860A">Vintage</div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:#F5E6C8;color:#D4860A;margin-left:8px">Used · Vintage</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Vintage / used inventory. Always amber.</div>
+      </div>
+
+      <div class="sg-badge-row" style="padding:20px 28px">
+        <div class="sg-badge-label">badge-bestseller<br><span style="color:#C0392B">Red tint</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:rgba(192,57,43,0.08);color:#C0392B">Best Seller</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Top-selling SKU in its category. Red signals transactional priority.</div>
+      </div>
+
+      <div class="sg-badge-row" style="padding:20px 28px;border-bottom:none">
+        <div class="sg-badge-label">badge-featured<br><span style="color:rgba(26,26,24,0.55)">Neutral tint</span></div>
+        <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:rgba(26,26,24,0.07);color:#1A1A18">Featured</div>
+        <div style="font-size:13px;color:rgba(26,26,24,0.5);margin-left:24px">Editor's pick / staff featured. Neutral so it doesn't compete with vintage or bestseller.</div>
+      </div>
+    </div>
+
+    <!-- CSS spec block -->
+    <div style="background:#1A1A18;color:#F7F5F2;padding:22px 28px;border-radius:3px;margin-top:18px;font-family:'SF Mono','Menlo',monospace;font-size:12px;line-height:1.7;overflow-x:auto">
+<pre style="margin:0;font-family:inherit;font-size:inherit;color:inherit;white-space:pre-wrap">.badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:3px 8px; border-radius:2px; width:fit-content; }
+.badge-new        { background:rgba(26,26,24,0.07); color:var(--near-black); }
+.badge-vintage    { background:var(--amber-bg);     color:var(--amber); }
+.badge-bestseller { background:rgba(192,57,43,0.08); color:var(--vk-red); }
+.badge-featured   { background:rgba(26,26,24,0.07); color:var(--near-black); }</pre>
+    </div>
+
     <div class="sg-do-dont" style="margin-top:24px">
       <div class="sg-do">
         <div class="sg-do-label">Do</div>
-        <div class="sg-do-item">Text-only badges, no fill background</div>
-        <div class="sg-do-item">Inline flow at top of card content</div>
-        <div class="sg-do-item">10px, 700 weight, 0.1em tracking, uppercase</div>
-        <div class="sg-do-item">Amber on editorial badges, red on program badges</div>
+        <div class="sg-do-item">Editorial pages: text-only, no fill</div>
+        <div class="sg-do-item">Product cards: tinted fill for grid visibility</div>
+        <div class="sg-do-item">10px, 700 weight, 0.10em tracking, uppercase — both families</div>
+        <div class="sg-do-item">Use the 4 canonical product-card names: new, vintage, bestseller, featured</div>
         <div class="sg-do-item">Only use badges if factually accurate</div>
       </div>
       <div class="sg-dont">
         <div class="sg-dont-label">Don't</div>
-        <div class="sg-do-item">Filled pill/chip background on badges</div>
+        <div class="sg-do-item">Filled pill backgrounds on editorial pages</div>
+        <div class="sg-do-item">Solid white-on-color fills (use tinted only)</div>
         <div class="sg-do-item">position:absolute on badge — causes clip/overlap issues</div>
-        <div class="sg-do-item">Invent badges that aren't factually accurate</div>
-        <div class="sg-do-item">Mix amber and red badges on the same page</div>
-        <div class="sg-do-item">White text on colored fill badges</div>
+        <div class="sg-do-item">Invent new product-card badge names — stick to the 4</div>
+        <div class="sg-do-item">Mix editorial and product-card families on the same page</div>
       </div>
     </div>
   </div>
