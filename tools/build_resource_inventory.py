@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
 """Build vk-resources-inventory.xlsx — team audit / gap-analysis spreadsheet.
 
-5 tabs, columns per team request:
-  Resource | Live link | Define | Comments | Additional Link 1 | Additional Link 2 | Vintageking.com equivalent
+Now organized by Template family (T1-T5) per the build-playbook.
+
+Columns:
+  Resource | Template | Header | Status | Live link | Define | Comments |
+  Additional Link 1 | Additional Link 2 | Vintageking.com equivalent
+
+Tabs (template-first):
+  T1 Editorial Light  · T2 Deep Article  · T3 Program / Service
+  T4 Promo / Drop     · T5 Policy / Long-form
+  PLP variants        · Core ecommerce (locked)  · Reference & tools
+  Archive
 """
 from __future__ import annotations
-import re, html, sys
+import re, html
 from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -42,65 +51,83 @@ def url(rel: str) -> str:
 def define_for(meta: dict, fallback: str = "") -> str:
     return meta["desc"] or meta["h1"] or meta["title"] or fallback
 
-# ---------- row builder ----------
-def row(name, link, define, comments="", add1=("",""), add2=("",""), vk_equiv=""):
-    """Returns 7-tuple: Resource, Live link, Define, Comments, Add1, Add2, VK equivalent."""
-    return [name, link, define, comments, add1[1] if add1[0] else "",
-            add2[1] if add2[0] else "", vk_equiv]
+# ---------- row builder (10 columns) ----------
+def row(name, template, header, status, link, define,
+        comments="", add1=("",""), add2=("",""), vk_equiv=""):
+    return [name, template, header, status, link, define, comments,
+            add1[1] if add1[0] else "",
+            add2[1] if add2[0] else "",
+            vk_equiv]
 
 def labeled_link(label, url_):
     return (label, f"{label} — {url_}") if url_ else ("", "")
 
-# ---------- tab data ----------
-def tab_pages():
-    """Built secondary marketing/info pages. v2 = primary, v1 = Additional Link 1."""
+def status_for(rel: str) -> str:
+    p = ROOT / rel
+    if not p.exists():
+        return "TBD"
+    txt = p.read_text(encoding="utf-8", errors="ignore")
+    if "PLACEHOLDER" in txt or len(txt) < 1500:
+        return "Placeholder"
+    return "Built"
+
+# ---------- template-grouped page items ----------
+# Each item: (display_name, base_filename, has_v2, vk_path, header_used)
+T1_ITEMS = [  # Editorial Light — image-led marketing landings
+    ("About VK",                      "about",                       True,  "/about",        "H2"),
+    ("Make Your Mark",                "make-your-mark",              False, "",              "H2"),
+    ("PLAYBACK Magazine",             "playback",                    False, "",              "H2"),
+    ("Careers",                       "careers",                     False, "/careers",      "H2"),
+    ("25 Years of Pro Audio",         "25-years-of-pro-audio",       True,  "",              "H2"),
+    ("Live Sound How-To",             "live-sound-how",              False, "",              "H2"),
+    ("Recording at Home",             "recording-at-home",           False, "",              "H2"),
+    ("Classic Studios Gone Modern",   "classic-studios-gone-modern", False, "",              "H2"),
+    ("Multi-Room Recording Studios",  "multi-room-recording-studios",True,  "",              "H2"),
+]
+T2_ITEMS = [  # Deep Article — long-form heritage / HOF
+    ("Hall of Fame (index)",          "hall-of-fame",                False, "",              "H3"),
+    ("HOF — Neve 1073 (overview)",    "neve-1073",                   False, "",              "H3"),
+    ("HOF — Neve 1073 Buyer's Guide", "neve-1073-guide",             True,  "",              "H3"),
+    ("HOF — Neve 1081",               "neve-1081",                   True,  "",              "H3"),
+    ("HOF — Neumann U47",             "neumann-u47",                 False, "",              "H3"),
+    ("HOF — Neumann U67",             "neumann-u67",                 False, "",              "H3"),
+    ("HOF — Neumann U47 FET",         "neumann-u47-fet",             True,  "",              "H3"),
+    ("HOF — Neumann Mic Comparison",  "neumann-mic-comparison",      False, "",              "H3"),
+    ("HOF — Telefunken ELA-M 251",    "telefunken-ela-m-251",        True,  "",              "H3"),
+    ("HOF — TAB Telefunken V72/V76",  "tab-telefunken-v72-v76",      True,  "",              "H3"),
+    ("HOF — Coles 4038",              "coles-4038",                  True,  "",              "H3"),
+    ("HOF — Fairchild 660/670",       "fairchild-660-670",           False, "",              "H3"),
+    ("HOF — UREI 1176",               "urei-1176",                   False, "",              "H3"),
+    ("HOF — LA-2A",                   "la-2a",                       False, "",              "H3"),
+    ("HOF — Universal Audio 175B",    "universal-audio-175b",        True,  "",              "H3"),
+    ("HOF — Universal Audio Apollo X","universal-audio-apollo-x",    True,  "",              "H3"),
+]
+T3_ITEMS = [  # Program / Service — process + pricing
+    ("Studio Professionals",          "studio-professionals",        False, "",              "H2"),
+    ("Trade Program",                 "trade-program",               False, "",              "H2"),
+    ("Audio Consultants",             "audio-consultants",           False, "",              "H2"),
+    ("Section 179 Tax Savings",       "section-179",                 False, "",              "H2"),
+    ("VK Warranty",                   "warranty",                    False, "/warranty",     "H2"),
+    ("VK Credit Card",                "vk-credit-card",              False, "",              "H2"),
+]
+T4_ITEMS = [  # Promo / Drop — time-bound campaign landings
+    ("Back to School",                "back-to-school",              True,  "",              "H4"),
+    ("Black Friday Microphone Deals", "black-friday-microphone-deals",True, "",              "H4"),
+    ("New at NAMM — Microphones",     "new-at-namm-microphones",     True,  "",              "H4"),
+    ("Universal Audio Promotions",    "universal-audio-promotions",  True,  "",              "H4"),
+    ("Avid Pro Tools Trade-In",       "avid-pro-tools-trade-in",     True,  "",              "H4"),
+    ("Avid S4 Control Surface Configs","avid-s4-control-surface-configurations", True, "",   "H4"),
+    ("Avid S6 Control Surface Configs","avid-s6-control-surface-configurations", True, "",   "H4"),
+]
+T5_ITEMS = [  # Policy / Long-form — utility, no hero photo
+    ("Privacy Policy",                "privacy-policy",              True,  "/policies/privacy-policy",  "H2"),
+    ("Shipping Policy",               "shipping-policy",             True,  "/policies/shipping-policy", "H2"),
+    ("Returns",                       "returns",                     True,  "/policies/refund-policy",   "H2"),
+]
+
+def render_items(items, template_label):
     rows = []
-    # (display name, base filename without -v2.html, has_v2, vk-equivalent path-hint)
-    items = [
-        ("About VK", "about", True, "/about"),
-        ("Hall of Fame", "hall-of-fame", False, ""),
-        ("Make Your Mark", "make-your-mark", False, ""),
-        ("PLAYBACK Magazine", "playback", False, ""),
-        ("Careers", "careers", False, "/careers"),
-        ("Studio Professionals", "studio-professionals", False, ""),
-        ("Trade Program", "trade-program", False, ""),
-        ("Audio Consultants", "audio-consultants", False, ""),
-        ("Section 179 Tax Savings", "section-179", False, ""),
-        ("VK Warranty", "warranty", False, "/warranty"),
-        ("VK Credit Card", "vk-credit-card", False, ""),
-        ("Live Sound How-To", "live-sound-how", False, ""),
-        ("Recording at Home", "recording-at-home", False, ""),
-        ("Classic Studios Gone Modern", "classic-studios-gone-modern", False, ""),
-        ("25 Years of Pro Audio", "25-years-of-pro-audio", True, ""),
-        ("Multi-Room Recording Studios", "multi-room-recording-studios", True, ""),
-        ("Back to School", "back-to-school", True, ""),
-        ("Black Friday Microphone Deals", "black-friday-microphone-deals", True, ""),
-        ("New at NAMM — Microphones", "new-at-namm-microphones", True, ""),
-        ("Universal Audio Promotions", "universal-audio-promotions", True, ""),
-        ("Avid Pro Tools Trade-In", "avid-pro-tools-trade-in", True, ""),
-        ("Avid S4 Control Surface Configurations", "avid-s4-control-surface-configurations", True, ""),
-        ("Avid S6 Control Surface Configurations", "avid-s6-control-surface-configurations", True, ""),
-        ("Privacy Policy", "privacy-policy", True, "/policies/privacy-policy"),
-        ("Shipping Policy", "shipping-policy", True, "/policies/shipping-policy"),
-        ("Returns", "returns", True, "/policies/refund-policy"),
-        # Hall of Fame deep articles
-        ("HOF — Neve 1073 (overview)", "neve-1073", False, ""),
-        ("HOF — Neve 1073 Buyer's Guide", "neve-1073-guide", True, ""),
-        ("HOF — Neve 1081", "neve-1081", True, ""),
-        ("HOF — Neumann U47", "neumann-u47", False, ""),
-        ("HOF — Neumann U67", "neumann-u67", False, ""),
-        ("HOF — Neumann U47 FET", "neumann-u47-fet", True, ""),
-        ("HOF — Neumann Mic Comparison", "neumann-mic-comparison", False, ""),
-        ("HOF — Telefunken ELA-M 251", "telefunken-ela-m-251", True, ""),
-        ("HOF — TAB Telefunken V72/V76", "tab-telefunken-v72-v76", True, ""),
-        ("HOF — Coles 4038", "coles-4038", True, ""),
-        ("HOF — Fairchild 660/670", "fairchild-660-670", False, ""),
-        ("HOF — UREI 1176", "urei-1176", False, ""),
-        ("HOF — LA-2A", "la-2a", False, ""),
-        ("HOF — Universal Audio 175B", "universal-audio-175b", True, ""),
-        ("HOF — Universal Audio Apollo X", "universal-audio-apollo-x", True, ""),
-    ]
-    for name, base, has_v2, vk_path in items:
+    for name, base, has_v2, vk_path, header in items:
         v2_file = f"{base}-v2.html"
         v1_file = f"{base}.html"
         primary = v2_file if has_v2 and (ROOT / v2_file).exists() else v1_file
@@ -112,113 +139,141 @@ def tab_pages():
             add1 = labeled_link("v1 (older variant)", url(v1_file))
             comments = "v2 is current; v1 kept for reference and may move to /archive/."
         vk_equiv = f"https://www.vintageking.com{vk_path}" if vk_path else ""
-        rows.append(row(name, url(primary), define, comments, add1, ("",""), vk_equiv))
+        rows.append(row(name, template_label, header, status_for(primary),
+                        url(primary), define, comments, add1, ("",""), vk_equiv))
     return rows
 
-def tab_prototype_demos():
-    """Core ecommerce screens — extracted from main prototype as standalone files."""
+# ---------- non-template tabs ----------
+def tab_plp_variants():
     rows = []
-    # Reference to the live core demo prototype
+    items = [
+        ("Microphones — PLP Default",            "microphones-plp-default.html",
+         "C1", "H1",
+         "Dark band hero, 3-up product grid, sticky filters. Default for all category landings.",
+         "Recommended default.",
+         "https://www.vintageking.com/collections/microphones"),
+        ("Microphones — PLP Spotlight (large)",  "microphones-plp-spotlight.html",
+         "C2", "H1",
+         "Split hero (image right) + 3-up grid. Marquee categories with strong hero photo.",
+         "Under team A/B vs Spotlight Compact.", ""),
+        ("Microphones — PLP Spotlight Compact",  "microphones-plp-spotlight-compact.html",
+         "C2", "H1",
+         "Same as Spotlight — hero shrunk to ~440px so pill filters land above the fold.",
+         "Under team A/B vs Spotlight large.", ""),
+        ("Microphones — PLP Editorial",          "microphones-plp-editorial.html",
+         "C3", "H1",
+         "6-grid with feature tile + dark editorial interruption. Story-led collections.", "", ""),
+        ("Microphones — PLP Spotlight Compact (font lab)", "microphones-plp-spotlight-compact-font-lab.html",
+         "C2", "H1",
+         "Font-comparison variant — used by the type-test workflow.",
+         "Decision tool — not for production.", ""),
+        ("Font Comparison PLP",                  "font-comparison-plp.html",
+         "C2", "H1",
+         "Side-by-side font comparison on a category PLP.",
+         "Decision tool — feeds the type-test page in vk-redesign-final.", ""),
+        ("Header Retail Three (lab)",            "header-retail-three.html",
+         "—", "H1",
+         "Header lab — three retail-leaning header variants on a PLP.", "Lab only.", ""),
+        ("Hero Retail Three (lab)",              "hero-retail-three.html",
+         "—", "H1",
+         "Hero lab — three retail-leaning hero variants.", "Lab only.", ""),
+    ]
+    for name, rel, cat, header, define, comments, vk in items:
+        rows.append(row(name, cat, header, status_for(rel),
+                        url(rel), define, comments, ("",""), ("",""), vk))
+    return rows
+
+def tab_core_ecommerce():
+    rows = []
     rows.append(row(
-        "Core single-file prototype (latest)",
+        "Core single-file prototype (latest)", "—", "—", "Locked",
         f"{CORE}/VintageKing-Redesign-v2_67-Mar2026.html",
-        "Full single-file VK redesign prototype — homepage, category, product, FAQ, deals, sell/trade, studio installs, tech shop, financing, open box. All 10 core ecommerce screens in one HTML page-switcher.",
-        "Source of truth for core ecommerce screens. DO NOT EDIT from this repo.",
+        "Full single-file VK redesign prototype — all 10 core ecommerce screens.",
+        "Source of truth for core ecommerce. DO NOT EDIT from this repo.",
         labeled_link("Mega-menu demo", f"{CORE}/mega-menu/VintageKing-MegaMenu-CursorLab-v2.html"),
         labeled_link("Filter / PLP demo (v4)", f"{CORE}/mega-menu/VK-Microphones-CategoryDemo-v4-refined.html"),
         "https://www.vintageking.com",
     ))
     pages = [
-        ("Homepage", "pages/home.html", "https://www.vintageking.com"),
-        ("Category page", "pages/category.html", "https://www.vintageking.com/collections/microphones"),
-        ("Product page", "pages/product.html", "https://www.vintageking.com/products/"),
-        ("FAQ", "pages/faq.html", "https://www.vintageking.com/pages/faq"),
-        ("Demo Deals", "pages/deals.html", "https://www.vintageking.com/collections/demo-deals"),
-        ("Sell or Trade", "pages/sell.html", "https://www.vintageking.com/sell-or-trade"),
-        ("Studio Installations", "pages/studio.html", "https://www.vintageking.com/studio-design"),
-        ("Tech Shop", "pages/techshop.html", "https://www.vintageking.com/tech-shop"),
-        ("Financing", "pages/financing.html", "https://www.vintageking.com/financing"),
-        ("Open Box", "pages/openbox.html", "https://www.vintageking.com/collections/open-box"),
+        ("Homepage",            "pages/home.html",     "https://www.vintageking.com"),
+        ("Category page",       "pages/category.html", "https://www.vintageking.com/collections/microphones"),
+        ("Product page",        "pages/product.html",  "https://www.vintageking.com/products/"),
+        ("FAQ",                 "pages/faq.html",      "https://www.vintageking.com/pages/faq"),
+        ("Demo Deals",          "pages/deals.html",    "https://www.vintageking.com/collections/demo-deals"),
+        ("Sell or Trade",       "pages/sell.html",     "https://www.vintageking.com/sell-or-trade"),
+        ("Studio Installations","pages/studio.html",   "https://www.vintageking.com/studio-design"),
+        ("Tech Shop",           "pages/techshop.html", "https://www.vintageking.com/tech-shop"),
+        ("Financing",           "pages/financing.html","https://www.vintageking.com/financing"),
+        ("Open Box",            "pages/openbox.html",  "https://www.vintageking.com/collections/open-box"),
     ]
     for name, rel, vk in pages:
         meta = extract(ROOT / rel)
-        rows.append(row(name, url(rel), define_for(meta, name),
-                        "Standalone extract from core prototype.", ("",""), ("",""), vk))
+        rows.append(row(name, "—", "—", status_for(rel),
+                        url(rel), define_for(meta, name),
+                        "Standalone extract from core prototype.",
+                        ("",""), ("",""), vk))
     return rows
 
 def tab_reference_tools():
     rows = []
     items = [
-        ("All Pages (navigator) — start here", "navigator.html",
-         "Master index of every demo, page, and tool. Open this first.", ""),
-        ("Style Guide — design rules", "style-guide.html",
-         "Color tokens, typography scale, badge system (two families: editorial + product card, tinted + outline), spacing, accent rules, no-go list, JSON-LD library.", ""),
-        ("Page Layouts — the Lego catalog", "page-layouts.html",
-         "Every layout pattern in one place: 4 light heroes, 2 dark heroes, 4 PLP variants, body modules, when-to-use rules, live demo links.", ""),
-        ("Page Templates Guide", "templates-guide.html",
-         "Agency hand-off: 3 hero variants (A, B, C), 2 body modules (Big, Dual), 2 strips (trust, explore), color tokens, decision rules.", "Likely to move into /archive/ once Page Layouts coverage is confirmed."),
-        ("Repo index", "index.html",
-         "Repo landing page.", ""),
-        ("Source pages (all built secondary content)", "VK-secondary-pages-source.html",
-         "Combined source containing copy, hero patterns, and JSON-LD blocks for all secondary pages built so far.", ""),
-        ("Open new pages (helper)", "open-new-pages.html",
-         "Helper page that opens recently built pages in new tabs.", ""),
+        ("VK Build Playbook (READ FIRST)",
+         "https://barreletics.github.io/vk-redesign-final/build-playbook.html",
+         "Single source of truth: rules, rhythm, templates, headers, layouts, strips, type, color, SEO, handoff. Read this before touching any page.",
+         "Lives in vk-redesign-final repo."),
+        ("VK Redesign Final — Dashboard",
+         "https://barreletics.github.io/vk-redesign-final/",
+         "Roadmap dashboard. Read · See · Decide · Hand off.", ""),
+        ("Type Test (decision tool)",
+         "https://barreletics.github.io/vk-redesign-final/type-test.html",
+         "A/B Editorial Playfair vs Retail DM Sans on product names across 3 surfaces.",
+         "Vote here to lock global typography."),
+        ("Value Strip Picker (decision tool)",
+         "https://barreletics.github.io/vk-redesign-final/value-strips/value-strip-options.html",
+         "11 value-strip variants side-by-side. Pick keepers; flag kills.", ""),
+        ("Section Buffet (decision tool)",
+         "https://barreletics.github.io/vk-redesign-final/section-buffet.html",
+         "Every body section with Keep / Maybe / Kill markers.", ""),
+        ("All Pages navigator (old repo inventory)",
+         url("navigator.html"),
+         "Master visual inventory of every page in the source repo.", ""),
+        ("Style Guide (slim)",
+         "https://barreletics.github.io/vk-redesign-final/style-guide.html",
+         "Slim spec: colors, type scale, spacing, no-go list.",
+         "Deeper detail still in old style-guide.html below."),
+        ("Style Guide (deep, old repo)",
+         url("style-guide.html"),
+         "Full design system: tokens, badges, buttons, JSON-LD library, strip patterns.", ""),
+        ("Page Layouts catalog",
+         "https://barreletics.github.io/vk-redesign-final/page-layouts.html",
+         "Visual catalog of every layout pattern.", ""),
+        ("Source pages (combined)",
+         url("VK-secondary-pages-source.html"),
+         "Combined source containing copy, hero patterns, JSON-LD blocks for all secondary pages.", ""),
     ]
-    for name, rel, define, comments in items:
-        rows.append(row(name, url(rel), define, comments))
-    # Repo docs (markdown) — hosted on GitHub, not GH Pages
+    for name, link, define, comments in items:
+        rows.append(row(name, "—", "—", "Reference", link, define, comments))
     repo_base = "https://github.com/barreletics/vk-secondary-pages/blob/main"
     md_items = [
-        ("HANDOFF.md — repo brief", f"{repo_base}/HANDOFF.md",
-         "Project guardrails, file inventory, page templates, build rules.", ""),
+        ("HANDOFF.md — repo brief",      f"{repo_base}/HANDOFF.md",
+         "Project guardrails, file inventory, page templates, build rules."),
         ("CLAUDE.md — design system rules", f"{repo_base}/CLAUDE.md",
-         "Full design system briefing for AI agents. Read before every edit.", ""),
-        ("README.md", f"{repo_base}/README.md",
-         "How to open the navigator locally and use the repo.", ""),
+         "Full design system briefing for AI agents."),
+        ("README.md",                    f"{repo_base}/README.md",
+         "How to open the navigator locally."),
     ]
-    for name, link, define, comments in md_items:
-        rows.append(row(name, link, define, comments))
-    return rows
-
-def tab_plp_variants():
-    rows = []
-    rows.append(row(
-        "Page Layouts — overview (Lego catalog)",
-        url("page-layouts.html"),
-        "Complete catalog of layout patterns — heroes, PLP variants, body modules, badges. Use this to pick a layout, then jump to the live demo.",
-        "Cross-listed in Reference & Tools tab.",
-    ))
-    items = [
-        ("Microphones — PLP Default (dark strip)", "microphones-plp-default.html",
-         "Dark band hero, no image, headline + lede + 2 CTAs, pill filter row + inline quick filters, 3-up product grid, trust strip. Default for all category landings.",
-         "Recommended default."),
-        ("Microphones — PLP Spotlight (large)", "microphones-plp-spotlight.html",
-         "Dark 50/50 hero, co-op pill, big featured photo right, single featured item meta, pill filter row, 3-up grid. Brand spotlight / partner weeks.",
-         "Under team A/B vs Spotlight Compact — pick one within the week, archive the other."),
-        ("Microphones — PLP Spotlight Compact", "microphones-plp-spotlight-compact.html",
-         "Same content as Spotlight — hero shrunk to ~440px so pill filters land above the fold on standard laptops.",
-         "Under team A/B vs Spotlight large — pick one within the week, archive the other."),
-        ("Microphones — PLP Editorial (light six-grid)", "microphones-plp-editorial.html",
-         "Hero 2 with product grid right side, 6 curated picks, curator notes 3-up, dark process strip, CTA back to full catalog. Opt-in for drops, campaigns, staff picks.", ""),
-    ]
-    vk_cat = "https://www.vintageking.com/collections/microphones"
-    for name, rel, define, comments in items:
-        rows.append(row(name, url(rel), define, comments,
-                        labeled_link("Page Layouts catalog", url("page-layouts.html#plp")),
-                        ("",""), vk_cat))
+    for name, link, define in md_items:
+        rows.append(row(name, "—", "—", "Reference", link, define, ""))
     return rows
 
 def tab_archive():
-    """Archive folder not yet created (pending Phase 4 of buffet reorg).
-    List candidates here so team has visibility."""
     rows = []
     rows.append(row(
         "(folder not yet created — pending buffet reorg Phase 4)",
-        "",
-        "v1 duplicates of secondary pages and the old templates-guide.html will be moved into /archive/ once the new dashboard ships. Until then they remain in repo root and are listed as 'Additional Link 1' on their v2 row in the Pages tab.",
+        "—", "—", "Planned", "",
+        "v1 duplicates and superseded files will move to /archive/ once the new dashboard ships.",
         "No action required from team — internal cleanup.",
     ))
-    # List every -v2.html that has a v1 sibling so team can see what's slated for archive
     v1_candidates = sorted([p.name for p in ROOT.glob("*.html")
                             if not p.name.endswith("-v2.html")
                             and (ROOT / p.name.replace(".html", "-v2.html")).exists()])
@@ -226,23 +281,27 @@ def tab_archive():
         meta = extract(ROOT / v1)
         rows.append(row(
             f"[archive candidate] {v1}",
-            url(v1),
-            define_for(meta, v1),
-            "Older v1 — superseded by v2 of same name. Currently live; will move to /archive/.",
+            "—", "—", "Archive candidate",
+            url(v1), define_for(meta, v1),
+            "Older v1 — superseded by v2 of same name.",
             labeled_link("Current v2", url(v1.replace(".html", "-v2.html"))),
         ))
     rows.append(row(
         "[archive candidate] templates-guide.html",
+        "—", "—", "Archive candidate",
         url("templates-guide.html"),
-        "Agency hand-off template guide. Superseded by page-layouts.html (the new Lego catalog).",
-        "Will move to /archive/ once team confirms Page Layouts has full coverage.",
-        labeled_link("Replacement", url("page-layouts.html")),
+        "Old agency template guide. Superseded by build-playbook.html in vk-redesign-final.",
+        "Will move to /archive/ once team confirms build-playbook coverage.",
+        labeled_link("Replacement", "https://barreletics.github.io/vk-redesign-final/build-playbook.html"),
     ))
     return rows
 
 # ---------- workbook ----------
 HEADERS = [
     "Resource",
+    "Template",
+    "Header",
+    "Status",
     "Live link (our prototype)",
     "Define resource",
     "Comments",
@@ -250,7 +309,7 @@ HEADERS = [
     "Additional link 2",
     "Vintageking.com equivalent (team to confirm)",
 ]
-COL_WIDTHS = [42, 70, 70, 50, 60, 60, 50]
+COL_WIDTHS = [42, 14, 10, 16, 60, 60, 44, 50, 50, 44]
 
 def style_sheet(ws):
     header_fill = PatternFill("solid", fgColor="1A1A18")
@@ -267,6 +326,17 @@ def style_sheet(ws):
     ws.freeze_panes = "A2"
     return border, align
 
+# Status colorization
+STATUS_FILL = {
+    "Built":             ("DCEDC8", "1B5E20"),  # light green / dark green text
+    "Placeholder":       ("FFE0B2", "5D4037"),  # light amber / brown
+    "TBD":               ("FFCDD2", "B71C1C"),  # light red / dark red
+    "Locked":            ("E1BEE7", "4A148C"),  # light purple
+    "Reference":         ("E0E0E0", "424242"),  # light grey
+    "Planned":           ("F5F5F5", "757575"),
+    "Archive candidate": ("FFF9C4", "F57F17"),
+}
+
 def write_rows(ws, rows):
     border, align = style_sheet(ws)
     link_font = Font(color="C0392B", underline="single")
@@ -275,26 +345,36 @@ def write_rows(ws, rows):
             cell = ws.cell(row=r, column=c, value=val)
             cell.alignment = align
             cell.border = border
-            if c in (2, 7) and val and val.startswith("http"):
+            # Hyperlinks: col 5 (live link), col 10 (vk equiv)
+            if c in (5, 10) and val and isinstance(val, str) and val.startswith("http"):
                 cell.hyperlink = val
                 cell.font = link_font
-            elif c in (5, 6) and val and " — http" in val:
-                # "Label — URL" — make the URL clickable
+            # Hyperlinks within "Label — URL" cells (cols 8, 9)
+            elif c in (8, 9) and val and isinstance(val, str) and " — http" in val:
                 u = val.split(" — ", 1)[1]
                 cell.hyperlink = u
                 cell.font = link_font
-        # row height
+            # Status color (col 4)
+            if c == 4 and val in STATUS_FILL:
+                bg, fg = STATUS_FILL[val]
+                cell.fill = PatternFill("solid", fgColor=bg)
+                cell.font = Font(name="Calibri", size=11, bold=True, color=fg)
+                cell.alignment = Alignment(vertical="center", horizontal="center")
         ws.row_dimensions[r].height = 60
 
 def main():
     wb = Workbook()
     wb.remove(wb.active)
     sheets = [
-        ("Pages", tab_pages()),
-        ("Prototype demos", tab_prototype_demos()),
-        ("Reference & tools", tab_reference_tools()),
-        ("Page Layouts & PLP variants", tab_plp_variants()),
-        ("Archive", tab_archive()),
+        ("T1 Editorial Light",      render_items(T1_ITEMS, "T1 Editorial Light")),
+        ("T2 Deep Article (HOF)",   render_items(T2_ITEMS, "T2 Deep Article")),
+        ("T3 Program & Service",    render_items(T3_ITEMS, "T3 Program/Service")),
+        ("T4 Promo & Drop",         render_items(T4_ITEMS, "T4 Promo/Drop")),
+        ("T5 Policy & Long-form",   render_items(T5_ITEMS, "T5 Policy/Long-form")),
+        ("PLP variants (C1-C4)",    tab_plp_variants()),
+        ("Core ecommerce (locked)", tab_core_ecommerce()),
+        ("Reference & tools",       tab_reference_tools()),
+        ("Archive",                 tab_archive()),
     ]
     for name, rows in sheets:
         ws = wb.create_sheet(name)
